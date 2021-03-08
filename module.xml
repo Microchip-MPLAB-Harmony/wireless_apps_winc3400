@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Module name="wireless_apps_winc3400" id="fdacc24d-93a2-4309-9cfa-0b914d6709c4" version="3.4.0">
+    <ConfigRoot path="config/module.py"/>
+</Module>
