@@ -698,7 +698,7 @@ files:
   physicalPath: .
   security: NON_SECURE
   type: HEADER
-  userChecksum: 008EFEEC1C69B05E48C10372AC8518F3
+  userChecksum: 859B8E5F11EC9D9CC30461AEA76CC81E
 - generatedChecksum: C3C79A66D5ABA685FC43266F7F152385
   logicalPath: packs/ATSAMD21J18A_DFP/component
   name: gclk.h

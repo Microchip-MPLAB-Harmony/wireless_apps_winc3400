@@ -46,7 +46,7 @@
 
 /** WiFi Settings */
 /* < Destination SSID */
-#define MAIN_WLAN_SSID              "DEMO_AP"//"MicrochipDemoAp"
+#define MAIN_WLAN_SSID              "MicrochipDemoAp"
 #define WLAN_AUTH_WPA
 /* < Password for Destination SSID */
 #define MAIN_WLAN_PSK               "12345678"

@@ -170,6 +170,7 @@
             <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_definitions.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_impl_basic.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_freertos.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clock" projectFiles="true">
@@ -256,6 +257,38 @@
           <itemPath>../src/config/sam_e54_xpro_winc3400/device.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/user.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/configuration.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400/FreeRTOSConfig.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
+        <logicalFolder name="f1" displayName="Source" projectFiles="true">
+          <logicalFolder name="f1" displayName="include" projectFiles="true">
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/croutine.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/event_groups.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/list.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/portable.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/queue.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/semphr.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stack_macros.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/task.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/timers.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_prototypes.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stream_buffer.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/message_buffer.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="f2" displayName="portable" projectFiles="true">
+            <logicalFolder name="f1" displayName="GCC" projectFiles="true">
+              <logicalFolder name="f1" displayName="SAM" projectFiles="true">
+                <logicalFolder name="f1" displayName="ARM_CM4F" projectFiles="true">
+                  <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F/portmacro.h</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="iot" displayName="iot" projectFiles="true">
@@ -619,6 +652,9 @@
               <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_wps.c</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="f6" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_freertos.c</itemPath>
+          </logicalFolder>
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="clock" projectFiles="true">
               <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/clock/plib_clock.c</itemPath>
@@ -696,6 +732,30 @@
           <itemPath>../src/config/sam_e54_xpro_winc3400/startup_xc32.c</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/libc_syscalls.c</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/tasks.c</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400/freertos_hooks.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="FreeRTOS" projectFiles="true">
+        <logicalFolder name="f1" displayName="Source" projectFiles="true">
+          <logicalFolder name="f1" displayName="portable" projectFiles="true">
+            <logicalFolder name="f2" displayName="GCC" projectFiles="true">
+              <logicalFolder name="f1" displayName="SAM" projectFiles="true">
+                <logicalFolder name="f1" displayName="ARM_CM4F" projectFiles="true">
+                  <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F/port.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="f1" displayName="MemMang" projectFiles="true">
+              <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_1.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/croutine.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/list.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/queue.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/FreeRTOS_tasks.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/timers.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/event_groups.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="iot" displayName="iot" projectFiles="true">
@@ -785,6 +845,7 @@
         <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/drv_spi.yml</itemPath>
         <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/eic.yml</itemPath>
         <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/FreeRTOS.yml</itemPath>
         <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/GraphSettings.yml</itemPath>
         <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/HarmonyCore.yml</itemPath>
         <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/nvmctrl.yml</itemPath>
@@ -882,7 +943,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_xpro_winc3400;../src/config/sam_e54_xpro_winc3400/driver/winc/include/;../src/config/sam_e54_xpro_winc3400/driver/winc/include/dev;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/at_ble_api;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp/include;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/common;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/platform;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/socket;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/spi_flash;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/sam_e54_xpro_winc3400;../src/config/sam_e54_xpro_winc3400/driver/winc/include/;../src/config/sam_e54_xpro_winc3400/driver/winc/include/dev;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/at_ble_api;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp/include;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/common;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/platform;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/socket;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/spi_flash;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -981,7 +1042,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_xpro_winc3400;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/sam_e54_xpro_winc3400;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

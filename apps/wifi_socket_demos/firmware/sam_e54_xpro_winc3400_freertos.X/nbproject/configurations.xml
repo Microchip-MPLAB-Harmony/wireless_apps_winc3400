@@ -1693,6 +1693,8 @@
         <property key="periphComp5.gte" value="gt"/>
         <property key="periphComp6.gte" value="gt"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/H3_winc3400_1.4.3_release/wireless_apps_winc3400/apps/wifi_socket_demos/firmware/sam_e54_xpro_winc3400_freertos.X/debug/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

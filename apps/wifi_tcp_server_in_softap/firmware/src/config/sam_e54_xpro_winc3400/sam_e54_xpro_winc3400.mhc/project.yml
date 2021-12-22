@@ -796,7 +796,7 @@ files:
   physicalPath: .
   security: NON_SECURE
   type: HEADER
-  userChecksum: 12B37961399DB1550E3B99E59115007D
+  userChecksum: A14727971C83C6F7E7FD67BA0AE714B2
 - generatedChecksum: CF600D8862D589E2574478FD12F3186C
   logicalPath: packs/ATSAME54P20A_DFP/component
   name: freqm.h

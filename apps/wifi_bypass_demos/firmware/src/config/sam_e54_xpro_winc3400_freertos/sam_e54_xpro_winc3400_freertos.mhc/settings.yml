@@ -10,5 +10,5 @@ settings:
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   MERGE_STRATEGY: USER_ALL
-  PackageFilter: bsp;core;crypto;csp;dev_packs;net;quick_docs;usb;wireless_apps_winc3400;wireless_wifi
+  PackageFilter: bsp;core;crypto;cryptoauthlib;csp;dev_packs;net;quick_docs;usb;wireless_apps_winc3400;wireless_wifi
   TRUSTZONE: 'false'
