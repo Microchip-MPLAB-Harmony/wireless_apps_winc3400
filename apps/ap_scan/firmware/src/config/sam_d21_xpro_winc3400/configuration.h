@@ -56,7 +56,7 @@
 */
 
 #include "user.h"
-#include "toolchain_specifics.h"
+#include "device.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -81,7 +81,7 @@ extern "C" {
 // *****************************************************************************
 
 #define SYS_DEBUG_ENABLE
-#define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
+#define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_INFO
 #define SYS_DEBUG_BUFFER_DMA_READY
 #define SYS_DEBUG_USE_CONSOLE
 
@@ -129,6 +129,7 @@ extern "C" {
 #define WDRV_WINC_DEVICE_OTA_STATUS_EXTENDED
 #define WDRV_WINC_DEVICE_URL_TYPE           unsigned char
 #define WDRV_WINC_DEVICE_SCAN_STOP_ON_FIRST
+#define WDRV_WINC_DEVICE_DEPRECATE_WEP
 #define WDRV_WINC_DEVICE_SCAN_SSID_LIST
 #define WDRV_WINC_DEVICE_USE_SYS_DEBUG
 

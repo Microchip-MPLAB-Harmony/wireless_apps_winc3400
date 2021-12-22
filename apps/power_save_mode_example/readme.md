@@ -21,7 +21,7 @@ In this demonstration, the WINC’s power save feature is demonstrated. The Powe
 
 ## Downloading and building the application
 
-To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/wireless)
+To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400)
 
 
 Path of the application within the repository is **apps/power_save_mode_example/firmware** .

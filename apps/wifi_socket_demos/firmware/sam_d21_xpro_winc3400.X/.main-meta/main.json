@@ -1,0 +1,74 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.wireless_apps_winc3400_wifi_socket_demos",
+		"version": "3.4.2",
+		"displayName": "Wi-Fi Socket Mode Demos",
+		"projectName": "sam_d21_xpro_winc3400.X",
+		"shortDescription": "This example application demonstrates the WINC3400 WiFi station mode/Access point mode,SSL,Ping,Iperf,SNTP,MQTT,WiFi Provisioning,WiFi Provisioning via BLE,Custom serial Chat,Heart Rate Profile,Battery Service,Proximity Reporter and Transparent Service applications in Socket Mode",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.50.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=3.1.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMD21_DFP",
+			"semverRange": "^3.4.116"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.8.2"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "WINC3400",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit",
+				"WINC3400-XPRO"
+			],
+			[
+				"Wireless",
+				"Wi-Fi"
+			]
+		],
+		"peripherals": [
+			"Wi-Fi",
+			"BLE"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"WINC3400",
+			"WINC",
+			"wireless",
+			"BLE"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

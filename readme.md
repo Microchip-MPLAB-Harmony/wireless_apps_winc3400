@@ -44,9 +44,20 @@ The following applications are provided to demonstrate the typical or interestin
 |[Wi-Fi Provisioning using WPS (Socket mode)](apps/wifi_provisioning_via_wps/readme.md)|Demonstrates WINC3400 HomeAP Provisioning using WPS|
 |[Wi-Fi Provisioning using BLE (Socket mode)](apps/wifi_provision_via_ble/readme.md)|Demonstrates WINC3400 HomeAP Provisioning using BLE|
 |[Wi-Fi STA (Bypass/Ethernet mode)](apps/wifi_winc_sta_bypass/readme.md)|Demonstrates WINC3400 STA Bypass\Ethenet mode application|
-|[Serial Bridge](apps/serial_bridge/readme.md)|Demonstrates WINC3400 serial bridge between PC and WINC3400 module, used for firmware upgrade|
 |[Power Save Mode](apps/power_save_mode_example/readme.md)|Demonstrates WINC3400 low power modes|
+|[Wi-Fi Bypass Mode Demos](apps/wifi_bypass_demos/readme.md)|Demonstrates the below WINC3400 applications in Bypass Mode. <br>WiFi station mode/Access point mode demo <br>SSL Demo <br>Ping Demo <br>Iperf Demo <br>SNTP Demo <br>MQTT Demo <br>WiFi Provisioning Demo|
+|[Wi-Fi Socket Mode Demos](apps/wifi_socket_demos/readme.md)|Demonstrates the below WINC3400 applications in Socket Mode. <br>WiFi station mode/Access point mode demo <br>SSL Demo <br>Ping Demo <br>Iperf Demo <br>SNTP Demo <br>MQTT Demo <br>OTA Demo <br>WiFi Provisioning Demo <br>WiFi Provisioning via BLE <br>Custom serial Chat Demo <br>Heart Rate Profile Demo <br>Battery Service Demo <br>Proximity Reporter Demo <br>Transparent Service Demo <br> Certificate Download OTA Demo <br> |
 
+## Documentation
+
+| Mode       | Document| Description                             |
+| ----        | ----    |---                                 |
+| | [Create WINC Project - Getting Started](apps/getting_started/create_winc_project_from_scratch.md)  | This is a getting-started guide for MPLABX IDE |
+| | [Firmware Upgrade of WINC Devices ](apps/getting_started/winc_firmware_upgrade.md) | This document explains in detail downloading procedure of firmware, certificate, and gain values into WINC serial flash through different supported serial interfaces like UART/I2C. |
+| | [Supported Modes In WINC devices](apps/getting_started/winc_supported_modes.md) | Describes the supported modes in WINC devices |
+|Socket Mode| [WINC3400+SAMD21](apps/wifi_socket_demos/winc_samd21_socketmode_from_scratch.md)| This document explains a step by step approach to create a WINC3400 Socket mode project with SAMD21 host.|
+|Socket Mode|[WINC3400+SAME54](apps/wifi_socket_demos/winc_same54_socketmode_from_scratch.md)|This document explains a step by step approach to create a WINC3400 Socket mode project with SAME54 host.|
+|Bypass Mode|[WINC3400+SAME54](apps/wifi_bypass_demos/winc3400_same54_bypassmode_from_scratch.md)|This document explains a step by step approach to create a WINC3400 Bypass mode project with SAME54 host. |
 
 
 ____

@@ -1,0 +1,72 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.wireless_apps_winc3400_tcp_client",
+		"version": "3.4.2",
+		"displayName": "TCP Client (Socket mode)",
+		"projectName": "sam_d21_xpro_winc3400",
+		"shortDescription": "Demonstrates WINC3400 TCP Client example application",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.50.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=3.1.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMD21_DFP",
+			"semverRange": "^3.4.116"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.8.2"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "WINC3400",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit",
+				"WINC3400-XPRO"
+			],
+			[
+				"Wireless",
+				"Wi-Fi"
+			]
+		],
+		"peripherals": [
+			"Wi-Fi"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"WINC3400",
+			"WINC",
+			"wireless"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

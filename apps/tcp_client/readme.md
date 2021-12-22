@@ -27,7 +27,7 @@ This demonstration can be configured in the following ways in the source code.
 
 ## Downloading and building the application
 
-To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/wireless)
+To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400)
 
 
 Path of the application within the repository is **apps/tcp_client/firmware** .

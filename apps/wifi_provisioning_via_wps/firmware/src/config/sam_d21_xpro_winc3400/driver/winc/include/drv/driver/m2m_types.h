@@ -147,7 +147,7 @@ MACROS
 #define M2M_DRIVER_VERSION_MAJOR_NO                     (1)
 /*!< Driver Major release version number.
 */
-#define M2M_DRIVER_VERSION_MINOR_NO                     (2)
+#define M2M_DRIVER_VERSION_MINOR_NO                     (3)
 /*!< Driver Minor release version number.
 */
 #define M2M_DRIVER_VERSION_PATCH_NO                     (0)
@@ -945,7 +945,7 @@ typedef enum {
     M2M_WIFI_SEC_WPA_PSK,
     /*!< Wi-Fi network is secured with WPA/WPA2 personal(PSK). */
     M2M_WIFI_SEC_WEP,
-    /*!< Security type WEP (40 or 104) OPEN OR SHARED. */
+    /*!< WEP is deprecated as of 1.4.3 */
     M2M_WIFI_SEC_802_1X,
     /*!< Wi-Fi network is secured with WPA/WPA2 Enterprise.IEEE802.1x. */
     M2M_WIFI_NUM_AUTH_TYPES

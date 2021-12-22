@@ -1,0 +1,77 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.wireless_apps_winc3400_wifi_provision_via_ble",
+		"version": "3.4.2",
+		"displayName": "Wi-Fi Provisioning using BLE (Socket mode)",
+		"projectName": "sam_e54_xpro_winc3400",
+		"shortDescription": "This example application demonstrates WINC3400 HomeAP Provisioning using BLE",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.50.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=3.1.0"
+			}
+		],
+		"dfp": {
+			"name": "SAME54_DFP",
+			"semverRange": "^3.6.95"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.8.2"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "WINC3400",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit",
+				"WINC3400-XPRO"
+			],
+			[
+				"Wireless",
+				"Wi-Fi",
+				"BLE",
+				"Bluetooth"
+			]
+		],
+		"peripherals": [
+			"Wi-Fi",
+			"BLE"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"WINC3400",
+			"WINC",
+			"wireless",
+			"BLE",
+			"Bluetooth"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

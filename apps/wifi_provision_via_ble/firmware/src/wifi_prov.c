@@ -270,12 +270,6 @@ void APP_ExampleTasks(DRV_HANDLE handle)
                                     break;
                                 }
 
-                                case M2M_WIFI_SEC_WEP:
-                                {
-                                    status = WDRV_WINC_AuthCtxSetWEP(&authCtx, 1, pWiFiProvInfo->passphrase, pWiFiProvInfo->passphrase_length);
-                                    break;
-                                }
-
                                 default:
                                 {
                                     SYS_CONSOLE_Print(appData.consoleHandle, "Unsupported security type %d\r\n", pWiFiProvInfo->sec_type);

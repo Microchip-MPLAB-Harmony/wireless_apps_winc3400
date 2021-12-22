@@ -97,13 +97,13 @@ const DRV_SPI_PLIB_INTERFACE drvSPI0PlibAPI = {
     .writeRead = (DRV_SPI_PLIB_WRITE_READ)SERCOM4_SPI_WriteRead,
 
     /* SPI PLIB Transfer Status function */
-    .isBusy = (DRV_SPI_PLIB_IS_BUSY)SERCOM4_SPI_IsBusy,
+    .isTransmitterBusy = (DRV_SPI_PLIB_TRANSMITTER_IS_BUSY)SERCOM4_SPI_IsTransmitterBusy,
 
     /* SPI PLIB Callback Register */
     .callbackRegister = (DRV_SPI_PLIB_CALLBACK_REGISTER)SERCOM4_SPI_CallbackRegister,
 };
 
-const uint32_t drvSPI0remapDataBits[]= { 0x0, 0x1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF };
+const uint32_t drvSPI0remapDataBits[]= { 0x0, 0x1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF };
 const uint32_t drvSPI0remapClockPolarity[] = { 0x0, 0x20000000 };
 const uint32_t drvSPI0remapClockPhase[] = { 0x10000000, 0x0 };
 
@@ -136,11 +136,6 @@ const DRV_SPI_INIT drvSPI0InitData =
     /* SPI Client Objects Pool */
     .clientObjPool = (uintptr_t)&drvSPI0ClientObjPool[0],
 
-    /* DMA Channel for Transmit */
-    .dmaChannelTransmit = SYS_DMA_CHANNEL_NONE,
-
-    /* DMA Channel for Receive */
-    .dmaChannelReceive  = SYS_DMA_CHANNEL_NONE,
 
     /* SPI Queue Size */
     .transferObjPoolSize = DRV_SPI_QUEUE_SIZE_IDX0,
@@ -239,11 +234,6 @@ const TCPIP_ICMP_MODULE_CONFIG tcpipICMPInitData =
 
 
 
-
-
-
-
-
 /*** DNS Client Initialization Data ***/
 const TCPIP_DNS_CLIENT_MODULE_CONFIG tcpipDNSClientInitData =
 {
@@ -286,17 +276,17 @@ const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] 
 {
     /*** Network Configuration Index 0 ***/
     {
-        TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX0,       // interface
-        TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX0,            // hostName
-        TCPIP_NETWORK_DEFAULT_MAC_ADDR_IDX0,             // macAddr
-        TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX0,           // ipAddr
-        TCPIP_NETWORK_DEFAULT_IP_MASK_IDX0,              // ipMask
-        TCPIP_NETWORK_DEFAULT_GATEWAY_IDX0,              // gateway
-        TCPIP_NETWORK_DEFAULT_DNS_IDX0,                  // priDNS
-        TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX0,           // secondDNS
-        TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX0,           // powerMode
-        TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX0,      // startFlags
-       &TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0,           // pMacObject
+        .interface = TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX0,
+        .hostName = TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX0,
+        .macAddr = TCPIP_NETWORK_DEFAULT_MAC_ADDR_IDX0,
+        .ipAddr = TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX0,
+        .ipMask = TCPIP_NETWORK_DEFAULT_IP_MASK_IDX0,
+        .gateway = TCPIP_NETWORK_DEFAULT_GATEWAY_IDX0,
+        .priDNS = TCPIP_NETWORK_DEFAULT_DNS_IDX0,
+        .secondDNS = TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX0,
+        .powerMode = TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX0,
+        .startFlags = TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX0,
+        .pMacObject = &TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0,
     },
 };
 
@@ -495,9 +485,9 @@ void SYS_Initialize ( void* data )
 
 
 
-    /* TCPIP Stack Initialization */
-    sysObj.tcpip = TCPIP_STACK_Init();
-    SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
+/* TCPIP Stack Initialization */
+sysObj.tcpip = TCPIP_STACK_Init();
+SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
 
     CRYPT_WCCB_Initialize();

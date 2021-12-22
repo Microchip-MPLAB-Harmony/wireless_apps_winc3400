@@ -21,7 +21,7 @@ This application demonstrates how a user can pass the target AP credentials to W
 
 ## Downloading and building the application
 
-To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/wireless)
+To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400)
 
 
 Path of the application within the repository is **apps/wifi_provision_via_ble/firmware** .

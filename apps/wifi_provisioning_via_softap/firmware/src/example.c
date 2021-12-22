@@ -268,16 +268,6 @@ static void APP_ExampleSocketEventCallback(SOCKET socket, uint8_t messageType, v
                             break;
                         }
 
-                        case WDRV_WINC_AUTH_TYPE_WEP:
-                        {
-                            if (WDRV_WINC_STATUS_OK != WDRV_WINC_AuthCtxSetWEP(&authCtx, wep_parameters.u8KeyIndx, wep_parameters.au8WepKey, wep_parameters.u8KeySz))
-                            {
-                                SYS_CONSOLE_Print(appData.consoleHandle, "Fail to set Auth WEP....\r\n");
-                                break;
-                            }
-
-                            break;
-                        }
                     }
 
                     break;
@@ -422,13 +412,6 @@ void APP_ExampleTasks(DRV_HANDLE handle)
             /* Create authentication context for Open. */
 
             if (WDRV_WINC_STATUS_OK != WDRV_WINC_AuthCtxSetOpen(&authCtx))
-            {
-                break;
-            }
-#elif defined(WLAN_AUTH_WEP)
-            /* Create authentication context for WEP. */
-
-            if (WDRV_WINC_STATUS_OK != WDRV_WINC_AuthCtxSetWEP(&authCtx, WLAN_WEB_KEY_INDEX, (uint8_t*)WLAN_WEB_KEY, strlen(WLAN_WEB_KEY)))
             {
                 break;
             }

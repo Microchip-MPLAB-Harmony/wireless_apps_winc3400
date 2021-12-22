@@ -46,12 +46,12 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #ifndef _EXAMPLE_CONF_H
 #define _EXAMPLE_CONF_H
 
-#define WLAN_SSID           "MicrochipDemoAp"
+#define WLAN_SSID           "DEMO_AP"//"MicrochipDemoAp"
 #define WLAN_AUTH_WPA_PSK
 //#define WLAN_AUTH_OPEN
 #define WLAN_PSK            "12345678"
 
-#define TCP_SERVER_IP_ADDR  "192.168.1.3"
+#define TCP_SERVER_IP_ADDR  "192.168.0.102"
 #define TCP_SERVER_PORT_NUM 80
 
 #define TCP_BUFFER_SIZE     1460

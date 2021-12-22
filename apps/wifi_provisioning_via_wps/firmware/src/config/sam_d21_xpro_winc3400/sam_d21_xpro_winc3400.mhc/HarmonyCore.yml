@@ -41,7 +41,7 @@ children:
           - type: Pair
             attributes: {description: 'FALSE', value: '0', key: ENABLE_SYS_PORTS}
           - type: Pair
-            attributes: {description: 'FALSE', value: '0', key: ENABLE_SYS_DMA}
+            attributes: {description: 'FALSE', value: '1', key: ENABLE_SYS_DMA}
           - type: Pair
             attributes: {description: 'FALSE', value: '0', key: ENABLE_SYS_RESET}
   - type: File
@@ -82,6 +82,24 @@ children:
         - {type: Value, value: 'true'}
   - type: File
     attributes: {id: DMA_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: DRIVER_COMMON}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: DRIVER_ROOT}
     children:
     - type: Attributes
       children:

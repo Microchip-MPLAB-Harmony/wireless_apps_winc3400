@@ -22,7 +22,7 @@
  *******************************************************************************/
 
 /*******************************************************************************
-* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2020-21 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -227,10 +227,6 @@ void APP_Tasks ( void )
                 else if (WDRV_WINC_AUTH_TYPE_WPA_PSK == WLAN_AUTH)
                 {
                     WDRV_WINC_AuthCtxSetWPA(&authCtx, (uint8_t*)WLAN_WPA_PASSPHRASE, strlen(WLAN_WPA_PASSPHRASE));
-                }
-                else if (WDRV_WINC_AUTH_TYPE_WEP == WLAN_AUTH)
-                {
-                    WDRV_WINC_AuthCtxSetWEP(&authCtx, WLAN_WEP_KEY_INDEX, (uint8_t*)WLAN_WEP_KEY, strlen(WLAN_WEP_KEY));
                 }
                 else
                 {

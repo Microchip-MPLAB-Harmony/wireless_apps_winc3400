@@ -326,13 +326,6 @@ void APP_ExampleTasks(DRV_HANDLE handle)
             {
                 break;
             }
-#elif defined(WLAN_AUTH_WEP)
-            /* Create authentication context for WEP. */
-
-            if (WDRV_WINC_STATUS_OK != WDRV_WINC_AuthCtxSetWEP(&authCtx, WLAN_WEB_KEY_INDEX, (uint8_t*)WLAN_WEB_KEY, strlen(WLAN_WEB_KEY)))
-            {
-                break;
-            }
 #endif
 
 #if defined(WLAN_DHCP_SRV_ADDR) && defined(WLAN_DHCP_SRV_NETMASK)
