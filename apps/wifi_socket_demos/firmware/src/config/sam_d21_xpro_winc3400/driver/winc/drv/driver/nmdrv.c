@@ -88,7 +88,7 @@ int8_t nm_get_firmware_full_info(tstrM2mRev *pstrRev)
     memset((uint8_t*)pstrRev, 0, sizeof(tstrM2mRev));
     nm_get_hif_info(&fw_hif_info, NULL);
 
-    M2M_INFO("Fw HIF: %04x\r\n", fw_hif_info);
+//    M2M_INFO("Fw HIF: %04x\r\n", fw_hif_info);
     if(M2M_GET_HIF_BLOCK(fw_hif_info) == M2M_HIF_BLOCK_VALUE)
     {
         ret = nm_read_reg_with_ret(rNMI_GP_REG_0, &reg);
@@ -106,9 +106,9 @@ int8_t nm_get_firmware_full_info(tstrM2mRev *pstrRev)
                         ret = nm_read_block(reg|0x30000, (uint8_t*)pstrRev, sizeof(tstrM2mRev));
                         if(ret == M2M_SUCCESS)
                         {
-                            M2M_INFO("Firmware HIF (%u) : %u.%u\r\n", M2M_GET_HIF_BLOCK(pstrRev->u16FirmwareHifInfo), M2M_GET_HIF_MAJOR(pstrRev->u16FirmwareHifInfo), M2M_GET_HIF_MINOR(pstrRev->u16FirmwareHifInfo));
-                            M2M_INFO("Firmware ver   : %u.%u.%u\r\n", pstrRev->u8FirmwareMajor, pstrRev->u8FirmwareMinor, pstrRev->u8FirmwarePatch);
-                            M2M_INFO("Firmware Build %s Time %s\r\n", pstrRev->BuildDate, pstrRev->BuildTime);
+//                            M2M_INFO("Firmware HIF (%u) : %u.%u\r\n", M2M_GET_HIF_BLOCK(pstrRev->u16FirmwareHifInfo), M2M_GET_HIF_MAJOR(pstrRev->u16FirmwareHifInfo), M2M_GET_HIF_MINOR(pstrRev->u16FirmwareHifInfo));
+//                            M2M_INFO("Firmware ver   : %u.%u.%u\r\n", pstrRev->u8FirmwareMajor, pstrRev->u8FirmwareMinor, pstrRev->u8FirmwarePatch);
+//                            M2M_INFO("Firmware Build %s Time %s\r\n", pstrRev->BuildDate, pstrRev->BuildTime);
 
                             /* Check Hif info is consistent */
                             if(fw_hif_info != pstrRev->u16FirmwareHifInfo)

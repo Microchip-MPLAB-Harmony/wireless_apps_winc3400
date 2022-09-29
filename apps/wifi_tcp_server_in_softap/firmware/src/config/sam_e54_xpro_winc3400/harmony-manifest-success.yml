@@ -4,19 +4,20 @@
 
 
 project: wifi_tcp_server_in_softap
-creation_date: 2021-12-22T18:37:55.897+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2022-03-01T14:31:28.147+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
-mhc_mode: IDE            # [IDE|Standalone|Headless]
+mhc_mode: Standalone            # [IDE|Standalone|Headless]
 mhc_version: v3.8.2
-mplabx_version: v5.50        # if MPLAB X plugin only
-plugin_version: v3.6.4        # if MPLAB X plugin only
-compiler: XC32 (3.01)
+mplabx_version: NA        # if MPLAB X plugin only
+plugin_version: NA        # if MPLAB X plugin only
+compiler: xc32
 
 modules:
+    - {name: "..", version: "unknown"}
     - {name: "csp", version: "v3.10.0"}
     - {name: "wireless_wifi", version: "v3.6.1"}
     - {name: "core", version: "v3.10.0"}
     - {name: "dev_packs", version: "v3.10.0"}
-    - {name: "wireless_apps_winc3400", version: "v3.4.2"}
+    - {name: "wireless_apps_winc1500", version: "v3.5.0"}
     - {name: "bsp", version: "v3.10.0"}
 

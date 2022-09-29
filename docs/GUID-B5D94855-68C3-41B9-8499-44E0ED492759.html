@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
+<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta name="DC.type" content="topic" />
+<meta name="DC.title" content="MQTT Demo" />
+<meta name="DC.relation" scheme="URI" content="GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.html" />
+<meta name="DC.format" content="XHTML" />
+<meta name="DC.identifier" content="mqtt-demo" />
+<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
+<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>MQTT Demo</title>
+<meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-mqtt-demo" />
+<meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
+<meta name="Microsoft.Help.TocOrder" content="0" />
+<meta name="Microsoft.Help.Locale" content="en-US" />
+<meta name="Microsoft.Help.TopicLocale" content="en-US" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<script language="javascript">
+       
+       if (window.parent.location.protocol != 'file:') {
+				document.addEventListener('click', function(e) {
+				    if (e.target) {
+               if (e.target.nodeName == "A" ) {
+                    if (!e.target.target) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                              
+                      var origUrl = window.parent.location.href.substr(0, window.parent.location.href.indexOf("?"));
+                      if (origUrl.length === 0) {
+                          origUrl = window.parent.location.href;
+                      }
+                      var href= e.target.getAttribute("href");
+                      var parts = href.split("#");
+          
+                      var url = "";
+                      if (parts.length == 2 ) {
+                        if (!parts[0].length) {
+                            url = window.parent.location.search.replace('?','')
+                        } else {
+                            url = parts[0].replace('.html','');
+                        }
+                      } else {
+                        url = parts[0].replace('.html','');
+                      }
+
+                      if (parts.length == 2) {
+                          url += "#" + parts[1];
+                      }
+    
+                      window.parent.location.href = origUrl + "?" + url;
+
+                      return false;
+                    }
+               }
+            }
+				});
+			}
+
+		</script><script language="javascript">
+        function cpy(id, button) {
+        
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            var textArea = document.createElement("textarea");
+            
+            // Place in the top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+            
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+            
+            
+            textArea.value = content;
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+               var successful = document.execCommand('copy');
+               var msg = successful ? 'successful' : 'unsuccessful';
+               if (!button.classList.contains("copied")){
+                  button.textContent = "Copied";
+                  button.classList.add("copied");
+                  setTimeout(function(){
+                    button.textContent = "Copy";
+                    button.classList.remove("copied");
+                  },1000);
+               }
+            } catch (err) {
+              console.log('Oops, unable to copy');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+      </script><script language="javascript">
+          
+          // Add the MathML namespace to html
+          var html = document.getElementsByTagName("html")[0],
+          head = document.getElementsByTagName("head")[0];
+          
+          var mathJax = document.createElement("script");
+          mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+          head.appendChild(mathJax);
+          
+          html.setAttribute("xmlns:m","http://www.w3.org/1998/Math/MathML");
+          
+          function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } }
+          
+          if (!inIframe()) { 
+          
+          var Default = "index.html?GUID-B5D94855-68C3-41B9-8499-44E0ED492759"; 
+          
+          var displaylocation = "value" + window.location.href;
+          
+          var GUIDS = displaylocation.split('GUID');          
+          
+          if (displaylocation.indexOf('#GUID') != -1) {            
+          var First = GUIDS[1].split('.html');  
+          if (GUIDS[3]){First = GUIDS[2].split('.html');}
+          if (GUIDS[4]){First = GUIDS[3].split('.html');}
+          if (GUIDS[5]){First = GUIDS[4].split('.html');}
+          
+          var Second = GUIDS[2].split('#');   
+          if (GUIDS[3]){Second = GUIDS[3].split('#');}
+          if (GUIDS[4]){Second = GUIDS[4].split('#');}
+          if (GUIDS[5]){Second = GUIDS[5].split('#');}
+          
+          Default = "index.html?" + "GUID" + First[0] + "GUID" + Second[0];     
+          }                    
+          window.top.location = Default;
+          }       
+          
+        </script><style xml:space="">
+        
+          button.copy-code{
+            display:none;
+            padding:0.7em 1.4em;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.15em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#FFFFFF;
+            background-color:#9c9c9c;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+            text-align:center;
+            position:relative;
+            border: 0;
+            float: right;
+            border-radius: .5em;
+            cursor: pointer;
+          }
+          button.copy-code:active{
+            top:0.1em;
+          }
+          
+          pre:hover button.copy-code{
+            display: inline-block !important;
+          }
+          button.copy-code.copied {
+            cursor: default !important;
+          }
+          
+          
+          @media all and (max-width:30em){
+            button.copy-code{
+              display:block;
+              margin:0.4em auto;
+            }
+          }
+        
+        
+      </style></head>
+<body id="mqtt-demo">
+<h1 class="title topictitle1" id="ariaid-title1">MQTT Demo</h1><div class="body"><p class="p">This application demonstrates how a user run a MQTT Client using third party Paho software on WINC3400 device. The user would need to use "MQTT.fx" third party Mqtt Client application to receive message posted by MQTT Client running on WINC3400 device once it connects to the MQTT server.</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Download the MQTT.fx Third Party Mqtt Client Application and open it on Laptop.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Connect the MQTT.fx Application to the MQTT Server - broker.hivemq.com with port 1883.</p>
+<br /><img class="image" src="GUID-3F4B943A-B357-462C-9C97-3F38C80743E0-low.png" alt="mqtt_fx1" /><br /></li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Make the MQTT.fx Application susbcribe to Topic MCHP/Sample/a.</p>
+<br /><img class="image" src="GUID-982757B8-0597-4511-BC95-D2AAEC39430A-low.png" alt="mqtt_fx2" /><br /></li>
+<li class="li"><span class="indent-level-default">4.</span><p class="p">Configure the wifi parameters using "wifi set" command.</p>
+<br /><img class="image" src="GUID-4DC916AC-6E5D-4F01-94F4-4D5AE0B066E8-low.png" alt="ping_demo_config" /><br /></li>
+<li class="li"><span class="indent-level-default">5.</span><p class="p">Enter the command "mqtt start".</p>
+<br /><img class="image" src="GUID-D629ED58-9264-4952-A989-34BB6D8F5378-low.png" alt="mqtt_start_cmd" /><br /></li>
+<li class="li"><span class="indent-level-default">6.</span><p class="p">Enter the command "appdemo start 1 18". The device will connect to the network and IP address will be displayed on the terminal window. Then the MQTT Client on the WINC3400 device shall connect to the MQTT Server - broker.hivemq.com.</p>
+<br /><img class="image" src="GUID-800DF72A-25F0-42D9-84F0-0B946FE4607B-low.png" alt="mqtt_app_start" /><br /></li>
+<li class="li"><span class="indent-level-default">7.</span><p class="p">After connecting to MQTT Server, the MQTT Client on the WINC3400 device shall subscribe to Topic MCHP/Sample/b.</p>
+<br /><img class="image" src="GUID-E16CBF90-2933-4A2A-92AE-F77B18EFD075-low.png" alt="mqtt_subscribe_1" /><br /></li>
+<li class="li"><span class="indent-level-default">8.</span><p class="p">The MQTT Client on the WINC3400 device shall publish the message "Hello" to Topic MCHP/Sample/a.</p>
+<br /><img class="image" src="GUID-B58CD159-6864-4ED2-826B-F107F3A80854-low.png" alt="mqtt_subscribe" /><br /></li>
+<li class="li"><span class="indent-level-default">9.</span><p class="p">MQTT.fx Application receives the message "Hello" on the Topic MCHP/Sample/a sent by the MQTT Client running on the WINC3400.</p>
+<br /><img class="image" src="GUID-7FE0DC0D-D002-412A-B205-2325E4F65500-low.png" alt="mqtt_fx3" /><br /></li>
+<li class="li"><span class="indent-level-default">10.</span><p class="p">Publish message from MQTT.fx Application on the Topic MCHP/Sample/b.</p>
+<br /><img class="image" src="GUID-A5E12442-97F4-47B1-9E96-163769D0F9F0-low.png" alt="mqtt_fx4" /><br /></li>
+<li class="li"><span class="indent-level-default">11.</span><p class="p">The MQTT Client on the WINC3400 device receives the message on the Topic MCHP/Sample/b sent by the MQTT.fx Application running on the laptop.</p>
+<br /><img class="image" src="GUID-002C31E1-8458-44B6-A358-A5EE8A094C3F-low.png" alt="mqtt_publish_terminal" /><br /></li>
+</ol>
+<p class="p"><strong class="ph b">Note:</strong></p>
+<p class="p">If the user wants to create a MQTT application project in Socket Mode, and wants to use the Paho for MQTT Protocol, One needs to follow the below mentioned steps</p>
+<pre class="pre codeblock"><button title="Copy Code" class="copy-code" onclick="cpy('d660e81', this);">Copy</button><code id="d660e81" content="1. From the &#34;paho.mqtt.embedded-c&#34; repo, copy the folder &#34;paho.mqtt.embedded-c\MQTTPacket&#34; to &#34;app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTPacket&#34; of the new project directory.&#xD;&#xA;&#xD;&#xA;2. From the &#34;paho.mqtt.embedded-c&#34; repo, copy the folder &#34;paho.mqtt.embedded-c\MQTTClient-C&#34; to &#34;app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C&#34; of the new project directory.&#xD;&#xA;&#xD;&#xA;3. It is important to have the porting files &#34;MCHP_winc.c&#34; and &#34;MCHP_winc.h&#34; in the project. These porting files are available only in &#34;wifi_socket_demo&#34; project. Copy the folder from &#34;wifi_socket_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C\Platforms&#34; to &#34;app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C\Platforms&#34; of the new project directory. Please make sure that the folder structure of the new project is same as mentioned above.&#xD;">1. From the "paho.mqtt.embedded-c" repo, copy the folder "paho.mqtt.embedded-c\MQTTPacket" to "app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTPacket" of the new project directory.&#xD;
+&#xD;
+2. From the "paho.mqtt.embedded-c" repo, copy the folder "paho.mqtt.embedded-c\MQTTClient-C" to "app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C" of the new project directory.&#xD;
+&#xD;
+3. It is important to have the porting files "MCHP_winc.c" and "MCHP_winc.h" in the project. These porting files are available only in "wifi_socket_demo" project. Copy the folder from "wifi_socket_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C\Platforms" to "app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C\Platforms" of the new project directory. Please make sure that the folder structure of the new project is same as mentioned above.&#xD;</code></pre><ul class="ul"><li class="li"><p class="p">Enable MQTT
+User should enable the macro "WINC_MQTT" to enable the MQTT application. For this follow the steps:</p>
+<ul class="ul"><li class="li with-image"><p class="p">Open project properties</p>
+<br /><img class="image" src="GUID-E3D4F3D5-56FD-412A-A983-B3643F7B40C9-low.png" alt="mqtt_properties_1" /><br /></li>
+<li class="li with-image"><p class="p">Select xc32-gcc</p>
+<br /><img class="image" src="GUID-841FE4DF-89BC-47C0-A15E-4DB7A033F4A6-low.png" alt="mqtt_properties_2" /><br /></li>
+<li class="li with-image"><p class="p">Select "preprocessing and messages" from the "Option Categories".</p>
+<br /><img class="image" src="GUID-27AB5E81-8D4E-426D-89CE-F5C9A2AEB8C6-low.png" alt="mqtt_properties_3" /><br /></li>
+<li class="li with-image"><p class="p">Select the "add" button of "Preprocessor Macros"</p>
+<br /><img class="image" src="GUID-F70B2969-531E-4529-9831-B77355599803-low.png" alt="mqtt_properties_4" /><br /></li>
+<li class="li with-image"><p class="p">Add the macro "WINC_MQTT" and press OK.</p>
+<br /><img class="image" src="GUID-3DA1E841-108D-4165-B6CE-2C60C398AB30-low.png" alt="mqtt_properties_6" /><br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.html">WINC3400 Socket Mode Demo Applications</a></div>
+</div>
+</div></body>
+</html>

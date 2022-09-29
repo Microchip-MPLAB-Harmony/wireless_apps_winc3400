@@ -71,15 +71,19 @@
 at_ble_connected_t ble_connected_dev_info[MAX_DEVICE_CONNECTED];
 
 /** @brief callbacks initialized with user provided callbacks */
+ble_scan_info_callback_t ble_scan_info_cb = NULL;
+
+/** @brief callbacks initialized with user provided callbacks */
 ble_gap_event_callback_t ble_connected_cb = NULL;
 ble_gap_event_callback_t ble_disconnected_cb = NULL;
 ble_gap_event_callback_t ble_paired_cb = NULL;
 ble_characteristic_changed_callback_t ble_char_changed_cb = NULL;
 
-#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL)|| (BLE_DEVICE_ROLE == BLE_OBSERVER))
+//#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL)|| (BLE_DEVICE_ROLE == BLE_OBSERVER))
+#ifdef APP_PUB_BLE_MQTT
 uint8_t scan_response_count = 0;
 at_ble_scan_info_t scan_info[MAX_SCAN_DEVICE];
-#endif
+#endif /* APP_PUB_BLE_MQTT */
 
 at_ble_LTK_t app_bond_info;
 bool app_device_bond;
@@ -87,6 +91,10 @@ uint8_t auth_info;
 
 at_ble_events_t event;
 uint8_t params[AT_BLE_EVENT_PARAM_MAX_SIZE];
+
+
+//Gateway Demo Flag
+//extern bool demoDone;
 
 static inline void BLE_PROFILE_INIT(void *param,uint8_t appEnabled)
 {
@@ -369,7 +377,8 @@ static void ble_set_address(at_ble_addr_t *addr)
 }
 */
 
-#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_OBSERVER))
+//#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_OBSERVER))
+#ifdef APP_PUB_BLE_MQTT
 /** @brief request the peer device for connection */
 at_ble_status_t gap_dev_connect(at_ble_addr_t *dev_addr)
 {
@@ -398,11 +407,14 @@ at_ble_status_t gap_dev_scan(void)
 /** @brief function handling scanned information */
 at_ble_status_t ble_scan_info_handler(at_ble_scan_info_t *scan_param)
 {
-    if(scan_response_count < MAX_SCAN_DEVICE)
+
+    if (scan_response_count < MAX_SCAN_DEVICE)
     {
-        // store the advertising report data into scan_info[]
+        if(scan_param->dev_addr.addr[5] == 0xF8)
+        {
+          // store the advertising report data into scan_info[]
         memcpy((uint8_t *)&scan_info[scan_response_count], scan_param, sizeof(at_ble_scan_info_t));
-        DBG_LOG_DEV("Info:Device found address [%d]  0x%02X%02X%02X%02X%02X%02X ",
+        DBG_LOG("Info:Device found address [%d]  0x%02X%02X%02X%02X%02X%02X \r\n",
                     scan_response_count,
                     scan_param->dev_addr.addr[5],
                     scan_param->dev_addr.addr[4],
@@ -411,12 +423,16 @@ at_ble_status_t ble_scan_info_handler(at_ble_scan_info_t *scan_param)
                     scan_param->dev_addr.addr[1],
                     scan_param->dev_addr.addr[0]);
         scan_response_count++;
+        }
         return AT_BLE_SUCCESS;
     }
     else
     {
-        DBG_LOG("Info:maximum of scan device reached");
-        //Todo Stop Scanning
+        DBG_LOG("Info:maximum of scan device reached\r\n");
+        //To-do Stop Scanning
+//        scan_response_count = 0;
+        scan_response_count++;
+//        demoDone = true;
         return AT_BLE_FAILURE;
     }
 }
@@ -508,7 +524,7 @@ uint8_t scan_info_parse(at_ble_scan_info_t *scan_info_data,
 }
 
 #endif /* ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_OBSERVER)) */
-
+/* APP_PUB_BLE_MQTT */
 /** @brief function to send slave security request */
 at_ble_status_t ble_send_slave_sec_request(at_ble_handle_t conn_handle)
 {
@@ -576,6 +592,37 @@ void register_ble_characteristic_changed_cb(ble_characteristic_changed_callback_
 {
     ble_char_changed_cb = char_changed_cb_fn;
 }
+
+/** @brief function to register callback to be called when scan info is recevied  */
+void register_ble_scan_info_event_cb(ble_scan_info_callback_t scan_info_cb_fn)
+{
+	ble_scan_info_cb = scan_info_cb_fn;
+}
+
+/** @brief instructs device to start scanning */
+at_ble_status_t gateway_node_scan_start(uint16_t scan_interval, uint8_t scan_window, uint8_t scan_type)
+{
+	/* Device Scan discover started*/	
+         DBG_LOG("\ngateway_node_scan_start::Scanning...Started... \r\n");
+	/* Don't filter duplicates, because data in the beacon may be different */
+	return(at_ble_scan_start(scan_interval, scan_window, 0, scan_type, AT_BLE_SCAN_OBSERVER_MODE, false,false)) ;
+		
+}
+
+#ifdef APP_PUB_BLE_MQTT
+
+void save_ble_node_data(uint8_t* bt_addr, uint8_t *advData, uint8_t advLen);
+
+at_ble_status_t ble_gateway_scan_handler(at_ble_scan_info_t *scan_param)
+{
+    
+	save_ble_node_data(scan_param->dev_addr.addr, scan_param->adv_data, scan_param->adv_data_len);
+	return AT_BLE_SUCCESS;
+	
+	return AT_BLE_SUCCESS;
+}
+
+#endif /* APP_PUB_BLE_MQTT */
 
 /** @brief function handles disconnection event received from stack */
 void ble_disconnected_state_handler(at_ble_disconnected_t *disconnect)
@@ -885,13 +932,17 @@ void ble_event_manager(at_ble_events_t events, void *event_params,uint8_t appEna
     break;
 
     /** Scan info needs to be delivered either adv data or scan response data. \n
-     * Refer to @ref at_ble_scan_info_t
-     */
-    case AT_BLE_SCAN_INFO:
-    {
-        BLE_SCAN_INFO_HANDLER((at_ble_scan_info_t *)event_params);
-    }
-    break;
+             * Refer to @ref at_ble_scan_info_t
+             */
+        case AT_BLE_SCAN_INFO:
+        {
+            if (ble_scan_info_cb)
+            {
+                ble_scan_info_cb((at_ble_scan_info_t *) event_params);
+            }
+            BLE_SCAN_INFO_HANDLER((at_ble_scan_info_t *) event_params);
+        }
+            break;
 
     /** Scan report received at the end of scan period if @ref AT_BLE_SCAN_GEN_DISCOVERY or @ref AT_BLE_SCAN_LIM_DISCOVERY are used. \n
      * Refer to @ref at_ble_scan_report_t
@@ -979,8 +1030,9 @@ void ble_event_manager(at_ble_events_t events, void *event_params,uint8_t appEna
      */
     case AT_BLE_SLAVE_SEC_REQUEST:
     {
-	  #if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL)|| (BLE_DEVICE_ROLE == BLE_OBSERVER))
-      BLE_SLAVE_SEC_REQUEST((at_ble_slave_sec_request_t *)event_params);
+//	  #if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL)|| (BLE_DEVICE_ROLE == BLE_OBSERVER))
+           #ifdef APP_PUB_BLE_MQTT
+        BLE_SLAVE_SEC_REQUEST((at_ble_slave_sec_request_t *)event_params);
       #endif
     }
     break;

@@ -1,0 +1,22 @@
+# WINC3400 WiFi Socket Mode Demo Application
+
+-   [WINC3400 Socket Mode Demo Applications](GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.md)
+    -   [Wi-Fi BLE Connectionless Gateway Demo](GUID-9529805E-7FC7-420D-8DC2-49600780BC69.md)
+    -   [WiFi Provisioning via microchip android application](GUID-27AD4A89-B663-48BD-ADA8-F36812640DB7.md)
+    -   [WiFi Provisioning via BLE](GUID-A24A649B-14FE-4938-8BF3-AFDD3F36E2D2.md)
+    -   [Transparent Service Application Demo](GUID-E3159AC0-44A2-4304-9ED7-75C30606A4F3.md)
+    -   [WiFi Station Mode / Access Point Mode Demo](GUID-CF0832B7-23E1-4E35-A1DE-7FC82194FDD6.md)
+    -   [SSL Demo](GUID-62FC0E1E-3C98-45A0-A7D8-A40A1F58A004.md)
+    -   [SNTP Demo](GUID-617E4AF5-AFBF-4AD8-A694-D17E347A103E.md)
+    -   [Proximity Reporter Application Demo](GUID-423A02F6-C40D-47FD-A330-B86AD684E2F1.md)
+    -   [Ping Demo](GUID-E623850D-7676-4ACC-A8BE-634D53B4BF5C.md)
+    -   [OTA Demo](GUID-C3E09031-D714-4F59-8C0D-5AD6C31F7129.md)
+    -   [MQTT Demo](GUID-B5D94855-68C3-41B9-8499-44E0ED492759.md)
+    -   [Iperf Demo](GUID-11B187F2-A2D5-4004-8085-4E1960FF2510.md)
+    -   [Heart Rate Profile Application Demo](GUID-29322041-5FEE-440A-86ED-FF758E26DF94.md)
+    -   [Custom Serial Chat Application Demo](GUID-4179DE5D-7260-49E4-B8A3-D7954299ADCB.md)
+    -   [Certificate Download OTA Demo](GUID-75D92290-831A-4383-BDF2-FBDB8F6E651B.md)
+    -   [Battery Service Application Demo](GUID-F6C1AEC3-D21B-440A-9AF7-40CE3A8C6251.md)
+-   [Example project creation - WINC3400 Socket mode project with SAMD21](GUID-D13DB96E-629F-4533-A72D-FA069843DEE9.md)
+-   [Example project creation - WINC3400 Socket mode project with SAME54](GUID-0CD99E9B-6954-42F9-8CA8-5E92D55DAEB8.md)
+

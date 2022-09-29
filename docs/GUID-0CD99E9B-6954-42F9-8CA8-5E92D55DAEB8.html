@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
+<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta name="DC.type" content="topic" />
+<meta name="DC.title" content="Example project creation - WINC3400 Socket mode project with SAME54" />
+<meta name="DC.relation" scheme="URI" content="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html" />
+<meta name="DC.format" content="XHTML" />
+<meta name="DC.identifier" content="example-project-creation---winc3400-socket-mode-project-with-same54" />
+<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
+<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>Example project creation - WINC3400 Socket mode project with SAME54</title>
+<meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-example-project-creation---winc3400-socket-mode-project-with-same54" />
+<meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
+<meta name="Microsoft.Help.TocOrder" content="0" />
+<meta name="Microsoft.Help.Locale" content="en-US" />
+<meta name="Microsoft.Help.TopicLocale" content="en-US" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<script language="javascript">
+       
+       if (window.parent.location.protocol != 'file:') {
+				document.addEventListener('click', function(e) {
+				    if (e.target) {
+               if (e.target.nodeName == "A" ) {
+                    if (!e.target.target) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                              
+                      var origUrl = window.parent.location.href.substr(0, window.parent.location.href.indexOf("?"));
+                      if (origUrl.length === 0) {
+                          origUrl = window.parent.location.href;
+                      }
+                      var href= e.target.getAttribute("href");
+                      var parts = href.split("#");
+          
+                      var url = "";
+                      if (parts.length == 2 ) {
+                        if (!parts[0].length) {
+                            url = window.parent.location.search.replace('?','')
+                        } else {
+                            url = parts[0].replace('.html','');
+                        }
+                      } else {
+                        url = parts[0].replace('.html','');
+                      }
+
+                      if (parts.length == 2) {
+                          url += "#" + parts[1];
+                      }
+    
+                      window.parent.location.href = origUrl + "?" + url;
+
+                      return false;
+                    }
+               }
+            }
+				});
+			}
+
+		</script><script language="javascript">
+        function cpy(id, button) {
+        
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            var textArea = document.createElement("textarea");
+            
+            // Place in the top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+            
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+            
+            
+            textArea.value = content;
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+               var successful = document.execCommand('copy');
+               var msg = successful ? 'successful' : 'unsuccessful';
+               if (!button.classList.contains("copied")){
+                  button.textContent = "Copied";
+                  button.classList.add("copied");
+                  setTimeout(function(){
+                    button.textContent = "Copy";
+                    button.classList.remove("copied");
+                  },1000);
+               }
+            } catch (err) {
+              console.log('Oops, unable to copy');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+      </script><script language="javascript">
+          
+          // Add the MathML namespace to html
+          var html = document.getElementsByTagName("html")[0],
+          head = document.getElementsByTagName("head")[0];
+          
+          var mathJax = document.createElement("script");
+          mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+          head.appendChild(mathJax);
+          
+          html.setAttribute("xmlns:m","http://www.w3.org/1998/Math/MathML");
+          
+          function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } }
+          
+          if (!inIframe()) { 
+          
+          var Default = "index.html?GUID-0CD99E9B-6954-42F9-8CA8-5E92D55DAEB8"; 
+          
+          var displaylocation = "value" + window.location.href;
+          
+          var GUIDS = displaylocation.split('GUID');          
+          
+          if (displaylocation.indexOf('#GUID') != -1) {            
+          var First = GUIDS[1].split('.html');  
+          if (GUIDS[3]){First = GUIDS[2].split('.html');}
+          if (GUIDS[4]){First = GUIDS[3].split('.html');}
+          if (GUIDS[5]){First = GUIDS[4].split('.html');}
+          
+          var Second = GUIDS[2].split('#');   
+          if (GUIDS[3]){Second = GUIDS[3].split('#');}
+          if (GUIDS[4]){Second = GUIDS[4].split('#');}
+          if (GUIDS[5]){Second = GUIDS[5].split('#');}
+          
+          Default = "index.html?" + "GUID" + First[0] + "GUID" + Second[0];     
+          }                    
+          window.top.location = Default;
+          }       
+          
+        </script><style xml:space="">
+        
+          button.copy-code{
+            display:none;
+            padding:0.7em 1.4em;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.15em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#FFFFFF;
+            background-color:#9c9c9c;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+            text-align:center;
+            position:relative;
+            border: 0;
+            float: right;
+            border-radius: .5em;
+            cursor: pointer;
+          }
+          button.copy-code:active{
+            top:0.1em;
+          }
+          
+          pre:hover button.copy-code{
+            display: inline-block !important;
+          }
+          button.copy-code.copied {
+            cursor: default !important;
+          }
+          
+          
+          @media all and (max-width:30em){
+            button.copy-code{
+              display:block;
+              margin:0.4em auto;
+            }
+          }
+        
+        
+      </style></head>
+<body id="example-project-creation---winc3400-socket-mode-project-with-same54">
+<h1 class="title topictitle1" id="ariaid-title1">Example project creation - WINC3400 Socket mode project with SAME54</h1><div class="body"><p class="p">This document explains a step by step approach to create a WINC Socket mode project with SAME54 host.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html">Harmony 3 Wireless application examples for WINC3400</a></div>
+</div>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="hardware-setup"><h2 class="title topictitle2" id="ariaid-title2">Hardware Setup</h2><div class="body"><p class="p">The document demonstrates the creation of a demo on the SAM E54 Xplained Pro board with the ATWINC1500 XPRO board.</p>
+<p class="p">The SAME54 Xplained PRO contains a built-in programmer-debugger tool called Embedded Debugger (EDBG) which is used in this tutorial.</p>
+<p class="p">Following image shows the hardware setup.</p>
+<br /><img class="image" src="GUID-F1763F05-6B06-44E4-A2C9-74CA4DB1CE5C-low.png" alt="same54_57" /><br /></div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="steps-to-create-the-new-example-project"><h2 class="title topictitle2" id="ariaid-title3">Steps to create the new example project</h2><div class="body"><p class="p">Follow the below mwntioned steps to create the new WINC project in socket mode with SAME54 from scratch.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title4" id="project-creation"><h2 class="title topictitle2" id="ariaid-title4">Project Creation</h2><div class="body"><ul class="ul"><li class="li"><p class="p">Open MP Lab</p>
+</li>
+<li class="li with-image"><p class="p">Go to File Menu and select New Project…</p>
+<br /><img class="image" src="GUID-D2719C20-27A5-485F-8397-F8A3F4EF16A5-low.png" alt="same54_1" /><br /></li>
+</ul>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title5" id="project-selection"><h3 class="title topictitle3" id="ariaid-title5">Project Selection</h3><div class="body"><ul class="ul"><li class="li with-image"><p class="p">Under the Projects section, select 32bit MPLAB Harmony3 Project and click on Next.</p>
+<br /><img class="image" src="GUID-F7CCD9D5-BAC9-4652-A8B1-DCB2837488BC-low.png" alt="same54_2" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title6" id="framework-selection"><h3 class="title topictitle3" id="ariaid-title6">Framework Selection</h3><div class="body"><ul class="ul"><li class="li with-image"><p class="p">Enter the local system path where the packages are downloaded click Next.</p>
+<br /><img class="image" src="GUID-D37E24A3-297B-4E21-AC8B-D2DACD788D68-low.png" alt="same54_3" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title7" id="project-settings"><h3 class="title topictitle3" id="ariaid-title7">Project Settings</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Under {local system H3 path}\wireless_apps_winc1500\apps, create a folder name for the project (Ex: sample_project).</p>
+</li>
+<li class="li"><p class="p">Enter the full path including the newly created project folder.</p>
+</li>
+<li class="li with-image"><p class="p">Enter the Folder name and Project name and click on Next (To know about “Folder” and “Name” please click “Show visual Help” button).</p>
+<br /><img class="image" src="GUID-51E6E9D4-F776-4DE3-AF4D-FD8A7CF0C3BC-low.png" alt="same54_4" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title8" id="configuration-settings"><h3 class="title topictitle3" id="ariaid-title8">Configuration Settings</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Enter a <strong class="ph b">Name</strong> for the config setting folder</p>
+</li>
+<li class="li"><p class="p">select the <strong class="ph b">Target device</strong> name</p>
+</li>
+<li class="li with-image"><p class="p">Click <strong class="ph b">Finish</strong>.</p>
+<br /><img class="image" src="GUID-D1318888-0E5A-4D35-A1BF-BE921AABA48B-low.png" alt="same54_5" /><br /></li>
+<li class="li with-image"><p class="p">Click <strong class="ph b">Launch</strong> once <strong class="ph b">Configuration Database Setup</strong> windows pops up.</p>
+<br /><img class="image" src="GUID-0FAC5C04-9C42-4609-9A57-373FD81A19CB-low.png" alt="same54_6" /><br /></li>
+</ul>
+<p class="p">MHC window and has three panes.</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Available components:
+It lists all the components from downloaded packages.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Project Graph.
+It is where the user adds components from Available components</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Configuration options.
+Each component in project graph can be configured using Configuration options.</p>
+<br /><img class="image" src="GUID-7E17BA56-3D77-40EC-B573-46B51F3CA9CF-low.png" alt="same54_7" /><br /></li>
+</ol>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title9" id="adding-components-in-mh3"><h3 class="title topictitle3" id="ariaid-title9">Adding components in MH3</h3><div class="body"><p class="p">User should select required components for creating WINC project.</p>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title10" id="core"><h3 class="title topictitle3" id="ariaid-title10">Core</h3><div class="body"><p class="p">The first component to enable is Core because core is the base component for many drivers and system components.</p>
+<ul class="ul"><li class="li"><p class="p">Go to Harmony in the Available components</p>
+</li>
+<li class="li with-image"><p class="p">Select core.</p>
+<br /><img class="image" src="GUID-23C6690B-2211-4BDC-918F-4A9098E92F3C-low.png" alt="same54_8" /><br /></li>
+<li class="li"><p class="p">Drag and drop it in the <strong class="ph b">Project Graph</strong>.</p>
+</li>
+<li class="li with-image"><p class="p">This will ask permission to activate Free RTOS. Since this project does not require free RTOS, click <strong class="ph b">No</strong>.</p>
+<br /><img class="image" src="GUID-B2FE1A2C-22F5-47A4-91A3-DCA7C3059252-low.png" alt="samd21_9" /><br /></li>
+<li class="li with-image"><p class="p">Core component appears in the Project Graph as shown below.</p>
+<br /><img class="image" src="GUID-63F2E15A-5214-4C24-9CD4-4D1149D6777C-low.png" alt="/same54_10" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title11" id="same54-xplained-pro-component"><h3 class="title topictitle3" id="ariaid-title11">SAME54 Xplained pro component</h3><div class="body"><p class="p">This example uses SAME54 xplained pro board for host development board.
+Enable component SAM E54 Xplained Pro BSP.</p>
+<ul class="ul"><li class="li"><p class="p">Go to Board Support Packages</p>
+</li>
+<li class="li with-image"><p class="p">select SAM E54 Xplained Pro BSP</p>
+<br /><img class="image" src="GUID-A93D5B90-AFBB-4479-8715-C6F51C12B86C-low.png" alt="same54_11" /><br /></li>
+<li class="li with-image"><p class="p">Drag and drop it in the Project Graph.</p>
+<br /><img class="image" src="GUID-61FACF26-AFE0-480D-BE07-D3A5D9904524-low.png" alt="same54_12" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title12" id="timer-component"><h3 class="title topictitle3" id="ariaid-title12">Timer component</h3><div class="body"><p class="p">WINC driver needs driver for its delay functionality and user can select the any timer for this.
+To enable Timer</p>
+<ul class="ul"><li class="li"><p class="p">Go to <strong class="ph b">Harmony -&gt; System Services</strong></p>
+</li>
+<li class="li with-image"><p class="p">Select <strong class="ph b">TIME</strong></p>
+<br /><img class="image" src="GUID-A5CB889E-6DEC-4546-A59E-471CC98FA5BD-low.png" alt="same54_13" /><br /></li>
+<li class="li with-image"><p class="p">Drag and drop it in the Project Graph.</p>
+<br /><img class="image" src="GUID-D4B04FDF-ECFC-4B36-BB7E-91EDDF5FB675-low.png" alt="same54_14" /><br /></li>
+<li class="li"><p class="p">Right click on <strong class="ph b">TMR</strong> in the <strong class="ph b">TIME component</strong></p>
+</li>
+<li class="li with-image"><p class="p">Go to Satisfiers and select <strong class="ph b">TC3</strong> (user can select any timer)</p>
+<br /><img class="image" src="GUID-EE96AC25-8911-4FDE-AAEC-FBE03A8F4D7F-low.png" alt="same54_15" /><br /></li>
+<li class="li with-image"><p class="p">This adds <strong class="ph b">TC3</strong> connected with <strong class="ph b">TIME</strong></p>
+<br /><img class="image" src="GUID-87E00B14-52BE-4B6C-943A-447313329A39-low.png" alt="same54_16" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title13" id="eic-component"><h3 class="title topictitle3" id="ariaid-title13">EIC component</h3><div class="body"><p class="p">WINC device uses interrupt pin PB07. To configure PB07, EIC component must be enabled.</p>
+<ul class="ul"><li class="li"><p class="p">Go to <strong class="ph b">Peripherals</strong></p>
+</li>
+<li class="li with-image"><p class="p">Select <strong class="ph b">EIC</strong></p>
+<br /><img class="image" src="GUID-741C62A4-C17D-4A19-BEF0-62185AD0EC9A-low.png" alt="same54_17" /><br /></li>
+<li class="li with-image"><p class="p">Drag and drop it in the Project Graph.</p>
+<br /><img class="image" src="GUID-A625AD2E-7076-4038-8D26-B302081082B5-low.png" alt="same54_18" /><br /></li>
+</ul>
+<p class="p">Pin PB07 belongs to external interrupt channel 7 so EIC channel 7 has to be enabled and configured.</p>
+<ul class="ul"><li class="li"><p class="p">Select EIC in the Project Graph</p>
+</li>
+<li class="li with-image"><p class="p">Please do the following changes in the Configuration Options:</p>
+<ul class="ul"><li class="li"><p class="p">Check Enable <strong class="ph b">EIC channel4</strong> box and expand <strong class="ph b">EIC channel7 Configuration</strong></p>
+</li>
+<li class="li"><p class="p">Check <strong class="ph b">Enable Interrupt</strong> box</p>
+</li>
+<li class="li"><p class="p">Change <strong class="ph b">Enable Interrupt7 Edge detection</strong> to <strong class="ph b">Falling Edge detection</strong></p>
+</li>
+</ul>
+<br /><img class="image" src="GUID-82E64533-02A5-4721-B784-C351C5B68ABA-low.png" alt="same54_19" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title14" id="virtual-console"><h3 class="title topictitle3" id="ariaid-title14">Virtual Console</h3><div class="body"><p class="p">Virtual Console is used to send debug messages and to receive commands from user. Virtual console uses UART interface for communication.
+Host SAME54 uses pins PB24 and PB25 for UART interface to perform receive and transmit operation, respectively. These two pins belong to SERCOM2 of the host SAME54 device.
+For more information please refer section 5.4.2 (Virtual COM Port) of <strong class="ph b"><a class="xref" href="http://ww1.microchip.com/downloads/en/DeviceDoc/70005321A.pdf" target="_blank">SAM E54 Xplained Pro User's Guide</a></strong></p>
+<p class="p">To enable and configure Virtual COM port:</p>
+<ul class="ul"><li class="li"><p class="p">Go to <strong class="ph b">System Services</strong></p>
+</li>
+<li class="li with-image"><p class="p">Select <strong class="ph b">CONSOLE</strong></p>
+<br /><img class="image" src="GUID-C82B33A6-EC40-4EC4-ADB9-A67C7F39FE58-low.png" alt="same54_20" /><br /></li>
+<li class="li with-image"><p class="p">Drag and drop it in the Project Graph.</p>
+<br /><img class="image" src="GUID-F151A217-0D99-4BDC-8544-ED5C9CB68B17-low.png" alt="same54_21" /><br /></li>
+</ul>
+<p class="p">UART interface of <strong class="ph b">SERCOM2</strong> is used by <strong class="ph b">CONSOLE</strong>.</p>
+<ul class="ul"><li class="li"><p class="p">Right click on the <strong class="ph b">UART</strong> port of <strong class="ph b">Instance 0</strong> of the <strong class="ph b">CONSOLE</strong> component.</p>
+</li>
+<li class="li with-image"><p class="p">Go to Satisfiers and select <strong class="ph b">SERCOM2</strong>.</p>
+<br /><img class="image" src="GUID-328B6F9E-D316-4F4A-A9BC-D5ECCF4884BB-low.png" alt="same54_22" /><br /></li>
+</ul>
+<p class="p"><strong class="ph b">SERCOM2</strong> appears in <strong class="ph b">Project Graph</strong> connected with <strong class="ph b">CONSOLE</strong>.</p>
+<br /><img class="image" src="GUID-B974FCCE-8698-4AF9-AF22-859B3447D20D-low.png" alt="same54_23" /><br /><p class="p"><strong class="ph b">SERCOM2</strong> uses <strong class="ph b">PAD<span class="xref"></span></strong> for data reception.</p>
+<ul class="ul"><li class="li with-image"><p class="p">Change the <strong class="ph b">Receive pinout</strong> property to <strong class="ph b">SERCOM PAD<span class="xref"></span></strong> in the Configuration Options</p>
+<br /><img class="image" src="GUID-46D42B41-1FF9-4A54-93B3-65C3A37576F0-low.png" alt="same54_24" /><br /></li>
+</ul>
+<p class="p"><strong class="ph b">CONSOLE</strong> has a dependency on <strong class="ph b">DEBUG</strong> and <strong class="ph b">COMMAND</strong> component.
+To add DEBUG component</p>
+<ul class="ul"><li class="li"><p class="p">Right click on the SYS_CONSOLE interface of Instance 0 of the <strong class="ph b">CONSOLE</strong> component.</p>
+</li>
+<li class="li with-image"><p class="p">Go to <strong class="ph b">Consumers</strong> and select <strong class="ph b">DEBUG</strong></p>
+<br /><img class="image" src="GUID-7D8F0E4A-782B-4B9E-A3D7-194942B192B2-low.png" alt="same54_25" /><br /></li>
+<li class="li with-image"><p class="p"><strong class="ph b">DEBUG</strong> component connected with <strong class="ph b">CONSOLE</strong> appears in the Project Graph</p>
+<br /><img class="image" src="GUID-C9D273A5-05A2-4F40-8441-26596FDB6874-low.png" alt="same54_26" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title15" id="to-add-command-component"><h3 class="title topictitle3" id="ariaid-title15">To add COMMAND component</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Right click on the SYS_CONSOLE interface of Instance 0 of the CONSOLE component.</p>
+</li>
+<li class="li with-image"><p class="p">Go to Consumers and select COMMAND</p>
+<br /><img class="image" src="GUID-32B90FA1-57E9-49EF-A9B6-CB2186DA61F0-low.png" alt="same54_27" /><br /></li>
+<li class="li with-image"><p class="p">COMMAND component connected with CONSOLE appears in the Project Graph</p>
+<br /><img class="image" src="GUID-E06EF96D-2A9A-4E58-A218-7FE9B2710803-low.png" alt="same54_28" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title16" id="spi-component"><h3 class="title topictitle3" id="ariaid-title16">SPI component</h3><div class="body"><p class="p">WINC communicates with host using SPI interface. So, to establish a SPI connection between WINC and host, three components are required.
+They are:</p>
+<ul class="ul"><li class="li"><p class="p">SPI Driver</p>
+</li>
+<li class="li"><p class="p">SERCOM4 (Peripheral library)</p>
+</li>
+<li class="li"><p class="p">WINC Driver</p>
+</li>
+</ul>
+<p class="p">To enable SPI driver,</p>
+<ul class="ul"><li class="li"><p class="p">In the Available Components, go to Harmony -&gt; Drivers.</p>
+</li>
+<li class="li with-image"><p class="p">Select SPI</p>
+<br /><img class="image" src="GUID-6796546B-4EED-48A4-B3EF-24B76531E23D-low.png" alt="same54_29" /><br /></li>
+<li class="li with-image"><p class="p">Drag and drop it in the Project Graph</p>
+<br /><img class="image" src="GUID-089EEA41-E522-4F25-99B2-4C556C9159A9-low.png" alt="same54_30" /><br /></li>
+</ul>
+<p class="p">Connect SERCOM4 with SPI driver.</p>
+<ul class="ul"><li class="li"><p class="p">Right click on the SPI interface of Instance 0 of the SPI component.</p>
+</li>
+<li class="li with-image"><p class="p">Go to Satisfiers and select SERCOM4</p>
+<br /><img class="image" src="GUID-7762369B-2E32-4DAA-B7C3-AE7ADBCD9182-low.png" alt="same54_31" /><br /></li>
+</ul>
+<p class="p">SERCOM4 appears in Project Graph connected with SPI driver.</p>
+<br /><img class="image" src="GUID-C98529BB-B95E-410F-AF5E-AE4D4BC8AB83-low.png" alt="same54_32" /><br /><p class="p">Enable DMA for SPI driver</p>
+<ul class="ul"><li class="li"><p class="p">Select instance 0 on SPI driver</p>
+</li>
+<li class="li with-image"><p class="p">Go to Configurations Options and enable Use DMA for Transmit and Receive</p>
+<br /><img class="image" src="GUID-3932FA69-B5E3-408C-9838-28A34800615A-low.png" alt="same54_33" /><br /></li>
+<li class="li"><p class="p"><strong class="ph b">SERCOM4</strong> uses PAD<span class="xref"></span> for data reception. change the SPI Data In Pad selection property to SERCOM PAD<span class="xref"></span> in the Configuration Options</p>
+</li>
+<li class="li with-image"><p class="p">Enable the property SPI Master Hardware Slave Select.</p>
+<br /><img class="image" src="GUID-A13B25A3-2D55-4390-BD3D-ED1B6546C2BD-low.png" alt="same54_34" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title17" id="winc-component"><h3 class="title topictitle3" id="ariaid-title17">WINC Component</h3><div class="body"><p class="p">Enable WINC Driver in the project:</p>
+<ul class="ul"><li class="li"><p class="p">In the Available Components, go to Wireless</p>
+</li>
+<li class="li with-image"><p class="p">Select <strong class="ph b">Driver -&gt; WINC</strong></p>
+<br /><img class="image" src="GUID-D5E0CBAB-BCAA-474B-A91A-F4FD38CA8FCB-low.png" alt="same54_35" /><br /></li>
+<li class="li with-image"><p class="p">Drag and drop it in the Project Graph.</p>
+<br /><img class="image" src="GUID-67A8F416-D3C5-4741-A636-4F7703A6332D-low.png" alt="same54_36" /><br /></li>
+<li class="li with-image"><p class="p">Connect DRV_SPI interface of SPI interface 0 and WINC component</p>
+<br /><img class="image" src="GUID-E55146F3-2122-4DD7-B3D4-F2AAFFA78972-low.png" alt="same54_37" /><br /></li>
+</ul>
+<p class="p">User has the option to select between WINC1500 and WINC3400 using the WINC Device configuration option.</p>
+<p class="p">Enable Interrupt for WINC:</p>
+<ul class="ul"><li class="li"><p class="p">In the configuration options for WINC, expand Interrupt Source</p>
+</li>
+<li class="li with-image"><p class="p">Select EIC channel 7</p>
+<br /><img class="image" src="GUID-E237205F-D050-43BB-8921-072C155B75D3-low.png" alt="same54_38" /><br /></li>
+</ul>
+<p class="p"><strong class="ph b">WINC3400 BLE:</strong></p>
+<p class="p">User can enable BLE option in WINC3400 as shown below.</p>
+<br /><img class="image" src="GUID-F693A443-5AC7-480E-8B76-83F6D9D38D67-low.png" alt="winc3400_1" /><br /></div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title18" id="mhc-pin-configuration"><h3 class="title topictitle3" id="ariaid-title18">MHC PIN Configuration</h3><div class="body"><p class="p">This section summarizes the pin configuration requirement for MHC pin configuration component.</p>
+<p class="p">In MHC, user can do pin configuration with the help of below steps</p>
+<ul class="ul"><li class="li"><p class="p">Go to Tools in menu bar</p>
+</li>
+<li class="li with-image"><p class="p">Select Pin Configuration</p>
+<br /><img class="image" src="GUID-DCF61E37-D400-433B-874E-C014D945E4C0-low.png" alt="same54_39" /><br /></li>
+</ul>
+<p class="p">The following window appears</p>
+<br /><img class="image" src="GUID-E43F415B-1760-4CB8-91A6-B998613EC986-low.png" alt="samd21_40" /><br /><p class="p">The pin can be configured as shown below.</p>
+<ul class="ul"><li class="li"><p class="p">RESETN pin configuration:</p>
+<p class="p">For WINC1500,</p>
+<ul class="ul"><li class="li"><p class="p">Go to PA06 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to GPIO</p>
+</li>
+<li class="li with-image"><p class="p">Name should be changed as “WDRV_WINC_RESETN”</p>
+<br /><img class="image" src="GUID-13861AB4-CC91-46AA-B011-46D5674988F7-low.png" alt="samd21_41" /><br /></li>
+</ul>
+<p class="p">For WINC3400,</p>
+<ul class="ul"><li class="li"><p class="p">Go to PB05 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to GPIO</p>
+</li>
+<li class="li with-image"><p class="p">Name should be changed as “WDRV_WINC_RESETN”</p>
+<br /><img class="image" src="GUID-8B3A521D-A6C1-4D9A-ADC2-E750373CD498-low.png" alt="winc3400_2" /><br /></li>
+</ul>
+</li>
+<li class="li"><p class="p">Interrupt pin configuration:</p>
+<p class="p">For both WINC1500 and WINC3400,</p>
+<ul class="ul"><li class="li"><p class="p">Go to PB07 pin column</p>
+</li>
+<li class="li with-image"><p class="p">Select the function as EIC_EXTINT7</p>
+<br /><img class="image" src="GUID-9EFDAF7B-A4E3-4C2B-B724-B6C0FB754CDB-low.png" alt="same54_42" /><br /></li>
+</ul>
+</li>
+<li class="li"><p class="p">Chip enable pin configuration:
+For both WINC1500 and WINC3400,</p>
+<ul class="ul"><li class="li"><p class="p">Go to PA27 of pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to GPIO</p>
+</li>
+<li class="li with-image"><p class="p">Name should be changed as “WDRV_WINC_CHIP_EN”</p>
+<br /><img class="image" src="GUID-C12F5421-8CC2-4497-8DD0-697358E879D6-low.png" alt="same54_43" /><br /></li>
+</ul>
+</li>
+<li class="li"><p class="p">BLE pin configuration:
+This configuration only applicable for WINC3400,</p>
+</li>
+<li class="li"><p class="p">Go to PA04 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to SERCOM0_PAD0</p>
+</li>
+<li class="li"><p class="p">Go to PA05 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to SERCOM0_PAD1</p>
+</li>
+<li class="li"><p class="p">Go to PA06 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to SERCOM0_PAD2</p>
+</li>
+<li class="li"><p class="p">Go to PA07 pin column</p>
+</li>
+<li class="li with-image"><p class="p">Change the function to SERCOM0_PAD3</p>
+<br /><img class="image" src="GUID-9A94A9F2-70C5-4919-8D70-85B6AF7FC6FF-low.png" alt="winc3400_3" /><br /></li>
+<li class="li"><p class="p">SERCOM2 (COM Port) and SERCOM4 (SPI) pin configuration:
+For both WINC1500 and WINC3400,</p>
+<ul class="ul"><li class="li"><p class="p">Go to PB24 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to SERCOM2_PAD1</p>
+</li>
+<li class="li"><p class="p">Go to PB25 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to SERCOM2_PAD0</p>
+</li>
+<li class="li"><p class="p">Go to PB26 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to SERCOM4_PAD1</p>
+</li>
+<li class="li"><p class="p">Go to PB27 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to SERCOM4_PAD0</p>
+</li>
+<li class="li"><p class="p">Go to PB28 pin column</p>
+</li>
+<li class="li"><p class="p">Change the function to SERCOM4_PAD2</p>
+</li>
+<li class="li"><p class="p">Go to PB29 pin column</p>
+</li>
+<li class="li with-image"><p class="p">Change the function to SERCOM4_PAD3</p>
+<br /><img class="image" src="GUID-E5B8F077-DD84-438E-A53F-D5A22A2F75B1-low.png" alt="same54_44" /><br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title19" id="save-and-generate-code"><h3 class="title topictitle3" id="ariaid-title19">Save and generate code</h3><div class="body"><p class="p">To save the modifications</p>
+<ul class="ul"><li class="li with-image"><p class="p">Click Save Click Generate Code</p>
+<br /><img class="image" src="GUID-B64DA3A8-875A-4B3D-931F-8087DE5E557A-low.png" alt="same54_46" /><br /></li>
+<li class="li with-image"><p class="p">In the next window, click Generate</p>
+<br /><img class="image" src="GUID-03719E86-7C76-4D49-B326-10373EB5C5FF-low.png" alt="same54_47" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title20" id="application-code"><h3 class="title topictitle3" id="ariaid-title20">Application Code</h3><div class="body"><p class="p">With above component and pin configuration in MHC, user has required peripheral libraries and drivers for application development. User can follow the API guidelines to develop the application or follow the below step to create simple application for getting started.</p>
+<ul class="ul"><li class="li"><p class="p">Go to the path {local system path}\wireless_apps_winc1500\apps{User project name}\firmware\src.</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">a.</span><p class="p">app.c</p>
+</li>
+<li class="li"><span class="indent-level-default">b.</span><p class="p">app.h</p>
+</li>
+<li class="li"><span class="indent-level-default">c.</span><p class="p">example.c</p>
+</li>
+</ol>
+</li>
+<li class="li"><p class="p">Replace the following files with the files available in the AP scan example project
+{local system path}\wireless_apps_winc1500\apps\ap_scan\firmware\src</p>
+</li>
+<li class="li"><p class="p">As example.c file does not come with default project, create a new file called example.c under Source Files</p>
+</li>
+<li class="li"><p class="p">Right click on Source Files</p>
+</li>
+<li class="li"><p class="p">Select Add Existing Item</p>
+</li>
+<li class="li"><p class="p">Go to {local system path}\wireless_apps_winc1500\apps{User project name}\firmware\src</p>
+</li>
+<li class="li"><p class="p">Select example.c</p>
+</li>
+<li class="li with-image"><p class="p">In the file example.c, user can change the Home AP credentials.</p>
+<br /><img class="image" src="GUID-8FB35AB7-E471-4D9B-BE5B-BE4BEF817D77-low.png" alt="samd21_50" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title21" id="build-and-program-the-device"><h3 class="title topictitle3" id="ariaid-title21">Build and program the device</h3><div class="body"><p class="p">To compile the project</p>
+<ul class="ul"><li class="li"><p class="p">Right click on the project</p>
+</li>
+<li class="li with-image"><p class="p">Select Clean and Build</p>
+<br /><img class="image" src="GUID-760157FA-7725-4836-B8A0-D5BA2E172555-low.png" alt="same54_51" /><br /></li>
+</ul>
+<p class="p">After successful build make sure SAME54 XPRO is connected with local system.</p>
+<ul class="ul"><li class="li"><p class="p">Right click again on the project</p>
+</li>
+<li class="li with-image"><p class="p">Select Make and Program Device.</p>
+<br /><img class="image" src="GUID-98F6BF42-4149-4EE1-B981-FB86CE381792-low.png" alt="same54_52" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title22" id="output"><h3 class="title topictitle3" id="ariaid-title22">Output</h3><div class="body"><p class="p">Expected output</p>
+<br /><img class="image" src="GUID-E33EF084-215A-4A41-9BDC-A0AA6A0C7680-low.png" alt="samd21_53" /><br /><p class="p"><strong class="ph b">Note:</strong></p>
+<p class="p">If the user wants to create the project using the FrreRTOS, then follow the below mentioned steps.</p>
+<p class="p">To add FreeRTOS component</p>
+<ul class="ul"><li class="li with-image"><p class="p">Select FreeRTOS from Thrid party Libraries -&gt; RTOS -&gt; FreeRTOS</p>
+<br /><img class="image" src="GUID-3D041A08-DFAB-4525-95C7-E2A9F91EFC88-low.png" alt="samd21_54" /><br /></li>
+<li class="li with-image"><p class="p">Drag and drop it in the Project Graph</p>
+<br /><img class="image" src="GUID-01484BA4-8669-4726-B064-F861A83B5B5F-low.png" alt="samd21_55" /><br /></li>
+<li class="li with-image"><p class="p">In the configuration options of FreeRTOS, change the <strong class="ph b">Total heap size</strong> to 10000.</p>
+<br /><img class="image" src="GUID-3B29B416-EE19-41A4-85C7-8EAA24BD9171-low.png" alt="samd21_56" /><br /></li>
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>

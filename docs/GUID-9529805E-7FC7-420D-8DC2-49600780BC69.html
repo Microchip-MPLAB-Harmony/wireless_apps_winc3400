@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
+<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta name="DC.type" content="topic" />
+<meta name="DC.title" content="Wi-Fi BLE Connectionless Gateway Demo" />
+<meta name="DC.relation" scheme="URI" content="GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.html" />
+<meta name="DC.format" content="XHTML" />
+<meta name="DC.identifier" content="wi-fi-ble-connectionless-gateway-demo" />
+<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
+<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>Wi-Fi BLE Connectionless Gateway Demo</title>
+<meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-wi-fi-ble-connectionless-gateway-demo" />
+<meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
+<meta name="Microsoft.Help.TocOrder" content="0" />
+<meta name="Microsoft.Help.Locale" content="en-US" />
+<meta name="Microsoft.Help.TopicLocale" content="en-US" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<script language="javascript">
+       
+       if (window.parent.location.protocol != 'file:') {
+				document.addEventListener('click', function(e) {
+				    if (e.target) {
+               if (e.target.nodeName == "A" ) {
+                    if (!e.target.target) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                              
+                      var origUrl = window.parent.location.href.substr(0, window.parent.location.href.indexOf("?"));
+                      if (origUrl.length === 0) {
+                          origUrl = window.parent.location.href;
+                      }
+                      var href= e.target.getAttribute("href");
+                      var parts = href.split("#");
+          
+                      var url = "";
+                      if (parts.length == 2 ) {
+                        if (!parts[0].length) {
+                            url = window.parent.location.search.replace('?','')
+                        } else {
+                            url = parts[0].replace('.html','');
+                        }
+                      } else {
+                        url = parts[0].replace('.html','');
+                      }
+
+                      if (parts.length == 2) {
+                          url += "#" + parts[1];
+                      }
+    
+                      window.parent.location.href = origUrl + "?" + url;
+
+                      return false;
+                    }
+               }
+            }
+				});
+			}
+
+		</script><script language="javascript">
+        function cpy(id, button) {
+        
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            var textArea = document.createElement("textarea");
+            
+            // Place in the top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+            
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+            
+            
+            textArea.value = content;
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+               var successful = document.execCommand('copy');
+               var msg = successful ? 'successful' : 'unsuccessful';
+               if (!button.classList.contains("copied")){
+                  button.textContent = "Copied";
+                  button.classList.add("copied");
+                  setTimeout(function(){
+                    button.textContent = "Copy";
+                    button.classList.remove("copied");
+                  },1000);
+               }
+            } catch (err) {
+              console.log('Oops, unable to copy');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+      </script><script language="javascript">
+          
+          // Add the MathML namespace to html
+          var html = document.getElementsByTagName("html")[0],
+          head = document.getElementsByTagName("head")[0];
+          
+          var mathJax = document.createElement("script");
+          mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+          head.appendChild(mathJax);
+          
+          html.setAttribute("xmlns:m","http://www.w3.org/1998/Math/MathML");
+          
+          function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } }
+          
+          if (!inIframe()) { 
+          
+          var Default = "index.html?GUID-9529805E-7FC7-420D-8DC2-49600780BC69"; 
+          
+          var displaylocation = "value" + window.location.href;
+          
+          var GUIDS = displaylocation.split('GUID');          
+          
+          if (displaylocation.indexOf('#GUID') != -1) {            
+          var First = GUIDS[1].split('.html');  
+          if (GUIDS[3]){First = GUIDS[2].split('.html');}
+          if (GUIDS[4]){First = GUIDS[3].split('.html');}
+          if (GUIDS[5]){First = GUIDS[4].split('.html');}
+          
+          var Second = GUIDS[2].split('#');   
+          if (GUIDS[3]){Second = GUIDS[3].split('#');}
+          if (GUIDS[4]){Second = GUIDS[4].split('#');}
+          if (GUIDS[5]){Second = GUIDS[5].split('#');}
+          
+          Default = "index.html?" + "GUID" + First[0] + "GUID" + Second[0];     
+          }                    
+          window.top.location = Default;
+          }       
+          
+        </script><style xml:space="">
+        
+          button.copy-code{
+            display:none;
+            padding:0.7em 1.4em;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.15em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#FFFFFF;
+            background-color:#9c9c9c;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+            text-align:center;
+            position:relative;
+            border: 0;
+            float: right;
+            border-radius: .5em;
+            cursor: pointer;
+          }
+          button.copy-code:active{
+            top:0.1em;
+          }
+          
+          pre:hover button.copy-code{
+            display: inline-block !important;
+          }
+          button.copy-code.copied {
+            cursor: default !important;
+          }
+          
+          
+          @media all and (max-width:30em){
+            button.copy-code{
+              display:block;
+              margin:0.4em auto;
+            }
+          }
+        
+        
+      </style></head>
+<body id="wi-fi-ble-connectionless-gateway-demo">
+<h1 class="title topictitle1" id="ariaid-title1">Wi-Fi BLE Connectionless Gateway Demo</h1><div class="body"><p class="p">This application implements a gateway/central device that collects data from several BLE nodes and publishes it to the remote MQTT server.</p>
+<p class="p"><strong class="ph b">Note:</strong></p>
+<p class="p">Currently, this demo is disabled in the project <strong class="ph b">sam_d21_xpro_winc3400.X</strong> due to memory limitation.The user can enable this demo by enabling the macro <strong class="ph b">APP_PUB_BLE_MQTT</strong> in <strong class="ph b">app.h</strong> file.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.html">WINC3400 Socket Mode Demo Applications</a></div>
+</div>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="description"><h2 class="title topictitle2" id="ariaid-title2">Description</h2><div class="body"><p class="p">In this demo, the gateway device does not establish a connection with the BLE nodes. The demo uses ATSAM D21 XPro along with ATWINC3400 XPro board as the gateway device, and BLE nodes can be any BLE device. For this demo ATSAM B11 XPro acts as a BLE node, which sends out BLE advertisement packets. Gateway receives data from the BLE nodes, in the form of advertisement packets using BLE passive scanning mechanism and publishes the data to the remote MQTT server. The messages published by the gateway application can be received (just for the data verification purpose) by <a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc1500" target="_blank">wifi_socket_demos</a> application as a MQTT client, by subscribing to the topic used by the gateway, to publish the messages. As an alternate MQTT client, user can <a class="xref" href="https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm?hl=en" target="_blank">download a Google Chrome Extension - MQTTLens</a>.</p>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="wi-fi-ble-connectionless-gateway-demo-1"><h2 class="title topictitle2" id="ariaid-title3">Wi-Fi BLE Connectionless Gateway Demo</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">The functional block diagram shows different modules in the Gateway Demo:</p>
+<br /><img class="image" src="GUID-6C50EF34-A58A-442C-82CB-9B3E00E3AC9C-low.png" alt="gw_funct_block_diagram" /><br /></li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Download the MQTTLens (A Google Chrome Extension) as a MQTT client and open it on laptop</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Configure the MQTTLens Application for MQTT Server setting - broker.hivemq.com with port 1883 as shown below:</p>
+<br /><img class="image" src="GUID-4FEF632E-E93D-418A-BFF0-C3051402F173-low.png" alt="gw_mqtt_lens_1" /><br /></li>
+<li class="li"><span class="indent-level-default">4.</span><p class="p">Subscribe to the Topic "devices/WINC3400-GateWay/events"</p>
+<br /><img class="image" src="GUID-332F3630-1453-4E2B-B7A3-4456167D9C20-low.png" alt="gw_mqtt_lens_2" /><br /></li>
+<li class="li"><span class="indent-level-default">5.</span><p class="p">The gateway application mandates that, all the gateway compatible BLE nodes are required to have the advertisement data in a specific format, which the gateway application can parse. The advertisement data should follow the format given below for the gateway application:</p>
+<br /><img class="image" src="GUID-98DCB701-A026-48D8-B40F-903F90494B8D-low.png" alt="gw_ble_node_advt_frame_format" /><br /><p class="p">The table below provides advertisement packet data with respect to each byte position in the advertisement packet:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d13313e88"><span>Bytes</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d13313e90"><span>Data Type and Description</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d13313e92"><span>Data Value</span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Length (Flags Element Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x02</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Type (Flags)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x01</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Value (BR/EDR Supported, LE General Discoverable mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x06</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>3</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Length (Manufacture Specific Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x1B</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>4</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Type (Manufacture Specific)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0xFF</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>5, 6</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element:- MFG ID (Manufacture ID of Microchip)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x00CD</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>7</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element:- APP ID (Application ID of WINC3400 Gateway)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0xAA</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>8</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element:- Name LEN (BLE Node Name Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>XX</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>9 - 20</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element:- Name (Maximum length of 12 bytes Node Name)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>XX, XX...XX</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>21</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element :- Value LEN (BLE Node Value Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>XX</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>22 - 30</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element :- Value (Maximum length of 9 bytes of Node Value)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>XX, XX...XX</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p"><strong class="ph b">Note:</strong> It is mandatory to have byte 0 to byte 7 as mentioned in the above table so that gateway can filter other BLE nodes from the gateway compatible BLE nodes.</p>
+</li>
+<li class="li"><span class="indent-level-default">6.</span><p class="p">Refer an existing project "SIMPLE_BROADCASTER_SAMB11_XPLAINED_PRO" from Microchip Studio for SAM B11 XPro board - to generate BLE advertisement data for the gateway application. Make the following changes in the "SIMPLE_BROADCASTER_SAMB11_XPLAINED_PRO" project to set-up BLE nodes:</p>
+<br /><img class="image" src="GUID-C96BD167-4C2F-47D9-B27D-BCD1F232C230-low.png" alt="simple_broadcaster_app_h" /><br /><p class="p">Or, use the <strong class="ph b">SIMPLE_BROADCASTER_SAMB11_XPLAINED_PRO1.hex file</strong> which is available in "apps\wifi_socket_demos\utilities\hex\SIMPLE_BROADCASTER_SAMB11_XPLAINED_PRO1.hex" with ATSAM B11 XPro board, to set up gateway compatible BLE node as below:</p>
+<br /><img class="image" src="GUID-F18E0014-57A6-46FF-A97B-F59B58747176-low.png" alt="gateway_ble_advt_pkt1" /><br /><br /><img class="image" src="GUID-85175BF4-DE04-4403-B170-99FB0C814A27-low.png" alt="gateway_ble_advt_pkt2" /><br /></li>
+<li class="li"><span class="indent-level-default">7.</span><p class="p">Configure the WiFi parameters using the "wifi set" command. Device will connect to the access point and the assigned IP address will be displayed on the terminal window. Now, enter the command "appdemo start 1 20" to run the Gateway application. The gateway device creates an MQTT connection with the pre-configured MQTT server: broker.hivemq.com</p>
+<br /><img class="image" src="GUID-63375052-BFB5-4BCB-B1BE-7E68DEFE6283-low.png" alt="gw_demo_start_command" /><br /></li>
+<li class="li"><span class="indent-level-default">8.</span><p class="p">Once the MQTT connection is successful, the WINC34000 starts collecting the BLE advertisement data. These data packets are sent to MQTT server in a loop. The gateway application maintains a counter to monitor the node status. The counter keeps incrementing at a regular interval and if overflows and reaches 0, the node is marked as dead. But if the node was alive and transmitting advertisement packets for every received advertisement data the counter is reset to 1 and node becomes alive.</p>
+</li>
+<li class="li"><span class="indent-level-default">9.</span><p class="p">The gateway publishes messages on "devices/WINC3400-GateWay/events" topic</p>
+<br /><img class="image" src="GUID-F8CD1EBD-D223-4623-B974-7B28C5FC274F-low.png" alt="gw_demo_out_1" /><br /><br /><img class="image" src="GUID-8EA372BB-A81F-44B5-8A60-B29DAB38AA51-low.png" alt="gw_demo_out_2" /><br /><br /><img class="image" src="GUID-804DD937-ECB7-4561-8E29-202095F4C882-low.png" alt="gw_demo_out_3" /><br /><br /><img class="image" src="GUID-E86E578F-EDBA-4FC8-98B0-51DE83676182-low.png" alt="gw_demo_out_4" /><br /></li>
+<li class="li"><span class="indent-level-default">10.</span><p class="p">Use command "appdemo get" to get the DemoId of the current application, and "appdemo stop" to stop the current (Gateway) application</p>
+<br /><img class="image" src="GUID-805FE9E4-F374-4417-832B-F5822FB2927E-low.png" alt="gw_demo_out_5" /><br /></li>
+</ol>
+<ul class="ul"><li class="li"><p class="p">Enable MQTT (<em class="ph i">Only if you are using this application individually, you need to enable this macro</em>)
+Follow the steps below to enable the macro "WINC_MQTT" for the gateway application:</p>
+<ul class="ul"><li class="li with-image"><p class="p">Open project properties</p>
+<br /><img class="image" src="GUID-E3D4F3D5-56FD-412A-A983-B3643F7B40C9-low.png" alt="mqtt_properties_1" /><br /></li>
+<li class="li with-image"><p class="p">Select xc32-gcc</p>
+<br /><img class="image" src="GUID-841FE4DF-89BC-47C0-A15E-4DB7A033F4A6-low.png" alt="mqtt_properties_2" /><br /></li>
+<li class="li with-image"><p class="p">Select "preprocessing and messages" from the "Option Categories".</p>
+<br /><img class="image" src="GUID-27AB5E81-8D4E-426D-89CE-F5C9A2AEB8C6-low.png" alt="mqtt_properties_3" /><br /></li>
+<li class="li with-image"><p class="p">Select the "add" button of "Preprocessor Macros"</p>
+<br /><img class="image" src="GUID-F70B2969-531E-4529-9831-B77355599803-low.png" alt="mqtt_properties_4" /><br /></li>
+<li class="li with-image"><p class="p">Add the macro "WINC_MQTT" and press OK</p>
+<br /><img class="image" src="GUID-3DA1E841-108D-4165-B6CE-2C60C398AB30-low.png" alt="mqtt_properties_6" /><br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

@@ -364,7 +364,10 @@ typedef enum
 
 
 /* All GAP Connection Parameter defined */
-#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_OBSERVER))
+//#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_OBSERVER))
+
+#ifdef APP_PUB_BLE_MQTT
+
 /** minimum connection interval */
 #define GAP_CONN_INTERVAL_MIN           (20)        //Connection interval min 20ms
 /** maximum connection interval */
@@ -386,12 +389,13 @@ typedef enum
 #define GATT_DISCOVERY_ENDING_HANDLE    (0xFFFF)
 
 #define MAX_SCAN_DEVICE                 (10)              //Max number of scan device
-#define SCAN_INTERVAL                   (0x140)              //Scan interval 60ms in steps of 625us
-#define SCAN_WINDOW                     (0x60)              //Scan window 60ms values in steps of 625ms
+#define SCAN_INTERVAL                   (0x250)              //Scan interval 60ms in steps of 625us
+#define SCAN_WINDOW                     (0x80)              //Scan window 60ms values in steps of 625ms
 #define SCAN_TIMEOUT                    (0x0000)          //Timeout  Scan time-out, 0x0000 disables time-out
 #define SCAN_TYPE                       (AT_BLE_SCAN_ACTIVE)
 
-#endif //((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_OBSERVER))
+#endif  /*  APP_PUB_BLE_MQTT    */
+//#endif //((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_OBSERVER))
 
 /** maximum number of devices connected */
 #define MAX_DEVICE_CONNECTED            (1)
@@ -401,6 +405,8 @@ typedef enum
 
 
 #if ((BLE_DEVICE_ROLE == BLE_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL))
+//#else
+//#ifdef APP_PUB_BLE_MQTT
 
 
 
@@ -437,9 +443,9 @@ typedef enum
 
 
 #define BLE_CONN_PARAM_UPDATE_DONE                  ble_conn_param_update
-#define BLE_PAIR_REQUEST                            ble_pair_request_handler
-#define BLE_PAIR_KEY_REQUEST                        ble_pair_key_request_handler
-#define BLE_SLAVE_SEC_REQUEST						ble_slave_security_handler
+#define BLE_PAIR_REQUEST                                              ble_pair_request_handler
+#define BLE_PAIR_KEY_REQUEST                                        ble_pair_key_request_handler
+#define BLE_SLAVE_SEC_REQUEST				ble_slave_security_handler
 
 #define BLE_PAIR_DONE(param,appEnabled)             ble_pair_done_handler(param);\
                                                     BLE_ADDITIONAL_PAIR_DONE_HANDLER(param,appEnabled);
@@ -450,10 +456,14 @@ typedef enum
                                                                BLE_ADDITIONAL_ENCRYPTION_CHANGED_HANDLER(param,appEnabled);
 #endif /* (BLE_DEVICE_ROLE == BLE_PERIPHERAL) */
 
+//#endif
 
-#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL))
+
+//#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL))
+#ifdef APP_PUB_BLE_MQTT
+
 #define BLE_SCAN_REPORT_HANDLER                     ble_scan_report_handler
-#define BLE_SCAN_INFO_HANDLER                       ble_scan_info_handler
+#define BLE_SCAN_INFO_HANDLER                           ble_scan_info_handler
 
 /** @brief Function handlers for proximity monitor */
 #if defined PROXIMITY_MONITOR
@@ -500,7 +510,9 @@ typedef enum
 #define BLE_CHARACTERISTIC_READ_RESPONSE                        time_info_characteristic_read_response
 #endif /* TIP_CLIENT */
 
-#endif /* ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL)) */
+#endif /*   APP_PUB_BLE_MQTT    */
+
+//#endif /* ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL)) */
 
 /* Common functions */
 #define BLE_CONNECTED_STATE_HANDLER(param,appEnabled)          ble_connected_state_handler(param);\
@@ -658,6 +670,9 @@ typedef struct gatt_service_handler
 *                                       Functions                                       *
 ****************************************************************************************/
 
+/* Typedef for GAP Scan event callbacks */
+typedef at_ble_status_t (*ble_scan_info_callback_t)(at_ble_scan_info_t *);
+
 /* Typedef for GAP event callbacks */
 typedef void (*ble_gap_event_callback_t)(at_ble_handle_t);
 
@@ -730,7 +745,10 @@ void ble_encryption_request_handler(at_ble_encryption_request_t *encry_req);
   */
 void ble_encryption_status_change_handler(at_ble_encryption_status_changed_t *encry_status);
 
-#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_OBSERVER))
+//#if ((BLE_DEVICE_ROLE == BLE_CENTRAL) || (BLE_DEVICE_ROLE == BLE_CENTRAL_AND_PERIPHERAL) || (BLE_DEVICE_ROLE == BLE_OBSERVER))
+
+#ifdef APP_PUB_BLE_MQTT
+
 /** @brief function requesting the device for the connection.
   *
   * @param[in] dev_addr address of the the peer device.
@@ -790,6 +808,8 @@ uint8_t scan_info_parse(at_ble_scan_info_t *scan_info_data, at_ble_uuid_t *ble_s
   */
 void ble_characteristic_found_handler(at_ble_characteristic_found_t *characteristic_found);
 #endif
+
+
 
 /** @brief function to handle the BLE event task.
   *
@@ -864,6 +884,12 @@ void ble_connected_state_handler(at_ble_connected_t *conn_params);
   *
   */
 void register_ble_connected_event_cb(ble_gap_event_callback_t connected_cb_fn);
+
+at_ble_status_t ble_gateway_scan_handler(at_ble_scan_info_t *scan_param);
+
+at_ble_status_t gateway_node_scan_start(uint16_t scan_interval, uint8_t scan_window, uint8_t scan_type);
+
+void register_ble_scan_info_event_cb(ble_scan_info_callback_t scan_info_cb_fn);
 
 /** @brief Register callback function, to be triggered when disconnected from the peer device.
   *

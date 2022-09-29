@@ -1,17 +1,4 @@
----
-parent: Harmony 3 Wireless application examples for WINC3400
-title: Wi-Fi provisioning using BLE 
-has_toc: true
-has_children: false
-has_toc: false
-nav_order: 1
-
-family: SAME54
-family: SAMD21
-function: Wi-Fi provisioning using BLE 
----
-
-# Wi-Fi provisioning using BLE 
+# Wi-Fi provisioning using BLE
 
 This example demonstrates how to pass the AP credentials to WINC3400 device via BLE.
 
@@ -23,71 +10,75 @@ This application demonstrates how a user can pass the target AP credentials to W
 
 To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400)
 
-
-Path of the application within the repository is **apps/wifi_provision_via_ble/firmware** .
+Path of the application within the repository is **apps/wifi\_provision\_via\_ble/firmware** .
 
 To build the application, refer to the following table and open the project using its IDE.
 
-| Project Name      | Description                                    |
-| ----------------- | ---------------------------------------------- |
-| sam_e54_xpro_winc3400.X | MPLABX project for SAME54 and WINC3400 Xplained pro|
-| sam_d21_xpro_winc3400.X | MPLABX project for SAMD21 and WINC3400 Xplained pro|
-|||
-
+|Project Name|Description|
+|------------|-----------|
+|sam\_e54\_xpro\_winc3400.X|MPLABX project for SAME54 and WINC3400 Xplained pro|
+|sam\_d21\_xpro\_winc3400.X|MPLABX project for SAMD21 and WINC3400 Xplained pro|
+| | |
 
 ## Setting up SAMXXX Xplained Pro board
 
-- Connect the Debug USB port on the SAMEXXX Xplained Pro board to the computer using a micro USB cable
+-   Connect the Debug USB port on the SAMEXXX Xplained Pro board to the computer using a micro USB cable
+
 
 ## Running the Application
 
-1. Build and program the application project using its respective IDE
+1.  Build and program the application project using its respective IDE
 
-2. Open the Terminal application (Ex.:Tera term) on the computer
+2.  Open the Terminal application \(Ex.:Tera term\) on the computer
 
-3. Connect to the "USB to UART" COM port and configure the serial settings as follows:
+3.  Connect to the "USB to UART" COM port and configure the serial settings as follows:
 
-    * Baud : 115200
-    * Data : 8 Bits
-    * Parity : None
-    * Stop : 1 Bit
-    * Flow Control : None
+    -   Baud : 115200
 
-4. Download the Microchip Bluetooth Data application from App Store and open it.
+    -   Data : 8 Bits
 
-5. The WINC3400 device will scan the APs and ready to get paired with Mobile application.
+    -   Parity : None
 
-![ble_scan](images/ble_scan.png)
+    -   Stop : 1 Bit
 
-6. In the Mobile Application, Open the "Ble provisioner" widget.
+    -   Flow Control : None
 
-![ble_scan](images/wifi_prov_widget.jpg)
+4.  Download the Microchip Bluetooth Data application from App Store and open it.
 
-7. In the "Ble provisioner" widget, press the "scan" button. It will list the surrounding BLE devices. 
+5.  The WINC3400 device will scan the APs and ready to get paired with Mobile application.
 
-![scan](images/scan.jpg)
+    ![ble_scan](images/GUID-E1636831-7B1D-4CB3-A619-F360C3059905-low.png)
 
-7. The default name given for WINC3400 in the "Wi-Fi provisioning using BLE" application is "Wifi Prov". Click on "Wifi Prov" device.
+6.  In the Mobile Application, Open the "Ble provisioner" widget.
 
-![select_device](images/select_device.jpg)
+    ![wifi_prov_widget](images/GUID-38796A44-D45A-4AC9-96A8-2B475F02C1CB-low.jpg)
 
-8. The next screen will display the scanned AP list. 
+7.  In the "Ble provisioner" widget, press the "scan" button. It will list the surrounding BLE devices.
 
-![provisioning](images/provisioning.jpg)
+    ![scan](images/GUID-E1623A3D-8D15-4E78-94BD-BBE0C3CC161A-low.jpg)
 
-9. Select the desired AP from the scan list and provide the required credentials to make Wi-Fi connection.
+8.  The default name given for WINC3400 in the "Wi-Fi provisioning using BLE" application is "Wifi Prov". Click on "Wifi Prov" device.
 
-10. Press "Provision" button
+    ![select_device](images/GUID-745696CC-257C-4410-ACB9-97172B87E96E-low.jpg)
+
+9.  The next screen will display the scanned AP list.
+
+    ![provisioning](images/GUID-569499C9-0752-4774-A413-AB76EDA56F93-low.jpg)
+
+10. Select the desired AP from the scan list and provide the required credentials to make Wi-Fi connection.
+
+11. Press "Provision" button
 
 12. The mobile application will ask for the password to pair.
 
-
-13. The password is stored in the "pincode" variable in the "wifi_prov.c" file.
+13. The password is stored in the "pincode" variable in the "wifi\_prov.c" file.
 
 14. Enter the password to pair the WINC3400 device with mobile.
 
-![pairing](images/pairing.jpg)
+    ![pairing](images/GUID-E7DC885E-EC71-4806-AC07-41DDCDE60416-low.jpg)
 
-11. The device will connect to the AP and print the IP address obtained.
+15. The device will connect to the AP and print the IP address obtained.
 
-![ble_scan](images/ble_provisoing_full_log.png)
+    ![ble_provisoing_full_log](images/GUID-ADA9232A-58EE-4CAE-868B-7E01948C1DE9-low.png)
+
+

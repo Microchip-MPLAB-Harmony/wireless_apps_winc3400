@@ -274,6 +274,7 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_d21_xpro_winc3400/harmony-manifest-success.yml</itemPath>
+      <itemPath>tcp_client_sam_d21_xpro_winc3400.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -499,13 +500,14 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_d21_xpro_winc3400;../src/config/sam_d21_xpro_winc3400/driver/winc/include/;../src/config/sam_d21_xpro_winc3400/driver/winc/include/dev;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/bsp;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/bsp/include;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/common;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/driver;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/socket;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/spi_flash;../src/packs/ATSAMD21J18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src/config/sam_d21_xpro_winc3400/driver/winc/include/;;../src/config/sam_d21_xpro_winc3400/driver/winc/include/dev;;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/bsp;;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/bsp/include;;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/common;;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/driver;;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/socket;;../src/config/sam_d21_xpro_winc3400/driver/winc/include/drv/spi_flash;;../src;../src/config/sam_d21_xpro_winc3400;../src/packs/ATSAMD21J18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -555,6 +557,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -581,7 +584,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value=";"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -594,6 +597,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -603,7 +607,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_d21_xpro_winc3400;../src/packs/ATSAMD21J18A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/sam_d21_xpro_winc3400;../src/packs/ATSAMD21J18A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

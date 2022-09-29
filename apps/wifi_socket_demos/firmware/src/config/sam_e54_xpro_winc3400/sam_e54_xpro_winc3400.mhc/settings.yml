@@ -5,7 +5,7 @@ frameworkPath: ../../..
 processor: ATSAME54P20A
 projectName: ''
 settings:
-  PackageFilter: bsp;core;crypto;cryptoauthlib;csp;dev_packs;net;quick_docs;usb;wireless_apps_winc3400;wireless_wifi
+  PackageFilter: bsp;core;core_apps_pic32mz_w1;crypto;cryptoauthlib;csp;csp_apps_pic32mz_w1;Devices;dev_packs;harmony-services;net;net_dev;quick_docs;usb;usb_apps_device;usb_apps_device_old;wireless_apps_pic32mzw1_wfi32e01;wireless_apps_pic32mzw1_wfi32e01_backup_2;wireless_apps_winc1500_backup;wireless_apps_winc1500_copy;wireless_apps_winc1500_old;wireless_apps_winc1500_release;wireless_apps_winc3400_old;wireless_system_pic32mzw1_wfi32e01;wireless_system_pic32mzw1_wfi32e01_updated_dhcpsv2_id;wireless_wifi;wireless_wifi_rio2_integration
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.8.0

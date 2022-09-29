@@ -121,6 +121,7 @@ typedef struct MQTTClient
     unsigned int keepAliveInterval;
     char ping_outstanding;
     int isconnected;
+    int isSubAckRx;
     int cleansession;
 
     struct MessageHandlers
