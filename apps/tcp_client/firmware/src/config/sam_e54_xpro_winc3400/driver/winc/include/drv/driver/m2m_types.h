@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -129,7 +129,7 @@ MACROS
 #define M2M_HIF_MAJOR_VALUE                             (1)
 /*!< Drv/Fw major compatibility check.
 */
-#define M2M_HIF_MINOR_VALUE                             (5)
+#define M2M_HIF_MINOR_VALUE                             (6)
 /*!< Drv/Fw minor compatibility check.
 */
 
@@ -150,7 +150,7 @@ MACROS
 #define M2M_DRIVER_VERSION_MINOR_NO                     (3)
 /*!< Driver Minor release version number.
 */
-#define M2M_DRIVER_VERSION_PATCH_NO                     (0)
+#define M2M_DRIVER_VERSION_PATCH_NO                     (1)
 /*!< Driver patch release version number.
 */
 
@@ -271,6 +271,21 @@ MACROS
 #define M2M_802_1X_TLS_FLAG                             0x02
 /*!< Flag to indicate 802.1x TLS credentials: domain/user-name/private-key/certificate.
 */
+
+#define M2M_802_1X_FLAGS_PHASE1_ANY              		(0)
+/*!< Flag to indicate any of the methods are allowed: EAP_TLS, PEAPv0/PEAPv1 and TTLS. */
+
+#define M2M_802_1X_FLAGS_PHASE1_EAP_TLS              	(1<<2)
+/*!< Any of the methods are allowed: EAP_TLS, PEAPv0/PEAPv1 and TTLS. */
+
+#define M2M_802_1X_FLAGS_PHASE1_PEAP					(2<<2)
+/*!< Only PEAP is allowed. */
+
+#define M2M_802_1X_FLAGS_PHASE1_TTLS					(3<<2)
+/*!< Only TTLS is allowed. */
+
+#define M2M_802_1X_FLAGS_PHASE1_MASK					(3<<2)
+/*!< Mask to clear all 1X Phase1 flags. */
 
 #define M2M_802_1X_TLS_CLIENT_CERTIFICATE               1
 /*!< Info type used in @ref tstrM2mWifiAuthInfoHdr to indicate Enterprise TLS client certificate.
@@ -2557,6 +2572,8 @@ typedef enum {
     /*!< Response to indicate the OTA update status. */
     M2M_OTA_REQ_TEST,
     /*!< Reserved. Do not use.*/
+    M2M_OTA_REQ_START_UPDATE_V2,
+    /*!< Request to start an OTA update with support to SNI.*/
     M2M_OTA_MAX_ALL,
 } tenuM2mOtaCmd;
 
@@ -2742,4 +2759,22 @@ typedef struct {
     /*!< PRNG pads */
     uint8_t     __PAD16__[2];
 } tstrPrng;
+
+/*!
+@struct \
+    tstrOtaStart
+
+@brief
+    M2M Request OTA
+ */
+
+typedef struct {
+    uint32_t u32TotalLen;
+    char acUrl[256];
+    char acSNI[64];
+    uint8_t u8SSLFlags;
+    uint8_t   __PAD24__[3];
+    /*!< Padding byte for forcing 4-byte alignment */
+} tstrOtaStart;
+
 #endif

@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -401,7 +401,7 @@ MACROS
 
 #define SO_SSL_ENABLE_SNI_VALIDATION                        0x04
 /*!<
-    Legacy name for @ref SO_SSL_ENABLE_CERTNAME_VALIDATION.\n
+    Legacy name for @ref SO_SSL_ENABLE_CERTNAME_VALIDATION \n
 */
 /**@}*/     //SSLSocketOptions
 
@@ -965,8 +965,6 @@ FUNCTION PROTOTYPES
     - Registers the socket (Host Interface)hif callback function through the call to the hif_register_cb function.
        This facilitates handling all of the socket related functions received through interrupts from the firmware.
 
-@return          void
-
 @remarks
     This initialization function must be invoked before any socket operation is performed.
     No error codes from this initialization function since the socket array is statically allocated based on the maximum number of
@@ -1048,7 +1046,6 @@ uint8_t IsSocketReady(void);
                                  registering the callback.
                                  NULL is assigned when DNS resolution is not required.
 
-@return          void
 @remarks
         If any of the socket functionality is not to be used, NULL is passed in as a parameter.
         It must be invoked after @ref socketInit and before other socket layer operations.
@@ -1134,7 +1131,7 @@ void registerSocketResolveCallback(tpfAppResolveCb resolve_cb);
                     TLS.\n
                     - [SOCKET_CONFIG_SSL_ON](@ref SOCKET_CONFIG_SSL_ON): The socket is secured by TLS.\n
                     - [SOCKET_CONFIG_SSL_DELAY](@ref SOCKET_CONFIG_SSL_DELAY): The socket is not secured
-                    by TLS, but may be secured later, by calling @ref secure.\n
+                    by TLS, but may be secured later, by calling @ref secure \n
                 - When u8Type is [SOCK_RAW](@ref SOCK_RAW), the following configuration values
                 are defined:\n
                     - [SOCKET_CONFIG_IPPROTO_RAW](@ref SOCKET_CONFIG_IPPROTO_RAW): The socket is to be
@@ -1507,7 +1504,7 @@ int8_t connect(SOCKET sock, struct sockaddr *pstrAddr, uint8_t u8AddrLen);
     Converts an (insecure) TCP connection with a remote server into a secure TLS-over-TCP connection.
     It may be called after both of the following:\n
     - a TCP socket has been created by the @ref socket function, with u8Config parameter set to
-    @ref SOCKET_CONFIG_SSL_DELAY.\n
+    @ref SOCKET_CONFIG_SSL_DELAY \n
     - a successful connection has been made on the socket via the @ref connect function.
     This is an asynchronous API; the application socket callback function is notified of the result
     of the attempt to make the connection secure through the event @ref SOCKET_MSG_SECURE, along
@@ -1833,7 +1830,7 @@ int16_t send(SOCKET sock, void *pvSendBuffer, uint16_t u16SendLength, uint16_t u
  *              accept
  *              send
  * @warning
- *              u16SendLength must not exceed @ref SOCKET_BUFFER_MAX_LENGTH.\n
+ *              u16SendLength must not exceed @ref SOCKET_BUFFER_MAX_LENGTH \n
  *              Use a valid socket (returned from socket).
  *              A valid buffer pointer must be used (not NULL).\n
  *              Successful  completion of a call to sendto does not guarantee delivery of the message,
@@ -1894,19 +1891,19 @@ int8_t gethostbyname(const char *pcHostName);
 @param[in]  option_name
                 Option to be set.\n
                 For protocol level @ref SOL_SOCKET, the supported option names are:\n
-                    @ref SO_SET_UDP_SEND_CALLBACK\n
-                    @ref SO_TCP_KEEPALIVE\n
-                    @ref SO_TCP_KEEPIDLE\n
-                    @ref SO_TCP_KEEPINTVL\n
-                    @ref SO_TCP_KEEPCNT\n
+                    @ref SO_SET_UDP_SEND_CALLBACK \n
+                    @ref SO_TCP_KEEPALIVE \n
+                    @ref SO_TCP_KEEPIDLE \n
+                    @ref SO_TCP_KEEPINTVL \n
+                    @ref SO_TCP_KEEPCNT \n
                 For protocol level @ref SOL_SSL_SOCKET, the supported option names are:\n
-                    @ref SO_SSL_BYPASS_X509_VERIF\n
-                    @ref SO_SSL_SNI\n
-                    @ref SO_SSL_ENABLE_SESSION_CACHING\n
-                    @ref SO_SSL_ENABLE_CERTNAME_VALIDATION\n
-                    @ref SO_SSL_ALPN\n
+                    @ref SO_SSL_BYPASS_X509_VERIF \n
+                    @ref SO_SSL_SNI \n
+                    @ref SO_SSL_ENABLE_SESSION_CACHING \n
+                    @ref SO_SSL_ENABLE_CERTNAME_VALIDATION \n
+                    @ref SO_SSL_ALPN \n
                 For protocol level @ref SOL_RAW, the supported option names are:\n
-                    @ref SO_ICMP_FILTER\n
+                    @ref SO_ICMP_FILTER \n
 
 @param[in]  option_value
                 Pointer to user provided value.
@@ -2038,7 +2035,7 @@ int8_t set_alpn_list(SOCKET sock, const char *pcProtocolList);
  *                  the ALPN applies.
  *
  * @return  The function returns:\n
- *  - >0: 1-based index of negotiated protocol with respect to the list previously provided to @ref set_alpn_list.\n
+ *  - >0: 1-based index of negotiated protocol with respect to the list previously provided to @ref set_alpn_list \n
  *  - 0: No negotiation occurred (eg TLS peer did not support ALPN).\n
  *  - <0: Invalid parameters (socket is not in use, or not an SSL socket).\n
  *

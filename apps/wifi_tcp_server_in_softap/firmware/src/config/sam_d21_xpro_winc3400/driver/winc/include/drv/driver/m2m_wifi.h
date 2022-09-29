@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -186,7 +186,7 @@ typedef void (*tpfAppWifiCb)(uint8_t u8MsgType, const void *const pvMsg);
     For example, it could be a pointer to the buffer holding the received frame in case
     a @ref M2M_WIFI_RESP_ETHERNET_RX_PACKET event is received.
 
-@param[in]  pvControlBuf
+@param[in]  pvCtrlBuf
     A pointer to control buffer describing the accompanied message.
     This must be cast to the data type @ref tstrM2mIpCtrlBuf in case of @ref M2M_WIFI_RESP_ETHERNET_RX_PACKET event.
 
@@ -337,7 +337,33 @@ typedef enum {
         20-byte arrays: authentication is limited to this particular root certificate; Recommended\n
         0-byte array: authentication can succeed with any certificate in the WINC root certificate store; Default.\n
     */
+	WIFI_1X_PHASE1_METHOD,
+    /*!< Specify the allowed 1X Phase 1 methods. Values are:
+        0 = any of the methods are allowed: EAP_TLS, PEAPv0/PEAPv1 and TTLS
+        1 = Only EAP-TLS is allowed.
+        2 = Only PEAP is allowed.
+        3 = Only TTLS is allowed.
+    */
 } tenu1xOption;
+
+/*!
+@enum   \
+    tenu1xPhase1Method
+@brief
+
+@remarks
+
+*/
+typedef enum {
+	WIFI_1X_PHASE1_METHOD_ANY = 0,
+	/*!< Any of the methods are allowed: EAP_TLS, PEAPv0/PEAPv1 and TTLS. */
+	WIFI_1X_PHASE1_METHOD_EAP_TLS,
+	/*!< Only EAP-TLS is allowed. */
+	WIFI_1X_PHASE1_METHOD_PEAP,
+	/*!< Only PEAP is allowed. */
+	WIFI_1X_PHASE1_METHOD_TTLS
+	/*!< Only TTLS is allowed. */
+} tenu1xPhase1Method;
 
 /*!
 @struct     \
@@ -1066,12 +1092,13 @@ int8_t m2m_wifi_connect_psk(tenuCredStoreOption enuCredStoreOption, tstrNetworkI
 
 @details
     The following options can be set:\n
-        @ref WIFI_1X_BYPASS_SERVER_AUTH\n
-        @ref WIFI_1X_TIME_VERIF_MODE\n
-        @ref WIFI_1X_SESSION_CACHING\n
-        @ref WIFI_1X_SPECIFIC_ROOTCERT\n
+        @ref WIFI_1X_BYPASS_SERVER_AUTH \n
+        @ref WIFI_1X_TIME_VERIF_MODE \n
+        @ref WIFI_1X_SESSION_CACHING \n
+        @ref WIFI_1X_SPECIFIC_ROOTCERT \n
+        @ref WIFI_1X_PHASE1_METHOD \n
     The setting applies to all subsequent connection attempts via @ref m2m_wifi_connect_1x_mschap2
-    or @ref m2m_wifi_connect_1x_tls.\n
+    or @ref m2m_wifi_connect_1x_tls \n
     Connection attempts via @ref m2m_wifi_default_connect use the
     settings which were in place at the time of the original connection.
 
@@ -1100,16 +1127,17 @@ int8_t m2m_wifi_1x_set_option(tenu1xOption enuOptionName, const void *pOptionVal
 
 @details
     The following options can be read:\n
-        @ref WIFI_1X_BYPASS_SERVER_AUTH\n
-        @ref WIFI_1X_TIME_VERIF_MODE\n
-        @ref WIFI_1X_SESSION_CACHING\n
-        @ref WIFI_1X_SPECIFIC_ROOTCERT\n
+        @ref WIFI_1X_BYPASS_SERVER_AUTH \n
+        @ref WIFI_1X_TIME_VERIF_MODE \n
+        @ref WIFI_1X_SESSION_CACHING \n
+        @ref WIFI_1X_SPECIFIC_ROOTCERT \n
+        @ref WIFI_1X_PHASE1_METHOD \n
 
 @param[in]      enuOptionName
     The option to get.
 
 @param[out]     pOptionValue
-    Pointer to a buffer to be filled with the value being read. The buffer must be at least as long as the length in pOptionLen
+    Pointer to a buffer to contain the value to get. The buffer must be at least as long as the value pointed to by pOptionLen.
 
 @param[inout]  pOptionLen
     Pointer to a length.
@@ -3728,7 +3756,7 @@ int8_t m2m_wifi_set_cust_InfoElement(uint8_t *pau8M2mCustInfoElement);
     Change the power profile mode.
 
 @param[in]  u8PwrMode
-    Change the WINC power profile to different mode based on the enumeration @ref tenuM2mPwrMode.\n
+    Change the WINC power profile to different mode based on the enumeration @ref tenuM2mPwrMode \n
     Not implemented in WINC3400 firmware.
 
 @warning

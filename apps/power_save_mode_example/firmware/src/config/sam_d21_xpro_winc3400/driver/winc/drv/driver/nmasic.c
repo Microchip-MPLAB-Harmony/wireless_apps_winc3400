@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -389,8 +389,7 @@ int8_t chip_wake(void)
             goto _WAKE_EXIT;
         }
     } while(1);
-    /* Workaround sometimes spi fail to read clock regs after reading/writing clockless registers */
-    //nm_bus_reset();
+
 _WAKE_EXIT:
     return ret;
 }

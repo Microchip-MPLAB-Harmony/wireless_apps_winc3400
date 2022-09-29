@@ -1,4 +1,4 @@
-<config configName="sam_e54_xpro_winc3400" projectName="wifi_bypass_demos_sam_e54_xpro_winc3400" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.1">
+<config configName="sam_e54_xpro_winc3400" projectName="wifi_bypass_demos_sam_e54_xpro_winc3400" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.11">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -207,7 +207,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.5"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -890,7 +890,15 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;NETWORK LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;401&quot; y=&quot;18&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipStack&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;NETWORK LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipArp&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipIPv4&quot; x=&quot;280&quot; y=&quot;20&quot;/&gt;
@@ -898,7 +906,25 @@
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_network_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipDhcp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcps&quot; x=&quot;230&quot; y=&quot;138&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipDns&quot; x=&quot;424&quot; y=&quot;23&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpipDnss&quot; x=&quot;164&quot; y=&quot;275&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipIperf&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpipSntp&quot; x=&quot;340&quot; y=&quot;281&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_Xplained_Pro&quot; x=&quot;310&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
@@ -923,18 +949,7 @@
         &lt;ElementPosition dnOrder=&quot;20&quot; id=&quot;tc3&quot; x=&quot;34&quot; y=&quot;316&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;403&quot; y=&quot;46&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;DRIVER LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvWifiWinc&quot; x=&quot;280&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;TCP/IP STACK&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;TCP/IP STACK&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;APPLICATION LAYER&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;BASIC CONFIGURATION&quot; x=&quot;30&quot; y=&quot;80&quot;/&gt;
@@ -944,31 +959,16 @@
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot; x=&quot;200&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;TRANSPORT LAYER&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipTcp&quot; x=&quot;440&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipUdp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpip_transport_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
     &lt;GraphSettings canvasHeight=&quot;634&quot; canvasWidth=&quot;1042&quot; dnOrder=&quot;6&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;APPLICATION LAYER&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;7&quot; id=&quot;DRIVER LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipDhcp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipDhcps&quot; x=&quot;230&quot; y=&quot;138&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipDns&quot; x=&quot;424&quot; y=&quot;23&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpipDnss&quot; x=&quot;164&quot; y=&quot;275&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;tcpipIperf&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;tcpipSntp&quot; x=&quot;340&quot; y=&quot;281&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tcpip_apps_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drvWifiWinc&quot; x=&quot;282&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpip_driver_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;BASIC CONFIGURATION&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;8&quot; id=&quot;PRESENTATION LAYER&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;tcpipCmd&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;tcpipNetConfig&quot; x=&quot;401&quot; y=&quot;18&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;tcpipStack&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;tcpip_basic_config&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;net_Pres&quot; x=&quot;403&quot; y=&quot;46&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -4153,7 +4153,7 @@
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1.4.3&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1.4.4&quot;/&gt;
     &lt;/Values&gt;
   &lt;/drvWifiWinc&gt;
 &lt;/drvWifiWinc&gt;
@@ -4609,9 +4609,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_ECC_TYPES_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_ECC_TYPES_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_ECC_TYPES_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_ECC_TYPES_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4622,9 +4622,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_FLEXIBLE_FLASH_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_FLEXIBLE_FLASH_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4635,9 +4635,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_FLEXIBLE_FLASH_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_FLEXIBLE_FLASH_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_FLEXIBLE_FLASH_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4648,9 +4648,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_INET_ADDR_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_INET_ADDR_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_INET_ADDR_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_INET_ADDR_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4661,9 +4661,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_INET_NTOP_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_INET_NTOP_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_INET_NTOP_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_INET_NTOP_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4674,9 +4674,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_HIF_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_HIF_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_HIF_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_HIF_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4687,9 +4687,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_HIF_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_HIF_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_HIF_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_HIF_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4700,9 +4700,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_OTA_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_OTA_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_OTA_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_OTA_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4713,9 +4713,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_OTA_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_OTA_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_OTA_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_OTA_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4726,9 +4726,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_PERIPH_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_PERIPH_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_PERIPH_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_PERIPH_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4739,9 +4739,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_PERIPH_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_PERIPH_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_PERIPH_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_PERIPH_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4752,9 +4752,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_SOCKET_HOST_IF_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_SOCKET_HOST_IF_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_SOCKET_HOST_IF_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_SOCKET_HOST_IF_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4765,9 +4765,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_SSL_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_SSL_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_SSL_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_SSL_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4778,9 +4778,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_SSL_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_SSL_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_SSL_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_SSL_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4791,9 +4791,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_TYPES_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_TYPES_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_TYPES_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_TYPES_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4804,9 +4804,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_WIFI_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_WIFI_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_WIFI_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_WIFI_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4817,9 +4817,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_M2M_WIFI_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_M2M_WIFI_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_M2M_WIFI_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_M2M_WIFI_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4830,9 +4830,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NETINET_IN_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NETINET_IN_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NETINET_IN_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NETINET_IN_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4843,9 +4843,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NMASIC_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMASIC_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NMASIC_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMASIC_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4856,9 +4856,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NMASIC_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMASIC_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NMASIC_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMASIC_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4869,9 +4869,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NMBUS_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMBUS_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NMBUS_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMBUS_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4882,9 +4882,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NMBUS_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMBUS_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NMBUS_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMBUS_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4895,9 +4895,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NMDRV_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMDRV_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NMDRV_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMDRV_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4908,9 +4908,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NMDRV_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMDRV_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NMDRV_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMDRV_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4921,9 +4921,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NMSPI_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMSPI_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NMSPI_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMSPI_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4934,9 +4934,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NMSPI_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NMSPI_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NMSPI_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NMSPI_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4947,9 +4947,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NM_BSP_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_BSP_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NM_BSP_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_BSP_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4960,9 +4960,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NM_COMMON_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_COMMON_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NM_COMMON_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_COMMON_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4973,9 +4973,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NM_COMMON_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_COMMON_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NM_COMMON_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_COMMON_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4986,9 +4986,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_NM_DEBUG_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_NM_DEBUG_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_NM_DEBUG_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_NM_DEBUG_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -4999,9 +4999,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_SOCKET_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SOCKET_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_SOCKET_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SOCKET_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -5012,9 +5012,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_SOCKET_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SOCKET_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_SOCKET_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SOCKET_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -5025,9 +5025,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_SPI_FLASH_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SPI_FLASH_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_SPI_FLASH_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SPI_FLASH_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -5038,9 +5038,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_SPI_FLASH_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SPI_FLASH_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_SPI_FLASH_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SPI_FLASH_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -5051,9 +5051,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_6_SPI_FLASH_MAP_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC1500_19_7_7_SPI_FLASH_MAP_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_6_SPI_FLASH_MAP_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC1500_19_7_7_SPI_FLASH_MAP_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
@@ -5064,9 +5064,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_FLASH_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_FLASH_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_FLASH_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_FLASH_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5077,9 +5077,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_FLASH_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_FLASH_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_FLASH_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_FLASH_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5090,9 +5090,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_HIF_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_HIF_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_HIF_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_HIF_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5103,9 +5103,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_HIF_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_HIF_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_HIF_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_HIF_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5116,9 +5116,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_PERIPH_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_PERIPH_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_PERIPH_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_PERIPH_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5129,9 +5129,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_PERIPH_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_PERIPH_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_PERIPH_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_PERIPH_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5142,9 +5142,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_SOCKET_HOST_IF_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_SOCKET_HOST_IF_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_SOCKET_HOST_IF_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_SOCKET_HOST_IF_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5155,9 +5155,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_TYPES_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_TYPES_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_TYPES_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_TYPES_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5168,9 +5168,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_WIFI_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_WIFI_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_WIFI_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_WIFI_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5181,9 +5181,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_M2M_WIFI_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_WIFI_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_M2M_WIFI_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_WIFI_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5194,9 +5194,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NETINET_IN_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NETINET_IN_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NETINET_IN_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NETINET_IN_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5207,9 +5207,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NMASIC_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMASIC_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NMASIC_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMASIC_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5220,9 +5220,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NMASIC_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMASIC_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NMASIC_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMASIC_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5233,9 +5233,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NMBUS_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMBUS_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NMBUS_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMBUS_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5246,9 +5246,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NMBUS_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMBUS_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NMBUS_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMBUS_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5259,9 +5259,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NMDRV_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMDRV_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NMDRV_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMDRV_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5272,9 +5272,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NMDRV_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMDRV_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NMDRV_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMDRV_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5285,9 +5285,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NMSPI_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMSPI_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NMSPI_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMSPI_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5298,9 +5298,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NMSPI_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMSPI_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NMSPI_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMSPI_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5311,9 +5311,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NM_BSP_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NM_BSP_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NM_BSP_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NM_BSP_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5324,9 +5324,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NM_COMMON_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NM_COMMON_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NM_COMMON_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NM_COMMON_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5337,9 +5337,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NM_COMMON_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NM_COMMON_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NM_COMMON_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NM_COMMON_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5350,9 +5350,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_NM_DEBUG_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NM_DEBUG_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_NM_DEBUG_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NM_DEBUG_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5363,9 +5363,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_SOCKET_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_SOCKET_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_SOCKET_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_SOCKET_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5376,9 +5376,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_SPI_FLASH_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_SPI_FLASH_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_SPI_FLASH_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_SPI_FLASH_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5389,9 +5389,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_SPI_FLASH_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_SPI_FLASH_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_SPI_FLASH_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_SPI_FLASH_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -5402,9 +5402,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_3_SPI_FLASH_MAP_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_SPI_FLASH_MAP_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_3_SPI_FLASH_MAP_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_SPI_FLASH_MAP_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -9005,19 +9005,6 @@
          <value>NETWORK LAYER</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipIcmp" name="TCPIP_ICMP_CLIENT_USER_NOTIFICATION"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipIcmp&gt;
-  &lt;tcpipIcmp dnOrder=&quot;0&quot; id=&quot;TCPIP_ICMP_CLIENT_USER_NOTIFICATION&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/tcpipIcmp&gt;
-&lt;/tcpipIcmp&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcpipIcmp" name="TCPIP_ICMP_COMMAND_ENABLE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcpipIcmp&gt;
   &lt;tcpipIcmp dnOrder=&quot;0&quot; id=&quot;TCPIP_ICMP_COMMAND_ENABLE&quot;&gt;
@@ -9596,7 +9583,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\gmac.h</file>
-         <hash>ae091520f122cd484774107d35e17bf0e53c6b30fededbf39a94e38dd7217975</hash>
+         <hash>94efa3650d2abab35c8ebdde28dd10c2e6d91662dad092dbe3ffda0de08aa11b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\snmp_private.h</file>
@@ -9612,7 +9599,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc3.h</file>
-         <hash>7e673ab564f7fa7e0dbdb448421cf78d45bb501ac1f2dccc6f2e4f66140c6c54</hash>
+         <hash>7a4406dfa7eb718eee60217e7836e2a70d929d7ee4bac6f4495149b9f20ee2c8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\ftpc_private.h</file>
@@ -9624,7 +9611,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pdec.h</file>
-         <hash>f23dcd3f095246b19f3fb3abb8db9771a31b74f56640700347610facf5f3e634</hash>
+         <hash>acbe65ae334a0fc7f7ff94042e6ec87b296cbd0e48aa2e11a2e008ecf317efb5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\igmp_manager.h</file>
@@ -9656,7 +9643,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\can1.h</file>
-         <hash>c615bbfba0692f4d2b02c465687b8960be2f70d73758f8130a4f384d81fee5f2</hash>
+         <hash>56667e55cd303da255ce88cc14f04bca72ea2f1dd2c440cd4bfc74d335d6f52d</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\src\ssl.c</file>
@@ -9664,11 +9651,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc0.h</file>
-         <hash>7c1bd6780a1fbcc40c75067995025ce73a93ec7eed4231ee16afd4e99d8d0b9a</hash>
+         <hash>b791f87f272e2b821b62776957439be96511ec4644da1e1e111b4b044b044831</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\initialization.c</file>
-         <hash>fbed222fa1620b17712e97b799dba8ee9a4a3c185502a740e971542a07024093</hash>
+         <hash>2306efbf587de9d2ddb626318fee69b371d467ac50d35dcb06223720526d8e2e</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_c32.c</file>
@@ -9688,7 +9675,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\tcpip_mac.h</file>
-         <hash>016a72953f90e948baff4818b8fa8b9b0edf0f909068e6ac7b110cb6f0eb4ba5</hash>
+         <hash>c517aafb8c11f40bf01a702af6232251e3bc8ff922282c8799f3d8abad2cfb0e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\time\sys_time.h</file>
@@ -9696,7 +9683,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\rtc.h</file>
-         <hash>de023e96a1640f6318a0dbfe2f49155e59ce870250c3c4610e220d9ddf9d771f</hash>
+         <hash>1e2e3e0282040e074fe932b7a6835c025377050ead505b432b5ccc31f8248552</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\curve448.c</file>
@@ -9708,11 +9695,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\dhcp.h</file>
-         <hash>4f6af9fc08fdfd47f5551e16127028960151ea26da2c43c7b99992648a101e8a</hash>
+         <hash>30d1c8ba29e1fe380bafd1b247df7245499e023cf5cdc7c444f660703a0fdaba</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\udp.h</file>
-         <hash>f891d19968374ae333734d32cafe0241cecac1ae31674caf3112d365d43cdc8d</hash>
+         <hash>6d1fa5692af3cef0125eb5581e1e7cb555ea6de98a82827e070b164e0c13ab76</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_GF2NEccMul_pb.h</file>
@@ -9723,16 +9710,20 @@
          <hash>4087cdcd2d509945c69469d4b2339156a53b8e278bd23b12e7019d31ea83d58c</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dhcp_server_manager.h</file>
+         <hash>461db7f0b8c8a501769971a2ec777a8b83693149aee28b02c2e1d9096ea200bb</hash>
+      </entry>
+      <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_ecc_ba414e.h</file>
          <hash>587fbb2f6cfd0e104be31fba33bbe7fe36273791d9e37098474f76dded9112c1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\sercom.h</file>
-         <hash>eae7caf2de3979c62d0e1c5fed18dd3b0b2f0eb3dc7b42ed63c4f4bb9280e2ee</hash>
+         <hash>7962b585227a8dccadbf1827cf3acb709c7551dd50bb0caa7989ae5bdfa256d9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\spi_flash\spi_flash_map.h</file>
-         <hash>532ec2d62ecd0c1eb65b9cec86d7a1dde61f5ea1851f103ee7dd6c4e946e9266</hash>
+         <hash>f9c160397e5be642fc62b8280eff0610bf2cee4de50de9bbe52acbb8ef163a15</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\snmp.h</file>
@@ -9740,7 +9731,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_commands.c</file>
-         <hash>a318c2c82ae38260022a0a90f3f742fdf09ba0db470090b958a39b593b456ad3</hash>
+         <hash>1712afdb545445153a481c3c5e96bf6527df66e840e525800eff45825efdf05e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\lldp_manager.h</file>
@@ -9784,11 +9775,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\time\src\sys_time_local.h</file>
-         <hash>a761ad68ce0cbac8c326bd17e54cc01d10324ed8d5e120ef092856a21604b6a2</hash>
+         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\fuses.h</file>
-         <hash>9f6f4d5f26e8ec216a92b4b1435463cecc8f93b3a9de74f3a372bb32cf6bfb75</hash>
+         <hash>ac7d722ecfe4276c9d237ccf9895a03769cdbc34c5daf5cab07371be63bd2fda</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\tc\plib_tc3.h</file>
@@ -9800,7 +9791,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc4.h</file>
-         <hash>a21b7edc06e798c212590003e6e8de194c58217fab9669cc5af29ae5703bd6d5</hash>
+         <hash>9af9725307faef9d111bbae1690210fead4a87688d2958d4a06e045c49c8ad32</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -9816,7 +9807,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\arp.h</file>
-         <hash>f36470195390b76b01dde07a13e8fe55e607a724ace803243b2b77eb1f379e52</hash>
+         <hash>6ae66cd429f88b2f1c618a280b8b1ab3842825041af987a6f0415209a4d0d82b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_heap_alloc.h</file>
@@ -9832,7 +9823,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pm.h</file>
-         <hash>ab73313f3760d63aa12a03b580c76d62922cde31c863ca0affb859777e3c2036</hash>
+         <hash>924ef846b3e6bc3dadd2559f7271f497069737e5be34d3effc7ec7538c464e03</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\ftp_manager.h</file>
@@ -9848,7 +9839,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc1.h</file>
-         <hash>efbe26115a6951604fcd20763aa0e0e0f94a0491736223c3483251d4873250ff</hash>
+         <hash>eec97cfa4892f7e854bd005faf8764283fc231a0d89015bb43a7f59e6cfc6920</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_heap_alloc.c</file>
@@ -9880,7 +9871,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\tc.h</file>
-         <hash>c4da9ce90cc583c827d1796d7dff1da2d06113c43ba1261bcbb2e2deccd9b96c</hash>
+         <hash>28d5f9bee9d48ec44365e09c31de981901bfff7644a1311b597de6ad25b61fe8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\hash_fnv.c</file>
@@ -9888,7 +9879,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\supc.h</file>
-         <hash>4e59bd63e5265f01d166a7d9d8a6f1941c842279caf0990daac04d517bb3d99c</hash>
+         <hash>4f24cfd1a56abae06b37a33b380d1fcf0289defd42ef4158efa35718ce549ae7</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_pukcl_functions.c</file>
@@ -9896,7 +9887,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\cmcc.h</file>
-         <hash>88204afaecf2b110df4c2268b94f6dd1a21d8684534efd52527211a2725c3711</hash>
+         <hash>dcafc77117791e50e2e8cfcb4ec261d26221bea154c06640fb6ba048ece602d5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\hash_fnv.h</file>
@@ -9912,11 +9903,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\icm.h</file>
-         <hash>af316cd27e972972400556972c74c88b8b42b5b2652f6e6e73d14430de831913</hash>
+         <hash>56756a50078cee562852e453d9644fe7b02e37ce29ca29032bedb5a6c686e46c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\mclk.h</file>
-         <hash>20c22bc974031aa0e91f751cd6df9548b8eac10a98179238a9b41558c00e1ad6</hash>
+         <hash>59a795ce0072896839b864efc833f6ecb71cf9034c2dc7a09ef2c67a6565bf26</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_sha256_sam6156.c</file>
@@ -9936,7 +9927,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\rstc.h</file>
-         <hash>8856387f7d6221ef5b0f5e4b08700da466ef03c8e0350877ad083bda04687632</hash>
+         <hash>bec7acd432ab4742f4b19035e1013197954665683011881ceb181b6304d5e6ee</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\http_manager.h</file>
@@ -9960,11 +9951,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\tcc.h</file>
-         <hash>24bae1827188517d2a015fd4aee7a149799ff45afe06f3b1f0dbaf55ada74e15</hash>
+         <hash>1a67838d862982f07d3f57b1053319a230c7e0db3fd12760afdc98f11a389a99</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\libc_syscalls.c</file>
-         <hash>ff03e955db4f7bb775c7989bc2254553698f3d921e9885caac347ccd118e55d7</hash>
+         <hash>88bb2e34c939601b5b7ad076556e3ee0fcedf388436b8cddb6d6fd3e9d07472f</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\src\keys.c</file>
@@ -10004,7 +9995,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\interrupts.c</file>
-         <hash>cdf3f49daa67ee79cc48e449edb2d05a58d4c45e69f8dcde1f02dbb0b784360a</hash>
+         <hash>91682907b7a4757201df0c3071111373f1cec090b327f37a5e9ac909dd321721</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\asn.c</file>
@@ -10012,11 +10003,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dac.h</file>
-         <hash>8f3e1e98d298a332a917dc7c7dcfc60ad59164e0c6dc3e4dddc8d3e4711fd119</hash>
+         <hash>3362476e395241fb0105f18359c57ee3f5798752ac708fd42ec1fb308d3bdb40</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\interrupts.h</file>
-         <hash>4fcdd28b338e99a0fab4ae568d2a233e8072d86c9bf6ab94155f120d234882d8</hash>
+         <hash>5f01102567fa14da959ca55e3e6d1a222f3e6b5a46cb935129286a556872deac</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\blake2-int.h</file>
@@ -10028,19 +10019,23 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>71377a9a12cf76e7368be2b5b4bef19c3bd16523e135782e6e996451aacddf53</hash>
+         <hash>41942501c8d9502763cdc13b4300fe4728369c4c6ff0348c99cf7cd4a5db276b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\arp_manager.h</file>
          <hash>7a7ea62cca1656e0943a29c956174b234e9cbb91fd1ff60fd8715c3e103e2fa8</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\wdrv_winc_enterprise.c</file>
+         <hash>7c7c6bd221462c97c9d626778d6960609a7dce82985e3dbfafa7da280de091a5</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\i2s.h</file>
-         <hash>bf8091ffefce2cd728a6ba201a63a846819d631f73365c653b582f59f4361e18</hash>
+         <hash>0957768f19000713bf75692cc4d440fac6cc1d71f20c21273a2b73adb366d51f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\dev\wdrv_winc_gpio.h</file>
-         <hash>e4261d058fed31567925b0bdb49594e8c8b73eaf78aa583a7bf87e10e51b44da</hash>
+         <hash>e4e6c8983d2de502c7cade2f031faaf1552b4752a903fe937c7d7d3a6d4e88d3</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\types.h</file>
@@ -10048,7 +10043,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\udp_private.h</file>
-         <hash>2d8965cee12c8c61365f8e3133dc2ebba2184950f476d01553cf27dda13cdf48</hash>
+         <hash>5473b909c7f844b5362b8651704c651a5064e4df66f1cbf1ba67b8f727717f2e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\ipv4_manager.h</file>
@@ -10092,7 +10087,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\settings.h</file>
-         <hash>0131d22c9c73278c8123f7efcadf514e85ccb95cd61dbe7a40976de10800b2d0</hash>
+         <hash>86a92896cc09608435ffe0d78f4aa3421fb5f19a5675761070d1e9c85ad22de8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\src\internal.c</file>
@@ -10104,7 +10099,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\wdrv_winc_assoc.c</file>
-         <hash>f81455da0ecfcdd814936f25543d4229037285b65067d779e9a9099527901fb3</hash>
+         <hash>7b5b0ef753c73eed7bdd87deb81d0c14a17fa3a0377b4e6be0d65df0cf05a6b6</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\camellia.h</file>
@@ -10124,7 +10119,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\driver\nmbus.c</file>
-         <hash>d190375877e48a6c96cd78593ab7ca6a38b244969d2972a4cd6b76f9427173c9</hash>
+         <hash>4dbaefa8bf3c504e19d5ce109e80a8d20fab44435bfb47b6459d25d4453f893c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\crypto\src\crypto.c</file>
@@ -10136,7 +10131,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pac.h</file>
-         <hash>a417d1ca2087049de2388583f770684bdf1ac35fa127fe4979df319d900acfca</hash>
+         <hash>28020fb497d05bb49280f1c04f5f8b6c86e534bd53a0492bbfd57d82c9714793</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\fe_low_mem.c</file>
@@ -10144,7 +10139,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>6013e612c402dd6bd965c5250a317275d1004a9d370a0d0c62cf84663a6a4089</hash>
+         <hash>1c793506fb215f62b363eccb885ca40b271710b3c381c47e1a7d1530cf10a527</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\blake2b.c</file>
@@ -10152,7 +10147,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dns.c</file>
-         <hash>8321c27e58d85cbc9d806acfdfb4c6e081644b6d6eee616e56a37e906ed37782</hash>
+         <hash>49e3596965c281bbbd7a9818b6e3e3b2b812c6627ae77529490ef18f6776ef1a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dns_manager.h</file>
@@ -10160,7 +10155,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pdec.h</file>
-         <hash>cd39a136a27dbe2cac33e570270a27b7b2362a8a8cf4f449ac4f171275966593</hash>
+         <hash>a4858778c5bac2a29dbbe3347c94e4cc8171f602436361b82e5789f41ee62c0e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dhcps_private.h</file>
@@ -10188,7 +10183,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\gclk.h</file>
-         <hash>2296e16df3631fb3f4b8bbed7c96ce8902c27004d31ea48d2b7718b659726180</hash>
+         <hash>9cfbdbf41c3db7df4e704494b98ea35c5fd8d1f824053729c97d30876471e55f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\cache\sys_cache.c</file>
@@ -10208,7 +10203,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\rstc.h</file>
-         <hash>6cee87d4869618630beea72ab9d23c946f084600b7f62ecf4ecb6c80f9a38f2b</hash>
+         <hash>c3820c23846c758a727a9c31cf08f875cf15698f27b434ccf2bfe81c4daffe1f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tftps_manager.h</file>
@@ -10220,11 +10215,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_assoc.h</file>
-         <hash>12faf5fa2f8d72699b42a102f36d77859fbbae0523cfe5032bab6907c49ded33</hash>
+         <hash>0dfa352e4fdce8325360352f70320f5e68cfd4318cec4009cdbda31dee2bbb80</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\gmac.h</file>
-         <hash>38ac6d5e361dcd3ad092ac98ca8fecf655f49de1b30b22ffabe4bdcf2a075637</hash>
+         <hash>c4e83282e98bd9fa139fc5112ec6b14829fb3903c897ed70e65e71306cd598e1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_mac_bridge_manager.h</file>
@@ -10236,7 +10231,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\supc.h</file>
-         <hash>2fd716d664158b80dc799ef6255fa642eae6eb40e6cfc46344421540d40e24b6</hash>
+         <hash>83e4cd9043a8bb90c15f6a20aeacee430a033fe128242bf2fe724d44cf90cd8e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\console\src\sys_console_uart_definitions.h</file>
@@ -10280,7 +10275,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\freqm.h</file>
-         <hash>207374b1420a702324c61f8218db4e5917e587fdcc44a6d9a53c645f34890536</hash>
+         <hash>0533078470a6d558a021051a793e7a6c5dd307bb45a5d56ecac03d73359981a1</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_rsa_pukcl.h</file>
@@ -10288,7 +10283,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\m2m_types.h</file>
-         <hash>43f300a6c5cd0e2a816dde1207dcb806b6820b580f6243565ac0c66747f1f7bb</hash>
+         <hash>fe2ded5bd25e45bad90177885e836f6b6e11402df50851d665de19a83b76133a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\tcpip_announce.h</file>
@@ -10300,7 +10295,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\socket\m2m_socket_host_if.h</file>
-         <hash>b78267f9dcb8c45a021db0f5591844f5aab842a9a9cb21282a44de4deb3c0629</hash>
+         <hash>98586afc8217baefe24e3758eb1aea76509f149801b1ab706f6ae51506ca88e8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\link_list.h</file>
@@ -10312,15 +10307,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc.h</file>
-         <hash>e56871a6643412f4b4b12e446a4e70d93e6167054908606baa6d99000e24a7c8</hash>
+         <hash>f580ef83f5d4bacab065222f46a4c7ccd1799c61b685dd06ba4c703cbd319782</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\port\plib_port.c</file>
-         <hash>72d896eba15139f8a08a62054277b05f19bb5a8b425dd3fb06e82fb1cc87decf</hash>
+         <hash>8b8d2aeccac653ca3485819a3cb2dd027adef2fd791ea55b934a35e2924eb7e3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\dmac\plib_dmac.h</file>
-         <hash>3411906d50cd798a17c4e1019efade705a37732cb76b54ae7db16d54858819b8</hash>
+         <hash>80ba15bc2650a8bb5735cba44782fb8c6e6f9ee2695aa505c2a5d94454a36017</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ge_448.c</file>
@@ -10328,7 +10323,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\port\plib_port.h</file>
-         <hash>3d0220cd37a1088e5a20b70e52000ce3bfafb1ac101a184089c451b3a243bc81</hash>
+         <hash>fc0c1dc82c3fad9f582920a6bac7528d685bb5ae88dc2fc9957b91e83beaed00</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\arc4.c</file>
@@ -10348,7 +10343,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\sercom\usart\plib_sercom2_usart.h</file>
-         <hash>c08f0b28679cddc5f2fa640e9089bd7f0fbb01787d225b8491d81dff77badbfc</hash>
+         <hash>4fcbe714fd27dc7949f7d2fd7b1d4cdb64d1d87d7f65e311766d110a6891d329</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\rc2.c</file>
@@ -10356,19 +10351,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\dmac\plib_dmac.c</file>
-         <hash>be09bd8d66626a7b1309eed98047ae2e4bc6513bb5d58b13fe71723ce77e8438</hash>
+         <hash>877cd887520ac3cf97dc43430c9475ceca4e2e350ba0480bc0012b8b8c1e6d20</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\nmspi.h</file>
-         <hash>4054f51182abaeab6625fe513825e97e17f799e95faf891a527e3aeb49c821c4</hash>
+         <hash>c6312ff437d521583d3a72240b11793f8aa9683bc7e7bc010da45eb2d2d6b136</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dhcp.c</file>
-         <hash>2f523116d6e2f9e86c3481394df36907c4720b4f662621810ef775b9e2156a60</hash>
+         <hash>45dbcf12064725af8225654619727d41b23e5fe632d2912bf31073f2c9cd890d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\eic.h</file>
-         <hash>12d558e9e19b34fcb458b11d50b2a9084143ed416d668b856c0c70a8e71a739d</hash>
+         <hash>e7f0427325d472a6dec3e6085a674e268e1ebc1b226ef83c4dd432f8c122a415</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\des3.c</file>
@@ -10376,7 +10371,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc4.h</file>
-         <hash>6b2b9e6ef85915a897aae98f2f9e08fa5addc08060278a443a84610b4c44a1a6</hash>
+         <hash>4b2f8226672f6d53b5d76bba759758640206835fd0a159e5350dd25f6f070d62</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\console\src\sys_console_uart.h</file>
@@ -10388,7 +10383,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\wdrv_winc.c</file>
-         <hash>5aa3c4a81c9988bac9c2a0c35fef439b26e924730e51143c373db52f0c3e605c</hash>
+         <hash>796e6722497630e5a4cbc9a2ae40ad36437c62d7ee5f6fcdff708c5ca7f3ee4c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_rng_u2242.c</file>
@@ -10396,7 +10391,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom5.h</file>
-         <hash>ce800478cccbf7d32dd235d1956ac1ce6eb32b7b2e3ef77801688c99f044711d</hash>
+         <hash>00da252e1cdbd227ca47252e0c82e0476082fd6decddf2b029da7f4a1f422419</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\berkeley_manager.h</file>
@@ -10408,11 +10403,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sdhc1.h</file>
-         <hash>c2590980951ba0eba417b4d272a70795309f1c94fc7542f9a2d23b89d65ad983</hash>
+         <hash>b2c4cf6e0edd8ee9a24c5c5ab2c799ed7d02c33e4d9b7d6cb90b3cd17f78d3ab</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\icmp.h</file>
-         <hash>9d8f67ac45146f25b1d7ddbfcb0f660a0d69fa3b569d198974808dd71e34dde6</hash>
+         <hash>c41fdfc0036ec543e8d804ea684d0426029947a5853d1530234c1cbeafbb3ac2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tftpc_private.h</file>
@@ -10428,7 +10423,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\driver\m2m_flash.c</file>
-         <hash>205f97876f58d27d2c65d013b03d587c295e8331904f40e36910df9c6385a4ab</hash>
+         <hash>90df791bf1ac95c791f2bf6b57e3dfeeabbbb6412753afa652fadffe359f82a8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tftps_private.h</file>
@@ -10436,11 +10431,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\sercom\usart\plib_sercom2_usart.c</file>
-         <hash>ede5c0bf57d9cf0bbaf75a8407db18cc8c521b2285d62e1c603b17feb26d645e</hash>
+         <hash>a34d7e2ec873ab4bc98bb1af2b9c6decdb227846d6812b3e21c4593008734b72</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>3ec013593edf39000df359408205a1f012fba3df3b88ce90f09c5115522d81cb</hash>
+         <hash>3feca67a173d19d45961676a16f6153a6d849ecac98e906b62a343258c8bf43b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\tc\plib_tc_common.h</file>
@@ -10448,7 +10443,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\socket\netinet_in.h</file>
-         <hash>fdda8208c27377394bc8371155f3d92b25482f988ec63b3c968bb4c4bf0c8224</hash>
+         <hash>d08301d00a9fd274f41592f0a4dd0c13e20d1be8dc08d1acc05f0585bd0d6395</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\smtp_manager.h</file>
@@ -10496,7 +10491,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\console\sys_console.h</file>
-         <hash>f4a1d6e28347f9d6dcc091dc65032ef01f9b0651bc710001ba4b2eb4af29f4bb</hash>
+         <hash>e8a97986345fb2c80389834b113384eba523837ee43f7798d9b56be630a6e7b3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\snmpv3.h</file>
@@ -10508,11 +10503,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\rtc.h</file>
-         <hash>cca9ecde250e7156cd0de6016e6e5a21522d75467b3df0760ecc06d4b166ed0c</hash>
+         <hash>cd984dc4e6d77d9d6d6c9dc9280a3920439f0c13cbb092950b2e07c697a57ec8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\wolfmqtt\mqtt_socket.h</file>
-         <hash>221392b075d63e9d0fad89c548bccb2ad49c8cb112b640279666231721476e3e</hash>
+         <hash>827c4458c562cc72dc0112edce7970bf8b3a5514c51f6f131e0cf421583719aa</hash>
       </entry>
       <entry>
          <file>..\src\app_mqtt_commands.c</file>
@@ -10528,11 +10523,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\port.h</file>
-         <hash>de1105304d3693578b62a9112a9bfdc085f80428f994a93bf7c01d8ef4a57d96</hash>
+         <hash>b10e90934dac26e4be23ceedd6aab8ee2eb889c6cdfce5ccf68fbbbf41608d09</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\ATSAME54P20A.ld</file>
-         <hash>50fef922a36e934b5480ec39fe162016797fa6dab586b4b4ed6cefb304dce5c9</hash>
+         <hash>5376ca76ffc77cfc847cf381be187aee4ec4bbc9bf8269ee8c54019750744638</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\ssl.h</file>
@@ -10544,7 +10539,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\nmdrv.h</file>
-         <hash>2f44bfd9f1541d0e1e3479ca7689a4888d2a9d8be043ad3842eeff315c5cae36</hash>
+         <hash>9eced0c31e73cda09b450121563c8a24f5703a82b33d1a86860ff16df1a684d4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\dma\sys_dma.c</file>
@@ -10552,7 +10547,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\wolfmqtt\version.h</file>
-         <hash>3f6569ae87191c070238594cf7b3a08cc3c8a7c3636d0d688fce40282a601971</hash>
+         <hash>57ec45bd6bb25b9d07debdf4b717514edbdff021ed98a3eecc2de93da0ec23a8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_debug.h</file>
@@ -10560,19 +10555,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dsu.h</file>
-         <hash>7e7c1fcc3d0e3f5de34071b85eb59f0227e6ff3d2aab27aa2a5bb27da12bfa70</hash>
+         <hash>fbebab10b4f28e6ee432568942b26cdd34abf7f419cdeeb73713c2c51fe1c4ea</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\udp.c</file>
-         <hash>1d4490188a6b554716a2f727c46a34a8977f26b9ce3bf0d41765a6c0de59d278</hash>
+         <hash>f2f3ce399aaee365a5907bd607caa3ee46f73ef55e6fad9f04ecc670e83268e6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\m2m_wifi.h</file>
-         <hash>ded5d8f9a827962eb836fd65db5b79a36d35841859702313aad8f0a0ea3bdaf9</hash>
+         <hash>bf40482f7965c1f25512c899c025ef409c736a79fc8bc173bd59da34569d55ad</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_winc3400\pin_configurations.csv</file>
+         <hash>30aa4b6768bfdb34f83dfa70fba201c242584d4dc09da2e4c53321f5bb15f288</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc5.h</file>
-         <hash>eff1e6f24c35076ccb6b2b9cd920f8e387e2eb0ba31546355091782013666e66</hash>
+         <hash>89aafad0edc1599ec9e28352f5660ea7e956d37ab3f1e6fee402406ad934732c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\dma\sys_dma.h</file>
@@ -10584,7 +10583,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom4.h</file>
-         <hash>8464dfe73e6f848633666b6b83101e139eb17a3f93311902818ce9d7a7c41d21</hash>
+         <hash>ca75e8b4411a88f70c75e19383a87bfff923253ba7d61cb2207a6e9d664f2634</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_commands_manager.h</file>
@@ -10600,7 +10599,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\oscctrl.h</file>
-         <hash>ef4820f7a664092a8bd0ac69fd61b6159d7e5001c038ed62875ddd3c310b145c</hash>
+         <hash>45106e859c0345f1b1ff2e2e0b685f065cfbae5cd52bb3555b1f8339f30965a7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\lldp_private.h</file>
@@ -10608,7 +10607,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sdhc0.h</file>
-         <hash>f0db037d01527f2bd947d7ed6df38995a48be9c6268c37168353d615faa484ad</hash>
+         <hash>306fbaf8bc442ae7e35de841d05b64c1fd8596028ecf0088b560946493ab73c2</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\chacha20_poly1305.h</file>
@@ -10620,11 +10619,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\ac.h</file>
-         <hash>07959fb89a30087a186cb5c87c729677b643c09eb3be55d431c8826fc72700a2</hash>
+         <hash>7e142048188375d903cdd54914149058479c6a6c688bbd9968fde9cbe441fc80</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\driver\m2m_wifi.c</file>
-         <hash>d28b36049bb62aa39ef2fdc6e367e6c8e3bed10263bd393e9015ca2b7b7e8bc8</hash>
+         <hash>5ccfe485b8f9ba2823086d06f68563d1a48fa5a2263b524f2b0bd9f055c323f7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dnss_private.h</file>
@@ -10632,7 +10631,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>93a9b2f3e8ea848dbaec312a08323e4a3106152a528fa2aa7a50c91a387246ca</hash>
+         <hash>e87e6ba9cb409542bed1b3de76bb5248bf145ce31201768d6c811a6d1f0cd4f0</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_ZpEcDsa_pb.h</file>
@@ -10656,11 +10655,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\evsys.h</file>
-         <hash>3d6481277a1bbb7b75fb49cb233388c6c7c6b9fb09de849cbd90cd98ced4f799</hash>
+         <hash>53d452b1a0ecf684cb32b78fbff42d4dc3fda75303d2f32a7a868371b89393b4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\dmac.h</file>
-         <hash>b6b23197419ba8f989cc010ee55a4c4b8d42c3e064fa7d8c98f1deab083e60b6</hash>
+         <hash>bb8092e89fc62bb3768112e46505e3aa17016ecc9a374d4ac5b9fa9766f2a5cd</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_Swap_pb.h</file>
@@ -10676,7 +10675,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\src\mqtt_packet.c</file>
-         <hash>1ddae67e389b0248fbb37e48b87d9fefa0c23f15a5139e43050cc7c19d4c0b6a</hash>
+         <hash>d0e3c8db8d19da4c23c709f9cb8a2f0b0d7c329fe39fc12857fcaf3fdff28b24</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_sha384_hw.h</file>
@@ -10696,7 +10695,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\command\src\sys_command.c</file>
-         <hash>d1e9a128db653a24ba44efacb812861f6b0db9e444952f421cdc202a4db9ff7e</hash>
+         <hash>f6ffa260b5a6f1e0134c8845c405d0e21dcdc5fd02e95dcc7a4a5fccf1cb23ae</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_aes_hw.h</file>
@@ -10712,11 +10711,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\spi\drv_spi.h</file>
-         <hash>dfd0f628815dc935e8594112dc1a2acb17e9e2c50bf847744e1d54398768b274</hash>
+         <hash>aed15b9971d20ddad5624af0d417eccb3d9acf31326b0d9ededffabb34c3ed15</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc2.h</file>
-         <hash>be74d0b80ce3b98acc80661f6bca0a9ad3bb11b333fb90be09263f7e3b60b2e9</hash>
+         <hash>005f104724a67df67777f098ab413eaa54a3c8c2b017a234972c79d124cdb651</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\sha3.h</file>
@@ -10740,11 +10739,11 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\wolfmqtt\vs_settings.h</file>
-         <hash>74822e56ec59cfa6f3b146956907c565bea68cca7ac6443128a96d6db36b8e19</hash>
+         <hash>5d7a84ef3fb7e6dfd535a62c30056c140544d6f1271d43b5920db7fa81a42da8</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\src\mqtt_client.c</file>
-         <hash>6a29c3b3308ba29ff6706c7e20e57b995bfb20bbbb5d42bfba7a38d3a902b311</hash>
+         <hash>6bad577540871ab7a73b3238b078bc2d0a58a153238c099123e065995bd640c6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\ddns.h</file>
@@ -10756,7 +10755,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom7.h</file>
-         <hash>258d690f9c39cb3ce866201571022ed27e6bcb9e8ccdb046f880349686df0fed</hash>
+         <hash>cde51d90ee89ca0c59572a5c24f1c157ace1c156a0f0a2db51cb94fe6a657843</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_ecc_ba414e.c</file>
@@ -10764,15 +10763,15 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\wolfmqtt\mqtt_client.h</file>
-         <hash>1732692eb683d10db50c233d47c16d327a4546bd61d480940042848042ebf102</hash>
+         <hash>f3e9ce752ac43b3f5d4986c68009956da754a63a09d5054e823b45a38df8ff86</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\pio\same54p20a.h</file>
-         <hash>6e9dd9a6a3222ff90b84a6ca73a5d23002c2b26a550dc95abcfeb5be2c96fe7e</hash>
+         <hash>621937ef00579bc65a507ae3f380751399ec465963415917a7ce4e0dbddc3eb4</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\ccl.h</file>
-         <hash>b944c3303a4dac6e5bfe46317a0d77ef5f4c9466621cef69f8d68f54ba6f0e03</hash>
+         <hash>913da7b52f88394117572bf85629149862e719a21dd20f219940637ea0c26441</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\system_module.h</file>
@@ -10792,11 +10791,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\driver\m2m_hif.c</file>
-         <hash>52757e232efa2a8d614a7a1e3288d332a1eef10ca45de6f04cf3627652c3bd57</hash>
+         <hash>0ad27a8c082b49ab4c7f669e7953e95ccc3195cd6868923fa11aa469782e1036</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\device_vectors.h</file>
-         <hash>c119e2624973964efb9b0e62bbc213fc7beb0fea306538d94ad80f057372c6f8</hash>
+         <hash>2ca6c5e4f11c88f714464908b2a390e9ca48457311f7e72f6f6679dea2b43b86</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_tdes_sam6150.h</file>
@@ -10804,7 +10803,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\adc.h</file>
-         <hash>7cca0111b5938de7baf9463ff6092e407e399e6e1271c194ac000de0d6f389a4</hash>
+         <hash>5a241246876ccce46808a9069ff2ac8091c2d02180f37606775028821e0b3573</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\ge_operations.h</file>
@@ -10816,7 +10815,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\driver\m2m_periph.c</file>
-         <hash>74982d5c658a06ea888c3ee5954e3baf45e2749c3004b5d7715fe27a5fdf2b12</hash>
+         <hash>bf5d33cf585ea3c21756e6ff21072dfdd76acecba5c0713545c9701fa158d3e3</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dhcp_manager.h</file>
@@ -10832,7 +10831,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\http_net.h</file>
-         <hash>27308a2d6103136d39c0101be76c3fa8eb40622ac3e307868e98ebf0285d98d3</hash>
+         <hash>5fdff94f9de406e711d4571e130bfa25338f6d7c5072ff168565a35bce7e7f7a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_authctx.h</file>
@@ -10848,11 +10847,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\aes.h</file>
-         <hash>e9e78d8ad36856a7d5df96451729740f51ecc92ebaa346fbb3f56580e8d6404a</hash>
+         <hash>cd772b0c69e234690731091c6165f65a183c033cda444982249e1e1214cb9fc7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\ramecc.h</file>
-         <hash>a5e8f1725f0a0e6d069679138e3a9dc9f8f1205a78cd2b5766c0a7763528a61b</hash>
+         <hash>16961b1a9384916412757215a9921539c7628612858ea805af4bbe9d309d61b5</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\test.h</file>
@@ -10864,15 +10863,15 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\wolfmqtt\mqtt_packet.h</file>
-         <hash>3e871b7ec642cb5c9c7af8c6f6668e3e2486c0c6e86a9c0c5e21ec82abb4b37b</hash>
+         <hash>949ddfd056bb6cc918a2f34a0289b4f2ef5a46643f1747af122b34e500763e22</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\qspi.h</file>
-         <hash>e327b5f371a5ecd1f186c1bdb2b97a39c94fde52c79605f4bc408617bf5fd75e</hash>
+         <hash>2ff27da95ed31d43cc72b85564b187c03b222477c1f0d853eac2255b0a122116</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\configuration.h</file>
-         <hash>5fa411f76b892c7a0e6bd80c003744997fda16819f5a7e346f688dc99ec0ae99</hash>
+         <hash>ff7ffa6a43b74c2f69f21b04836d0573ccfe0b8ae57791bf73125d609aeb0a3c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\toolchain_specifics.h</file>
@@ -10884,7 +10883,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\can0.h</file>
-         <hash>a7bed179ef6e03d2c4fff50b3f2e91e17b024f92aeb59644fd89971a77d2e0d8</hash>
+         <hash>5e54c238136765f6f7b588e00eee3d377b4df1dfee50641ca762df33b5e4191d</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\blake2-impl.h</file>
@@ -10908,7 +10907,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_manager.c</file>
-         <hash>2ac7f7419789dc9a3624ab7afd8a2d09c8ea5c59d6f2c3bc0304e4d50f6dcdbb</hash>
+         <hash>1159559e437c574a27256913c02c4a242369eedde85b8957a79a30647c9d5801</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\rabbit.c</file>
@@ -10916,7 +10915,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc3.h</file>
-         <hash>b4df28e8d47dc0f3ed75c197dec763f03432a8fc6be8d21d42a7a987036e64b3</hash>
+         <hash>8efdc1c1596804c975c2bb3498327623c25644a8225f17c979808ff953e2adc2</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\pic32mz-crypt.c</file>
@@ -10948,7 +10947,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\hmatrix.h</file>
-         <hash>d221b32c6ac1eeaf96d66f9519dd5f47eb1fe85a08c53fe13463c6ec689ae775</hash>
+         <hash>362eb1e9cabbc4e4cb1e0c2788c83f8a491a1814015ae8085396117b9448fcd6</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\certs_test.h</file>
@@ -10956,7 +10955,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom6.h</file>
-         <hash>048dc232b81667fa40f6ee614e418bb152c3187c898a0877fe181a3e7c3ec5e6</hash>
+         <hash>e87daf37c648191e0bfeeb38c46fe98f812184ceba157fe3203389decacb6234</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\lldp.h</file>
@@ -10968,7 +10967,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dmac.h</file>
-         <hash>cdf093c2d71c1c49c6ae46eef03c4da626ca7da6040465a37dcbdcfdfc8ead4b</hash>
+         <hash>75d483c942661a7c27425bbcf069bbe4d51fc5cd414d2e6773827f560d40a3f5</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_ZpEccAdd_pb.h</file>
@@ -10976,15 +10975,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\net_pres\pres\src\net_pres.c</file>
-         <hash>fb9752cc44b8339175def832ea2cdb8c4ccb2b17983d32fe7a7057b7d45609ce</hash>
+         <hash>9d12c8e4f2584ad099f86d7f62ebedb4c4ec60481e8b21b478c0717a5b5deb16</hash>
       </entry>
       <entry>
          <file>..\src\app_mqtt_task.h</file>
-         <hash>1b749e385b6fc9e305a15651ad52ba1f2c179c8788f3e774b42b53378f5a6f42</hash>
+         <hash>adce13ca7a14ba57273ae8a890bf6dc493c5e0a90958253c12340f229c2f4646</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\spi\src\drv_spi_local.h</file>
-         <hash>71a1fa9ba0e3739cb5404dd272adbc0b1f3166fd4c744206830cbfe6919433d8</hash>
+         <hash>f416bb5ff297e44b00f9e83f79070b03bac197d4b6710742ed82379d967a07fb</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\fe_448.c</file>
@@ -11020,7 +11019,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\oahash.c</file>
-         <hash>5651aa16152a6548ce9bb8e1a0dd914ade8cfa27b9acf72a7453744c6f783598</hash>
+         <hash>f8e65ee4421a5405e219e05f5a5ab875ab948b51e9aa035566b11e1060941af6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\cmcc\plib_cmcc.c</file>
@@ -11028,7 +11027,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\common\nm_common.c</file>
-         <hash>47d15f6322fc1e61d30c171696a1f7e7f56571f62eb3b0715d67c87e4465ddc1</hash>
+         <hash>27bd05fddbf359d0118bd41b5b1b883347142350fc7283836ff02db1700a1a87</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_mac.h</file>
@@ -11036,7 +11035,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\eic\plib_eic.c</file>
-         <hash>e2daec69293366765ee17aa7ff49aba95222eb75cf767f10968dbaec745a5c44</hash>
+         <hash>c02d546ddf3fdc1f4c4d9496d54fc1b106b4dec238fd52e832fdd0c7cdd58e41</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\nbns_manager.h</file>
@@ -11048,7 +11047,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pac.h</file>
-         <hash>76fca352c9c26cc746ae966726daf347c3e069dd4ff934c5d30cc87cb8928f4a</hash>
+         <hash>5d6641d83f661de2ef7b4170b8fbfb313c17dbb7ce10a995a24021ead24839bd</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\dnss.h</file>
@@ -11060,7 +11059,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pukcc.h</file>
-         <hash>aad19fde901f14472896ba53b1bed64a04ebe156eccbfdf0cca7f3780ca2c5ae</hash>
+         <hash>df2df1cb0faf292fb7aafcc25ac062bdef941eaddd10e9cf1a0e70250b262c46</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\tcpip.h</file>
@@ -11080,7 +11079,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\nvmctrl\plib_nvmctrl.h</file>
-         <hash>dcfa87f0ff4cc198c8ec4ca6dccda6daed86d3e47d6641049bbb7d92c039b65c</hash>
+         <hash>fd7749dc74a885efd7c593394454abc74afc7cf184123f0315425a3600c26ac5</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\fe_operations.h</file>
@@ -11088,11 +11087,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\cmcc\plib_cmcc.h</file>
-         <hash>543ede3f86dcfb1c4a339a2e0ddcc31cadbf22cc1565dd92618aaa7eb432b80a</hash>
+         <hash>89b940242bfa0ecdba3ac53666c5996e25fab712227d37d2d6881c8a86b5f497</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\oahash.h</file>
-         <hash>14cd46dce77ffceacb33fbef8ed5dc96b8e5bd24fae6d72d5b7dddf5c2b3fa8f</hash>
+         <hash>75929a00c86e29359dcb5452f9dc184fa1c714906b6244c79982f911063b8848</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\error-crypt.h</file>
@@ -11100,7 +11099,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\icmp.c</file>
-         <hash>cf009623bc221603c2058e167b7144c279e0d60b75350eae6b73f41c02a7027e</hash>
+         <hash>727d020f0077fe0b965a9627c7fb21afc146c807e60889a9bd7bdbfe8fc8525f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\tcpip_helpers.h</file>
@@ -11116,7 +11115,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\startup_xc32.c</file>
-         <hash>4925c57b172987921a52aa8b0c1ce442b8743e2376df3e7d356d45d2a11c18f9</hash>
+         <hash>5fa956deadc84b3c95c31673a48d5567320f5a2e5e789e6a98efea5673645c51</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_helpers_private.h</file>
@@ -11128,15 +11127,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\usb.h</file>
-         <hash>93915ec37587d35362eeeb0fc3fa2322fb456b3c0d1d11e611df182aaea4cb9e</hash>
+         <hash>3bc3730edcc123e89557c8e54bd3b2f84bc57567d6b7fc54e1df27cbc0738e99</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\ipv4_private.h</file>
-         <hash>a3d97439130503608cb09cb559fdd8cb3e1cdfb508103b5569c7deb5b54ef808</hash>
+         <hash>c3d6d368ccd35c2836cdcb9d85226c16fc4a07709e92a6f4400110552e2771de</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\osc32kctrl.h</file>
-         <hash>883fc09543652fd863e9111e16084e31cb7dbad35cbff5af72270e33fbe07130</hash>
+         <hash>624324adc97b0c810648375fe8621a64d255a6231fe42c24d2bb2b01653e4c70</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\icmpv6.h</file>
@@ -11152,15 +11151,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\eic\plib_eic.h</file>
-         <hash>e2f058c015e7314be30ff782929f365918f87defbfd797fd925f3275b92134bd</hash>
+         <hash>f4a613f36d3f29afc8b15d5b6a48fdce94815a703079aa7849fa1c3058aeea2f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\qspi.h</file>
-         <hash>fe75e66581ef99bdb520569387d5abf77fc8b3b2acc944bd034e6909a86fad8d</hash>
+         <hash>e7402c5ce991b3594b699915d53ea2b43fb862171c32ce71948cf80cc41239f6</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom1.h</file>
-         <hash>42aa5cf4cdd14f3d9d966328d944902d8346c00712e012c2ff809cd86d3698ac</hash>
+         <hash>aa2bdc8321bd2bbc2b22c2f128dfeb347df622da1f3c8a7e3999f289deb5811d</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_sha512_sam6156.c</file>
@@ -11192,7 +11191,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\berkeley_api.h</file>
-         <hash>7c7bd67361c5c73dfada1108aadd3828a606617ae246cbdfc707b6b5d1c7d680</hash>
+         <hash>872e102da2b316e0bd29c0340fd40034570d4208459773043b348070de1149c5</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system_config.h</file>
@@ -11228,11 +11227,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\dsu.h</file>
-         <hash>8f1e896afd49a662fc7d948aff2d59da68f8cdc5bc29610f1fca50d76ce7c83d</hash>
+         <hash>487382470657aa7cfadf6233d6a14d97decfa8cf91a4e343a39c685e4fa2def0</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\command\sys_command.h</file>
-         <hash>586744733bb14e5c1547f19240db471e2d7486527e1e98987fb0d1204a45ddf6</hash>
+         <hash>6f16c51fa7ad3d93e4c29d007f21fb73445e183ca0de3d316911cf546c4b901f</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\cmac.h</file>
@@ -11264,23 +11263,23 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>0098e8e01f3a17f3b7a4a5e236c4250ca1865aeb05a12faf9845e201cd112eff</hash>
+         <hash>47d11de9cd641091a877f388429489353c47b8fe1c8be23b45a90db5ba2fcbfa</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\ftp_private.h</file>
-         <hash>ce44f931cbdd4e2a95e2482c56f95c13560364ac2a380ab99fcd55e89b3b3398</hash>
+         <hash>41a8b196b82fe5d660f349010fbe6661e5d5d9297afdcee3bbe4dd231ffb0876</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\ac.h</file>
-         <hash>fc66e24696d5520af080c749efe402a3dd90732c1e818b71e78268fa98098ec9</hash>
+         <hash>ed90a2587bd19ba867bf619be0172cdd8a79b283954e1c16f9406d3da4a9ec88</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\sdhc.h</file>
-         <hash>94b7d37af0db6463cf64b82cd807baacc341d2a8ff8b725190da97bf7e2d2510</hash>
+         <hash>dc193677fada7c80e6668978c9d7b0e02858dd55a848ea627850e14726a66f9d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\bsp\nm_bsp.h</file>
-         <hash>97acfcc628c3218c99781e2c75248283d88a57f4179dff448a6bf4d38dcd3d3d</hash>
+         <hash>8ab48f1e914b25496ed5bbda2d6202fa41eb0a5dff4f98b4d899ae835939072a</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_GCD_pb.h</file>
@@ -11300,11 +11299,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\oscctrl.h</file>
-         <hash>bb99b225ef227789e33b3fafc06400f6c55af0a47ba888c6fbab88b7587efbc2</hash>
+         <hash>4a8cd26588085dd798c86a20597c7a063c1182a3c6021c45150263b623fb4681</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\spi_flash\spi_flash.h</file>
-         <hash>f2c202c5cb3d572107472c92d5ed0fd212e3fef7fbc88fb308e49ca806b54d96</hash>
+         <hash>e06abf7222ed403f46a6a29a3ae5b67656e531b3d0f6c157ea372b477dbf5ffd</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\md4.c</file>
@@ -11312,15 +11311,15 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom0.h</file>
-         <hash>d03fe7e654571f01422e17b1ef108c0209b25426766470eac09494225f96f676</hash>
+         <hash>ea7ac34c84bbe5a09fcb23a6592b006e78740b4608c9f8376630f83a864d410b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\nmasic.h</file>
-         <hash>0bcfe9a8850f8aef900b19144321597301fdd912d2b8993e2d90715ab9f1f230</hash>
+         <hash>79f113d88d81aa084c329cbd08e8f6c4ccdf7ff825e730eef16681fc9ac3d153</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\spi\src\drv_spi.c</file>
-         <hash>dfdf1bcb8e4575145e8651fc7b1e18aac28a00b5180f07d51f0c86f9f3fb21fc</hash>
+         <hash>96937f051d09857d615928e842980833a61e3c60f7d0bcc7f996cb41d450c560</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\reset\sys_reset.c</file>
@@ -11332,11 +11331,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\socket\socket.h</file>
-         <hash>270c4954cdcd19091503d8a333df7ca6d055caddfd9811bf3addec706e8d397a</hash>
+         <hash>b149e16ae739f10004995ce093f05b7970a1c164f3a1590c3ba05fe2db3395fd</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\ccl.h</file>
-         <hash>514b4c3c93ea30ec6c8d8df52f4eea59d29ee17c7ca6c089b659f654af434599</hash>
+         <hash>a9aa5e1eef743d9b44cedab5ef673265dd76edd1ea52991b67d71e4bd4eac7ce</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_pukcl_functions.h</file>
@@ -11388,7 +11387,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\src\mqtt_socket.c</file>
-         <hash>79f5b4114ac4ff0790640e5039f68e6ec5e0aa496f12b222c1f127d962b37691</hash>
+         <hash>9b35d7bfb5e9deecd9a79842407f412bb0a52d365b553ae23908624d870ffecc</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_ZpEccDbl_pb.h</file>
@@ -11396,19 +11395,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\time\src\sys_time.c</file>
-         <hash>ddec1a83e32b63552ae72f884dc849e376b60d411669554f7ec492fff180662f</hash>
+         <hash>b722ac0c5d955d289bd906609ab6f302342166c5ba66f87b30cac17ac6bfdcd9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc6.h</file>
-         <hash>83155d58fe552b3cad653df8ad382b968697c6347626b4ccfc767e5b5b35954f</hash>
+         <hash>454812f8e2a149ef8c5a1ea5533bece468e4b8db938ed9a42de06d8348df21cc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\aes.h</file>
-         <hash>dbe3eb8730dda5cb57366d47c82eaa840d4ef22a624fad59a0068c51bcd91f3d</hash>
+         <hash>bf7b8eca815a4408576711759191a5c5d3492849fc5a7d3bc0ff06b7c66d67a8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom3.h</file>
-         <hash>d2a2661fc52b8d8ff01a7aefbe29169d6be5ebe6e24223a42454832e6bd9a2ec</hash>
+         <hash>37c6aa3f45977919a3e32df82a77be4e6a9db0e3f88eda524401fcb8e2aa5cfa</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\osal\osal_impl_basic.h</file>
@@ -11424,11 +11423,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\net_pres\pres\net_pres_enc_glue.c</file>
-         <hash>3238c18c8e5237ad183f9287caea46082ef7505ce5bf5fb49a22c757ece0d302</hash>
+         <hash>acd3757bc162c53987df53f45713ac6fde331f0a5136998de8b32add2ab67110</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\m2m_hif.h</file>
-         <hash>b5a499d0466f2fbac557b50a3ccfa052040441489c018b65d2a1f2da4a04e9a3</hash>
+         <hash>d6d0a52d5163470bd40bc6620cb9f59a06738babfdd63fc98905c68b822c57fd</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dhcpv6_private.h</file>
@@ -11443,8 +11442,12 @@
          <hash>7643880d0e4b753a06654858d76e1870fe36ef78816dc8bccf61521d0a2635ab</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dhcp_server_private.h</file>
+         <hash>7e85322b5eadd0a1eaca264334cbe2ce041df42bbde4fa210cd4f6c4fd4585f6</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\driver\nmasic.c</file>
-         <hash>3542774a8800293853714f4d19d449175d8922ca802f07a6d43b3dbb94b65146</hash>
+         <hash>bf2a2bdac11e046c72ba159e79635e7f14754a453151fd5a03cd8ca87e4eb70a</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\ed448.c</file>
@@ -11452,7 +11455,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pcc.h</file>
-         <hash>6adf66f31e5285e3539adddbf3e6c720b1e8025bbc2372ec0bc32597947f5ff3</hash>
+         <hash>8080608194a68281c5401da728d47c346cb41c5e210182c1d47a2e89b0add62f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\snmp_manager.h</file>
@@ -11464,7 +11467,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\wdrv_winc_systime.c</file>
-         <hash>ffc0fe834b84bab95f75cdd853def78f17d021c15b200ab57167f9e28447afde</hash>
+         <hash>740bfa85d241095598526c40510657ad8191665ca2c14ac7820ef1d879a4f575</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\telnet.h</file>
@@ -11480,7 +11483,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\port.h</file>
-         <hash>117fec2328ab3b6eca845f8aba39aa31c72002366599e4f5a075c5cc43728087</hash>
+         <hash>f7d57f3fec22d69b2bfd372d6921a340f6684974503c1fae9d485960443fa527</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\asn_public.h</file>
@@ -11524,7 +11527,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\trng.h</file>
-         <hash>99d8a0263ac9bd0236f812dfcfc18ad472b0df57345b87f118eec985f7ae743e</hash>
+         <hash>b9f5b514a803299ecde17fd1846aef899a8e2bb43d1c43df2f346da17eccad60</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\tftpc.h</file>
@@ -11532,7 +11535,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_helpers.c</file>
-         <hash>41b5e3b503aafc4cb0aa78acd06cb780c8ce61f339e510f6d7a7de80616fce0e</hash>
+         <hash>4db07f17febbc0b56170c064e15966a696792f6ccb08aad4fb42f2fbc7640154</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\poly1305.h</file>
@@ -11548,11 +11551,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_heap_internal.c</file>
-         <hash>dae8d714995899c343e3ccf3d1048d13ea9210b6806e5e4ab2bb8ec26d12e137</hash>
+         <hash>d2889ab1b488c6fd010c9bceff88ac49dee94b7671c269d784b8f70b966864b2</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\debug\sys_debug.h</file>
-         <hash>c17a266d85e3ed1dd692a96184193c0ebfea1099f6698ca073f82418d92d8b53</hash>
+         <hash>222cdc284bd651e83188b9641cc57c133cf86563dbeb5d5523766d4a36087165</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\net_pres\pres\net_pres_cert_store.c</file>
@@ -11580,11 +11583,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_client_api.h</file>
-         <hash>0aed6ac4e80b9b0d060dc1b3a5280fc59d2c9642b7d2d5b5859931473d535a9c</hash>
+         <hash>a24e8af21a445d837cc0e05852017d8ca16e5f4c442e54b0cabdc89a5586cac9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\eic.h</file>
-         <hash>9c767ae807adc441263e6915e070cb2a7ab1dea06c3a044ebbfe3c55918538cf</hash>
+         <hash>b0e3f093b3b682edd3e89d425dae3830e46689c35eb8c0f995992c0f4c4d1758</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\lldp_tlv.h</file>
@@ -11596,7 +11599,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\spi_flash\spi_flash.c</file>
-         <hash>da691737475b98b20effe19032aeb9f9cf42d2f89b8c20652f4a2e74d8a16d45</hash>
+         <hash>bd9fd766c5d04f5df3ec71b41e0277b83deaa35bf760ff9ba42475aa10218d5c</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_Fmult_pb.h</file>
@@ -11604,7 +11607,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc7.h</file>
-         <hash>6538e1803b468eb7acf930635c46cdebe2c09332935a303db6d76c8a45210541</hash>
+         <hash>e9309c807bb8e0187278345ea5e0e4219a04608ed6cf4b1826eb69e8fc3baa0c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\osal\osal.h</file>
@@ -11620,11 +11623,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\wdt.h</file>
-         <hash>90a3a4dac9e13fd4097b343706db578fbdbfa834a022ddeb61ea4f632296e744</hash>
+         <hash>baee082baff1f74e66735b0245582338d5aaabf72a21a2c870a72f45397014f3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom2.h</file>
-         <hash>8151496324941b4cc732e0f47d468dd043ee49d7e3a1db7f8312f83f27939d6d</hash>
+         <hash>c3b5c376a04f2b0779f2dbb0208dfa1451805c65c292e59cbb1b92ac2b3dd592</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dns_private.h</file>
@@ -11636,11 +11639,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\nvmctrl.h</file>
-         <hash>4f444a273ac24752c15fb6d3ba2110d8c9984821116120531299ba1fa85246b3</hash>
+         <hash>ffe3448c20db8bb1a15e03c025e8ab10356c6ab7c2c9760cf17e7d566697a1cd</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\wolfmqtt\mqtt_types.h</file>
-         <hash>42f0ee7812c055787b1dffff44347e6303ef715b985d67c6fc07b4f1e4346e4b</hash>
+         <hash>f7920d63ba3355c49b2ff46c0b7404359e1b472e2cab989a2c0bba2891f5c94d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_powersave.h</file>
@@ -11648,7 +11651,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\can.h</file>
-         <hash>f63bce9c7b1475e65dc3bfbe994a15ec140a55ad6fbc52fb332efb593209df3e</hash>
+         <hash>f24296dc3f77e540e7822722e5150ced89f8778257cc49bf0c64ca6f6bb71dc2</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\rsa.h</file>
@@ -11696,15 +11699,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\mclk.h</file>
-         <hash>6eacfac3e8c11d64b3423d372be0a4102969853c1ab2b44540eec0e800782f49</hash>
+         <hash>fc16c918b9563ed2fd62b5df9f7d13124380141cf232d055e61d77f1a0dc517f</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_ecc_pukcl.h</file>
          <hash>5d3cbbe7759c25af71dbfb103a4ebdbaba24b59589d9e1229327609122f52626</hash>
       </entry>
       <entry>
+         <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_enterprise.h</file>
+         <hash>d570e30c1451491017f757b2fd31751f1c16f49a16fe2f8fc33aeb2ebe849521</hash>
+      </entry>
+      <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\clock\plib_clock.c</file>
-         <hash>94c8ef0f1b0cde6c40f72f6eb8449c3696adf6d20d74299ba0467e298ca4c120</hash>
+         <hash>28dde2fa619b477c79c61e1579f5b639b80247972d5d8cc1f5139197f3d3d145</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_wolfcryptcb.c</file>
@@ -11728,11 +11735,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\wdt.h</file>
-         <hash>249a056c2d011ea83cb9338c126bfd18df8f57b09acec1e8b2f62b72b7aad92c</hash>
+         <hash>fef17ee4febd3b280a68fe0a0517370fbc82e6b9b0d2342507f109098beef24e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\arp.c</file>
-         <hash>5338def807918e048842e9e78eb62fc7868f7a3662059931e5b6517d578b3707</hash>
+         <hash>e78a4e6b26d1f2cf65a8a0cae85ea725ee9f57d83b4f23c9ddc4dfbb2601715d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dnss.c</file>
@@ -11740,11 +11747,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\icm.h</file>
-         <hash>d305345e3840c68d0e17e6af2103a7bd20a6ac9bc68d8e11f1629fba3548bb5b</hash>
+         <hash>eb1224fe0df6acd2ffca2c29d88e7b635ac0e01c5e68035921c94c3112739b6d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\usb.h</file>
-         <hash>dc3b95f7e2a072536e77c433bb0660a04df7d258e06603b377894f7e88d4b174</hash>
+         <hash>b4f09538ae20e0e58e8c2a1ce2462322c648e5211b0dc8afeb85849536a1d5ca</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\rabbit.h</file>
@@ -11760,19 +11767,19 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dhcp_private.h</file>
-         <hash>b91eda5e97999b9b0c12d509616899fbbd4816dd06311b96cf7fbb90ea6db8ca</hash>
+         <hash>91ffa8cd07a9564bc1d05744dd8779dede435bd4036d3ab4a905cd5ca17c7cf8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\gclk.h</file>
-         <hash>7ada448634d8700b4b5eef65bc319bff354229531c00e8aa10c7b534f10ba31e</hash>
+         <hash>4ee5b14477d2d3b386c883c28440fb6383f68c6da3dd32d3e852f78f500c9fba</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\trng.h</file>
-         <hash>0c8092501d5c3954460ebd9056e12cbfb8c64528bf6b81fd7c7cacd3a96f3832</hash>
+         <hash>0677211e0f140cce9806eb3611122a91a3c8c9e9954ac7f2e40b6d75478f72c4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\driver\nmspi.c</file>
-         <hash>fddf5624253e1ef3583f93f38a9f79da461dc903273a5f7a5d773fc56b974d2b</hash>
+         <hash>c34909a2f0134a475f26a6d103937b206f59745d2e31357fc7aac03e306c5ad0</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\port\pic32\crypt_sha256_sam11105.c</file>
@@ -11780,15 +11787,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\cmcc.h</file>
-         <hash>bf891431e0c56c3cc829ea39e92b873d0a952772e62a6b5c2bb40375f7db9a7f</hash>
+         <hash>2195f531dd5af8ea3bb5b496205abae4b862644e6616cc5f4bd3f32c3942bb05</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\ipv4.c</file>
-         <hash>445eb07eab9aed995ea8a022d22d1b31b8b9a1492da22d54abb6fc36aa36c660</hash>
+         <hash>584d4645ee0e3ee479e23ec48ae3399af38edb9f6f57b42ca3e8cea33ef3c619</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\fuses.h</file>
-         <hash>228f1e941c4a02a5bee4155b9d57feaa18d951df091aba919a01b467974f26fc</hash>
+         <hash>c2067e1d6147f250854ab29d5de09ec7b74b3f6cc3c5aac0ccedaa5c946763b8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\dhcp_server.h</file>
+         <hash>51e645d3ded493317ac36d913b5534bd60a59d705d4310eced80c7be89c1eeff</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\wc_pkcs11.c</file>
@@ -11812,7 +11823,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\ramecc.h</file>
-         <hash>4830f72672df19f323f8cafd5904eaa04eb96493ce6238aee433c1eac0bf7615</hash>
+         <hash>76772b012a260102a2ad28d3c93028e8dcd71d9efe22fbc52d1923a1b92e0884</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\src\tls.c</file>
@@ -11832,11 +11843,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\m2m_periph.h</file>
-         <hash>07b300dded3966f544e6959b7514144d13143ebc5583d8c3882d2b0df7cb69fe</hash>
+         <hash>991727e0b14e025e357fa27ae2125e59e25e4f46944cdb490e57abd0044a942d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\osc32kctrl.h</file>
-         <hash>014749d94e3c42696529bb3eac53e66d1cb8377bec25d19e642e9f4a5c767ce4</hash>
+         <hash>8d0d13d6027df1f1e2299933b3b56fdddb98f2721ff282a0df4745bb4af402e5</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\sp_arm32.c</file>
@@ -11872,7 +11883,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\sercom\spi_master\plib_sercom4_spi_master.c</file>
-         <hash>8801a8657ceaf93acefcf78a643a1a64594fe8b96d3605d1af6bdae10b88ef34</hash>
+         <hash>4e6969b168a7a74a8e9221c5e694891660459a3bef1342ec38ecd57103615917</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\nvic\plib_nvic.h</file>
@@ -11888,7 +11899,7 @@
       </entry>
       <entry>
          <file>..\src\third_party\wolfMQTT\wolfmqtt\visibility.h</file>
-         <hash>9163d8db65eabd291031c4a5da04cb7df0e8d51a2a188521a1c6843d4ee32e87</hash>
+         <hash>3e9e915d1938912a58d5f85fb2d44962e35caf30e6ca0b7005be486290e7c2c8</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\system.h</file>
@@ -11904,7 +11915,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc0.h</file>
-         <hash>d42f9a50c6d89fcc1d966962245819fe93d77dda89e847691d1b93f2a3b1d30a</hash>
+         <hash>e715c19eeed340888ffae621420306c68c0b5d3f7a2e4201c2a157cfde210c2a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dnss_manager.h</file>
@@ -11944,11 +11955,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\stdio\xc32_monitor.c</file>
-         <hash>26e5749db654ed433fd94f6c732ef8600d0cbf5196493374cf111877c02b694e</hash>
+         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\same54p20a.h</file>
-         <hash>d1141475d45696b24b8a1c82c79108aeab1d01a8a206c73cf084e602686fbfec</hash>
+         <hash>545f399235831d509f116ce7f09777842a926ef0bc4b8c59dd95306ae01c7c25</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\CryptoLib_Headers_pb.h</file>
@@ -11956,11 +11967,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_api.h</file>
-         <hash>3f00a1654d74c9c6a9848334d57556ffab7528db36e85497d2ce514ef63d68aa</hash>
+         <hash>cab8dd9724c46a8023aab31d4af7121164b52c624529822041d4bd4f25b64738</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\common\nm_common.h</file>
-         <hash>1485df0ef9781d2ebbdf0532a7783184e87cf2316612d8020d49dab9e1d6377f</hash>
+         <hash>c12406f4680510fff82a70bd9056cdc8e0c6fcf737daf121e7952f0540b2e4e1</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_sha224_hw.h</file>
@@ -11968,7 +11979,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\dhcps.c</file>
-         <hash>506b6d1d0df12d43009ba0d67aac8ce02ee033748b6f27c982953176d2556207</hash>
+         <hash>93575970dfc5177dd231cd08ebc986f27bcf42214610cadb59096c3ff958b7be</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -11976,11 +11987,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\freqm.h</file>
-         <hash>5d2619208c78de7372a64a53b6b70538da1cadb74d352a91bf0914ca99363949</hash>
+         <hash>70ca09126aef424be83d6521acbd4ae1a38017f1a70b6238f1113bdd84dfca66</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\tcpip_manager_control.h</file>
-         <hash>67049612c82158d3ee62db2267ea8c829a4d50f2dc4001a04dfc21e0dd9f5452</hash>
+         <hash>87b88b3cda8ff015aaf63432223c11c7d62cd45d39fcaf50cdb94ca2cc0feb90</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\udp_manager.h</file>
@@ -12008,11 +12019,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\nvic\plib_nvic.c</file>
-         <hash>572a395d37fa26e184b09009fa2754ab8236f6a8587b90eb3d0d049319aed5b4</hash>
+         <hash>f3290d3af1b02a500e87be6256449fbe5efbf4c2f282d5f64a47ae1e2298eb3d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\sercom\spi_master\plib_sercom4_spi_master.h</file>
-         <hash>d8d802ccd0a09e692363e9b90f3206e91c4463e78750463e9ec91bda43e91cc4</hash>
+         <hash>8615baebaf7234665699c1684aec924b2a5a4be311d3f3980c546a77b8f04ae5</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -12024,7 +12035,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\sys_random_h2_adapter.c</file>
-         <hash>ec02569fe86d160b78280f0113cbb50eb58d818a33a94fffa53960c8d152ac05</hash>
+         <hash>6e84293cf74f2640b5b5af0ee0b6eaedf2a246fd7e233cf71385f468a45c901e</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\dh.h</file>
@@ -12036,23 +12047,23 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\adc1.h</file>
-         <hash>3f5fce5056d96771fe2ffd3ae270c86e2bb947e3e3798fd989d5690da331445e</hash>
+         <hash>ea4d8d72628305086bef3d9e37ed0891f9dc551434a2b7f962aa79456ed97c07</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\sys_random_h2_adapter.h</file>
-         <hash>f04b3baf0f66dde3c4b217b331a2ad50de6122be786b44cb49a92b4b840c4594</hash>
+         <hash>f12e175e7261158adacd99331c8e3252491e309658e90aec6adb0ffeff5f5587</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\common\nm_debug.h</file>
-         <hash>ef782f9a428e80cf7d301b2e2f0b55fba8cc305cd4d0a01b41b846d476d07ff7</hash>
+         <hash>9ef40ae17adcd32b8331f98a46bfbbb90f331304c696358278a175b2648d3bf5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\i2s.h</file>
-         <hash>bd936b22a1de76a2a27225ec0cb76875e760bd8979f423351dde3d891682464e</hash>
+         <hash>fb8e53631fceb08cf85d98c4944af862c0c575a596da8dabd822808e85f8a31a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc1.h</file>
-         <hash>cb27732f6aa1c0eb35841d37b086935cdc5dda7fec28e24443558e08d6de4d0c</hash>
+         <hash>c25acf8c27fb5165542be44216b91804c586b481a652ef3c6897110f01ca1a2d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\ndp_private.h</file>
@@ -12060,7 +12071,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pcc.h</file>
-         <hash>2d15658f1b778885eded294e0edbedbd905e1e843a288e60de8c76175775e362</hash>
+         <hash>1c2fd58711fc401db09965e8a48cb09884f90d0775493eec529d02731c641799</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\net_pres\pres\net_pres_encryptionproviderapi.h</file>
@@ -12068,7 +12079,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\dns.h</file>
-         <hash>0a5b8a799412808cc56a78eb8aa644af8f9dda61a5d403e198af9e9697f31999</hash>
+         <hash>180ee8622056b0db299e51437f55aaa760949a9c700feefc22b91aa69cd20c84</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\curve448.h</file>
@@ -12080,7 +12091,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\dac.h</file>
-         <hash>e92b8ddb69155309a2bd9ee94e20f0cfa62c60b8e04d7ef5633bb7baaebc075d</hash>
+         <hash>de20eef37aba02dcbb9030914fff4b6d97fa8e5ef28a5e805bab7c754ff82c60</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\ftpc_manager.h</file>
@@ -12136,11 +12147,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\nmbus.h</file>
-         <hash>dbe87bd74c7fe37a39c84f10eee69f6a0bd9f09cb403d7be41d863594de3be6b</hash>
+         <hash>e8dd06c0de215ffdb9903c3dede97e1fbd706a7ca14424983e3380f46a1ffa1c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\hmatrixb.h</file>
-         <hash>e6f70272a27aa81202b535fbaade45b4931492e748e8e6d86165fa7632566b39</hash>
+         <hash>516f5f33d5606616e64dba3940d754ff251c670e2c065d68f89284c4cb40b897</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\wdrv_winc_nvm.c</file>
@@ -12156,7 +12167,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pm.h</file>
-         <hash>d8f305eb1364d35d0f87c1d86b89a1561cd1766338dd288978ab5674950985dd</hash>
+         <hash>0770c6947000ab1ed87796051eda463dab42dd3d91490df1b91c1a54d57d0e90</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\library\tcpip\src\http_net_manager.h</file>
@@ -12176,7 +12187,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_common.h</file>
-         <hash>4365699cfdbd18a90af8934ae01a275f4c966f5d6cfc0db3f106e8cd2f36cab1</hash>
+         <hash>313498377406dad481bdb8ca07cea79f6d57fdf0367c3476f9a11f4ee7d3d292</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\port\pic32\crypt_sha_sam11105.h</file>
@@ -12192,19 +12203,19 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\adc0.h</file>
-         <hash>4b559bb26f6af6d56312b401583b8d6bbbd54787e2e2ff2f8bb0fedee169c26f</hash>
+         <hash>82539a752b7c918fcf2719074477c2388b84f35ca0abff7730c542e90133ff86</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\evsys\plib_evsys.c</file>
-         <hash>171913270aa095f1e8ff9192995129ff7bab22e5c793c4223f9046802e69d1e6</hash>
+         <hash>b2e1a8004049e687fc5544133f3346f743ced50cdaf860c8e3c7f58df3cc163f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc2.h</file>
-         <hash>65a61bfd363b21c064a4b9bb4adc2326e945a5e4dc39b1711ed29ba78b0ee65d</hash>
+         <hash>fc181665af5fdd3ea4a4d3647c7e355de483bf3c761c4f73a7a02a99fa58c9dd</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\drv\driver\nmdrv.c</file>
-         <hash>dcc69dffcabe2c771bf43dd4e0d7d32fd035e44747e5f99f45e2a3b0d4ea2c06</hash>
+         <hash>1b0b000f62f008077225812e5a467bc78978e5c8f12aed633d5266aa8fafe882</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\wdrv_winc_authctx.c</file>
@@ -12212,7 +12223,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\m2m_flash.h</file>
-         <hash>3722a65262a44f4eda91a2200b47d78a2bc048fa2b460bd472942524bfeb135c</hash>
+         <hash>2e2b964d10c43b80bb895520ffc2fe1f52e2bee585c50cc073952641cf2ab31f</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\fe_448.h</file>
@@ -12272,7 +12283,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\exceptions.c</file>
-         <hash>8373b825c302768f52e3568c20241f4eb49c1fbb3614139e8e65ba694066141e</hash>
+         <hash>b268111879b5fa0ab2eaf79fc5d4bd1aa046c54d97805246ce08964100a70bfb</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\curve25519.c</file>
@@ -12292,7 +12303,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\nvmctrl.h</file>
-         <hash>15ae533d872f1a9731ff60b5353d942c846ba7ee6ace54be1ab1784d1cdba93b</hash>
+         <hash>e1a95a83ba3b00e6057a6f85d6d30b23348dab47bda67b3f0ca6cd8d6ad43f55</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\wolfmath.h</file>
@@ -12304,7 +12315,7 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\evsys.h</file>
-         <hash>fa32ece008c81f305665e311fb1822114a8360a450de79ac6d1d6a8a8f954d82</hash>
+         <hash>66e57717318f12ccee0365559bbc9dd9048a44640468849567acd947c896a3dc</hash>
       </entry>
       <entry>
          <file>..\src\third_party\wolfssl\wolfssl\wolfcrypt\src\evp.c</file>

@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -52,6 +52,7 @@
 static volatile uint8_t gu8ChNum;
 static tpfAppWifiCb gpfAppWifiCb = NULL;
 
+static uint8_t    gu81xFlags            = 0;
 static uint32_t   gu321xTlsHsFlags      = WIFI_1X_TLS_HS_FLAGS_DEFAULT;
 static uint8_t    gau81xRootSha1[20]    = {0};
 
@@ -757,6 +758,8 @@ int8_t m2m_wifi_connect_psk(
 
 int8_t m2m_wifi_1x_set_option(tenu1xOption enuOptionName, const void *pOptionValue, size_t OptionLen)
 {
+	uint8_t temp_1xFlags;
+
     if((pOptionValue == NULL) && (OptionLen > 0))
         return M2M_ERR_INVALID_ARG;
     switch(enuOptionName)
@@ -827,6 +830,29 @@ int8_t m2m_wifi_1x_set_option(tenu1xOption enuOptionName, const void *pOptionVal
             return M2M_ERR_INVALID_ARG;
         }
         break;
+	case WIFI_1X_PHASE1_METHOD:
+		if(OptionLen != sizeof(tenu1xPhase1Method))
+			return M2M_ERR_INVALID_ARG;
+
+		temp_1xFlags = gu81xFlags & ~M2M_802_1X_FLAGS_PHASE1_MASK;
+        switch(*(tenu1xPhase1Method*)pOptionValue)
+        {
+        case WIFI_1X_PHASE1_METHOD_ANY:
+        	gu81xFlags = temp_1xFlags | M2M_802_1X_FLAGS_PHASE1_ANY;
+        	break;
+        case WIFI_1X_PHASE1_METHOD_EAP_TLS:
+        	gu81xFlags = temp_1xFlags | M2M_802_1X_FLAGS_PHASE1_EAP_TLS;
+            break;
+        case WIFI_1X_PHASE1_METHOD_PEAP:
+        	gu81xFlags = temp_1xFlags | M2M_802_1X_FLAGS_PHASE1_PEAP;
+            break;
+        case WIFI_1X_PHASE1_METHOD_TTLS:
+        	gu81xFlags = temp_1xFlags | M2M_802_1X_FLAGS_PHASE1_TTLS;
+            break;
+        default:
+            return M2M_ERR_INVALID_ARG;
+        }
+        break;
     default:
         return M2M_ERR_INVALID_ARG;
     }
@@ -873,6 +899,25 @@ int8_t m2m_wifi_1x_get_option(tenu1xOption enuOptionName, void *pOptionValue, si
         else
             *pOptionLen = 0;
         break;
+    case WIFI_1X_PHASE1_METHOD:
+    	if(*pOptionLen < sizeof(tenu1xPhase1Method))
+    		return M2M_ERR_INVALID_ARG;
+    	switch (gu81xFlags & M2M_802_1X_FLAGS_PHASE1_MASK)
+    	{
+    	case M2M_802_1X_FLAGS_PHASE1_ANY:
+    		*(tenu1xPhase1Method*)pOptionValue = WIFI_1X_PHASE1_METHOD_ANY;
+    		break;
+    	case M2M_802_1X_FLAGS_PHASE1_EAP_TLS:
+    		*(tenu1xPhase1Method*)pOptionValue = WIFI_1X_PHASE1_METHOD_EAP_TLS;
+    		break;
+    	case M2M_802_1X_FLAGS_PHASE1_PEAP:
+    		*(tenu1xPhase1Method*)pOptionValue = WIFI_1X_PHASE1_METHOD_PEAP;
+    		break;
+    	case M2M_802_1X_FLAGS_PHASE1_TTLS:
+    		*(tenu1xPhase1Method*)pOptionValue = WIFI_1X_PHASE1_METHOD_TTLS;
+    		break;
+    	}
+    	break;
     default:
         return M2M_ERR_INVALID_ARG;
     }
@@ -895,6 +940,7 @@ int8_t m2m_wifi_connect_1x_mschap2(
             && (pstrAuth1xMschap2->pu8Password != NULL)
             && ((uint32_t)(pstrAuth1xMschap2->u16DomainLen) + pstrAuth1xMschap2->u16UserNameLen <= M2M_AUTH_1X_USER_LEN_MAX)
             && (pstrAuth1xMschap2->u16PasswordLen <= M2M_AUTH_1X_PASSWORD_LEN_MAX)
+			&& ((gu81xFlags & M2M_802_1X_FLAGS_PHASE1_MASK) != M2M_802_1X_FLAGS_PHASE1_EAP_TLS) /* EAP-TLS + MSCHAP2 not allowed */
         )
         {
             tstrM2mWifiConnHdr  strConnHdr;
@@ -919,8 +965,8 @@ int8_t m2m_wifi_connect_1x_mschap2(
                     uint8_t   *pu8AuthPtr = pstr1xHdr->au81xAuthDetails;
                     memset((uint8_t*)pstr1xHdr, 0, u16AuthSize);
 
-                    pstr1xHdr->u8Flags = M2M_802_1X_MSCHAP2_FLAG;
-                    if (pstrAuth1xMschap2->bUnencryptedUserName == true)
+                    pstr1xHdr->u8Flags = M2M_802_1X_MSCHAP2_FLAG | gu81xFlags;
+                    if(pstrAuth1xMschap2->bUnencryptedUserName == true)
                         pstr1xHdr->u8Flags |= M2M_802_1X_UNENCRYPTED_USERNAME_FLAG;
                     if (pstrAuth1xMschap2->bPrependDomain == true)
                         pstr1xHdr->u8Flags |= M2M_802_1X_PREPEND_DOMAIN_FLAG;
@@ -976,6 +1022,7 @@ int8_t m2m_wifi_connect_1x_tls(
             && ((uint32_t)(pstrAuth1xTls->u16DomainLen) + pstrAuth1xTls->u16UserNameLen <= M2M_AUTH_1X_USER_LEN_MAX)
             && (pstrAuth1xTls->u16PrivateKeyLen <= M2M_AUTH_1X_PRIVATEKEY_LEN_MAX)
             && (pstrAuth1xTls->u16CertificateLen <= M2M_AUTH_1X_CERT_LEN_MAX)
+			&& ((gu81xFlags & M2M_802_1X_FLAGS_PHASE1_MASK) != M2M_802_1X_FLAGS_PHASE1_TTLS) /* TTLS + TLS not allowed */
         )
         {
             tstrM2mWifiConnHdr  strConnHdr;
@@ -1004,7 +1051,7 @@ int8_t m2m_wifi_connect_1x_tls(
                     uint8_t   *pu8AuthPtr = pstr1xHdr->au81xAuthDetails;
                     memset((uint8_t*)pstr1xHdr, 0, u16Payload1Size);
 
-                    pstr1xHdr->u8Flags = M2M_802_1X_TLS_FLAG;
+                    pstr1xHdr->u8Flags = M2M_802_1X_TLS_FLAG | gu81xFlags;
                     if (pstrAuth1xTls->bUnencryptedUserName == true)
                         pstr1xHdr->u8Flags |= M2M_802_1X_UNENCRYPTED_USERNAME_FLAG;
                     if (pstrAuth1xTls->bPrependDomain == true)

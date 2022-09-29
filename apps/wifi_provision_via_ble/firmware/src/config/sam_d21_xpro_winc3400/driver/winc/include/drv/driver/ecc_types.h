@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -87,7 +87,7 @@ DATA TYPES
 
     Defines a list of supported ECC named curves.
 */
-typedef enum EcNamedCurve{
+typedef enum {
     EC_SECP192R1        = 19,
     /*!<
         It is defined by NIST as P192 and by the SEC Group as secp192r1.

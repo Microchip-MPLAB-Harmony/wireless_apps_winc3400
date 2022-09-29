@@ -210,7 +210,7 @@ static void APP_WiFiAPConnectNotifyCallback(DRV_HANDLE handle, WDRV_WINC_ASSOC_H
     if (WDRV_WINC_CONN_STATE_CONNECTED == currentState)
     {
         SYS_CONSOLE_PRINT("Connected\r\r");
-        WDRV_WINC_AssocPeerAddressGet(assocHandle, &peerAddress,&APP_WiFiAPAssocCallback);        
+        WDRV_WINC_AssocPeerAddressGet(assocHandle,(WDRV_WINC_MAC_ADDR *const)&peerAddress,(WDRV_WINC_ASSOC_CALLBACK const)&APP_WiFiAPAssocCallback);        
     }
     else if (WDRV_WINC_CONN_STATE_DISCONNECTED == currentState)
     {

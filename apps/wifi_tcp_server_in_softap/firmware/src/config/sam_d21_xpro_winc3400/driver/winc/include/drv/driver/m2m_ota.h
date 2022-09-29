@@ -13,7 +13,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -39,10 +39,11 @@
 /**@defgroup OTAAPI OTA
    @brief
         The WINC supports OTA (Over-The-Air) updates. Using the APIs described in this module,
-        it is possible to request an ATWINC15x0 to update its firmware, or safely rollback to
-        the previous firmware version.\n There are also APIs to download files and store them in
-        the WINC's Flash (supported by ATWINC1510 only), which can be used for Host MCU OTA
-        updates or accessing information stored remotely.
+        it is possible to request an ATWINC15x0 to update its firmware image, or safely rollback to
+        the previous firmware image.\n Note that it is NOT possible to update other areas of the WINC
+        flash (e.g. the HTTP file area) using the OTA mechanism.\n\n There are also APIs to download 
+        files and store them in the WINC's Flash (supported by ATWINC1510 only), which can be used 
+        for Host MCU OTA updates or accessing information stored remotely.
     @{
         @defgroup   OTACALLBACKS    Callbacks
         @brief
@@ -76,6 +77,33 @@ INCLUDES
 #include "m2m_types.h"
 #include "nmdrv.h"
 
+/**@addtogroup  OTATYPEDEF
+ * @{
+ */
+/*!
+@enum   \
+    tenuOTASSLOption
+@brief
+    Enumeration for OTA SSL options
+    The following SSL options can be set for OTA
+*/
+typedef enum {
+    WIFI_OTA_SSL_OPT_BYPASS_SERVER_AUTH = 0x1,
+    /*!<Server authentication for OTA SSL connections. Values are of type int \n
+    1: Bypass server authentication.\n*/
+    WIFI_OTA_SSL_OPT_SNI_VALIDATION = 0x2,
+    /*!<Server Name Indication. The actual server name to send must be passed using option @ref WIFI_OTA_SSL_OPT_SNI_SERVERNAME \n
+    Values are of type int \n
+    0: Do not check the received servername against the server provided one\n
+    1: Check the received servername against the server provided one\n
+    */
+    WIFI_OTA_SSL_OPT_SNI_SERVERNAME = 0x4,
+    /*!<The server name string to send in the SNI extension. \n
+    Value is a null terminated string up to 64 characters in length including the null terminator.\n*/
+
+} tenuOTASSLOption;
+/**@}*/     //OTATYPEDEF
+
 /*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 MACROS
 *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
@@ -85,14 +113,14 @@ MACROS
 
 @brief
    A callback to get OTA status update, the callback provides the status type and its status.\n
-   The OTA callback provides the download status, the switch to the downloaded firmware status
-   and roll-back status.
+   The OTA callback provides the download status, the switch to the downloaded firmware status,
+   roll-back status and Host File Download status.
 
 @param[in] u8OtaUpdateStatusType
-    Possible values are listed in @ref tenuOtaUpdateStatusType.
+    Possible values are listed in @ref tenuOtaUpdateStatusType .
 
 @param[in] u8OtaUpdateStatus
-    Possible values are listed as enumerated by @ref tenuOtaUpdateStatus.
+    Possible values are listed as enumerated by @ref tenuOtaUpdateStatus .
 
 @note
     Executes other callbacks passed to the OTA module.
@@ -138,8 +166,8 @@ int8_t m2m_ota_init(tpfOtaUpdateCb pfOtaUpdateCb);
 @brief
     Request OTA start update using the download URL. The OTA module will download the OTA image, ensure integrity of the image
     and update the validity of the image in the control structure. On completion, a callback of type @ref tpfOtaUpdateCb is called
-    (callback previously provided via @ref m2m_ota_init). Switching to the updated image additionally requires completion of
-    @ref m2m_ota_switch_firmware, followed by a WINC reset.
+    (callback previously provided via @ref m2m_ota_init ). Switching to the updated image additionally requires completion of
+    @ref m2m_ota_switch_firmware and @ref system_reset .
 
 @param[in]  pcDownloadUrl
     The download firmware URL, according to the application server.
@@ -151,7 +179,7 @@ int8_t m2m_ota_init(tpfOtaUpdateCb pfOtaUpdateCb);
     the OTA succeeds, the current image will become the rollback image after @ref m2m_ota_switch_firmware.
 
 @pre
-    @ref m2m_ota_init is a prerequisite and must have been called before using @ref m2m_ota_start_update.\n
+    @ref m2m_ota_init is a prerequisite and must have been called before using @ref m2m_ota_start_update \n
     Switching to the newly downloaded image requires calling @ref m2m_ota_switch_firmware API.
 
 @sa
@@ -324,7 +352,7 @@ int8_t m2m_ota_rollback(void);
     int8_t m2m_ota_abort(void);
 
 @brief
-    Request the WINC to abort an OTA in progress.\n
+    Request the WINC to abort an OTA or Host File download in progress.\n
     If no download is in progress, the API will respond with failure.
 
 @sa
@@ -363,6 +391,71 @@ int8_t m2m_ota_abort(void);
  */
 int8_t m2m_ota_switch_firmware(void);
 
+
+/*!
+@ingroup OTAFUNCTIONS
+@fn \
+    int8_t m2m_ota_set_ssl_option(tenuOTASSLOption enuOptionName, const void *pOptionValue, size_t OptionLen)
+
+@brief
+    Set specific SSL options to be used when the WINC performs an OTA from an https server.
+
+@details
+	The following options can be set:\n
+
+	@ref WIFI_OTA_SSL_OPT_BYPASS_SERVER_AUTH \n
+	@ref WIFI_OTA_SSL_OPT_SNI_VALIDATION \n
+	@ref WIFI_OTA_SSL_OPT_SNI_SERVERNAME \n
+
+	The setting applies to all subsequent OTA attempts via @ref m2m_ota_start_update \n
+
+@param[in]  enuOptionName
+	The option to set.
+
+@param[in]  pOptionValue
+	Pointer to a buffer containing the value to set. The buffer must be at least as long as OptionLen.
+    If OptionLen is 0, then pOptionValue may be NULL.
+
+@param[in]  OptionLen
+	The length of the option value being set (including the null terminator for strings).
+
+@return
+	The function returns @ref M2M_SUCCESS if the parameters are valid and @ref M2M_ERR_INVALID_ARG otherwise.
+*/
+int8_t m2m_ota_set_ssl_option(tenuOTASSLOption enuOptionName, const void *pOptionValue, size_t OptionLen);
+
+
+/*!
+@ingroup OTAFUNCTIONS
+@fn \
+    int8_t m2m_ota_get_ssl_option(tenuOTASSLOption enuOptionName, void *pOptionValue, size_t *pOptionLen)
+
+@brief
+    Get (read) SSL options relating to OTA
+
+@details
+	The following options can be read:\n
+
+		@ref WIFI_OTA_SSL_OPT_BYPASS_SERVER_AUTH \n
+		@ref WIFI_OTA_SSL_OPT_SNI_VALIDATION \n
+		@ref WIFI_OTA_SSL_OPT_SNI_SERVERNAME \n
+
+@param[in]      enuOptionName
+	The option to get.
+
+@param[out]     pOptionValue
+    Pointer to a buffer to contain the value to get. The buffer must be at least as long as the value pointed to by pOptionLen.
+
+@param[inout]  pOptionLen
+	Pointer to a length.
+	When calling the function, this length must be the length of the buffer available for reading the option value,
+	and must be large enough to hold the returned option value otherwise an @ref M2M_ERR_INVALID_ARG error will be returned.
+	When the function returns, this length is the length of the data that has been populated by the function.
+
+@return
+	The function returns @ref M2M_SUCCESS if the parameters are valid and @ref M2M_ERR_INVALID_ARG otherwise.
+*/
+int8_t m2m_ota_get_ssl_option(tenuOTASSLOption enuOptionName, void *pOptionValue, size_t *pOptionLen);
 
 #ifdef __cplusplus
 }

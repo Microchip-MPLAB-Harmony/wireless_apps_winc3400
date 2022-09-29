@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -90,18 +90,19 @@ volatile tstrHifContext gstrHifCxt;
     Only need ones which are host->winc.
     Each entry is formed of ((GroupId << 8) | OpCode)
 */
-#define HIFCODE_SSL_WRITECERT       ((M2M_REQ_GROUP_SSL << 8) | M2M_SSL_REQ_WRITE_OWN_CERTS)
-#define HIFCODE_WIFI_PASSIVESCAN    ((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_PASSIVE_SCAN)
-#define HIFCODE_WIFI_CONN           ((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_CONN)
-#define HIFCODE_WIFI_CONN_PARAM     ((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_IND_CONN_PARAM)
-#define HIFCODE_WIFI_DELETE_CRED    ((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQRSP_DELETE_APID)
-#define HIFCODE_WIFI_START_PROV_MODE ((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_START_PROVISION_MODE)
-#define HIFCODE_WIFI_ENABLE_AP      ((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_ENABLE_AP)
-#define HIFCODE_IP_RAW_SOCK_OPT     ((M2M_REQ_GROUP_IP << 8)   | SOCKET_CMD_RAW_SET_SOCK_OPT)
-#define HIFCODE_WIFI_ROAMING        ((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_ROAMING)
-#define HIFCODE_IP_SECURE           ((M2M_REQ_GROUP_IP << 8)   | SOCKET_CMD_SECURE)
+#define HIFCODE_SSL_WRITECERT       		((M2M_REQ_GROUP_SSL << 8) | M2M_SSL_REQ_WRITE_OWN_CERTS)
+#define HIFCODE_WIFI_PASSIVESCAN    		((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_PASSIVE_SCAN)
+#define HIFCODE_WIFI_CONN           		((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_CONN)
+#define HIFCODE_WIFI_CONN_PARAM    		 	((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_IND_CONN_PARAM)
+#define HIFCODE_WIFI_DELETE_CRED    		((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQRSP_DELETE_APID)
+#define HIFCODE_WIFI_START_PROV_MODE 		((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_START_PROVISION_MODE)
+#define HIFCODE_WIFI_ENABLE_AP      		((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_ENABLE_AP)
+#define HIFCODE_IP_RAW_SOCK_OPT     		((M2M_REQ_GROUP_IP << 8)   | SOCKET_CMD_RAW_SET_SOCK_OPT)
+#define HIFCODE_WIFI_ROAMING        		((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_ROAMING)
+#define HIFCODE_IP_SECURE           		((M2M_REQ_GROUP_IP << 8)   | SOCKET_CMD_SECURE)
 #define HIFCODE_WIFI_SCAN_SSID_LIST         ((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_SCAN_SSID_LIST)
 #define HIFCODE_WIFI_SET_STOP_SCAN_OPTION   ((M2M_REQ_GROUP_WIFI << 8) | M2M_WIFI_REQ_SET_STOP_SCAN_OPTION)
+#define HIFCODE_OTA_SNI_OPTION				((M2M_REQ_GROUP_OTA  << 8) | M2M_OTA_REQ_START_UPDATE_V2)
 
 /*
     List of new HIF messages (since last HIF major increase).
@@ -121,7 +122,8 @@ volatile tstrHifContext gstrHifCxt;
     HIFCODE_WIFI_ROAMING, \
     HIFCODE_IP_SECURE, \
     HIFCODE_WIFI_SCAN_SSID_LIST, \
-    HIFCODE_WIFI_SET_STOP_SCAN_OPTION
+    HIFCODE_WIFI_SET_STOP_SCAN_OPTION, \
+	HIFCODE_OTA_SNI_OPTION
 /*
     Array of HIF messages which are not supported by Firmware.
     During hif_init() this array is rebased using an offset determined by Firmware HIF level.
@@ -351,6 +353,9 @@ int8_t hif_enable_access(void)
                 break;
             case 5:
                 gu8HifBlOffset = 13;
+                break;
+            case 6:
+                gu8HifBlOffset = 14;
                 break;
             // Additional case to be added each time hif minor increments.
             // All additional cases to be removed in the event of a hif major increment.

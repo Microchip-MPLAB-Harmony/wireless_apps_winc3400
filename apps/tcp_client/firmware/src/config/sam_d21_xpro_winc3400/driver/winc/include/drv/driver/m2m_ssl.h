@@ -11,7 +11,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2021 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -195,10 +195,8 @@ int8_t m2m_ssl_retrieve_hash(uint8_t *pu8Value, uint16_t u16ValueSz);
 @brief      Allow SSL driver to tidy up when the application chooses not to retrieve all available
             information.
 
-@return     None.
-
 @warning    The application must call this function if it has been notified (via
-            @ref ECC_REQ_SIGN_GEN or @ref ECC_REQ_SIGN_VERIFY) that information is available for
+            @ref ECC_REQ_SIGN_GEN or @ref ECC_REQ_SIGN_VERIFY ) that information is available for
             retrieving from the WINC, but chooses not to retrieve it all.
             The application must not call this function if it has retrieved all the available
             information, or if a retrieve function returned @ref M2M_ERR_FAIL indicating that any
@@ -214,7 +212,6 @@ void m2m_ssl_stop_retrieving(void);
 @ingroup    SSLFUNCTIONS
 @fn         NMI_API void m2m_ssl_stop_processing_certs(void);
 @brief      Allow SSL driver to tidy up in case application does not read all available certificates.
-@return     None.
 
 @warning    This API has been deprecated and is kept for legacy purposes only. It is recommended
             that @ref m2m_ssl_stop_retrieving is used instead.
@@ -226,11 +223,9 @@ void m2m_ssl_stop_processing_certs(void);
 @fn         void m2m_ssl_ecc_process_done(void);
 @brief      Allow SSL driver to tidy up after application has finished processing ECC message.
 
-@return     None.
-
 @warning    The application should call this function after receiving an SSL callback with message
-            type @ref M2M_SSL_REQ_ECC, after retrieving any related information, and before
-            calling @ref m2m_ssl_handshake_rsp.
+            type @ref M2M_SSL_REQ_ECC , after retrieving any related information, and before
+            calling @ref m2m_ssl_handshake_rsp .
 */
 void m2m_ssl_ecc_process_done(void);
 
@@ -243,7 +238,7 @@ void m2m_ssl_ecc_process_done(void);
             There is no need to call this function if the application will not change the default ciphersuites.
 @param[in]  u32SslCsBMP
                 Bitmap containing the desired ciphers to be enabled for the SSL module. The ciphersuites are defined in
-                @ref SSLCipherSuiteID.
+                @ref SSLCipherSuiteID .
                 The default ciphersuites are all ciphersuites supported by the firmware with the exception of ECC ciphersuites.
                 The caller can override the default with any desired combination.
                 If u32SslCsBMP does not contain any ciphersuites supported by firmware, then the current active list will not

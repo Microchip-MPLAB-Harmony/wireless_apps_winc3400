@@ -85,9 +85,6 @@ extern "C" {
 #define SYS_CMD_PRINT_BUFFER_SIZE          1024
 #define SYS_CMD_BUFFER_DMA_READY
 
-/* Command System Service RTOS Configurations*/
-#define SYS_CMD_RTOS_STACK_SIZE                256
-#define SYS_CMD_RTOS_TASK_PRIORITY             1
 
 
 #define SYS_DEBUG_ENABLE
@@ -106,7 +103,7 @@ extern "C" {
 #define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (188)
 
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			1
-#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			1
+#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			2
 #define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		0
 #define SYS_CONSOLE_PRINT_BUFFER_SIZE        		200
 
@@ -124,8 +121,7 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 /*** WiFi WINC Driver Configuration ***/
-#define WDRV_WINC_EIC_SOURCE                EIC_PIN_7
-#define WDRV_WINC_SPI_INDEX                 DRV_SPI_INDEX_0
+#define WDRV_WINC_EIC_SOURCE
 #define WDRV_WINC_NETWORK_MODE_SOCKET
 #define WDRV_WINC_DEVICE_WINC3400
 #define WDRV_WINC_DEVICE_SPLIT_INIT
@@ -144,9 +140,6 @@ extern "C" {
 #define WDRV_WINC_DEVICE_BLE_API_REV_2
 #define WDRV_WINC_ENABLE_BLE
 #define WDRV_WINC_DEVICE_USE_SYS_DEBUG
-/*** WiFi WINC Driver RTOS Configuration ***/
-#define DRV_WIFI_WINC_RTOS_STACK_SIZE           2023
-#define DRV_WIFI_WINC_RTOS_TASK_PRIORITY        1
 
 /* SPI Driver Instance 0 Configuration Options */
 #define DRV_SPI_INDEX_0                       0

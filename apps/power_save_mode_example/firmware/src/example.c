@@ -271,7 +271,7 @@ void APP_ExampleTasks(DRV_HANDLE handle)
 
                 SYS_CONSOLE_Print(appData.consoleHandle, "WDRV_WINC_AssociationRSSIGet() is called ...\r\n");
 
-                if (WDRV_WINC_STATUS_OK != WDRV_WINC_AssociationRSSIGet(handle, &rssi, &APP_ExamplpGetRssiCallback))
+                if (WDRV_WINC_STATUS_OK != WDRV_WINC_AssociationRSSIGet(handle, &rssi, (WDRV_WINC_ASSOC_RSSI_CALLBACK const) &APP_ExamplpGetRssiCallback))
                 {
                     break;
                 }
