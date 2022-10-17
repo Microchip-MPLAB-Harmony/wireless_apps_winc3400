@@ -271,4 +271,4 @@ children:
         children:
         - {type: Value, value: sys_console_UART_dependency}
 - type: ElementPosition
-  attributes: {x: '357', y: '388', id: sercom2}
+  attributes: {x: '550', y: '240', id: sercom2}

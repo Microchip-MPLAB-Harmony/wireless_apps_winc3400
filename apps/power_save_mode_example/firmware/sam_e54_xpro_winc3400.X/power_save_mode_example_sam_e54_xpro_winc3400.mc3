@@ -715,8 +715,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;490&quot; canvasWidth=&quot;800&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_Xplained_Pro&quot; x=&quot;310&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;190&quot; y=&quot;100&quot;/&gt;
@@ -737,6 +736,7 @@
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;tc3&quot; x=&quot;360&quot; y=&quot;146&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;490&quot; canvasWidth=&quot;800&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -2059,6 +2059,17 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;MCLK_APBD_INITIAL_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-10_0_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-10_0_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -4778,6 +4789,17 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;TC3_INTERRUPT_HANDLER_LOCK&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc3&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="UsageFault_INTERRUPT_ENABLE_UPDATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;UsageFault_INTERRUPT_ENABLE_UPDATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -8777,15 +8799,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\definitions.h</file>
-         <hash>9ee44f6ee6131144c8137b86177cb939790f9d20c269b5ae0d0bb743cca7a01c</hash>
+         <hash>6cee999bf134be9f99c390e7b233c8d702e81bda72d65276a57f37d7c26b2e8a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\interrupts.c</file>
-         <hash>4cf9c386cb50ec0b0924eb2b0e65d1b68d206bd16748dc887f03feb4533749f8</hash>
+         <hash>c608578775385ed8757871b881c3a14f7253207cbd0e0572f9a5f532a2b68531</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\interrupts.h</file>
-         <hash>6ef4912819f1fc169086916db1a3819f6e47e40f08cb2708cfae0625664ef4ad</hash>
+         <hash>dcbe0a9643d99e95decf8e82211b738815853ee21c5370386c3294c7c47062bd</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dac.h</file>
@@ -9329,7 +9351,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\nvic\plib_nvic.c</file>
-         <hash>5c33e1e2955228eac44aaa4e1e1c6af9e3af19f43cc65a4e0b2ca41db00674b8</hash>
+         <hash>9d3435b400d8098cebb5e83f0e14b69be26876df862813e5c4b11fe7d6abaf02</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\sercom\spi_master\plib_sercom4_spi_master.h</file>

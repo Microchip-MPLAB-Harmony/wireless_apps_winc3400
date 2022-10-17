@@ -6376,7 +6376,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\definitions.h</file>
-         <hash>2418ae6359480a8e6e0d4b123e4faa5d302e09cb4e7d340e53814becf2aac0ab</hash>
+         <hash>2293d683fcdd28e7fa5b8b5a8d8fb827e8f336da82708a86eb3f05e059f3e1db</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -6492,7 +6492,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\configuration.h</file>
-         <hash>535d152af923311593f962e1d26ddcc5877e9a7e2e95980857f64d9936e40d3f</hash>
+         <hash>6374fdb1d639b290676e38bdb5527ad5e824949cdfc507d654d04485568f3778</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\system\ports\sys_ports.h</file>
@@ -6520,7 +6520,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\initialization.c</file>
-         <hash>c110d97421985cad66fc29eab34d09a8b85e1ba756f5ecc53f576a44f4465a40</hash>
+         <hash>06a7b776b125d33a13a7ba2803e9ce6957933f73f03412f1312bd812e68f6419</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\wdrv_winc_debug.h</file>

@@ -12,7 +12,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: String
     attributes: {id: SYS_TIME_PLIB}
     children:
@@ -26,7 +26,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: sys_time, value: tc3}
+        attributes: {id: sys_time, value: ''}
 - type: Attachments
   children:
   - type: DirectDependency
@@ -43,4 +43,4 @@ children:
         children:
         - {type: Value, value: TC3_TMR}
 - type: ElementPosition
-  attributes: {x: '520', y: '101', id: sys_time}
+  attributes: {x: '550', y: '60', id: sys_time}

@@ -736,7 +736,7 @@
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;appWincExampleConf&quot; value=&quot;WEP&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;WEP&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;Open&quot;/&gt;
     &lt;/Values&gt;
   &lt;/appWincExampleConf&gt;
 &lt;/appWincExampleConf&gt;
@@ -774,6 +774,17 @@
   &lt;appWincExampleConf dnOrder=&quot;0&quot; id=&quot;APP_WIFI_MODE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;User dnOrder=&quot;0&quot; value=&quot;AP&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/appWincExampleConf&gt;
+&lt;/appWincExampleConf&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="appWincExampleConf" name="APP_WIFI_SSID"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;appWincExampleConf&gt;
+  &lt;appWincExampleConf dnOrder=&quot;0&quot; id=&quot;APP_WIFI_SSID&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;MicrochipDemoAp&quot;/&gt;
     &lt;/Values&gt;
   &lt;/appWincExampleConf&gt;
 &lt;/appWincExampleConf&gt;
@@ -2197,6 +2208,17 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;MCLK_APBD_INITIAL_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="NVIC_-10_0_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_-10_0_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -4916,6 +4938,17 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;TC3_INTERRUPT_HANDLER_LOCK&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc3&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="UsageFault_INTERRUPT_ENABLE_UPDATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;UsageFault_INTERRUPT_ENABLE_UPDATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -8931,15 +8964,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\definitions.h</file>
-         <hash>b04945e684c12c3eb8d93089e8c0e639fc4ae28f47a0425e914d14cc091bd62f</hash>
+         <hash>e9797ae3c43d68291fec29ddbd35a2198dfcd41ae4e038ff8699d503a95202c1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\interrupts.c</file>
-         <hash>4cf9c386cb50ec0b0924eb2b0e65d1b68d206bd16748dc887f03feb4533749f8</hash>
+         <hash>c608578775385ed8757871b881c3a14f7253207cbd0e0572f9a5f532a2b68531</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\interrupts.h</file>
-         <hash>6ef4912819f1fc169086916db1a3819f6e47e40f08cb2708cfae0625664ef4ad</hash>
+         <hash>dcbe0a9643d99e95decf8e82211b738815853ee21c5370386c3294c7c47062bd</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dac.h</file>
@@ -9483,7 +9516,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\nvic\plib_nvic.c</file>
-         <hash>5c33e1e2955228eac44aaa4e1e1c6af9e3af19f43cc65a4e0b2ca41db00674b8</hash>
+         <hash>9d3435b400d8098cebb5e83f0e14b69be26876df862813e5c4b11fe7d6abaf02</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\peripheral\sercom\spi_master\plib_sercom4_spi_master.h</file>
@@ -9531,7 +9564,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\example_conf.h</file>
-         <hash>f5be2983f6ae9f342b3787e8a151fe4ab3e8a543074e234636432f0f2463a75f</hash>
+         <hash>14f226398b4572013893776e1c1ca4d571125a8cd96fee13704ba48dac70fe02</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pcc.h</file>

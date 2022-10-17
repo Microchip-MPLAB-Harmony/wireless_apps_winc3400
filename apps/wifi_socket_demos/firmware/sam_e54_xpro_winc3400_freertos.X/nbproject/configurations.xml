@@ -9,282 +9,271 @@
                        displayName="ble_profiles"
                        projectFiles="true">
           <logicalFolder name="cscp" displayName="cscp" projectFiles="true">
-            <itemPath>../src/ble/ble_profiles/cscp/cscp.h</itemPath>
           </logicalFolder>
           <logicalFolder name="hr_sensor" displayName="hr_sensor" projectFiles="true">
-            <itemPath>../src/ble/ble_profiles/hr_sensor/hr_sensor.h</itemPath>
           </logicalFolder>
           <logicalFolder name="pxp_reporter"
                          displayName="pxp_reporter"
                          projectFiles="true">
-            <itemPath>../src/ble/ble_profiles/pxp_reporter/pxp_reporter.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="ble_services"
                        displayName="ble_services"
                        projectFiles="true">
           <logicalFolder name="battery" displayName="battery" projectFiles="true">
-            <itemPath>../src/ble/ble_services/battery/battery.h</itemPath>
           </logicalFolder>
           <logicalFolder name="ble_mgr" displayName="ble_mgr" projectFiles="true">
-            <itemPath>../src/ble/ble_services/ble_mgr/ble_manager.h</itemPath>
           </logicalFolder>
           <logicalFolder name="cscs" displayName="cscs" projectFiles="true">
-            <itemPath>../src/ble/ble_services/cscs/cscs.h</itemPath>
           </logicalFolder>
           <logicalFolder name="heart_rate" displayName="heart_rate" projectFiles="true">
-            <itemPath>../src/ble/ble_services/heart_rate/heart_rate.h</itemPath>
           </logicalFolder>
           <logicalFolder name="immediate_alert"
                          displayName="immediate_alert"
                          projectFiles="true">
-            <itemPath>../src/ble/ble_services/immediate_alert/immediate_alert.h</itemPath>
           </logicalFolder>
           <logicalFolder name="link_loss" displayName="link_loss" projectFiles="true">
-            <itemPath>../src/ble/ble_services/link_loss/link_loss.h</itemPath>
           </logicalFolder>
           <logicalFolder name="trans_service"
                          displayName="trans_service"
                          projectFiles="true">
-            <itemPath>../src/ble/ble_services/trans_service/trans_service.h</itemPath>
           </logicalFolder>
           <logicalFolder name="tx_power" displayName="tx_power" projectFiles="true">
-            <itemPath>../src/ble/ble_services/tx_power/tx_power.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="inc" displayName="inc" projectFiles="true">
-          <itemPath>../src/ble/inc/profiles.h</itemPath>
         </logicalFolder>
         <logicalFolder name="sio2host" displayName="sio2host" projectFiles="true">
           <logicalFolder name="uart" displayName="uart" projectFiles="true">
-            <itemPath>../src/ble/sio2host/uart/conf_sio2host.h</itemPath>
-            <itemPath>../src/ble/sio2host/uart/sio2host.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="utils" displayName="utils" projectFiles="true">
-          <itemPath>../src/ble/utils/ble_utils.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="sam_e54_xpro_winc3400"
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="sam_e54_xpro_winc3400_freertos"
+                       displayName="sam_e54_xpro_winc3400_freertos"
                        projectFiles="true">
-          <logicalFolder name="f4" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro_winc3400/bsp/bsp.h</itemPath>
+          <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="driver" projectFiles="true">
-            <logicalFolder name="f2" displayName="spi" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/spi/drv_spi.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/spi/drv_spi_definitions.h</itemPath>
+          <logicalFolder name="driver" displayName="driver" projectFiles="true">
+            <logicalFolder name="spi" displayName="spi" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/spi/drv_spi.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/spi/drv_spi_definitions.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/spi/src/drv_spi_local.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="winc" projectFiles="true">
-              <logicalFolder name="f1" displayName="include" projectFiles="true">
-                <logicalFolder name="f1" displayName="dev" projectFiles="true">
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/dev/wdrv_winc_gpio.h</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/dev/wdrv_winc_spi.h</itemPath>
+            <logicalFolder name="winc" displayName="winc" projectFiles="true">
+              <logicalFolder name="include" displayName="include" projectFiles="true">
+                <logicalFolder name="dev" displayName="dev" projectFiles="true">
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/dev/wdrv_winc_gpio.h</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/dev/wdrv_winc_spi.h</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f2" displayName="drv" projectFiles="true">
-                  <logicalFolder name="f6" displayName="at_ble_api" projectFiles="true">
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/at_ble_api/at_ble_api.h</itemPath>
+                <logicalFolder name="drv" displayName="drv" projectFiles="true">
+                  <logicalFolder name="at_ble_api" displayName="at_ble_api" projectFiles="true">
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/at_ble_api/at_ble_api.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f8" displayName="ble_stack" projectFiles="true">
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/atts_task.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/cmn_defs.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/dbg_task.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/ble_device.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/diss_task.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/error.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/event.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/gapc_task.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/gapm_task.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/gattc_task.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/gattm_task.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/htpt.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/htpt_task.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/interface.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/ll_if.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/profiles.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/smpc_task.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack/wifiprov_task.h</itemPath>
+                  <logicalFolder name="ble_stack" displayName="ble_stack" projectFiles="true">
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/dbg_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/atts_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/interface.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/diss_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/gapm_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/htpt.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/wifiprov_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/smpc_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/profiles.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/gattm_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/ll_if.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/gapc_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/error.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/htpt_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/ble_device.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/event.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/gattc_task.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack/cmn_defs.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f1" displayName="bsp" projectFiles="true">
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp/nm_bsp.h</itemPath>
+                  <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/bsp/nm_bsp.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f2" displayName="common" projectFiles="true">
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/common/nm_common.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/common/nm_debug.h</itemPath>
+                  <logicalFolder name="common" displayName="common" projectFiles="true">
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/common/nm_debug.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/common/nm_common.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f3" displayName="driver" projectFiles="true">
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/m2m_flash.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/m2m_hif.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/m2m_periph.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/m2m_types.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/m2m_wifi.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/nmasic.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/nmbus.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/nmdrv.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/nmspi.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/m2m_ota.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/m2m_ssl.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver/ecc_types.h</itemPath>
+                  <logicalFolder name="driver" displayName="driver" projectFiles="true">
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/nmdrv.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/nmspi.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/m2m_types.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/m2m_periph.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/m2m_ssl.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/nmbus.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/m2m_wifi.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/ecc_types.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/nmasic.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/m2m_flash.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/m2m_hif.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver/m2m_ota.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f7" displayName="platform" projectFiles="true">
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/platform/platform.h</itemPath>
+                  <logicalFolder name="platform" displayName="platform" projectFiles="true">
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/platform/platform.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f5" displayName="socket" projectFiles="true">
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/socket/m2m_socket_host_if.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/socket/socket.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/socket/netinet_in.h</itemPath>
+                  <logicalFolder name="socket" displayName="socket" projectFiles="true">
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/socket/m2m_socket_host_if.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/socket/socket.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/socket/netinet_in.h</itemPath>
                   </logicalFolder>
-                  <logicalFolder name="f4" displayName="spi_flash" projectFiles="true">
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/spi_flash/spi_flash.h</itemPath>
-                    <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/spi_flash/spi_flash_map.h</itemPath>
+                  <logicalFolder name="spi_flash" displayName="spi_flash" projectFiles="true">
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/spi_flash/spi_flash_map.h</itemPath>
+                    <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/spi_flash/spi_flash.h</itemPath>
                   </logicalFolder>
                 </logicalFolder>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_api.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_assoc.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_authctx.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_ble.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_bssctx.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_bssfind.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_client_api.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_common.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_custie.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_debug.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_httpprovctx.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_nvm.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_powersave.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_socket.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_softap.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_ssl.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_sta.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_systime.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_wps.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/include/wdrv_winc_enterprise.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_softap.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_common.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_api.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_debug.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_enterprise.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_client_api.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_wps.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_custie.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_assoc.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_ssl.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_systime.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_httpprovctx.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_ble.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_bssfind.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_bssctx.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_authctx.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_powersave.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_socket.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_nvm.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/wdrv_winc_sta.h</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <itemPath>../src/config/sam_e54_xpro_winc3400/driver/driver.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro_winc3400/driver/driver_common.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/driver.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/driver_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="osal" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_definitions.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_freertos.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_impl_basic.h</itemPath>
+          <logicalFolder name="osal" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/osal/osal.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/osal/osal_freertos.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f5" displayName="clock" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/clock/plib_clock.h</itemPath>
+          <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="clock" displayName="clock" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/clock/plib_clock.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="cmcc" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/cmcc/plib_cmcc.h</itemPath>
+            <logicalFolder name="cmcc" displayName="cmcc" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/cmcc/plib_cmcc.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="dmac" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/dmac/plib_dmac.h</itemPath>
+            <logicalFolder name="dmac" displayName="dmac" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/dmac/plib_dmac.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f9" displayName="eic" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/eic/plib_eic.h</itemPath>
+            <logicalFolder name="eic" displayName="eic" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/eic/plib_eic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="evsys" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/evsys/plib_evsys.h</itemPath>
+            <logicalFolder name="evsys" displayName="evsys" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/evsys/plib_evsys.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="nvic" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/nvic/plib_nvic.h</itemPath>
+            <logicalFolder name="nvic" displayName="nvic" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/nvic/plib_nvic.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="nvmctrl" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/nvmctrl/plib_nvmctrl.h</itemPath>
+            <logicalFolder name="nvmctrl" displayName="nvmctrl" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/nvmctrl/plib_nvmctrl.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="port" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/port/plib_port.h</itemPath>
+            <logicalFolder name="port" displayName="port" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="sercom" projectFiles="true">
-              <logicalFolder name="f2" displayName="spi_master" projectFiles="true">
-                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/spi_master/plib_sercom4_spi_master.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
+            <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
+              <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/sercom/spi_master/plib_sercom4_spi_master.h</itemPath>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="usart" projectFiles="true">
-                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/usart/plib_sercom2_usart.h</itemPath>
-                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
+              <logicalFolder name="usart" displayName="usart" projectFiles="true">
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/sercom/usart/plib_sercom2_usart.h</itemPath>
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f10" displayName="tc" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/tc/plib_tc_common.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/tc/plib_tc3.h</itemPath>
+            <logicalFolder name="tc" displayName="tc" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/tc/plib_tc_common.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/tc/plib_tc3.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="system" projectFiles="true">
-            <logicalFolder name="f6" displayName="cache" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/cache/sys_cache.h</itemPath>
+          <logicalFolder name="system" displayName="system" projectFiles="true">
+            <logicalFolder name="cache" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/cache/sys_cache.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="command" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/command/sys_command.h</itemPath>
+            <logicalFolder name="command" displayName="command" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/command/sys_command.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="console" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/console/sys_console.h</itemPath>
+            <logicalFolder name="console" displayName="console" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/console/sys_console.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/console/src/sys_console_uart.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/console/src/sys_console_local.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/console/src/sys_console_uart_definitions.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f9" displayName="debug" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/debug/sys_debug.h</itemPath>
+            <logicalFolder name="debug" displayName="debug" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/debug/src/sys_debug_local.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/debug/sys_debug.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="dma" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/dma/sys_dma.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/dma/sys_dma_mapping.h</itemPath>
+            <logicalFolder name="dma" displayName="dma" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/dma/sys_dma_mapping.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/dma/sys_dma.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="int" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/int/sys_int.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/int/sys_int_mapping.h</itemPath>
+            <logicalFolder name="int" displayName="int" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/int/sys_int.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="ports" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/ports/sys_ports.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/ports/sys_ports_mapping.h</itemPath>
+            <logicalFolder name="ports" displayName="ports" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/ports/sys_ports_mapping.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/ports/sys_ports.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="reset" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/reset/sys_reset.h</itemPath>
+            <logicalFolder name="reset" displayName="reset" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/reset/sys_reset.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="time" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/time/sys_time.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/time/sys_time_definitions.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/time/src/sys_time_local.h</itemPath>
+            <logicalFolder name="time" displayName="time" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/time/src/sys_time_local.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/time/sys_time_definitions.h</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/time/sys_time.h</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/sam_e54_xpro_winc3400/system/system.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro_winc3400/system/system_common.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro_winc3400/system/system_module.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/system_module.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/system.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/system_common.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/device_cache.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/toolchain_specifics.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/definitions.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/interrupts.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/device_vectors.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/device.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/user.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/configuration.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/FreeRTOSConfig.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/device_vectors.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/device_cache.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/device.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/FreeRTOSConfig.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/definitions.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/user.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/toolchain_specifics.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/configuration.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/interrupts.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="FreeRTOS" projectFiles="true">
-        <logicalFolder name="f1" displayName="Source" projectFiles="true">
-          <logicalFolder name="f1" displayName="include" projectFiles="true">
+      <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
+        <logicalFolder name="Source" displayName="Source" projectFiles="true">
+          <logicalFolder name="include" displayName="include" projectFiles="true">
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_prototypes.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stream_buffer.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stack_macros.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/croutine.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/event_groups.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/semphr.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/task.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/list.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/timers.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/message_buffer.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/queue.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/portable.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/queue.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/semphr.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stack_macros.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/task.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/timers.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_prototypes.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stream_buffer.h</itemPath>
-            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/message_buffer.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="portable" projectFiles="true">
-            <logicalFolder name="f1" displayName="GCC" projectFiles="true">
-              <logicalFolder name="f1" displayName="SAM" projectFiles="true">
-                <logicalFolder name="f1" displayName="ARM_CM4F" projectFiles="true">
+          <logicalFolder name="portable" displayName="portable" projectFiles="true">
+            <logicalFolder name="GCC" displayName="GCC" projectFiles="true">
+              <logicalFolder name="SAM" displayName="SAM" projectFiles="true">
+                <logicalFolder name="ARM_CM4F" displayName="ARM_CM4F" projectFiles="true">
                   <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F/portmacro.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
@@ -294,138 +283,135 @@
       </logicalFolder>
       <logicalFolder name="iot" displayName="iot" projectFiles="true">
         <logicalFolder name="http" displayName="http" projectFiles="true">
-          <itemPath>../src/iot/http/http_client.h</itemPath>
-          <itemPath>../src/iot/http/http_entity.h</itemPath>
-          <itemPath>../src/iot/http/http_header.h</itemPath>
         </logicalFolder>
-        <itemPath>../src/iot/stream_writer.h</itemPath>
-        <itemPath>../src/iot/sw_timer.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
-        <logicalFolder name="f1" displayName="ATSAME54P20A_DFP" projectFiles="true">
-          <logicalFolder name="f1" displayName="component" projectFiles="true">
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/ac.h</itemPath>
+      <logicalFolder name="packs" displayName="packs" projectFiles="true">
+        <logicalFolder name="ATSAME54P20A_DFP"
+                       displayName="ATSAME54P20A_DFP"
+                       projectFiles="true">
+          <logicalFolder name="component" displayName="component" projectFiles="true">
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/supc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/oscctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/freqm.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/adc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/aes.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/can.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/qspi.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/ccl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/sdhc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/eic.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/pdec.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/pac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/hmatrixb.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/pukcc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/aes.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/sercom.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/fuses.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/trng.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/gmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/ac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/rstc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/tcc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/can.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/port.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/cmcc.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/dac.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/dmac.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/dsu.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/eic.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/evsys.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/freqm.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/fuses.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/gclk.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/gmac.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/hmatrixb.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/i2s.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/evsys.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/ramecc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/dsu.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/icm.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/mclk.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/nvmctrl.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/osc32kctrl.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/oscctrl.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/pac.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/pcc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/pdec.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/gclk.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/pm.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/port.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/pukcc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/qspi.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/ramecc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/rstc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/rtc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/sdhc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/sercom.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/supc.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/tc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/tcc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/trng.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/component/usb.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/osc32kctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/pcc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/component/dmac.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="instance" projectFiles="true">
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ac.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/adc0.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/adc1.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/aes.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/can0.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/can1.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ccl.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/cmcc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dac.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dmac.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dsu.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/eic.h</itemPath>
+          <logicalFolder name="instance" displayName="instance" projectFiles="true">
             <itemPath>../src/packs/ATSAME54P20A_DFP/instance/evsys.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/freqm.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/fuses.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/gclk.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/gmac.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/hmatrix.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/i2s.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/icm.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/mclk.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/nvmctrl.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/osc32kctrl.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/oscctrl.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pac.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pcc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pdec.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pm.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/port.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/qspi.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ramecc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/rstc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/rtc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sdhc0.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sdhc1.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom0.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom1.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom2.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom3.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom4.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom5.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom6.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom7.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/supc.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc0.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc1.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc2.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc3.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc4.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc5.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc6.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc7.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc0.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc1.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc2.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc3.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc4.h</itemPath>
-            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/trng.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc3.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom3.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/supc.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/instance/usb.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/can0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/adc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/gmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/i2s.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc4.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc3.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/fuses.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/icm.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/can1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/adc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/rstc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pcc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/oscctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/trng.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc2.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dmac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/port.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sdhc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/freqm.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom7.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc7.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/hmatrix.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/cmcc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc0.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom6.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ramecc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pm.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc5.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tcc4.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/osc32kctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/dsu.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom5.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/ccl.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pdec.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/aes.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/eic.h</itemPath>
             <itemPath>../src/packs/ATSAME54P20A_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sdhc1.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/pac.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/gclk.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/mclk.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/sercom4.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/tc6.h</itemPath>
+            <itemPath>../src/packs/ATSAME54P20A_DFP/instance/qspi.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="pio" projectFiles="true">
+          <logicalFolder name="pio" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME54P20A_DFP/pio/same54p20a.h</itemPath>
           </logicalFolder>
           <itemPath>../src/packs/ATSAME54P20A_DFP/same54p20a.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
-          <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
-            <logicalFolder name="f1" displayName="Core" projectFiles="true">
-              <logicalFolder name="f1" displayName="Include" projectFiles="true">
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
+        <logicalFolder name="CMSIS" displayName="CMSIS" projectFiles="true">
+          <logicalFolder name="CMSIS" displayName="CMSIS" projectFiles="true">
+            <logicalFolder name="Core" displayName="Core" projectFiles="true">
+              <logicalFolder name="Include" displayName="Include" projectFiles="true">
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -438,21 +424,12 @@
                        displayName="MQTTClient-C"
                        projectFiles="true">
           <logicalFolder name="Platforms" displayName="Platforms" projectFiles="true">
-            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/Platforms/MCHP_winc.h</itemPath>
           </logicalFolder>
           <logicalFolder name="src" displayName="src" projectFiles="true">
-            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/src/MQTTClient.h</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="MQTTPacket" displayName="MQTTPacket" projectFiles="true">
           <logicalFolder name="src" displayName="src" projectFiles="true">
-            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnect.h</itemPath>
-            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTFormat.h</itemPath>
-            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPacket.h</itemPath>
-            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPublish.h</itemPath>
-            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribe.h</itemPath>
-            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribe.h</itemPath>
-            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/StackTrace.h</itemPath>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
@@ -460,21 +437,9 @@
                      displayName="root_tls_cert"
                      projectFiles="true">
         <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
-          <itemPath>../src/root_tls_cert/crypto/crypto.h</itemPath>
-          <itemPath>../src/root_tls_cert/crypto/crypto_api.h</itemPath>
-          <itemPath>../src/root_tls_cert/crypto/crypto_types.h</itemPath>
-          <itemPath>../src/root_tls_cert/crypto/sha1_routines.h</itemPath>
-          <itemPath>../src/root_tls_cert/crypto/tls_buffer_manager.h</itemPath>
         </logicalFolder>
         <logicalFolder name="x509" displayName="x509" projectFiles="true">
-          <itemPath>../src/root_tls_cert/x509/asn1.h</itemPath>
-          <itemPath>../src/root_tls_cert/x509/x509_cert.h</itemPath>
         </logicalFolder>
-        <itemPath>../src/root_tls_cert/pem.h</itemPath>
-        <itemPath>../src/root_tls_cert/root_setup.h</itemPath>
-        <itemPath>../src/root_tls_cert/root_tls_cert.h</itemPath>
-        <itemPath>../src/root_tls_cert/tls_setup.h</itemPath>
-        <itemPath>../src/root_tls_cert/tls_srv_sec.h</itemPath>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/app_battery.h</itemPath>
@@ -496,11 +461,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="sam_e54_xpro_winc3400"
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="sam_e54_xpro_winc3400_freertos"
+                       displayName="sam_e54_xpro_winc3400_freertos"
                        projectFiles="true">
-          <itemPath>../src/config/sam_e54_xpro_winc3400/ATSAME54P20A.ld</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/ATSAME54P20A.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -565,199 +530,194 @@
         <logicalFolder name="utils" displayName="utils" projectFiles="true">
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f1" displayName="config" projectFiles="true">
-        <logicalFolder name="f1"
-                       displayName="sam_e54_xpro_winc3400"
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="sam_e54_xpro_winc3400_freertos"
+                       displayName="sam_e54_xpro_winc3400_freertos"
                        projectFiles="true">
-          <logicalFolder name="f5" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro_winc3400/bsp/bsp.c</itemPath>
+          <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/bsp/bsp.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="driver" projectFiles="true">
-            <logicalFolder name="f2" displayName="spi" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/spi/src/drv_spi.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/spi/src/drv_spi_local.h</itemPath>
+          <logicalFolder name="driver" displayName="driver" projectFiles="true">
+            <logicalFolder name="spi" displayName="spi" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/spi/src/drv_spi.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="winc" projectFiles="true">
-              <logicalFolder name="f1" displayName="dev" projectFiles="true">
-                <logicalFolder name="f1" displayName="gpio" projectFiles="true">
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/dev/gpio/wdrv_winc_eint.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/dev/gpio/wdrv_winc_gpio.c</itemPath>
+            <logicalFolder name="winc" displayName="winc" projectFiles="true">
+              <logicalFolder name="dev" displayName="dev" projectFiles="true">
+                <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/dev/gpio/wdrv_winc_gpio.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/dev/gpio/wdrv_winc_eint.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f2" displayName="spi" projectFiles="true">
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/dev/spi/wdrv_winc_spi.c</itemPath>
+                <logicalFolder name="spi" displayName="spi" projectFiles="true">
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/dev/spi/wdrv_winc_spi.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f2" displayName="drv" projectFiles="true">
-                <logicalFolder name="f5" displayName="ble_stack" projectFiles="true">
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/dbg_task.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/error.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/event.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/gap.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/gapc_task.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/gapm_task.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/gatt_client.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/gatt_server.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/gattc_task.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/gattm_task.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/htpt.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/htpt_task.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/interface.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/security.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/ble_stack/wifiprov_task.c</itemPath>
+              <logicalFolder name="drv" displayName="drv" projectFiles="true">
+                <logicalFolder name="ble_stack" displayName="ble_stack" projectFiles="true">
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/gattm_task.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/gattc_task.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/interface.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/dbg_task.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/gatt_client.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/htpt.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/gatt_server.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/wifiprov_task.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/htpt_task.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/error.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/gapc_task.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/security.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/gapm_task.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/event.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/ble_stack/gap.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f1" displayName="common" projectFiles="true">
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/common/nm_common.c</itemPath>
+                <logicalFolder name="common" displayName="common" projectFiles="true">
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/common/nm_common.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f2" displayName="driver" projectFiles="true">
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/m2m_flash.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/m2m_hif.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/m2m_periph.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/m2m_wifi.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/nmasic.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/nmbus.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/nmdrv.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/nmspi.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/m2m_ota.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/driver/m2m_ssl.c</itemPath>
+                <logicalFolder name="driver" displayName="driver" projectFiles="true">
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/m2m_hif.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/nmbus.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/m2m_periph.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/m2m_ssl.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/m2m_flash.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/m2m_wifi.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/nmdrv.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/m2m_ota.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/nmasic.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/driver/nmspi.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f6" displayName="platform" projectFiles="true">
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/platform/platform.c</itemPath>
+                <logicalFolder name="platform" displayName="platform" projectFiles="true">
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/platform/platform.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f4" displayName="socket" projectFiles="true">
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/socket/socket.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/socket/inet_ntop.c</itemPath>
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/socket/inet_addr.c</itemPath>
+                <logicalFolder name="socket" displayName="socket" projectFiles="true">
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/socket/socket.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/socket/inet_ntop.c</itemPath>
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/socket/inet_addr.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="f3" displayName="spi_flash" projectFiles="true">
-                  <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/drv/spi_flash/spi_flash.c</itemPath>
+                <logicalFolder name="spi_flash" displayName="spi_flash" projectFiles="true">
+                  <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/drv/spi_flash/spi_flash.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
-              <logicalFolder name="f3" displayName="osal" projectFiles="true">
-                <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/osal/wdrv_winc_osal.c</itemPath>
+              <logicalFolder name="osal" displayName="osal" projectFiles="true">
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/osal/wdrv_winc_osal.c</itemPath>
               </logicalFolder>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_assoc.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_authctx.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_ble.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_bssctx.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_bssfind.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_custie.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_httpprovctx.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_nvm.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_powersave.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_socket.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_softap.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_ssl.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_sta.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_systime.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_wps.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/driver/winc/wdrv_winc_enterprise.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_nvm.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_enterprise.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_custie.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_authctx.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_sta.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_bssctx.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_httpprovctx.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_ble.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_assoc.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_systime.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_softap.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_wps.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_powersave.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_bssfind.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_socket.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/wdrv_winc_ssl.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f6" displayName="osal" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro_winc3400/osal/osal_freertos.c</itemPath>
+          <logicalFolder name="osal" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/osal/osal_freertos.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
-            <logicalFolder name="f5" displayName="clock" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/clock/plib_clock.c</itemPath>
+          <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="clock" displayName="clock" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/clock/plib_clock.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="cmcc" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/cmcc/plib_cmcc.c</itemPath>
+            <logicalFolder name="cmcc" displayName="cmcc" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/cmcc/plib_cmcc.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="dmac" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/dmac/plib_dmac.c</itemPath>
+            <logicalFolder name="dmac" displayName="dmac" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/dmac/plib_dmac.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f9" displayName="eic" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/eic/plib_eic.c</itemPath>
+            <logicalFolder name="eic" displayName="eic" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/eic/plib_eic.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="evsys" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/evsys/plib_evsys.c</itemPath>
+            <logicalFolder name="evsys" displayName="evsys" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/evsys/plib_evsys.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="nvic" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/nvic/plib_nvic.c</itemPath>
+            <logicalFolder name="nvic" displayName="nvic" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/nvic/plib_nvic.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="nvmctrl" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/nvmctrl/plib_nvmctrl.c</itemPath>
+            <logicalFolder name="nvmctrl" displayName="nvmctrl" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/nvmctrl/plib_nvmctrl.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="port" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/port/plib_port.c</itemPath>
+            <logicalFolder name="port" displayName="port" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="sercom" projectFiles="true">
-              <logicalFolder name="f2" displayName="spi_master" projectFiles="true">
-                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/spi_master/plib_sercom4_spi_master.c</itemPath>
+            <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
+              <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/sercom/spi_master/plib_sercom4_spi_master.c</itemPath>
               </logicalFolder>
-              <logicalFolder name="f1" displayName="usart" projectFiles="true">
-                <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/sercom/usart/plib_sercom2_usart.c</itemPath>
+              <logicalFolder name="usart" displayName="usart" projectFiles="true">
+                <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/sercom/usart/plib_sercom2_usart.c</itemPath>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f10" displayName="tc" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/peripheral/tc/plib_tc3.c</itemPath>
+            <logicalFolder name="tc" displayName="tc" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/peripheral/tc/plib_tc3.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="stdio" projectFiles="true">
-            <itemPath>../src/config/sam_e54_xpro_winc3400/stdio/xc32_monitor.c</itemPath>
+          <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
+            <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="system" projectFiles="true">
-            <logicalFolder name="f6" displayName="cache" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/cache/sys_cache.c</itemPath>
+          <logicalFolder name="system" displayName="system" projectFiles="true">
+            <logicalFolder name="cache" displayName="cache" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/cache/sys_cache.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="command" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/command/src/sys_command.c</itemPath>
+            <logicalFolder name="command" displayName="command" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/command/src/sys_command.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="console" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/console/src/sys_console.c</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/console/src/sys_console_local.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/console/src/sys_console_uart.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/console/src/sys_console_uart_definitions.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/console/src/sys_console_uart.c</itemPath>
+            <logicalFolder name="console" displayName="console" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/console/src/sys_console.c</itemPath>
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/console/src/sys_console_uart.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="debug" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/debug/src/sys_debug_local.h</itemPath>
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/debug/src/sys_debug.c</itemPath>
+            <logicalFolder name="debug" displayName="debug" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/debug/src/sys_debug.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f7" displayName="dma" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/dma/sys_dma.c</itemPath>
+            <logicalFolder name="dma" displayName="dma" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/dma/sys_dma.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f5" displayName="int" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/int/src/sys_int.c</itemPath>
+            <logicalFolder name="int" displayName="int" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/int/src/sys_int.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="reset" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/reset/sys_reset.c</itemPath>
+            <logicalFolder name="reset" displayName="reset" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/reset/sys_reset.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="time" projectFiles="true">
-              <itemPath>../src/config/sam_e54_xpro_winc3400/system/time/src/sys_time.c</itemPath>
+            <logicalFolder name="time" displayName="time" projectFiles="true">
+              <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/system/time/src/sys_time.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/initialization.c</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/interrupts.c</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/exceptions.c</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/startup_xc32.c</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/libc_syscalls.c</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/tasks.c</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/freertos_hooks.c</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/exceptions.c</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/initialization.c</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/freertos_hooks.c</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/tasks.c</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/startup_xc32.c</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/interrupts.c</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/libc_syscalls.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="FreeRTOS" projectFiles="true">
-        <logicalFolder name="f1" displayName="Source" projectFiles="true">
-          <logicalFolder name="f1" displayName="portable" projectFiles="true">
-            <logicalFolder name="f2" displayName="GCC" projectFiles="true">
-              <logicalFolder name="f1" displayName="SAM" projectFiles="true">
-                <logicalFolder name="f1" displayName="ARM_CM4F" projectFiles="true">
+      <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
+        <logicalFolder name="Source" displayName="Source" projectFiles="true">
+          <logicalFolder name="portable" displayName="portable" projectFiles="true">
+            <logicalFolder name="GCC" displayName="GCC" projectFiles="true">
+              <logicalFolder name="SAM" displayName="SAM" projectFiles="true">
+                <logicalFolder name="ARM_CM4F" displayName="ARM_CM4F" projectFiles="true">
                   <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F/port.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="MemMang" projectFiles="true">
+            <logicalFolder name="MemMang" displayName="MemMang" projectFiles="true">
               <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_1.c</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/event_groups.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/FreeRTOS_tasks.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/croutine.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/timers.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/list.c</itemPath>
           <itemPath>../src/third_party/rtos/FreeRTOS/Source/queue.c</itemPath>
-          <itemPath>../src/third_party/rtos/FreeRTOS/Source/FreeRTOS_tasks.c</itemPath>
-          <itemPath>../src/third_party/rtos/FreeRTOS/Source/timers.c</itemPath>
-          <itemPath>../src/third_party/rtos/FreeRTOS/Source/event_groups.c</itemPath>
-          <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="iot" displayName="iot" projectFiles="true">
@@ -814,12 +774,16 @@
         <itemPath>../src/root_tls_cert/tls_setup.c</itemPath>
         <itemPath>../src/root_tls_cert/tls_srv_sec.c</itemPath>
       </logicalFolder>
-      <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
+      <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/pin_configurations.csv</itemPath>
+      <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app_battery.c</itemPath>
       <itemPath>../src/app_blewifi_prov.c</itemPath>
       <itemPath>../src/app_cert_download_ota.c</itemPath>
       <itemPath>../src/app_csc.c</itemPath>
+      <itemPath>../src/app_gw.c</itemPath>
+      <itemPath>../src/app_gw_ble.c</itemPath>
+      <itemPath>../src/app_gw_mqtt.c</itemPath>
       <itemPath>../src/app_heart_rate.c</itemPath>
       <itemPath>../src/app_iperf.c</itemPath>
       <itemPath>../src/app_mqtt.c</itemPath>
@@ -832,43 +796,42 @@
       <itemPath>../src/app_trans_service.c</itemPath>
       <itemPath>../src/app_wifi.c</itemPath>
       <itemPath>../src/iperf.c</itemPath>
-      <itemPath>../src/config/sam_e54_xpro_winc3400/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <logicalFolder name="f1"
-                     displayName="sam_e54_xpro_winc3400.mhc"
+                     displayName="sam_e54_xpro_winc3400_freertos.mhc"
                      projectFiles="true">
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/BSP_SAM_E54_Xplained_Pro.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/drvWifiWinc.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/drv_spi.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/FreeRTOS.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sercom2.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sercom4.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sys_command.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sys_console.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sys_debug.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/sam_e54_xpro_winc3400/sam_e54_xpro_winc3400.mhc/tc3.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/BSP_SAM_E54_Xplained_Pro.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/drvWifiWinc.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/drv_spi.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/FreeRTOS.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/sercom4.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/sys_command.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/sys_console.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/sys_debug.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos.mhc/tc3.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_e54_xpro_winc3400/harmony-manifest-success.yml</itemPath>
       <itemPath>wifi_socket_demos_sam_e54_xpro_winc3400_freertos.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
+    <Elem>../../../../../../ori/wireless_apps_winc3400/apps/wifi_socket_demos/firmware/src</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -878,7 +841,7 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.10</languageToolchainVersion>
         <platform>3</platform>
@@ -939,26 +902,25 @@
         <property key="programoptions.preserveuserid" value="false"/>
       </AtmelIceTool>
       <C32>
-        <property key="additional-warnings" value="true"/>
+        <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_xpro_winc3400;../src/config/sam_e54_xpro_winc3400/driver/winc/include/;../src/config/sam_e54_xpro_winc3400/driver/winc/include/dev;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/at_ble_api;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/ble_stack;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/bsp/include;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/common;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/driver;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/platform;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/socket;../src/config/sam_e54_xpro_winc3400/driver/winc/include/drv/spi_flash;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F"/>
+                  value="../src;../src/config/sam_e54_xpro_winc3400_freertos;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/dev;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/at_ble_api;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/ble_stack;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/bsp;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/bsp/include;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/common;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/driver;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/platform;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/socket;../src/config/sam_e54_xpro_winc3400_freertos/driver/winc/include/drv/spi_flash;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
-        <property key="make-warnings-into-errors" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
         <property key="optimization-level" value="-O1"/>
         <property key="place-data-into-section" value="true"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros"
-                  value="BLE_DEVICE_ROLE=BLE_PERIPHERAL;WINC_MQTT"/>
+                  value="WINC_MQTT;BLE_DEVICE_ROLE=BLE_PERIPHERAL"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="tentative-definitions" value="-fno-common"/>
@@ -999,7 +961,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -1039,7 +1000,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -1049,7 +1009,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_xpro_winc3400;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F"/>
+                  value="../src;../src/config/sam_e54_xpro_winc3400_freertos;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/GCC/SAM/ARM_CM4F"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1068,7 +1028,6 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
-        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
@@ -1098,6 +1057,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1112,6 +1072,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/H3_sep_rel/wireless_apps_winc3400/apps/wifi_socket_demos/firmware/sam_e54_xpro_winc3400_freertos.X/debug/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -1131,6 +1093,7 @@
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value=""/>
+        <property key="x.erase.clearprot" value="true"/>
       </EdbgTool>
       <PICkit3PlatformTool>
         <property key="ADC 1" value="true"/>
@@ -1197,6 +1160,9 @@
         <property key="codecoverage.enabled" value="Disable"/>
         <property key="codecoverage.enableoutputtofile" value="false"/>
         <property key="codecoverage.outputfile" value=""/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="lastid" value=""/>
         <property key="oscillator.auxfrequency" value="120"/>
         <property key="oscillator.auxfrequencyunit" value="Mega"/>
         <property key="oscillator.frequency" value="1"/>
@@ -1356,6 +1322,8 @@
         <property key="warningmessagebreakoptions.W0034_CORE_UNALIGNED_MEMORY_ACCESS"
                   value="report"/>
         <property key="warningmessagebreakoptions.W0035_CORE_UNIMPLEMENTED_RAMACCESS_NOTRAP"
+                  value="report"/>
+        <property key="warningmessagebreakoptions.W0036_UNIMPLEMENTED_INSTRUCTION"
                   value="report"/>
         <property key="warningmessagebreakoptions.W0040_FPU_DIFF_CP10_CP11"
                   value="report"/>
@@ -1680,6 +1648,7 @@
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -1693,7 +1662,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
-        <property key="memories.rww" value="true"/>
         <property key="oscillator.auxfrequency" value="120"/>
         <property key="oscillator.auxfrequencyunit" value="Mega"/>
         <property key="oscillator.frequency" value="1"/>
@@ -1713,8 +1681,6 @@
         <property key="periphComp5.gte" value="gt"/>
         <property key="periphComp6.gte" value="gt"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/H3_winc3400_1.4.3_release/wireless_apps_winc3400/apps/wifi_socket_demos/firmware/sam_e54_xpro_winc3400_freertos.X/debug/sam_e54_xpro_winc3400_freertos/sam_e54_xpro_winc3400_freertos_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -1871,6 +1837,8 @@
         <property key="warningmessagebreakoptions.W0034_CORE_UNALIGNED_MEMORY_ACCESS"
                   value="report"/>
         <property key="warningmessagebreakoptions.W0035_CORE_UNIMPLEMENTED_RAMACCESS_NOTRAP"
+                  value="report"/>
+        <property key="warningmessagebreakoptions.W0036_UNIMPLEMENTED_INSTRUCTION"
                   value="report"/>
         <property key="warningmessagebreakoptions.W0040_FPU_DIFF_CP10_CP11"
                   value="report"/>
@@ -2174,6 +2142,7 @@
         <property key="warningmessagebreakoptions.displaywarningmessagesoption"
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
+        <property key="x.erase.clearprot" value="true"/>
       </Tool>
     </conf>
   </confs>

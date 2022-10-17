@@ -77,7 +77,7 @@ extern "C" {
 #ifdef APP_BLE
 #define APP_BLE_WIFI_PROV
 #define APP_BLE_CSC
-//#define APP_BLE_HEARTRATE
+#define APP_BLE_HEARTRATE
 #if (defined __SAMD21J18A__)
 
 //#define APP_PUB_BLE_MQTT

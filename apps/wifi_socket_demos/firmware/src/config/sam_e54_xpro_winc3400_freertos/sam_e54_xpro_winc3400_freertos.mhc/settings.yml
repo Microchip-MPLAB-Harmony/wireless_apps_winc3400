@@ -1,13 +1,14 @@
-configName: sam_e54_xpro_winc3400
-folderName: ''
+configName: sam_e54_xpro_winc3400_freertos
+folderName: sam_e54_xpro_winc3400_freertos
 format_version: v1.0
-frameworkPath: ../../..
+frameworkPath: ..\..\..\..
 processor: ATSAME54P20A
-projectName: ''
+projectName: wifi_socket_demos_sam_e54_xpro_winc3400_freertos
 settings:
-  PackageFilter: bsp;core;crypto;csp;dev_packs;net;quick_docs;usb;wireless_apps_winc3400;wireless_wifi
+  PackageFilter: bsp;core;crypto;cryptoauthlib;csp;csp_3.10.0;Devices;dev_packs;harmony-services;net;quick_docs;usb;wireless_apps_pic32mzw1_wfi32e01;wireless_apps_winc1500;wireless_apps_winc1500_old;wireless_apps_winc3400;wireless_apps_winc3400_old;wireless_system_pic32mzw1_wfi32e01;wireless_wifi
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
   CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.7.122\atdf\ATSAME54P20A.atdf

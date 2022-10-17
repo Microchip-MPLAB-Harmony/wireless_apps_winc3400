@@ -39,12 +39,16 @@
 
 void WDRV_MSDelay(uint32_t ms)
 {
-    if (!ms)
+    SYS_TIME_HANDLE tmrHandle = SYS_TIME_HANDLE_INVALID;
+
+    if (SYS_TIME_SUCCESS != SYS_TIME_DelayMS(ms, &tmrHandle))
     {
-        ms = 1;
+        return;
     }
 
-    vTaskDelay(ms / portTICK_PERIOD_MS);
+    while (true != SYS_TIME_DelayIsComplete(tmrHandle))
+    {
+    }
 }
 
 //DOM-IGNORE-END
