@@ -8,7 +8,7 @@ nav_order: 99
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
-## Harmony 3 Wireless application examples for WINC3400 v3.4.2
+## Harmony 3 Wireless application examples for WINC3400 v3.5.0
 
 ### Development kit and demo application support
 
@@ -22,21 +22,29 @@ Following table provides number of Wireless examples available for different dev
 |:--------------------------:|:-------------------:|
 
 ### New Features
-- New MQTT, SSL, SNTP and OTA demos added for Bypass mode.
-- New MQTT, SSL, SNTP, OTA Certificate download and OTA demos added for Socket mode.
-    
+
+-   All applications have been migrated from MHC to MCC.
+
+
 ### Bug fixes
-- "wireless_wifi_apps_winc3400" applications are upgraded with Countermeasures for ‘Fragattack’ vulnerabilities.
+
+-   "wireless_wifi_apps_winc3400" applications are upgraded with latest "wireless_wifi" driver v3.7.0.
 
 ### Known Issues
-- Due to an issue in the underlying `net` repo, you need to turn off `-Werror` for the `icmp.c` file in your projects.
-- User may face connectivity issue with the SSL demo of bypass mode with FreeRTOS. Please use SSL demo of bypass mode without FreeRTOS.
-- "wireless_wifi" Serial bridge application needs to be regenerated before using it for firmware update.
-Additional known issues can be found at [WINC3400-known-issues](https://github.com/MicrochipTech/WINC3400-known-issues)
+
+-   WolfMQTT\(STA bypass mode\) demo application need to build "third\_party/wolfMQTT/mqtt\_socket.c" without xc32 option 'Make warnings into errors' as it uses the obsolete \#include <sys/errno.h\> file in WolfMQTT repo.
+
+-   Additional known issues can be found at [WINC3400-known-issues](https://github.com/MicrochipTech/WINC3400-known-issues)
+
 
 ### Development Tools
 
-- [MPLAB® X IDE v5.50](https://www.microchip.com/mplab/mplab-x-ide)
-- MPLAB® X IDE plug-ins:
-  - MPLAB® Harmony Configurator (MHC) v3.8.2
-- [MPLAB® XC32 C/C++ Compiler v3.01](https://www.microchip.com/mplab/compilers)
+-   [MPLAB® X IDE v6.00](https://www.microchip.com/mplab/mplab-x-ide)
+
+-   MPLAB® X IDE plug-ins:
+
+    -   MPLAB® Code Configurator \(MCC\) v5.1.17
+
+-   [MPLAB® XC32 C/C++ Compiler v4.10](https://www.microchip.com/mplab/compilers)
+
+
