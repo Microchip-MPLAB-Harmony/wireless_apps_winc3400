@@ -15,44 +15,44 @@ MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded
 
 This repository contains the MPLAB® Harmony 3 Wireless application examples for WINC3400
 
--   [Release Notes](docs\GUID-F08B6414-2101-4047-8526-7B5F184D6CA3.md)
+-   [Release Notes](docs/GUID-F08B6414-2101-4047-8526-7B5F184D6CA3.md)
 
--   [MPLAB® Harmony License](docs\GUID-DA26AD7F-FC85-489B-A825-B749388C1794.md)
+-   [MPLAB® Harmony License](docs/GUID-DA26AD7F-FC85-489B-A825-B749388C1794.md)
 
 
 To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400) and then click **Clone** button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
--   **[WINC STA Bypass Demo Application](docs\GUID-45593756-3CB7-40EC-87BF-6F5D5C3A6DE5.md)**  
+-   **[WINC STA Bypass Demo Application](docs/GUID-45593756-3CB7-40EC-87BF-6F5D5C3A6DE5.md)**  
 
--   **[TCP Server in SoftAP](docs\GUID-3A04868E-EBB9-4C24-B572-455157B3ECD4.md)**  
+-   **[TCP Server in SoftAP](docs/GUID-3A04868E-EBB9-4C24-B572-455157B3ECD4.md)**  
 
--   **[Wifi Provisioning via WPS](docs\GUID-A912FC9F-E87D-458A-940F-279BE3C56FA2.md)**  
+-   **[Wifi Provisioning via WPS](docs/GUID-A912FC9F-E87D-458A-940F-279BE3C56FA2.md)**  
 
--   **[Wifi Provisioning via SoftAP](docs\GUID-CC5CDD03-6D8F-480E-B3AC-C1DA4A45EA7A.md)**  
+-   **[Wifi Provisioning via SoftAP](docs/GUID-CC5CDD03-6D8F-480E-B3AC-C1DA4A45EA7A.md)**  
 
--   **[Wi-Fi provisioning using BLE](docs\GUID-213DA604-1749-4752-B6F7-73600BA8F232.md)**  
+-   **[Wi-Fi provisioning using BLE](docs/GUID-213DA604-1749-4752-B6F7-73600BA8F232.md)**  
 
--   **[TCP Client](docs\GUID-ED639BEA-5958-4DEA-BA72-C736505A37B0.md)**  
+-   **[TCP Client](docs/GUID-ED639BEA-5958-4DEA-BA72-C736505A37B0.md)**  
 
--   **[Power Save Mode](docs\GUID-9E164756-9279-46E1-96D7-1D4F9F460F78.md)**  
+-   **[Power Save Mode](docs/GUID-9E164756-9279-46E1-96D7-1D4F9F460F78.md)**  
 
--   **[AP Scan](docs\GUID-78192F7A-E548-4CA5-9BED-84ED998280A2.md)**  
+-   **[AP Scan](docs/GUID-78192F7A-E548-4CA5-9BED-84ED998280A2.md)**  
 
--   **[WINC3400 Bypass Mode Demo Applications](docs\GUID-E5D04EAD-51D1-4D47-8ADB-9AD8BB1A700C.md)**  
+-   **[WINC3400 Bypass Mode Demo Applications](docs/GUID-E5D04EAD-51D1-4D47-8ADB-9AD8BB1A700C.md)**  
 
--   **[Create your first WINC3400 Bypass mode example using Harmony TCP/IP stack](docs\GUID-4ABAE224-6F7D-47D1-ACBE-5DE2FD598301.md)**  
+-   **[Create your first WINC3400 Bypass mode example using Harmony TCP/IP stack](docs/GUID-4ABAE224-6F7D-47D1-ACBE-5DE2FD598301.md)**  
 
--   **[WINC3400 Socket Mode Demo Applications](docs\GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.md)**  
+-   **[WINC3400 Socket Mode Demo Applications](docs/GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.md)**  
 
--   **[Example project creation - WINC3400 Socket mode project with SAMD21](docs\GUID-D13DB96E-629F-4533-A72D-FA069843DEE9.md)**  
+-   **[Example project creation - WINC3400 Socket mode project with SAMD21](docs/GUID-D13DB96E-629F-4533-A72D-FA069843DEE9.md)**  
 
--   **[Example project creation - WINC3400 Socket mode project with SAME54](docs\GUID-0CD99E9B-6954-42F9-8CA8-5E92D55DAEB8.md)**  
+-   **[Example project creation - WINC3400 Socket mode project with SAME54](docs/GUID-0CD99E9B-6954-42F9-8CA8-5E92D55DAEB8.md)**  
 
--   **[Create WINC Project - Getting Started](docs\GUID-862E7BA5-9BC0-413B-8702-BE39DD70C671.md)**  
+-   **[Create WINC Project - Getting Started](docs/GUID-862E7BA5-9BC0-413B-8702-BE39DD70C671.md)**  
 
--   **[WINC Devices – Integrated Serial Flash Memory Download Procedure](docs\GUID-98974C20-3195-4C76-84CF-C5DD8C246505.md)**  
+-   **[WINC Devices – Integrated Serial Flash Memory Download Procedure](docs/GUID-98974C20-3195-4C76-84CF-C5DD8C246505.md)**  
 
--   **[Supported Network Modes in WINC](docs\GUID-E20D971E-D45E-41BE-8598-2DFA10C5FF8A.md)**  
+-   **[Supported Network Modes in WINC](docs/GUID-E20D971E-D45E-41BE-8598-2DFA10C5FF8A.md)**  
 
 
 ## Contents Summary

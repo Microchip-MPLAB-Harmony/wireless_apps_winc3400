@@ -26,15 +26,14 @@
 <meta name="DC.relation" scheme="URI" content="GUID-E20D971E-D45E-41BE-8598-2DFA10C5FF8A.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="harmony-3-wireless-application-examples-for-winc3400" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>Harmony 3 Wireless application examples for WINC3400</title>
+<title>Harmony 3 Wireless application examples for WINC3400</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-harmony-3-wireless-application-examples-for-winc3400" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -77,10 +76,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -104,7 +102,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -118,16 +115,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -166,7 +196,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -208,9 +238,9 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="harmony-3-wireless-application-examples-for-winc3400">
-<h1 class="title topictitle1" id="ariaid-title1">Harmony 3 Wireless application examples for WINC3400</h1><div class="body"><p class="p">MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices.  Refer to the following links for more information.</p>
+<h1 class="title topictitle1" id="ariaid-title1" style="">Harmony 3 Wireless application examples for WINC3400</h1><div class="body"><p class="p">MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices.  Refer to the following links for more information.</p>
 <ul class="ul"><li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/design-centers/32-bit" target="_blank">Microchip 32-bit MCUs</a></p>
 </li>
 <li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/design-centers/32-bit-mpus" target="_blank">Microchip 32-bit MPUs</a></p>
@@ -266,92 +296,92 @@ This content can also be downloaded using content manager by following these <a 
 <li class="link ulchildlink"><strong><a href="GUID-E20D971E-D45E-41BE-8598-2DFA10C5FF8A.html">Supported Network Modes in WINC</a></strong><br />
 </li>
 </ul>
-</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="contents-summary"><h2 class="title topictitle2" id="ariaid-title2">Contents Summary</h2><div class="body">
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d21984e158"><span>Folder</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d21984e160"><span>Description</span></th>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="contents-summary"><h2 class="title topictitle2" id="ariaid-title2" style="">Contents Summary</h2><div class="body">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d24385e158"><span>Folder</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d24385e160"><span>Description</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e158 "><span>apps</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e160 "><span>Contains Wireless service example applications.</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e158 "><span>apps</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e160 "><span>Contains Wireless service example applications.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e158 "><span>docs</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e160 "><span>Contains documentation in html format for offline viewing (to be used only after cloning this repository onto a local machine). Use <a class="xref" href="https://microchip-mplab-harmony.github.io/wireless_apps_winc3400/" target="_blank">github pages</a> of this repository for viewing it online.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e158 "><span>docs</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e160 "><span>Contains documentation in html format for offline viewing (to be used only after cloning this repository onto a local machine). Use <a class="xref" href="https://microchip-mplab-harmony.github.io/wireless_apps_winc3400/" target="_blank">github pages</a> of this repository for viewing it online.</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title3" id="code-examples"><h2 class="title topictitle2" id="ariaid-title3">Code Examples</h2><div class="body"><p class="p">The following applications are provided to demonstrate the typical or interesting usage models of one or more wireless usecases.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="code-examples"><h2 class="title topictitle2" id="ariaid-title3" style="">Code Examples</h2><div class="body"><p class="p">The following applications are provided to demonstrate the typical or interesting usage models of one or more wireless usecases.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d21984e189"><span>Name</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d21984e191"><span>Description</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d24385e189"><span>Name</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d24385e191"><span>Description</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>AP Scan (Socket mode)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates scan of near by HomeAP’s and connects to configured HomeAP</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>AP Scan (Socket mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates scan of near by HomeAP’s and connects to configured HomeAP</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>TCP Client (Socket mode)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates WINC3400 TCP Client example application</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>TCP Client (Socket mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates WINC3400 TCP Client example application</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>TCP Server (Socket mode)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates WINC3400 TCP Server example application</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>TCP Server (Socket mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates WINC3400 TCP Server example application</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>Wi-Fi Provisioning using SoftAP (Socket mode)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates WINC3400 HomeAP Provisioning using SoftAP</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>Wi-Fi Provisioning using SoftAP (Socket mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates WINC3400 HomeAP Provisioning using SoftAP</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>Wi-Fi Provisioning using WPS (Socket mode)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates WINC3400 HomeAP Provisioning using WPS</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>Wi-Fi Provisioning using WPS (Socket mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates WINC3400 HomeAP Provisioning using WPS</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>Wi-Fi Provisioning using BLE (Socket mode)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates WINC3400 HomeAP Provisioning using BLE</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>Wi-Fi Provisioning using BLE (Socket mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates WINC3400 HomeAP Provisioning using BLE</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>Wi-Fi STA (Bypass/Ethernet mode)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates WINC3400 STA Bypass\Ethenet mode application</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>Wi-Fi STA (Bypass/Ethernet mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates WINC3400 STA Bypass\Ethenet mode application</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>Power Save Mode</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates WINC3400 low power modes</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>Power Save Mode</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates WINC3400 low power modes</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>Wi-Fi Bypass Mode Demos</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates the below WINC3400 applications in Bypass Mode. WiFi station mode/Access point mode demo, SSL Demo, Ping Demo, Iperf Demo, SNTP Demo, MQTT Demo, WiFi Provisioning Demo</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>Wi-Fi Bypass Mode Demos</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates the below WINC3400 applications in Bypass Mode. WiFi station mode/Access point mode demo, SSL Demo, Ping Demo, Iperf Demo, SNTP Demo, MQTT Demo, WiFi Provisioning Demo</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e189 "><span>Wi-Fi Socket Mode Demos</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e191 "><span>Demonstrates the below WINC3400 applications in Socket Mode. WiFi station mode/Access point mode demo, SSL Demo, Ping Demo, Iperf Demo, SNTP Demo, MQTT Demo, OTA Demo, WiFi Provisioning Demo, WiFi Provisioning via BLE , Custom serial Chat Demo, Heart Rate Profile Demo, Battery Service Demo, Proximity Reporter Demo, Transparent Service Demo, Certificate Download OTA Demo, WiFi BLE Connectionless Gateway Demo</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e189 "><span>Wi-Fi Socket Mode Demos</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e191 "><span>Demonstrates the below WINC3400 applications in Socket Mode. WiFi station mode/Access point mode demo, SSL Demo, Ping Demo, Iperf Demo, SNTP Demo, MQTT Demo, OTA Demo, WiFi Provisioning Demo, WiFi Provisioning via BLE , Custom serial Chat Demo, Heart Rate Profile Demo, Battery Service Demo, Proximity Reporter Demo, Transparent Service Demo, Certificate Download OTA Demo, WiFi BLE Connectionless Gateway Demo</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title4" id="documentation"><h2 class="title topictitle2" id="ariaid-title4">Documentation</h2><div class="body">
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d21984e255"><span>Mode</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d21984e257"><span>Document</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d21984e259"><span>Description</span></th>
+<div class="topic nested1" aria-labelledby="ariaid-title4" id="documentation"><h2 class="title topictitle2" id="ariaid-title4" style="">Documentation</h2><div class="body">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d24385e255"><span>Mode</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d24385e257"><span>Document</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d24385e259"><span>Description</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e255 "><span> </span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e257 "><span>Create WINC Project - Getting Started</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e259 "><span>This is a getting-started guide for MPLABX IDE</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e255 "><span> </span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e257 "><span>Create WINC Project - Getting Started</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e259 "><span>This is a getting-started guide for MPLABX IDE</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e255 "><span> </span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e257 "><span>Firmware Upgrade of WINC Devices</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e259 "><span>This document explains in detail downloading procedure of firmware, certificate, and gain values into WINC serial flash through different supported serial interfaces like UART/I2C.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e255 "><span> </span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e257 "><span>Firmware Upgrade of WINC Devices</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e259 "><span>This document explains in detail downloading procedure of firmware, certificate, and gain values into WINC serial flash through different supported serial interfaces like UART/I2C.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e255 "><span> </span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e257 "><span>Supported Modes In WINC devices</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e259 "><span>Describes the supported modes in WINC devices</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e255 "><span> </span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e257 "><span>Supported Modes In WINC devices</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e259 "><span>Describes the supported modes in WINC devices</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e255 "><span>Socket Mode</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e257 "><span>WINC3400+SAMD21</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e259 "><span>This document explains a step by step approach to create a WINC3400 Socket mode project with SAMD21 host.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e255 "><span>Socket Mode</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e257 "><span>WINC3400+SAMD21</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e259 "><span>This document explains a step by step approach to create a WINC3400 Socket mode project with SAMD21 host.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e255 "><span>Socket Mode</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e257 "><span>WINC3400+SAME54</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e259 "><span>This document explains a step by step approach to create a WINC3400 Socket mode project with SAME54 host.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e255 "><span>Socket Mode</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e257 "><span>WINC3400+SAME54</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e259 "><span>This document explains a step by step approach to create a WINC3400 Socket mode project with SAME54 host.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e255 "><span>Bypass Mode</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e257 "><span>WINC3400+SAME54</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21984e259 "><span>This document explains a step by step approach to create a WINC3400 Bypass mode project with SAME54 host.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e255 "><span>Bypass Mode</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e257 "><span>WINC3400+SAME54</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d24385e259 "><span>This document explains a step by step approach to create a WINC3400 Bypass mode project with SAME54 host.</span></td>
 </tr>
 </tbody>
 </table>

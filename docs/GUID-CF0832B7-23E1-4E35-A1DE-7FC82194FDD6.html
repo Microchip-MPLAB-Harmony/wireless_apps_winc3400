@@ -11,15 +11,14 @@
 <meta name="DC.relation" scheme="URI" content="GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="wifi-station-mode--access-point-mode-demo" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>WiFi Station Mode / Access Point Mode Demo</title>
+<title>WiFi Station Mode / Access Point Mode Demo</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-wifi-station-mode--access-point-mode-demo" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,15 +223,15 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="wifi-station-mode--access-point-mode-demo">
-<h1 class="title topictitle1" id="ariaid-title1">WiFi Station Mode / Access Point Mode Demo</h1><div class="body"><p class="p">This example demonstrates the use of the WINC3400 to behave as a Station or Access Point(AP).</p>
+<h1 class="title topictitle1" id="ariaid-title1" style="">WiFi Station Mode / Access Point Mode Demo</h1><div class="body"><p class="p">This example demonstrates the use of the WINC3400 to behave as a Station or Access Point(AP).</p>
 </div>
 <div class="related-links">
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.html">WINC3400 Socket Mode Demo Applications</a></div>
 </div>
-</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="station-mode"><h2 class="title topictitle2" id="ariaid-title2">Station Mode</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Configure the WiFi parameters using the "wifi set " command.</p>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="station-mode"><h2 class="title topictitle2" id="ariaid-title2" style="">Station Mode</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Configure the WiFi parameters using the "wifi set " command.</p>
 <br /><img class="image" src="GUID-5EC3A087-C2C1-4346-AF85-DA206B65FECD-low.png" alt="wifi_config" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Select and run the application using the command "appdemo start 1"</p>
 <br /><img class="image" src="GUID-5E49C069-B312-44BD-8A0E-3F7C14DBF750-low.png" alt="ap_scan_start" /><br /></li>
@@ -210,7 +240,7 @@
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title3" id="access-point-mode"><h2 class="title topictitle2" id="ariaid-title3">Access Point Mode</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">If the user wants to configure the device as Access Point,configure the wifi using "wifi set" command. In the configuration set the bootmode as Access point mode, keep the authentication type as "OPEN" and give an SSID name for the Access point.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="access-point-mode"><h2 class="title topictitle2" id="ariaid-title3" style="">Access Point Mode</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">If the user wants to configure the device as Access Point,configure the wifi using "wifi set" command. In the configuration set the bootmode as Access point mode, keep the authentication type as "OPEN" and give an SSID name for the Access point.</p>
 <br /><img class="image" src="GUID-FC39DF11-AFA0-471D-BEAA-AF56D39861CC-low.png" alt="ap_mode_config_cmd" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Enter the command "appdemo start 1" to run the application.</p>
 <br /><img class="image" src="GUID-EE8864DD-4B93-4E6B-8D5D-A47A3F77536F-low.png" alt="ap_mode_config" /><br /></li>

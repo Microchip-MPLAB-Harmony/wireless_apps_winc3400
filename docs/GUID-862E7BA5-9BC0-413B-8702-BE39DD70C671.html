@@ -11,15 +11,14 @@
 <meta name="DC.relation" scheme="URI" content="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="create-winc-project---getting-started" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>Create WINC Project - Getting Started</title>
+<title>Create WINC Project - Getting Started</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-create-winc-project---getting-started" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,14 +223,14 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="create-winc-project---getting-started">
-<h1 class="title topictitle1" id="ariaid-title1">Create WINC Project - Getting Started</h1><div class="body"></div>
+<h1 class="title topictitle1" id="ariaid-title1" style="">Create WINC Project - Getting Started</h1><div class="body"></div>
 <div class="related-links">
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html">Harmony 3 Wireless application examples for WINC3400</a></div>
 </div>
-</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="download-wireless-repository-from-github"><h2 class="title topictitle2" id="ariaid-title2">Download wireless repository from Github</h2><div class="body"><p class="p">After the installation, open the MPLAB IDE and launch H3 content manager from the IDE</p>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="download-wireless-repository-from-github"><h2 class="title topictitle2" id="ariaid-title2" style="">Download wireless repository from Github</h2><div class="body"><p class="p">After the installation, open the MPLAB IDE and launch H3 content manager from the IDE</p>
 <br /><img class="image" src="GUID-B303C9EF-03C6-4C55-8C23-DCCCD4009D6B-low.png" alt="content_manager" /><br /><p class="p">Please provide the framework path with the local system path.</p>
 <br /><img class="image" src="GUID-A3C2536A-6FB0-45A8-BEA0-63EE2B0517EA-low.png" alt="content_manager_2" /><br /><p class="p">This displays a new window as shown below.</p>
 <br /><img class="image" src="GUID-D5091EDC-86F4-4803-8220-79127A35472A-low.png" alt="content_manager_3" /><br /><p class="p">Using this window, user can download either all the packages or only the wireless packages with its required dependencies.</p>
@@ -220,7 +250,7 @@
 <p class="p">Go to the local system path and check if the following packages are downloaded correctly</p>
 <br /><img class="image" src="GUID-644C111A-B49E-41C0-9AE9-1E0446AC9E79-low.png" alt="content_manager_6" /><br /></div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title3" id="pin-mapping-between-host-and-winc"><h2 class="title topictitle2" id="ariaid-title3">Pin mapping between host and WINC</h2><div class="body"><p class="p">This section explains how to map pins between WINC1500/WINC3400 device and host to establish connection and exchange data. Totally 7/11 pins are involved in pin mapping (except VCC and GND) and they are.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="pin-mapping-between-host-and-winc"><h2 class="title topictitle2" id="ariaid-title3" style="">Pin mapping between host and WINC</h2><div class="body"><p class="p">This section explains how to map pins between WINC1500/WINC3400 device and host to establish connection and exchange data. Totally 7/11 pins are involved in pin mapping (except VCC and GND) and they are.</p>
 <ul class="ul"><li class="li"><p class="p">SPI (SS, CLOCK, MOSI and MISO)</p>
 </li>
 <li class="li"><p class="p">Reset</p>
@@ -241,17 +271,17 @@ Table 5-1 section under 5.2.1 of <strong class="ph b"><a class="xref" href="http
 Table 4-1 section under 4.1.1 of <strong class="ph b"><a class="xref" href="http://ww1.microchip.com/downloads/en/devicedoc/atmel-42220-samd21-xplained-pro_user-guide.pdf" target="_blank">SAM D21 Xplained Pro User's Guide</a></strong>
 In the same way if the user is using a different host, then he can perform one to one pin mapping by referring that host’s user guide.</p>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title4" id="spi-interface"><h3 class="title topictitle3" id="ariaid-title4">SPI interface</h3><div class="body"><p class="p">Communication between SAME54 / SAMD21 and WINC happens through SPI interface. Here, WINC acts as a slave and SAME54 / SAMD21 acts as master.
+<div class="topic nested2" aria-labelledby="ariaid-title4" id="spi-interface"><h3 class="title topictitle3" id="ariaid-title4" style="">SPI interface</h3><div class="body"><p class="p">Communication between SAME54 / SAMD21 and WINC happens through SPI interface. Here, WINC acts as a slave and SAME54 / SAMD21 acts as master.
 The below table lists the SPI pins of WINC extension and its corresponding pins of SAME54 and SAMD21.</p>
 <br /><img class="image" src="GUID-2FFA1F90-3EE1-479C-A7E7-B3038B61DA1F-low.png" alt="spi_interface" /><br /></div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title5" id="power-up-pins"><h3 class="title topictitle3" id="ariaid-title5">Power up pins</h3><div class="body"><p class="p">Reset and Chip Enable pins are used to perform power up sequence in WINC from host. The below table lists the power up pins of WINC extension and its corresponding pins of SAME54 / SAMD21.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title5" id="power-up-pins"><h3 class="title topictitle3" id="ariaid-title5" style="">Power up pins</h3><div class="body"><p class="p">Reset and Chip Enable pins are used to perform power up sequence in WINC from host. The below table lists the power up pins of WINC extension and its corresponding pins of SAME54 / SAMD21.</p>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title6" id="winc1500-power-up-pins"><h4 class="title topictitle4" id="ariaid-title6">WINC1500 Power up pins</h4><div class="body"><br /><img class="image" src="GUID-D7297C28-C882-45C4-968B-65EC2DA621F3-low.png" alt="power_pins" /><br /></div>
+<div class="topic nested3" aria-labelledby="ariaid-title6" id="winc1500-power-up-pins"><h4 class="title topictitle4" id="ariaid-title6" style="">WINC1500 Power up pins</h4><div class="body"><br /><img class="image" src="GUID-D7297C28-C882-45C4-968B-65EC2DA621F3-low.png" alt="power_pins" /><br /></div>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title7" id="winc3400-power-up-pins"><h4 class="title topictitle4" id="ariaid-title7">WINC3400 Power up pins</h4><div class="body"><br /><img class="image" src="GUID-3781DA66-4A04-4D55-8255-5C488C166822-low.png" alt="3400_power_pins" /><br /></div>
+<div class="topic nested3" aria-labelledby="ariaid-title7" id="winc3400-power-up-pins"><h4 class="title topictitle4" id="ariaid-title7" style="">WINC3400 Power up pins</h4><div class="body"><br /><img class="image" src="GUID-3781DA66-4A04-4D55-8255-5C488C166822-low.png" alt="3400_power_pins" /><br /></div>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title8" id="interrupt-pin"><h4 class="title topictitle4" id="ariaid-title8">Interrupt pin</h4><div class="body"><p class="p">Interrupt pin is used to send signal to host from WINC device.</p>
+<div class="topic nested3" aria-labelledby="ariaid-title8" id="interrupt-pin"><h4 class="title topictitle4" id="ariaid-title8" style="">Interrupt pin</h4><div class="body"><p class="p">Interrupt pin is used to send signal to host from WINC device.</p>
 <br /><img class="image" src="GUID-DAB40623-7A12-4392-8BFA-2F3FC60EE61E-low.png" alt="int_pin" /><br /></div>
 </div>
 </div>

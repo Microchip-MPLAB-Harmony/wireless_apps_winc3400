@@ -11,15 +11,14 @@
 <meta name="DC.relation" scheme="URI" content="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="winc-sta-bypass-demo-application" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>WINC STA Bypass Demo Application</title>
+<title>WINC STA Bypass Demo Application</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-winc-sta-bypass-demo-application" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,44 +223,43 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="winc-sta-bypass-demo-application">
-<h1 class="title topictitle1" id="ariaid-title1">WINC STA Bypass Demo Application</h1><div class="body"><p class="p">This example compiles the WINC STA Bypass application.</p>
+<h1 class="title topictitle1" id="ariaid-title1" style="">WINC STA Bypass Demo Application</h1><div class="body"><p class="p">This example compiles the WINC STA Bypass application.</p>
 </div>
 <div class="related-links">
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html">Harmony 3 Wireless application examples for WINC3400</a></div>
 </div>
-</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="description"><h2 class="title topictitle2" id="ariaid-title2">Description</h2><div class="body"><p class="p">This example implements a simple STA Client application on the SAM E54 Xplained Pro board with the ATWINC1500/3400 XPRO board where the WINC controller is in Bypass/Ethernet mode.</p>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="description"><h2 class="title topictitle2" id="ariaid-title2" style="">Description</h2><div class="body"><p class="p">This example implements a simple STA Client application on the SAM E54 Xplained Pro board with the ATWINC1500/3400 XPRO board where the WINC controller is in Bypass/Ethernet mode.</p>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title3" id="downloading-and-building-the-application"><h2 class="title topictitle2" id="ariaid-title3">Downloading and building the application</h2><div class="body"><p class="p">To download or clone this application from Github, go to the <a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400" target="_blank">top level of the repository</a></p>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="downloading-and-building-the-application"><h2 class="title topictitle2" id="ariaid-title3" style="">Downloading and building the application</h2><div class="body"><p class="p">To download or clone this application from Github, go to the <a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400" target="_blank">top level of the repository</a></p>
 <p class="p">Path of the application within the repository is <strong class="ph b">apps/wifi_winc_sta_bypass/firmware</strong> .</p>
 <p class="p">To build the application, refer to the following table and open the project using its IDE.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d21094e47"><span>Project Name</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d21094e49"><span>Description</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d23491e47"><span>Project Name</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d23491e49"><span>Description</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21094e47 "><span>sam_e54_xpro_winc3400.X</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21094e49 "><span>MPLABX project for SAME54 and WINC3400 Xplained pro</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d23491e47 "><span>sam_e54_xpro_winc3400.X</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d23491e49 "><span>MPLABX project for SAME54 and WINC3400 Xplained pro</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d21094e47 "><span> </span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d21094e49 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d23491e47 d23491e49 "><span> </span></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title4" id="setting-up-same54-xplained-pro-board"><h2 class="title topictitle2" id="ariaid-title4">Setting up SAME54 Xplained Pro board</h2><div class="body"><ul class="ul"><li class="li"><p class="p">Connect the ATWINCxx00 Xpro Wi-Fi board to <strong class="ph b">EXT1</strong> XPRO Header of SAME54 Xplained baord.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title4" id="setting-up-same54-xplained-pro-board"><h2 class="title topictitle2" id="ariaid-title4" style="">Setting up SAME54 Xplained Pro board</h2><div class="body"><ul class="ul"><li class="li"><p class="p">Connect the ATWINCxx00 Xpro Wi-Fi board to <strong class="ph b">EXT1</strong> XPRO Header of SAME54 Xplained baord.</p>
 </li>
 <li class="li"><p class="p">Connect the Debug USB port on the SAME54 Xplained Pro board to the computer using a micro USB cable</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title5" id="running-the-application"><h2 class="title topictitle2" id="ariaid-title5">Running the Application</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Open the project in MPLAB® X IDE and open the <strong class="ph b">app.c</strong> file to change the access point parameters as shown in the picture below.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title5" id="running-the-application"><h2 class="title topictitle2" id="ariaid-title5" style="">Running the Application</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Open the project in MPLAB® X IDE and open the <strong class="ph b">app.c</strong> file to change the access point parameters as shown in the picture below.</p>
 <br /><img class="image" src="GUID-A0E976C6-0493-4C47-8899-5A88402351B1-low.png" alt="app_ap_parameters_2" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Build and program the generated code into the hardware using its IDE by using on-board EDBG programmer.</p>
 </li>
@@ -247,7 +276,7 @@
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title6" id="how-to-create-this-project-from-scratch"><h2 class="title topictitle2" id="ariaid-title6">How to create this project from scratch</h2><div class="body"><p class="p">Following Wireless Wiki tutorial shows step-by-step process to create this project from scratch</p>
+<div class="topic nested1" aria-labelledby="ariaid-title6" id="how-to-create-this-project-from-scratch"><h2 class="title topictitle2" id="ariaid-title6" style="">How to create this project from scratch</h2><div class="body"><p class="p">Following Wireless Wiki tutorial shows step-by-step process to create this project from scratch</p>
 <p class="p"><a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/wireless/wiki/Create-your-first-winc-bypass-application" target="_blank">Create WINC1500 bypass mode demo from scratch</a></p>
 </div>
 </div>

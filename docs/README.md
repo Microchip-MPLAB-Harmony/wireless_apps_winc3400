@@ -20,7 +20,7 @@ This repository contains the MPLAB® Harmony 3 Wireless application examples for
 -   [MPLAB® Harmony License](GUID-DA26AD7F-FC85-489B-A825-B749388C1794.md)
 
 
-To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400) and then click **Clone** button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
+To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400) and then click **Clone** button to clone this repository or download as zip file.<br />This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
 -   **[WINC STA Bypass Demo Application](GUID-45593756-3CB7-40EC-87BF-6F5D5C3A6DE5.md)**  
 

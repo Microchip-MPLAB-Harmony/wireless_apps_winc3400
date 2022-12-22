@@ -11,15 +11,14 @@
 <meta name="DC.relation" scheme="URI" content="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="create-your-first-winc3400-bypass-mode-example-using-harmony-tcpip-stack" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>Create your first WINC3400 Bypass mode example using Harmony TCP/IP stack</title>
+<title>Create your first WINC3400 Bypass mode example using Harmony TCP/IP stack</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-create-your-first-winc3400-bypass-mode-example-using-harmony-tcpip-stack" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,18 +223,18 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="create-your-first-winc3400-bypass-mode-example-using-harmony-tcpip-stack">
-<h1 class="title topictitle1" id="ariaid-title1"><strong class="ph b">Create your first WINC3400 Bypass mode example using Harmony TCP/IP stack</strong></h1><div class="body"></div>
+<h1 class="title topictitle1" id="ariaid-title1" style=""><strong class="ph b">Create your first WINC3400 Bypass mode example using Harmony TCP/IP stack</strong></h1><div class="body"></div>
 <div class="related-links">
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html">Harmony 3 Wireless application examples for WINC3400</a></div>
 </div>
-</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="overview"><h2 class="title topictitle2" id="ariaid-title2"><strong class="ph b">Overview</strong></h2><div class="body"><p class="p">This tutorial is a getting-started guide to demonstrate how to create a WINC3400 Bypass (Ethernet) mode example using MPLAB® Harmony v3 TCP/IP stack.</p>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="overview"><h2 class="title topictitle2" id="ariaid-title2" style=""><strong class="ph b">Overview</strong></h2><div class="body"><p class="p">This tutorial is a getting-started guide to demonstrate how to create a WINC3400 Bypass (Ethernet) mode example using MPLAB® Harmony v3 TCP/IP stack.</p>
 <p class="p">This tutorial implements a simple STA Client application on a microcontroller development board. This will guide you through the steps required to create a new TCP/IP application using MPLAB® Harmony 3 modules.</p>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title3" id="software-details"><h2 class="title topictitle2" id="ariaid-title3"><strong class="ph b">Software Details</strong></h2><div class="body"><p class="p">This tutorial is tested with following tool versions.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="software-details"><h2 class="title topictitle2" id="ariaid-title3" style=""><strong class="ph b">Software Details</strong></h2><div class="body"><p class="p">This tutorial is tested with following tool versions.</p>
 <ul class="ul"><li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/mplab/mplab-x-ide" target="_blank">MPLAB® X IDE v5.40</a></p>
 </li>
 <li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/mplab/compilers" target="_blank">MPLAB® XC32/32++ C Compiler v2.40</a></p>
@@ -235,7 +265,7 @@
 </ul>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title4" id="hardware-setup"><h2 class="title topictitle2" id="ariaid-title4"><strong class="ph b">Hardware Setup</strong></h2><div class="body"><p class="p">The getting-started guide demonstrates the creation of a TCP/IP demo on the <strong class="ph b">SAM E54 Xplained Pro</strong> board with the <strong class="ph b">ATWINC1500 XPRO board</strong>. These steps can be applied for other supported development boards applying the device/board specific configuration changes. The microcontroller should be supported by NET and Wireless modules within H3. At this point, SAM E54 is the only device supported by both modules. New device support is constantly added to modules. Check the individual module release notes for more details about device support.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title4" id="hardware-setup"><h2 class="title topictitle2" id="ariaid-title4" style=""><strong class="ph b">Hardware Setup</strong></h2><div class="body"><p class="p">The getting-started guide demonstrates the creation of a TCP/IP demo on the <strong class="ph b">SAM E54 Xplained Pro</strong> board with the <strong class="ph b">ATWINC1500 XPRO board</strong>. These steps can be applied for other supported development boards applying the device/board specific configuration changes. The microcontroller should be supported by NET and Wireless modules within H3. At this point, SAM E54 is the only device supported by both modules. New device support is constantly added to modules. Check the individual module release notes for more details about device support.</p>
 <ul class="ul"><li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/developmenttools/ProductDetails/ATSAME54-XPRO" target="_blank">SAME54 Xplained PRO</a></p>
 </li>
 <li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/DevelopmentTools/ProductDetails/ATWINC3400-XPRO" target="_blank">ATWINC3400 XPRO</a></p>
@@ -248,7 +278,7 @@
 <p class="p">Following image shows the hardware setup.</p>
 <br /><img class="image" src="GUID-E5C92C39-942A-4E54-8B09-AC0DBED18E23-low.png" alt="samd21_57" /><br /></div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title5" id="creating-a-new-harmony-project"><h2 class="title topictitle2" id="ariaid-title5"><strong class="ph b">Creating a new Harmony project</strong></h2><div class="body"><p class="p">Follow the steps to create a basic Harmony project. The assumption is that H3 modules are cloned at <strong class="ph b">"C:\microchip\harmony\v3"</strong></p>
+<div class="topic nested1" aria-labelledby="ariaid-title5" id="creating-a-new-harmony-project"><h2 class="title topictitle2" id="ariaid-title5" style=""><strong class="ph b">Creating a new Harmony project</strong></h2><div class="body"><p class="p">Follow the steps to create a basic Harmony project. The assumption is that H3 modules are cloned at <strong class="ph b">"C:\microchip\harmony\v3"</strong></p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Open the <strong class="ph b">MPLAB® X IDE</strong>.</p>
 </li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Create a New Project by selecting <strong class="ph b">File &gt; New Project</strong>.</p>
@@ -313,7 +343,7 @@ The next step would be to configure the components based on the application need
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title6" id="add-tcpip-components"><h2 class="title topictitle2" id="ariaid-title6"><strong class="ph b">Add TCP/IP Components</strong></h2><div class="body"><p class="p">The <strong class="ph b">TCP/IP</strong> components can be added from the <strong class="ph b">Available Components</strong>. Go to <strong class="ph b">Available Components -&gt; Libraries -&gt; TCPIP</strong></p>
+<div class="topic nested1" aria-labelledby="ariaid-title6" id="add-tcpip-components"><h2 class="title topictitle2" id="ariaid-title6" style=""><strong class="ph b">Add TCP/IP Components</strong></h2><div class="body"><p class="p">The <strong class="ph b">TCP/IP</strong> components can be added from the <strong class="ph b">Available Components</strong>. Go to <strong class="ph b">Available Components -&gt; Libraries -&gt; TCPIP</strong></p>
 <p class="p">The TCP/IP components are categorized into 5 different groups and a configurator is available for each group.</p>
 <p class="p">These configurators are:</p>
 <ul class="ul"><li class="li"><p class="p"><strong class="ph b">TCP/IP Application Layer Configurator</strong></p>
@@ -331,7 +361,7 @@ The next step would be to configure the components based on the application need
 <p class="p">When the components are added using configurators, the dependent modules will be auto-activated.</p>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title7" id="application-layer-configurator"><h2 class="title topictitle2" id="ariaid-title7"><strong class="ph b">Application Layer Configurator</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Under <strong class="ph b">Available Components</strong>, Select the <strong class="ph b">TCP/IP Application Layer Configurator</strong> and double click.
+<div class="topic nested1" aria-labelledby="ariaid-title7" id="application-layer-configurator"><h2 class="title topictitle2" id="ariaid-title7" style=""><strong class="ph b">Application Layer Configurator</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Under <strong class="ph b">Available Components</strong>, Select the <strong class="ph b">TCP/IP Application Layer Configurator</strong> and double click.
 This step will add the <strong class="ph b">TCP/IP Application Layer Configurator</strong> inside the <strong class="ph b">APPLICATION LAYER</strong> group.</p>
 <br /><img class="image" src="GUID-E2548C05-0BA4-43A0-8AD0-112B9882AAF3-low.png" alt="winc3400_tcp_ip_application" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">This step also creates a hierarchy of groups as <strong class="ph b">Root-&gt;TCP/IP STACK-&gt;APPLICATION LAYER</strong>. Verify the hierarchy by going <strong class="ph b">View:</strong> dropdown and check out different layers.</p>
@@ -370,7 +400,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title8" id="transport-layer-configurator"><h2 class="title topictitle2" id="ariaid-title8"><strong class="ph b">Transport Layer Configurator</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">TRANSPORT LAYER</strong>.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title8" id="transport-layer-configurator"><h2 class="title topictitle2" id="ariaid-title8" style=""><strong class="ph b">Transport Layer Configurator</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">TRANSPORT LAYER</strong>.</p>
 <br /><img class="image" src="GUID-6360A0EB-535A-49D8-87AD-3171DEA516FA-low.png" alt="mhc_steps_tcpip_view_dropdown_app_to_trans" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Select the <strong class="ph b">TCP/IP Transport Layer Configurator</strong>.</p>
 <br /><img class="image" src="GUID-3B5B05A3-AFCC-4B57-9A4B-46642CB505DF-low.png" alt="mhc_steps_tcpip_trans_configurator" /><br /><p class="p">UDP has been auto-activated while adding the Application Layer components.</p>
@@ -382,7 +412,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title9" id="network-layer-configurator"><h2 class="title topictitle2" id="ariaid-title9"><strong class="ph b">Network Layer Configurator</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">NETWORK LAYER</strong>.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title9" id="network-layer-configurator"><h2 class="title topictitle2" id="ariaid-title9" style=""><strong class="ph b">Network Layer Configurator</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">NETWORK LAYER</strong>.</p>
 <br /><img class="image" src="GUID-A574E3B0-808A-4EDB-B666-A7685657A0D2-low.png" alt="mhc_steps_tcpip_view_dropdown_trans_to_netw" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Select the <strong class="ph b">TCP/IP Network Layer Configurator</strong>.</p>
 <br /><img class="image" src="GUID-44C54065-983E-4145-A758-03EA8EBC2A08-low.png" alt="mhc_steps_tcpip_network_configurator" /><br /></li>
@@ -395,7 +425,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title10" id="driver-layer-configurator"><h2 class="title topictitle2" id="ariaid-title10"><strong class="ph b">Driver Layer Configurator</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">DRIVER LAYER</strong>.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title10" id="driver-layer-configurator"><h2 class="title topictitle2" id="ariaid-title10" style=""><strong class="ph b">Driver Layer Configurator</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">DRIVER LAYER</strong>.</p>
 <br /><img class="image" src="GUID-C282A014-0351-4669-99EB-9FF5056D8156-low.png" alt="mhc_steps_tcpip_view_dropdown_netw_to_drv" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Select the <strong class="ph b">TCP/IP Driver Layer Configurator</strong> and enable <strong class="ph b">WINC</strong> module checkbox. Click <strong class="ph b">Yes</strong> to add the <strong class="ph b">WINC</strong> component in the TCP/IP Driver Layer</p>
 <br /><img class="image" src="GUID-B6E1D863-3A87-43B4-A248-0D674E3D509D-low.png" alt="mhc_steps_tcpip_drv_layer_winc" /><br /></li>
@@ -406,7 +436,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title11" id="basic-configuration"><h2 class="title topictitle2" id="ariaid-title11"><strong class="ph b">Basic Configuration</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">Basic Configuration</strong> layer.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title11" id="basic-configuration"><h2 class="title topictitle2" id="ariaid-title11" style=""><strong class="ph b">Basic Configuration</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">Basic Configuration</strong> layer.</p>
 <br /><img class="image" src="GUID-273C7BF9-B59F-43B5-B620-E7243FC5C8FD-low.png" alt="mhc_steps_tcpip_view_dropdown_drv_to_basic" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">This layer contains TCP/IP stack's core configuration,interface selection, heap management, MAC configuration, etc. <strong class="ph b">Basic STACK Configuration</strong> and <strong class="ph b">Network Configuration</strong> are already auto-activated, during previous steps.</p>
 <br /><img class="image" src="GUID-C9CEA5F6-FD24-4102-BF74-BB9BF59D93A4-low.png" alt="mhc_steps_tcpip_basic_configurator" /><br /></li>
@@ -419,7 +449,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title12" id="satisfying-module-dependencies"><h2 class="title topictitle2" id="ariaid-title12"><strong class="ph b">Satisfying Module Dependencies</strong></h2><div class="body"><p class="p">The project needs few more Harmony components. In this section, we will add and configure the required components.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title12" id="satisfying-module-dependencies"><h2 class="title topictitle2" id="ariaid-title12" style=""><strong class="ph b">Satisfying Module Dependencies</strong></h2><div class="body"><p class="p">The project needs few more Harmony components. In this section, we will add and configure the required components.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">Root</strong> layer.</p>
 <br /><img class="image" src="GUID-58B27832-A10C-4C34-9C0C-624396756832-low.png" alt="mhc_steps_tcpip_view_dropdown_basic_to_root" /><br /><p class="p">The <strong class="ph b">Root</strong> layer will be as shown below. The <strong class="ph b">red diamond-shaped</strong> buttons are unsatisfied mandatory dependencies. the connections might look messy at first. Feel free to move around some boxes so that project graph looks pretty.</p>
 <br /><img class="image" src="GUID-7006D35D-B4F8-41AB-84BB-3B6FDE89C156-low.png" alt="mhc_steps_tcpip_root_1" /><br /></li>
@@ -428,14 +458,14 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </li>
 </ul>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title13" id="satisfy-timer-dependency"><h3 class="title topictitle3" id="ariaid-title13"><strong class="ph b">Satisfy Timer dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Right click on red diamond for <strong class="ph b">TIME</strong> module. From the list of Satisfiers, select <strong class="ph b">TC3</strong>.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title13" id="satisfy-timer-dependency"><h3 class="title topictitle3" id="ariaid-title13" style=""><strong class="ph b">Satisfy Timer dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Right click on red diamond for <strong class="ph b">TIME</strong> module. From the list of Satisfiers, select <strong class="ph b">TC3</strong>.</p>
 <br /><img class="image" src="GUID-EA9AF278-82AA-479D-ADCC-2803A8835FA7-low.png" alt="mhc_steps_project_tcpip_root_tc" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Timer peripheral instance <strong class="ph b">TC3</strong> will be added to <strong class="ph b">Root</strong> layer and connected to the <strong class="ph b">TIMER</strong> module.</p>
 <br /><img class="image" src="GUID-E27E4F89-0C67-4830-8C12-1AC21B119010-low.png" alt="mhc_steps_tcpip_root_tc_done" /><br /></li>
 </ol>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title14" id="satisfy-console-dependency"><h3 class="title topictitle3" id="ariaid-title14"><strong class="ph b">Satisfy Console dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">From <strong class="ph b">Available Components &gt; Peripherals &gt; SERCOM &gt;</strong>, double-click on <strong class="ph b">SERCOM2</strong> to add it to current layer.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title14" id="satisfy-console-dependency"><h3 class="title topictitle3" id="ariaid-title14" style=""><strong class="ph b">Satisfy Console dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">From <strong class="ph b">Available Components &gt; Peripherals &gt; SERCOM &gt;</strong>, double-click on <strong class="ph b">SERCOM2</strong> to add it to current layer.</p>
 <br /><img class="image" src="GUID-F4E110E4-C58C-41EF-97A3-36E04AEAE32C-low.png" alt="mhc_steps_avilable_plib_sercom" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p"><strong class="ph b">SERCOM2</strong> is added to the <strong class="ph b">Root</strong> layer.</p>
 <br /><img class="image" src="GUID-7455B416-3164-4F2C-A89C-D249A229C8DB-low.png" alt="mhc_steps_tcpip_root_sercom_added" /><br /></li>
@@ -451,7 +481,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title15" id="satisfy-tcpip-stacks-ie-wincs-spi-dependency"><h3 class="title topictitle3" id="ariaid-title15"><strong class="ph b">Satisfy TCP/IP Stack's (i.e. WINC's) SPI dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Right click on <strong class="ph b">DRV_SPI</strong> red diamond of <strong class="ph b">TCP/IP STACK</strong> module and select <strong class="ph b">SPI</strong> as satisfier.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title15" id="satisfy-tcpip-stacks-ie-wincs-spi-dependency"><h3 class="title topictitle3" id="ariaid-title15" style=""><strong class="ph b">Satisfy TCP/IP Stack's (i.e. WINC's) SPI dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Right click on <strong class="ph b">DRV_SPI</strong> red diamond of <strong class="ph b">TCP/IP STACK</strong> module and select <strong class="ph b">SPI</strong> as satisfier.</p>
 <br /><img class="image" src="GUID-E7DF1B2A-5726-4269-ADF8-66A0213C4DB2-low.png" alt="mhc_steps_tcpip_root_spi_drv" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Right click on red diamond of SPI driver module and select <strong class="ph b">SERCOM4</strong>.</p>
 <br /><img class="image" src="GUID-9FE217C1-88DC-4E56-9B67-45A2E88176C2-low.png" alt="mhc_steps_tcpip_root_drv_spi_plib" /><br /></li>
@@ -465,7 +495,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title16" id="satisfy-transport-layer-lib-crypto-dependency"><h3 class="title topictitle3" id="ariaid-title16"><strong class="ph b">Satisfy Transport Layer LIB_CRYPTO Dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View</strong>: dropdown and go to the <strong class="ph b">Tranport layer</strong>.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title16" id="satisfy-transport-layer-lib-crypto-dependency"><h3 class="title topictitle3" id="ariaid-title16" style=""><strong class="ph b">Satisfy Transport Layer LIB_CRYPTO Dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View</strong>: dropdown and go to the <strong class="ph b">Tranport layer</strong>.</p>
 <br /><img class="image" src="GUID-5D7FAE8B-7646-4F4E-8021-46C69F5BD03C-low.png" alt="winc3400_transport_layer" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Right click on <strong class="ph b">LIB_CRYPTO</strong> of <strong class="ph b">TCP</strong> and select <strong class="ph b">Cryptographic Library</strong> from <strong class="ph b">Available Satisfiers</strong></p>
 <br /><img class="image" src="GUID-E69B7943-9C45-4F12-8BCB-C310001372DB-low.png" alt="winc3400_transport_layer_1" /><br /></li>
@@ -476,7 +506,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title17" id="satisfy-wincs-external-interrupt-dependency"><h3 class="title topictitle3" id="ariaid-title17"><strong class="ph b">Satisfy WINC's External Interrupt dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">From <strong class="ph b">Available Components &gt; Peripherals &gt; EIC &gt;</strong>, double-click on <strong class="ph b">EIC</strong> to add it to current Root layer.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title17" id="satisfy-wincs-external-interrupt-dependency"><h3 class="title topictitle3" id="ariaid-title17" style=""><strong class="ph b">Satisfy WINC's External Interrupt dependency:</strong></h3><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">From <strong class="ph b">Available Components &gt; Peripherals &gt; EIC &gt;</strong>, double-click on <strong class="ph b">EIC</strong> to add it to current Root layer.</p>
 <br /><img class="image" src="GUID-0EBA306B-31AA-4607-B553-8037732CE9FE-low.png" alt="mhc_steps_avilable_plib_eic" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Select <strong class="ph b">EIC</strong> in the Project Graph. In the Configuration Options of <strong class="ph b">EIC</strong>,</p>
 <ul class="ul"><li class="li"><p class="p">Select <strong class="ph b">Enable EIC channel 7</strong>.</p>
@@ -492,19 +522,19 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </div>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title18" id="project-heap-configuration"><h2 class="title topictitle2" id="ariaid-title18"><strong class="ph b">Project Heap Configuration</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Select the <strong class="ph b">System</strong> in the Project Graph. In Configuration Options, set the <strong class="ph b">Heap Size (bytes)</strong> to <strong class="ph b">96960</strong>.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title18" id="project-heap-configuration"><h2 class="title topictitle2" id="ariaid-title18" style=""><strong class="ph b">Project Heap Configuration</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Select the <strong class="ph b">System</strong> in the Project Graph. In Configuration Options, set the <strong class="ph b">Heap Size (bytes)</strong> to <strong class="ph b">96960</strong>.</p>
 <br /><img class="image" src="GUID-9EFA3C64-06C6-4A06-9448-3CFEE11A0A99-low.png" alt="mhc_steps_system_heap" /><br /></li>
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title19" id="winc-driver-configuration"><h2 class="title topictitle2" id="ariaid-title19"><strong class="ph b">WINC Driver Configuration</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">DRIVER LAYER</strong>.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title19" id="winc-driver-configuration"><h2 class="title topictitle2" id="ariaid-title19" style=""><strong class="ph b">WINC Driver Configuration</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click on <strong class="ph b">View:</strong> dropdown and go to the <strong class="ph b">DRIVER LAYER</strong>.</p>
 <br /><img class="image" src="GUID-E2219A32-41DD-49D9-A5ED-2B77BFAA591A-low.png" alt="mhc_steps_tcpip_view_dropdown_root_to_drv" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Select <strong class="ph b">WINC</strong> module in project graph. In the Configuration Options window, select the Interrupt Source for WINC as recently enabled <strong class="ph b">EIC Channel 7</strong>.</p>
 <br /><img class="image" src="GUID-D57B39E1-51D9-4AD2-8430-0F0C7BADCD33-low.png" alt="mhc_steps_tcpip_drv_winc_conf_eic" /><br /></li>
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title20" id="pin-configuration"><h2 class="title topictitle2" id="ariaid-title20"><strong class="ph b">Pin Configuration</strong></h2><div class="body"><p class="p">The I/O pins on the device can have alternate functions other than the general purpose I/O function. Here, we will configure the functionality of the I/O pins required for this demo.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title20" id="pin-configuration"><h2 class="title topictitle2" id="ariaid-title20" style=""><strong class="ph b">Pin Configuration</strong></h2><div class="body"><p class="p">The I/O pins on the device can have alternate functions other than the general purpose I/O function. Here, we will configure the functionality of the I/O pins required for this demo.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Open <strong class="ph b">MHC -&gt; Tools -&gt; Pin Configuration</strong>.</p>
 <br /><img class="image" src="GUID-6E310B41-E2A1-4F4C-A2B1-24745B5E2591-low.png" alt="mhc_steps_tcpip_pin_config" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Configure the pins for <strong class="ph b">EXT_INT7, SERCOM2, SERCOM4 and 2 GPIO</strong> as shown below. Notice the GPIO pins must have <strong class="ph b">Custom Name</strong> as shown in the figure.</p>
@@ -512,7 +542,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title21" id="code-generation"><h2 class="title topictitle2" id="ariaid-title21"><strong class="ph b">Code Generation</strong></h2><div class="body"><p class="p">Once Harmony components are added using MHC to the Project Graph, it's time to generate the source files based on the configurations.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title21" id="code-generation"><h2 class="title topictitle2" id="ariaid-title21" style=""><strong class="ph b">Code Generation</strong></h2><div class="body"><p class="p">Once Harmony components are added using MHC to the Project Graph, it's time to generate the source files based on the configurations.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Click Save button and Generate the code by clicking the <strong class="ph b">Generate Code</strong> button (marked in red).</p>
 <br /><img class="image" src="GUID-7028DF3B-4028-4F95-9293-4A72A2E33FB5-low.png" alt="mhc_steps_tcpip_generate_code" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Select the <strong class="ph b">Merge Strategy</strong> as <strong class="ph b">USER ALL</strong>. Refer to the MHC documentation for different merge strategy options.</p>
@@ -522,7 +552,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title22" id="application-coding"><h2 class="title topictitle2" id="ariaid-title22"><strong class="ph b">Application Coding</strong></h2><div class="body"><p class="p">Now, you have the MPLAB® Harmony components configured for a TCP/IP application. The Getting-Started demo implements a simple Wi-Fi STA application. This application is written using the APIs provided by the MPLAB® Harmony TCP/IP Stack.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title22" id="application-coding"><h2 class="title topictitle2" id="ariaid-title22" style=""><strong class="ph b">Application Coding</strong></h2><div class="body"><p class="p">Now, you have the MPLAB® Harmony components configured for a TCP/IP application. The Getting-Started demo implements a simple Wi-Fi STA application. This application is written using the APIs provided by the MPLAB® Harmony TCP/IP Stack.</p>
 <p class="p">There is already a STA demo implemented at <strong class="ph b">D:\MH3\wireless_apps_winc3400\apps\wifi_winc_sta_bypass</strong>. Let's make use of those source files for the <strong class="ph b">winc_bypass_getting_started</strong> demo.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Copy the application files (i.e. <strong class="ph b">app.c</strong>, <strong class="ph b">app.h</strong>) from <strong class="ph b">D:\MH3\wireless_apps_winc3400\apps\wifi_winc_sta_bypass\firmware\src</strong>.</p>
 </li>
@@ -533,7 +563,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title23" id="build-the-application"><h2 class="title topictitle2" id="ariaid-title23"><strong class="ph b">Build the Application</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Open the project <strong class="ph b">Properties</strong> by Right Clicking on the project name (winc_bypass_getting_started). Ensure that the <strong class="ph b">XC32</strong> Compiler Tool-chain and <strong class="ph b">SAME54 EDBG</strong> hardware tool is selected. Press <strong class="ph b">OK</strong>.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title23" id="build-the-application"><h2 class="title topictitle2" id="ariaid-title23" style=""><strong class="ph b">Build the Application</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Open the project <strong class="ph b">Properties</strong> by Right Clicking on the project name (winc_bypass_getting_started). Ensure that the <strong class="ph b">XC32</strong> Compiler Tool-chain and <strong class="ph b">SAME54 EDBG</strong> hardware tool is selected. Press <strong class="ph b">OK</strong>.</p>
 <br /><img class="image" src="GUID-7AE08418-6B5B-458D-BCA0-F5959F1514AC-low.png" alt="winc3400_project_properties" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Build the application by clicking on the <strong class="ph b">Build Main Project</strong>.</p>
 <br /><img class="image" src="GUID-5B0CAE06-45B6-4099-8C41-2F63ED340A15-low.png" alt="project_build" /><br /></li>
@@ -542,7 +572,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title24" id="program-the-application"><h2 class="title topictitle2" id="ariaid-title24"><strong class="ph b">Program the Application</strong></h2><div class="body"><p class="p">Now, the project is ready to be programmed on the hardware board. Refer to the hardware user-guide to see the different programming options supported.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title24" id="program-the-application"><h2 class="title topictitle2" id="ariaid-title24" style=""><strong class="ph b">Program the Application</strong></h2><div class="body"><p class="p">Now, the project is ready to be programmed on the hardware board. Refer to the hardware user-guide to see the different programming options supported.</p>
 <p class="p">The SAME54 Xplained board can be programmed using the on-board debugger <strong class="ph b">EDBG</strong>.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Connect a micro-USB cable from computer to the <strong class="ph b">DEBUG USB</strong> port on the SAM E54 Xplained Ultra board.</p>
 </li>
@@ -553,7 +583,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 </ol>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title25" id="test-the-application"><h2 class="title topictitle2" id="ariaid-title25"><strong class="ph b">Test the Application</strong></h2><div class="body"><p class="p">The testing of the application is done using different console commands.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title25" id="test-the-application"><h2 class="title topictitle2" id="ariaid-title25" style=""><strong class="ph b">Test the Application</strong></h2><div class="body"><p class="p">The testing of the application is done using different console commands.</p>
 <p class="p">There will be a virtual COM port enumerated when a micro-USB cable from the computer is connected to the <strong class="ph b">DEBUG USB</strong> port on SAM E54 Xplained Ultra board.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Open a terminal application (eg: TeraTerm) and configure the baud rate for <strong class="ph b">115200</strong>.</p>
 <br /><img class="image" src="GUID-83C37950-2B0E-4C96-B805-66905A489E15-low.png" alt="open_teraterm" /><br /></li>
@@ -573,7 +603,7 @@ This step will add the <strong class="ph b">TCP/IP Application Layer Configurato
 <p class="p">You have successfully created and tested your first WINC3400 Bypass mode Application.</p>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title26" id="references"><h2 class="title topictitle2" id="ariaid-title26"><strong class="ph b">References</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p"><a class="xref" href="https://microchip-mplab-harmony.github.io/net/frames.html" target="_blank">TCP/IP Stack Library Help</a></p>
+<div class="topic nested1" aria-labelledby="ariaid-title26" id="references"><h2 class="title topictitle2" id="ariaid-title26" style=""><strong class="ph b">References</strong></h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p"><a class="xref" href="https://microchip-mplab-harmony.github.io/net/frames.html" target="_blank">TCP/IP Stack Library Help</a></p>
 </li>
 </ol>
 </div>

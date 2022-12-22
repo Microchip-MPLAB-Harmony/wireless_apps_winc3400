@@ -11,15 +11,14 @@
 <meta name="DC.relation" scheme="URI" content="GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="mqtt-demo" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>MQTT Demo</title>
+<title>MQTT Demo</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-mqtt-demo" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,9 +223,9 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="mqtt-demo">
-<h1 class="title topictitle1" id="ariaid-title1">MQTT Demo</h1><div class="body"><p class="p">This application demonstrates how a user run a MQTT Client using third party Paho software on WINC3400 device. The user would need to use "MQTT.fx" third party Mqtt Client application to receive message posted by MQTT Client running on WINC3400 device once it connects to the MQTT server.</p>
+<h1 class="title topictitle1" id="ariaid-title1" style="">MQTT Demo</h1><div class="body"><p class="p">This application demonstrates how a user run a MQTT Client using third party Paho software on WINC3400 device. The user would need to use "MQTT.fx" third party Mqtt Client application to receive message posted by MQTT Client running on WINC3400 device once it connects to the MQTT server.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Download the MQTT.fx Third Party Mqtt Client Application and open it on Laptop.</p>
 </li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Connect the MQTT.fx Application to the MQTT Server - broker.hivemq.com with port 1883.</p>
@@ -221,7 +251,7 @@
 </ol>
 <p class="p"><strong class="ph b">Note:</strong></p>
 <p class="p">If the user wants to create a MQTT application project in Socket Mode, and wants to use the Paho for MQTT Protocol, One needs to follow the below mentioned steps</p>
-<pre class="pre codeblock"><button title="Copy Code" class="copy-code" onclick="cpy('d660e81', this);">Copy</button><code id="d660e81" content="1. From the &#34;paho.mqtt.embedded-c&#34; repo, copy the folder &#34;paho.mqtt.embedded-c\MQTTPacket&#34; to &#34;app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTPacket&#34; of the new project directory.&#xD;&#xA;&#xD;&#xA;2. From the &#34;paho.mqtt.embedded-c&#34; repo, copy the folder &#34;paho.mqtt.embedded-c\MQTTClient-C&#34; to &#34;app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C&#34; of the new project directory.&#xD;&#xA;&#xD;&#xA;3. It is important to have the porting files &#34;MCHP_winc.c&#34; and &#34;MCHP_winc.h&#34; in the project. These porting files are available only in &#34;wifi_socket_demo&#34; project. Copy the folder from &#34;wifi_socket_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C\Platforms&#34; to &#34;app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C\Platforms&#34; of the new project directory. Please make sure that the folder structure of the new project is same as mentioned above.&#xD;">1. From the "paho.mqtt.embedded-c" repo, copy the folder "paho.mqtt.embedded-c\MQTTPacket" to "app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTPacket" of the new project directory.&#xD;
+<pre class="pre codeblock"><code id="d843e81" content="1. From the &#34;paho.mqtt.embedded-c&#34; repo, copy the folder &#34;paho.mqtt.embedded-c\MQTTPacket&#34; to &#34;app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTPacket&#34; of the new project directory.&#xD;&#xA;&#xD;&#xA;2. From the &#34;paho.mqtt.embedded-c&#34; repo, copy the folder &#34;paho.mqtt.embedded-c\MQTTClient-C&#34; to &#34;app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C&#34; of the new project directory.&#xD;&#xA;&#xD;&#xA;3. It is important to have the porting files &#34;MCHP_winc.c&#34; and &#34;MCHP_winc.h&#34; in the project. These porting files are available only in &#34;wifi_socket_demo&#34; project. Copy the folder from &#34;wifi_socket_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C\Platforms&#34; to &#34;app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C\Platforms&#34; of the new project directory. Please make sure that the folder structure of the new project is same as mentioned above.&#xD;">1. From the "paho.mqtt.embedded-c" repo, copy the folder "paho.mqtt.embedded-c\MQTTPacket" to "app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTPacket" of the new project directory.&#xD;
 &#xD;
 2. From the "paho.mqtt.embedded-c" repo, copy the folder "paho.mqtt.embedded-c\MQTTClient-C" to "app_demos\firmware\src\third_party\paho.mqtt.embedded-c\MQTTClient-C" of the new project directory.&#xD;
 &#xD;

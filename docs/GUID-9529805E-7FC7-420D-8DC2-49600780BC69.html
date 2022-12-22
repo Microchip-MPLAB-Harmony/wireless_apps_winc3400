@@ -11,15 +11,14 @@
 <meta name="DC.relation" scheme="URI" content="GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="wi-fi-ble-connectionless-gateway-demo" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>Wi-Fi BLE Connectionless Gateway Demo</title>
+<title>Wi-Fi BLE Connectionless Gateway Demo</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-wi-fi-ble-connectionless-gateway-demo" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,9 +223,9 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="wi-fi-ble-connectionless-gateway-demo">
-<h1 class="title topictitle1" id="ariaid-title1">Wi-Fi BLE Connectionless Gateway Demo</h1><div class="body"><p class="p">This application implements a gateway/central device that collects data from several BLE nodes and publishes it to the remote MQTT server.</p>
+<h1 class="title topictitle1" id="ariaid-title1" style="">Wi-Fi BLE Connectionless Gateway Demo</h1><div class="body"><p class="p">This application implements a gateway/central device that collects data from several BLE nodes and publishes it to the remote MQTT server.</p>
 <p class="p"><strong class="ph b">Note:</strong></p>
 <p class="p">Currently, this demo is disabled in the project <strong class="ph b">sam_d21_xpro_winc3400.X</strong> due to memory limitation.The user can enable this demo by enabling the macro <strong class="ph b">APP_PUB_BLE_MQTT</strong> in <strong class="ph b">app.h</strong> file.</p>
 </div>
@@ -203,10 +233,10 @@
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-0F3F81B8-4EC2-400B-BA38-648D7FD12A61.html">WINC3400 Socket Mode Demo Applications</a></div>
 </div>
-</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="description"><h2 class="title topictitle2" id="ariaid-title2">Description</h2><div class="body"><p class="p">In this demo, the gateway device does not establish a connection with the BLE nodes. The demo uses ATSAM D21 XPro along with ATWINC3400 XPro board as the gateway device, and BLE nodes can be any BLE device. For this demo ATSAM B11 XPro acts as a BLE node, which sends out BLE advertisement packets. Gateway receives data from the BLE nodes, in the form of advertisement packets using BLE passive scanning mechanism and publishes the data to the remote MQTT server. The messages published by the gateway application can be received (just for the data verification purpose) by <a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc1500" target="_blank">wifi_socket_demos</a> application as a MQTT client, by subscribing to the topic used by the gateway, to publish the messages. As an alternate MQTT client, user can <a class="xref" href="https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm?hl=en" target="_blank">download a Google Chrome Extension - MQTTLens</a>.</p>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="description"><h2 class="title topictitle2" id="ariaid-title2" style="">Description</h2><div class="body"><p class="p">In this demo, the gateway device does not establish a connection with the BLE nodes. The demo uses ATSAM D21 XPro along with ATWINC3400 XPro board as the gateway device, and BLE nodes can be any BLE device. For this demo ATSAM B11 XPro acts as a BLE node, which sends out BLE advertisement packets. Gateway receives data from the BLE nodes, in the form of advertisement packets using BLE passive scanning mechanism and publishes the data to the remote MQTT server. The messages published by the gateway application can be received (just for the data verification purpose) by <a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc1500" target="_blank">wifi_socket_demos</a> application as a MQTT client, by subscribing to the topic used by the gateway, to publish the messages. As an alternate MQTT client, user can <a class="xref" href="https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm?hl=en" target="_blank">download a Google Chrome Extension - MQTTLens</a>.</p>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title3" id="wi-fi-ble-connectionless-gateway-demo-1"><h2 class="title topictitle2" id="ariaid-title3">Wi-Fi BLE Connectionless Gateway Demo</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">The functional block diagram shows different modules in the Gateway Demo:</p>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="wi-fi-ble-connectionless-gateway-demo-1"><h2 class="title topictitle2" id="ariaid-title3" style="">Wi-Fi BLE Connectionless Gateway Demo</h2><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">The functional block diagram shows different modules in the Gateway Demo:</p>
 <br /><img class="image" src="GUID-6C50EF34-A58A-442C-82CB-9B3E00E3AC9C-low.png" alt="gw_funct_block_diagram" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Download the MQTTLens (A Google Chrome Extension) as a MQTT client and open it on laptop</p>
 </li>
@@ -217,54 +247,54 @@
 <li class="li"><span class="indent-level-default">5.</span><p class="p">The gateway application mandates that, all the gateway compatible BLE nodes are required to have the advertisement data in a specific format, which the gateway application can parse. The advertisement data should follow the format given below for the gateway application:</p>
 <br /><img class="image" src="GUID-98DCB701-A026-48D8-B40F-903F90494B8D-low.png" alt="gw_ble_node_advt_frame_format" /><br /><p class="p">The table below provides advertisement packet data with respect to each byte position in the advertisement packet:</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d13313e88"><span>Bytes</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d13313e90"><span>Data Type and Description</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d13313e92"><span>Data Value</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d14072e88"><span>Bytes</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d14072e90"><span>Data Type and Description</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d14072e92"><span>Data Value</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>0</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Length (Flags Element Length)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x02</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>AD Element:- Length (Flags Element Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>0x02</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>1</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Type (Flags)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x01</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>AD Element:- Type (Flags)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>0x01</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Value (BR/EDR Supported, LE General Discoverable mode)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x06</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>AD Element:- Value (BR/EDR Supported, LE General Discoverable mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>0x06</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>3</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Length (Manufacture Specific Length)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x1B</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>3</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>AD Element:- Length (Manufacture Specific Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>0x1B</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>4</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>AD Element:- Type (Manufacture Specific)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0xFF</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>4</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>AD Element:- Type (Manufacture Specific)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>0xFF</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>5, 6</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element:- MFG ID (Manufacture ID of Microchip)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0x00CD</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>5, 6</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>GW Element:- MFG ID (Manufacture ID of Microchip)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>0x00CD</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>7</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element:- APP ID (Application ID of WINC3400 Gateway)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>0xAA</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>7</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>GW Element:- APP ID (Application ID of WINC3400 Gateway)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>0xAA</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>8</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element:- Name LEN (BLE Node Name Length)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>XX</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>8</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>GW Element:- Name LEN (BLE Node Name Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>XX</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>9 - 20</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element:- Name (Maximum length of 12 bytes Node Name)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>XX, XX...XX</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>9 - 20</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>GW Element:- Name (Maximum length of 12 bytes Node Name)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>XX, XX...XX</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>21</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element :- Value LEN (BLE Node Value Length)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>XX</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>21</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>GW Element :- Value LEN (BLE Node Value Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>XX</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e88 "><span>22 - 30</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e90 "><span>GW Element :- Value (Maximum length of 9 bytes of Node Value)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d13313e92 "><span>XX, XX...XX</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e88 "><span>22 - 30</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e90 "><span>GW Element :- Value (Maximum length of 9 bytes of Node Value)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14072e92 "><span>XX, XX...XX</span></td>
 </tr>
 </tbody>
 </table>

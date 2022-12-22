@@ -70,7 +70,7 @@ typedef enum
 APP_BLE_PROXIMITY_STATES appBleProximityState;
 
 
-#define LED0_PIN    PORT_PIN_PB30
+#define LED0_PIN    SYS_PORT_PIN_PB30
 
 // Initial timer value
 #define PXP_REPORTER_INIT_TIMER_INTERVAL		(60)
@@ -84,20 +84,20 @@ SYS_TIME_HANDLE timer = SYS_TIME_HANDLE_INVALID;
 
 void led_init(void)
 {
-    PORT_PinOutputEnable(LED0_PIN);
+    SYS_PORT_PinOutputEnable(LED0_PIN);
 	// clear LED
-	PORT_PinSet(LED0_PIN);
+	SYS_PORT_PinSet(LED0_PIN);
 }
 
 static void led_clear(void)
 {
-	PORT_PinSet(LED0_PIN);
+	SYS_PORT_PinSet(LED0_PIN);
     SYS_TIME_TimerDestroy(timer);
 }
 
 void led_toggle(unsigned int context)
 {
-	PORT_PinToggle(LED0_PIN);
+	SYS_PORT_PinToggle(LED0_PIN);
 }
 
 static void led_flash(uint32_t interval_ms)

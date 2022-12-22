@@ -11,15 +11,14 @@
 <meta name="DC.relation" scheme="URI" content="GUID-E5D04EAD-51D1-4D47-8ADB-9AD8BB1A700C.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="ssl-demo" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>SSL Demo</title>
+<title>SSL Demo</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-ssl-demo" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,9 +223,9 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="ssl-demo">
-<h1 class="title topictitle1" id="ariaid-title1">SSL Demo</h1><div class="body"><p class="p">This application demonstrates how a user can run a secured TCP Client on WINC3400 device. In this application, we open a secured html page 'https://www.google.com'. Here the TCP SSL Client running on the WINC3400 device shall connect to server google.com over a secured html port 443, and make a reuqtest for getting the html page.</p>
+<h1 class="title topictitle1" id="ariaid-title1" style="">SSL Demo</h1><div class="body"><p class="p">This application demonstrates how a user can run a secured TCP Client on WINC3400 device. In this application, we open a secured html page 'https://www.google.com'. Here the TCP SSL Client running on the WINC3400 device shall connect to server google.com over a secured html port 443, and make a reuqtest for getting the html page.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Configure the wifi parameters using "wifi set" command.</p>
 <br /><img class="image" src="GUID-FFCD8A0F-DB43-4D32-8AE4-74E5487C874C-low.png" alt="wifi_config" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Enter the command "ssl https://www.google.com/"</p>

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <keywords publicationid="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2"
           language="en-US"
-          version="1"
+          version="2"
           documenttitle="MPLAB Harmony WINC3400 Wireless Applications"
           pubtype="Online Reference"
           pubsubtype=""
           pubuserguidesubtype=""
           pubproductheirarchy=""
           devices=""
-          revisiondate="23/02/2022 00:00:00"
+          revisiondate="21/12/2022 00:00:00"
           revisionletter="A"
           isbn=""
           pubid=""
           reachid=""
           description=""
-          lastmodified="12/05/2022 05:39:17"
-          covertitle="MPLAB Harmony WINC3400 Wireless Applications"/>
+          lastmodified="22/12/2022 05:01:21"
+          covertitle="MPLAB Harmony WINC3400 Wireless Applications"
+          frontcover=""/>

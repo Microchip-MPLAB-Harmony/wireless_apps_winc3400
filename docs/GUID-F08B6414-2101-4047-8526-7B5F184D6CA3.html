@@ -10,15 +10,14 @@
 <meta name="DC.title" content="Microchip MPLAB® Harmony 3 Release Notes" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="microchip-mplab-harmony-3-release-notes" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>Microchip MPLAB® Harmony 3 Release Notes</title>
+<title>Microchip MPLAB® Harmony 3 Release Notes</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-microchip-mplab-harmony-3-release-notes" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -61,10 +60,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -88,7 +86,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -102,16 +99,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -150,7 +180,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -192,57 +222,59 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="microchip-mplab-harmony-3-release-notes">
-<h1 class="title topictitle1" id="ariaid-title1">Microchip MPLAB® Harmony 3 Release Notes</h1><div class="body"></div>
-<div class="topic nested1" aria-labelledby="ariaid-title2" id="harmony-3-wireless-application-examples-for-winc3400-v342"><h2 class="title topictitle2" id="ariaid-title2">Harmony 3 Wireless application examples for WINC3400 v3.4.2</h2><div class="body"></div>
-<div class="topic nested2" aria-labelledby="ariaid-title3" id="development-kit-and-demo-application-support"><h3 class="title topictitle3" id="ariaid-title3">Development kit and demo application support</h3><div class="body"><p class="p">Following table provides number of Wireless examples available for different development kits.</p>
+<h1 class="title topictitle1" id="ariaid-title1" style="">Microchip MPLAB® Harmony 3 Release Notes</h1><div class="body"></div>
+<div class="topic nested1" aria-labelledby="ariaid-title2" id="harmony-3-wireless-application-examples-for-winc3400-v351"><h2 class="title topictitle2" id="ariaid-title2" style="">Harmony 3 Wireless application examples for WINC3400 v3.5.1</h2><div class="body"></div>
+<div class="topic nested2" aria-labelledby="ariaid-title3" id="development-kit-and-demo-application-support"><h3 class="title topictitle3" id="ariaid-title3" style="">Development kit and demo application support</h3><div class="body"><p class="p">Following table provides number of Wireless examples available for different development kits.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="text-align:center;vertical-align:middle;" id="d20779e26"><span>Development Kits</span></th>
-<th class="entry cellrowborder" style="text-align:center;vertical-align:middle;" id="d20779e28"><span>MPLABx applications</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="text-align:center;vertical-align:middle;" id="d23160e26"><span>Development Kits</span></th>
+<th class="entry cellrowborder" style="text-align:center;vertical-align:middle;" id="d23160e28"><span>MPLABx applications</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d20779e26 "><span>SAMD21 with WINC3400 Xpro</span></td>
-<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d20779e28 "><span>8</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d23160e26 "><span>SAMD21 with WINC3400 Xpro</span></td>
+<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d23160e28 "><span>8</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d20779e26 "><span>SAME54 with WINC3400 Xpro</span></td>
-<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d20779e28 "><span>10</span></td>
+<tr class="row"><td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d23160e26 "><span>SAME54 with WINC3400 Xpro</span></td>
+<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d23160e28 "><span>10</span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d23160e26 "><span>SAMA5D27-SOM1-EK1 with WINC3400 Wifi 8 Click board</span></td>
+<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d23160e28 "><span>1</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title4" id="new-features"><h3 class="title topictitle3" id="ariaid-title4">New Features</h3><div class="body"><ul class="ul"><li class="li"><p class="p">New MQTT, SSL, SNTP and OTA demos added for Bypass mode.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title4" id="new-features"><h3 class="title topictitle3" id="ariaid-title4" style="">New Features</h3><div class="body"><ul class="ul"><li class="li"><p class="p">All applications have been migrated from MHC to MCC.</p>
 </li>
-<li class="li"><p class="p">New MQTT, SSL, SNTP, OTA Certificate download and OTA demos added for Socket mode.</p>
+<li class="li"><p class="p">"wifi_socket_demos" is available for SAMA5D27-SOM1-EK1 with WINC3400 Wifi 8 Click board with latest "wireless_wifi" driver v3.7.1</p>
+</li>
+</ul>
+<p class="p"><strong class="ph b">Note</strong></p>
+<p class="p">Only "wifi_socket_demos" of SAMA5D27-SOM1-EK1 with WINC3400 Wifi 8 Click board is upgraded with the latest "wireless_wifi" driver v3.7.1. All Other applcations are having "wireless_wifi" driver v3.7.0</p>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title5" id="bug-fixes"><h3 class="title topictitle3" id="ariaid-title5" style="">Bug fixes</h3><div class="body"><ul class="ul"><li class="li"><p class="p">"wireless_wifi_apps_winc3400" applications are upgraded with latest "wireless_wifi" driver v3.7.0.</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title5" id="bug-fixes"><h3 class="title topictitle3" id="ariaid-title5">Bug fixes</h3><div class="body"><ul class="ul"><li class="li"><p class="p">"wireless_wifi_apps_winc3400" applications are upgraded with Countermeasures for ‘Fragattack’ vulnerabilities.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title6" id="known-issues"><h3 class="title topictitle3" id="ariaid-title6" style="">Known Issues</h3><div class="body"><ul class="ul"><li class="li"><p class="p">WolfMQTT(STA bypass mode) demo application need to build "third_party/wolfMQTT/mqtt_socket.c" without xc32 option 'Make warnings into errors' as it uses the obsolete #include &lt;sys/errno.h&gt; file in WolfMQTT repo.</p>
+</li>
+<li class="li"><p class="p">Additional known issues can be found at <a class="xref" href="https://github.com/MicrochipTech/WINC3400-known-issues" target="_blank">WINC3400-known-issues</a></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title6" id="known-issues"><h3 class="title topictitle3" id="ariaid-title6">Known Issues</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Due to an issue in the underlying <code class="ph codeph">net</code> repo, you need to turn off <code class="ph codeph">-Werror</code> for the <code class="ph codeph">icmp.c</code> file in your projects.</p>
-</li>
-<li class="li"><p class="p">User may face connectivity issue with the SSL demo of bypass mode with FreeRTOS. Please use SSL demo of bypass mode without FreeRTOS.</p>
-</li>
-<li class="li"><p class="p">"wireless_wifi" Serial bridge application needs to be regenerated before using it for firmware update.
-Additional known issues can be found at <a class="xref" href="https://github.com/MicrochipTech/WINC3400-known-issues" target="_blank">WINC3400-known-issues</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="topic nested2" aria-labelledby="ariaid-title7" id="development-tools"><h3 class="title topictitle3" id="ariaid-title7">Development Tools</h3><div class="body"><ul class="ul"><li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/mplab/mplab-x-ide" target="_blank">MPLAB® X IDE v5.50</a></p>
+<div class="topic nested2" aria-labelledby="ariaid-title7" id="development-tools"><h3 class="title topictitle3" id="ariaid-title7" style="">Development Tools</h3><div class="body"><ul class="ul"><li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/mplab/mplab-x-ide" target="_blank">MPLAB® X IDE v6.00</a></p>
 </li>
 <li class="li"><p class="p">MPLAB® X IDE plug-ins:</p>
-<ul class="ul"><li class="li"><p class="p">MPLAB® Harmony Configurator (MHC) v3.8.2</p>
+<ul class="ul"><li class="li"><p class="p">MPLAB® Code Configurator (MCC) v5.1.17</p>
 </li>
 </ul>
 </li>
-<li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/mplab/compilers" target="_blank">MPLAB® XC32 C/C++ Compiler v3.01</a></p>
+<li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/mplab/compilers" target="_blank">MPLAB® XC32 C/C++ Compiler v4.10</a></p>
 </li>
 </ul>
 </div>

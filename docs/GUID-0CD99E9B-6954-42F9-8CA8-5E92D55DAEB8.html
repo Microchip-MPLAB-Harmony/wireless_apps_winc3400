@@ -11,15 +11,14 @@
 <meta name="DC.relation" scheme="URI" content="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html" />
 <meta name="DC.format" content="XHTML" />
 <meta name="DC.identifier" content="example-project-creation---winc3400-socket-mode-project-with-same54" />
-<link rel="stylesheet" type="text/css" href="stylesheets/commonltr.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
-<link rel="stylesheet" type="text/css" href="./stylesheets/common-extended.css" /><title>Example project creation - WINC3400 Socket mode project with SAME54</title>
+<title>Example project creation - WINC3400 Socket mode project with SAME54</title>
 <meta name="Microsoft.Help.Id" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2-example-project-creation---winc3400-socket-mode-project-with-same54" />
 <meta name="Microsoft.Help.TocParent" content="GUID-AD5B776E-19C6-49CD-A7CF-B692D58694C2" />
 <meta name="Microsoft.Help.TocOrder" content="0" />
 <meta name="Microsoft.Help.Locale" content="en-US" />
 <meta name="Microsoft.Help.TopicLocale" content="en-US" />
-<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 02/2022" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB Harmony WINC3400 Wireless Applications Reference A 12/2022" />
 <script language="javascript">
        
        if (window.parent.location.protocol != 'file:') {
@@ -62,10 +61,9 @@
 			}
 
 		</script><script language="javascript">
-        function cpy(id, button) {
-        
-            var element = document.getElementById(id);
-            var content = element.getAttribute("content");
+         
+         function copyContent(content, button) {
+         
             var textArea = document.createElement("textarea");
             
             // Place in the top-left corner of screen regardless of scroll position.
@@ -89,7 +87,6 @@
             // Avoid flash of the white box if rendered for any reason.
             textArea.style.background = 'transparent';
             
-            
             textArea.value = content;
             
             document.body.appendChild(textArea);
@@ -103,16 +100,49 @@
                   button.textContent = "Copied";
                   button.classList.add("copied");
                   setTimeout(function(){
-                    button.textContent = "Copy";
-                    button.classList.remove("copied");
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
                   },1000);
                }
             } catch (err) {
-              console.log('Oops, unable to copy');
+               console.log('Oops, unable to copy');
             }
             
             document.body.removeChild(textArea);
-        }
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
       </script><script language="javascript">
           
           // Add the MathML namespace to html
@@ -151,7 +181,7 @@
           window.top.location = Default;
           }       
           
-        </script><style xml:space="">
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
         
           button.copy-code{
             display:none;
@@ -193,39 +223,39 @@
           }
         
         
-      </style></head>
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
 <body id="example-project-creation---winc3400-socket-mode-project-with-same54">
-<h1 class="title topictitle1" id="ariaid-title1">Example project creation - WINC3400 Socket mode project with SAME54</h1><div class="body"><p class="p">This document explains a step by step approach to create a WINC Socket mode project with SAME54 host.</p>
+<h1 class="title topictitle1" id="ariaid-title1" style="">Example project creation - WINC3400 Socket mode project with SAME54</h1><div class="body"><p class="p">This document explains a step by step approach to create a WINC Socket mode project with SAME54 host.</p>
 </div>
 <div class="related-links">
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html">Harmony 3 Wireless application examples for WINC3400</a></div>
 </div>
-</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="hardware-setup"><h2 class="title topictitle2" id="ariaid-title2">Hardware Setup</h2><div class="body"><p class="p">The document demonstrates the creation of a demo on the SAM E54 Xplained Pro board with the ATWINC1500 XPRO board.</p>
+</div><div class="topic nested1" aria-labelledby="ariaid-title2" id="hardware-setup"><h2 class="title topictitle2" id="ariaid-title2" style="">Hardware Setup</h2><div class="body"><p class="p">The document demonstrates the creation of a demo on the SAM E54 Xplained Pro board with the ATWINC1500 XPRO board.</p>
 <p class="p">The SAME54 Xplained PRO contains a built-in programmer-debugger tool called Embedded Debugger (EDBG) which is used in this tutorial.</p>
 <p class="p">Following image shows the hardware setup.</p>
 <br /><img class="image" src="GUID-F1763F05-6B06-44E4-A2C9-74CA4DB1CE5C-low.png" alt="same54_57" /><br /></div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title3" id="steps-to-create-the-new-example-project"><h2 class="title topictitle2" id="ariaid-title3">Steps to create the new example project</h2><div class="body"><p class="p">Follow the below mwntioned steps to create the new WINC project in socket mode with SAME54 from scratch.</p>
+<div class="topic nested1" aria-labelledby="ariaid-title3" id="steps-to-create-the-new-example-project"><h2 class="title topictitle2" id="ariaid-title3" style="">Steps to create the new example project</h2><div class="body"><p class="p">Follow the below mwntioned steps to create the new WINC project in socket mode with SAME54 from scratch.</p>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title4" id="project-creation"><h2 class="title topictitle2" id="ariaid-title4">Project Creation</h2><div class="body"><ul class="ul"><li class="li"><p class="p">Open MP Lab</p>
+<div class="topic nested1" aria-labelledby="ariaid-title4" id="project-creation"><h2 class="title topictitle2" id="ariaid-title4" style="">Project Creation</h2><div class="body"><ul class="ul"><li class="li"><p class="p">Open MP Lab</p>
 </li>
 <li class="li with-image"><p class="p">Go to File Menu and select New Project…</p>
 <br /><img class="image" src="GUID-D2719C20-27A5-485F-8397-F8A3F4EF16A5-low.png" alt="same54_1" /><br /></li>
 </ul>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title5" id="project-selection"><h3 class="title topictitle3" id="ariaid-title5">Project Selection</h3><div class="body"><ul class="ul"><li class="li with-image"><p class="p">Under the Projects section, select 32bit MPLAB Harmony3 Project and click on Next.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title5" id="project-selection"><h3 class="title topictitle3" id="ariaid-title5" style="">Project Selection</h3><div class="body"><ul class="ul"><li class="li with-image"><p class="p">Under the Projects section, select 32bit MPLAB Harmony3 Project and click on Next.</p>
 <br /><img class="image" src="GUID-F7CCD9D5-BAC9-4652-A8B1-DCB2837488BC-low.png" alt="same54_2" /><br /></li>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title6" id="framework-selection"><h3 class="title topictitle3" id="ariaid-title6">Framework Selection</h3><div class="body"><ul class="ul"><li class="li with-image"><p class="p">Enter the local system path where the packages are downloaded click Next.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title6" id="framework-selection"><h3 class="title topictitle3" id="ariaid-title6" style="">Framework Selection</h3><div class="body"><ul class="ul"><li class="li with-image"><p class="p">Enter the local system path where the packages are downloaded click Next.</p>
 <br /><img class="image" src="GUID-D37E24A3-297B-4E21-AC8B-D2DACD788D68-low.png" alt="same54_3" /><br /></li>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title7" id="project-settings"><h3 class="title topictitle3" id="ariaid-title7">Project Settings</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Under {local system H3 path}\wireless_apps_winc1500\apps, create a folder name for the project (Ex: sample_project).</p>
+<div class="topic nested2" aria-labelledby="ariaid-title7" id="project-settings"><h3 class="title topictitle3" id="ariaid-title7" style="">Project Settings</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Under {local system H3 path}\wireless_apps_winc1500\apps, create a folder name for the project (Ex: sample_project).</p>
 </li>
 <li class="li"><p class="p">Enter the full path including the newly created project folder.</p>
 </li>
@@ -234,7 +264,7 @@
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title8" id="configuration-settings"><h3 class="title topictitle3" id="ariaid-title8">Configuration Settings</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Enter a <strong class="ph b">Name</strong> for the config setting folder</p>
+<div class="topic nested2" aria-labelledby="ariaid-title8" id="configuration-settings"><h3 class="title topictitle3" id="ariaid-title8" style="">Configuration Settings</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Enter a <strong class="ph b">Name</strong> for the config setting folder</p>
 </li>
 <li class="li"><p class="p">select the <strong class="ph b">Target device</strong> name</p>
 </li>
@@ -256,10 +286,10 @@ Each component in project graph can be configured using Configuration options.</
 </ol>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title9" id="adding-components-in-mh3"><h3 class="title topictitle3" id="ariaid-title9">Adding components in MH3</h3><div class="body"><p class="p">User should select required components for creating WINC project.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title9" id="adding-components-in-mh3"><h3 class="title topictitle3" id="ariaid-title9" style="">Adding components in MH3</h3><div class="body"><p class="p">User should select required components for creating WINC project.</p>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title10" id="core"><h3 class="title topictitle3" id="ariaid-title10">Core</h3><div class="body"><p class="p">The first component to enable is Core because core is the base component for many drivers and system components.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title10" id="core"><h3 class="title topictitle3" id="ariaid-title10" style="">Core</h3><div class="body"><p class="p">The first component to enable is Core because core is the base component for many drivers and system components.</p>
 <ul class="ul"><li class="li"><p class="p">Go to Harmony in the Available components</p>
 </li>
 <li class="li with-image"><p class="p">Select core.</p>
@@ -273,7 +303,7 @@ Each component in project graph can be configured using Configuration options.</
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title11" id="same54-xplained-pro-component"><h3 class="title topictitle3" id="ariaid-title11">SAME54 Xplained pro component</h3><div class="body"><p class="p">This example uses SAME54 xplained pro board for host development board.
+<div class="topic nested2" aria-labelledby="ariaid-title11" id="same54-xplained-pro-component"><h3 class="title topictitle3" id="ariaid-title11" style="">SAME54 Xplained pro component</h3><div class="body"><p class="p">This example uses SAME54 xplained pro board for host development board.
 Enable component SAM E54 Xplained Pro BSP.</p>
 <ul class="ul"><li class="li"><p class="p">Go to Board Support Packages</p>
 </li>
@@ -284,7 +314,7 @@ Enable component SAM E54 Xplained Pro BSP.</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title12" id="timer-component"><h3 class="title topictitle3" id="ariaid-title12">Timer component</h3><div class="body"><p class="p">WINC driver needs driver for its delay functionality and user can select the any timer for this.
+<div class="topic nested2" aria-labelledby="ariaid-title12" id="timer-component"><h3 class="title topictitle3" id="ariaid-title12" style="">Timer component</h3><div class="body"><p class="p">WINC driver needs driver for its delay functionality and user can select the any timer for this.
 To enable Timer</p>
 <ul class="ul"><li class="li"><p class="p">Go to <strong class="ph b">Harmony -&gt; System Services</strong></p>
 </li>
@@ -301,7 +331,7 @@ To enable Timer</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title13" id="eic-component"><h3 class="title topictitle3" id="ariaid-title13">EIC component</h3><div class="body"><p class="p">WINC device uses interrupt pin PB07. To configure PB07, EIC component must be enabled.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title13" id="eic-component"><h3 class="title topictitle3" id="ariaid-title13" style="">EIC component</h3><div class="body"><p class="p">WINC device uses interrupt pin PB07. To configure PB07, EIC component must be enabled.</p>
 <ul class="ul"><li class="li"><p class="p">Go to <strong class="ph b">Peripherals</strong></p>
 </li>
 <li class="li with-image"><p class="p">Select <strong class="ph b">EIC</strong></p>
@@ -324,7 +354,7 @@ To enable Timer</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title14" id="virtual-console"><h3 class="title topictitle3" id="ariaid-title14">Virtual Console</h3><div class="body"><p class="p">Virtual Console is used to send debug messages and to receive commands from user. Virtual console uses UART interface for communication.
+<div class="topic nested2" aria-labelledby="ariaid-title14" id="virtual-console"><h3 class="title topictitle3" id="ariaid-title14" style="">Virtual Console</h3><div class="body"><p class="p">Virtual Console is used to send debug messages and to receive commands from user. Virtual console uses UART interface for communication.
 Host SAME54 uses pins PB24 and PB25 for UART interface to perform receive and transmit operation, respectively. These two pins belong to SERCOM2 of the host SAME54 device.
 For more information please refer section 5.4.2 (Virtual COM Port) of <strong class="ph b"><a class="xref" href="http://ww1.microchip.com/downloads/en/DeviceDoc/70005321A.pdf" target="_blank">SAM E54 Xplained Pro User's Guide</a></strong></p>
 <p class="p">To enable and configure Virtual COM port:</p>
@@ -357,7 +387,7 @@ To add DEBUG component</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title15" id="to-add-command-component"><h3 class="title topictitle3" id="ariaid-title15">To add COMMAND component</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Right click on the SYS_CONSOLE interface of Instance 0 of the CONSOLE component.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title15" id="to-add-command-component"><h3 class="title topictitle3" id="ariaid-title15" style="">To add COMMAND component</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Right click on the SYS_CONSOLE interface of Instance 0 of the CONSOLE component.</p>
 </li>
 <li class="li with-image"><p class="p">Go to Consumers and select COMMAND</p>
 <br /><img class="image" src="GUID-32B90FA1-57E9-49EF-A9B6-CB2186DA61F0-low.png" alt="same54_27" /><br /></li>
@@ -366,7 +396,7 @@ To add DEBUG component</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title16" id="spi-component"><h3 class="title topictitle3" id="ariaid-title16">SPI component</h3><div class="body"><p class="p">WINC communicates with host using SPI interface. So, to establish a SPI connection between WINC and host, three components are required.
+<div class="topic nested2" aria-labelledby="ariaid-title16" id="spi-component"><h3 class="title topictitle3" id="ariaid-title16" style="">SPI component</h3><div class="body"><p class="p">WINC communicates with host using SPI interface. So, to establish a SPI connection between WINC and host, three components are required.
 They are:</p>
 <ul class="ul"><li class="li"><p class="p">SPI Driver</p>
 </li>
@@ -402,7 +432,7 @@ They are:</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title17" id="winc-component"><h3 class="title topictitle3" id="ariaid-title17">WINC Component</h3><div class="body"><p class="p">Enable WINC Driver in the project:</p>
+<div class="topic nested2" aria-labelledby="ariaid-title17" id="winc-component"><h3 class="title topictitle3" id="ariaid-title17" style="">WINC Component</h3><div class="body"><p class="p">Enable WINC Driver in the project:</p>
 <ul class="ul"><li class="li"><p class="p">In the Available Components, go to Wireless</p>
 </li>
 <li class="li with-image"><p class="p">Select <strong class="ph b">Driver -&gt; WINC</strong></p>
@@ -423,7 +453,7 @@ They are:</p>
 <p class="p">User can enable BLE option in WINC3400 as shown below.</p>
 <br /><img class="image" src="GUID-F693A443-5AC7-480E-8B76-83F6D9D38D67-low.png" alt="winc3400_1" /><br /></div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title18" id="mhc-pin-configuration"><h3 class="title topictitle3" id="ariaid-title18">MHC PIN Configuration</h3><div class="body"><p class="p">This section summarizes the pin configuration requirement for MHC pin configuration component.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title18" id="mhc-pin-configuration"><h3 class="title topictitle3" id="ariaid-title18" style="">MHC PIN Configuration</h3><div class="body"><p class="p">This section summarizes the pin configuration requirement for MHC pin configuration component.</p>
 <p class="p">In MHC, user can do pin configuration with the help of below steps</p>
 <ul class="ul"><li class="li"><p class="p">Go to Tools in menu bar</p>
 </li>
@@ -518,7 +548,7 @@ For both WINC1500 and WINC3400,</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title19" id="save-and-generate-code"><h3 class="title topictitle3" id="ariaid-title19">Save and generate code</h3><div class="body"><p class="p">To save the modifications</p>
+<div class="topic nested2" aria-labelledby="ariaid-title19" id="save-and-generate-code"><h3 class="title topictitle3" id="ariaid-title19" style="">Save and generate code</h3><div class="body"><p class="p">To save the modifications</p>
 <ul class="ul"><li class="li with-image"><p class="p">Click Save Click Generate Code</p>
 <br /><img class="image" src="GUID-B64DA3A8-875A-4B3D-931F-8087DE5E557A-low.png" alt="same54_46" /><br /></li>
 <li class="li with-image"><p class="p">In the next window, click Generate</p>
@@ -526,7 +556,7 @@ For both WINC1500 and WINC3400,</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title20" id="application-code"><h3 class="title topictitle3" id="ariaid-title20">Application Code</h3><div class="body"><p class="p">With above component and pin configuration in MHC, user has required peripheral libraries and drivers for application development. User can follow the API guidelines to develop the application or follow the below step to create simple application for getting started.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title20" id="application-code"><h3 class="title topictitle3" id="ariaid-title20" style="">Application Code</h3><div class="body"><p class="p">With above component and pin configuration in MHC, user has required peripheral libraries and drivers for application development. User can follow the API guidelines to develop the application or follow the below step to create simple application for getting started.</p>
 <ul class="ul"><li class="li"><p class="p">Go to the path {local system path}\wireless_apps_winc1500\apps{User project name}\firmware\src.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">a.</span><p class="p">app.c</p>
 </li>
@@ -554,7 +584,7 @@ For both WINC1500 and WINC3400,</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title21" id="build-and-program-the-device"><h3 class="title topictitle3" id="ariaid-title21">Build and program the device</h3><div class="body"><p class="p">To compile the project</p>
+<div class="topic nested2" aria-labelledby="ariaid-title21" id="build-and-program-the-device"><h3 class="title topictitle3" id="ariaid-title21" style="">Build and program the device</h3><div class="body"><p class="p">To compile the project</p>
 <ul class="ul"><li class="li"><p class="p">Right click on the project</p>
 </li>
 <li class="li with-image"><p class="p">Select Clean and Build</p>
@@ -568,7 +598,7 @@ For both WINC1500 and WINC3400,</p>
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title22" id="output"><h3 class="title topictitle3" id="ariaid-title22">Output</h3><div class="body"><p class="p">Expected output</p>
+<div class="topic nested2" aria-labelledby="ariaid-title22" id="output"><h3 class="title topictitle3" id="ariaid-title22" style="">Output</h3><div class="body"><p class="p">Expected output</p>
 <br /><img class="image" src="GUID-E33EF084-215A-4A41-9BDC-A0AA6A0C7680-low.png" alt="samd21_53" /><br /><p class="p"><strong class="ph b">Note:</strong></p>
 <p class="p">If the user wants to create the project using the FrreRTOS, then follow the below mentioned steps.</p>
 <p class="p">To add FreeRTOS component</p>

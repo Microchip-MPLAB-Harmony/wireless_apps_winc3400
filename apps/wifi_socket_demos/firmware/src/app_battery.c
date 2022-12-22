@@ -72,7 +72,7 @@ typedef enum
 
 APP_BLE_BATTERY_STATES appBleBatteryState;
 
-#define LED0_PIN     PORT_PIN_PB30
+#define LED0_PIN     SYS_PORT_PIN_PB30
 
 SYS_TIME_HANDLE battery_timer = SYS_TIME_HANDLE_INVALID;
 
@@ -153,9 +153,9 @@ static at_ble_status_t ble_bat_start_advertise(void)
 void ble_bat_handle_timer_event(unsigned int context)
 {
 	if (led_toggle == true)
-		PORT_PinToggle(LED0_PIN);
+		SYS_PORT_PinToggle(LED0_PIN);
 	else
-		PORT_PinSet(LED0_PIN);	// LED OFF
+		SYS_PORT_PinSet(LED0_PIN);	// LED OFF
 
 	timer_cb_done = true;
 }
