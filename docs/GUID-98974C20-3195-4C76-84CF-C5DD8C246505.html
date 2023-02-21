@@ -4,8 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
-<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2023" />
+<meta name="DC.rights.owner" content="(C) Copyright 2023" />
 <meta name="DC.type" content="topic" />
 <meta name="DC.title" content="WINC Devices – Integrated Serial Flash Memory Download Procedure" />
 <meta name="DC.relation" scheme="URI" content="GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.html" />
@@ -274,23 +274,43 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 <br /><img class="image" src="GUID-644C111A-B49E-41C0-9AE9-1E0446AC9E79-low.png" alt="content_manager_6" /><br /><p class="p">The firmware upgrade tool for WINC devices will be available in :  {local system path}\wireless_wifi\utilities\wifi\winc</p>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title5" id="hardware-setup"><h2 class="title topictitle2" id="ariaid-title5" style="">Hardware Setup</h2><div class="body"><ul class="ul"><li class="li"><p class="p">SAM D21 Xplained Pro Evaluation Kit (ATSAMD21-XPRO) - SAMD21 is used as a HostMCU</p>
+<div class="topic nested1" aria-labelledby="ariaid-title5" id="hardware-setup-for-samd21-xplained-pro-evaluation-kit"><h2 class="title topictitle2" id="ariaid-title5" style="">Hardware Setup for SAMD21 Xplained Pro Evaluation Kit</h2><div class="body"><ul class="ul"><li class="li"><p class="p">SAM D21 Xplained Pro Evaluation Kit (ATSAMD21-XPRO) - SAMD21 is used as a HostMCU</p>
 </li>
-<li class="li"><p class="p">ATWINC1500 / WINC3400 Xplained PRO Evaluation Kit (ATWINC1500-XPRO / ATWINC3400-XPRO) - Wi-Fi SPI slave device connected to SAMD21 HostMCU device</p>
+<li class="li"><p class="p">ATWINC3400 Xplained PRO Evaluation Kit (ATWINC3400-XPRO) - Wi-Fi SPI slave device connected to SAMD21 HostMCU device</p>
 </li>
-<li class="li"><p class="p">The ATWINC1500 / ATWINC3400 device is attached to EXT1 of the SAMD21 Xplained Pro kit.</p>
+<li class="li"><p class="p">The ATWINC3400 device is attached to EXT1 of the SAMD21 Xplained Pro kit.</p>
 </li>
 <li class="li with-image"><p class="p">Plug a micro-USB cable from Windows computer to the debug USB port of the SAM D21 Xplained Pro Evaluation kit</p>
 <br /><img class="image" src="GUID-FC167C73-FCC9-400F-A35A-39C77E8CCD0C-low.png" alt="hardware" /><br /></li>
 </ul>
-<p class="p"><strong class="ph b">Note</strong></p>
-<p class="p">If the user is using SAMA5D27 host, do not reset the board after programming the serial bridge application.</p>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title6" id="serial-bridge-application"><h2 class="title topictitle2" id="ariaid-title6" style="">Serial Bridge Application</h2><div class="body"><p class="p">As the WINC device is connected to host MCU through SPI interface, upgrading the WINC serial flash via the host MCU would be an easier solution. Since, WINC provides transparent access to host MCU, the WINC serial flash can be read/written from host MCU. The host MCU can program the serial (SPI) flash without the need for operational firmware in the WINC. The host MCU running the serial bridge firmware is connected between computer and WINC SPI to download the firmware to WINC serial flash.
+<div class="topic nested1" aria-labelledby="ariaid-title6" id="hardware-setup-for-same54-xplained-pro-evaluation-kit"><h2 class="title topictitle2" id="ariaid-title6" style="">Hardware Setup for SAME54 Xplained Pro Evaluation Kit</h2><div class="body"><ul class="ul"><li class="li"><p class="p">SAM E54 Xplained Pro Evaluation Kit - SAME54 is used as a HostMCU</p>
+</li>
+<li class="li"><p class="p">WINC3400 Xplained PRO Evaluation Kit (ATWINC3400-XPRO) - Wi-Fi SPI slave device connected to SAME54 HostMCU device</p>
+</li>
+<li class="li"><p class="p">The ATWINC3400 device is attached to EXT1 of the SAME54 Xplained Pro kit.</p>
+</li>
+<li class="li with-image"><p class="p">Plug a micro-USB cable from Windows computer to the debug USB port of the SAM E54 Xplained Pro Evaluation kit</p>
+<br /><img class="image" src="GUID-4556D49B-3B3F-49BD-87F0-24D070E4386B-low.png" alt="same54_winc3400" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title7" id="hardware-setup-for-sama5d27-with-winc3400-wifi-8-click-board"><h2 class="title topictitle2" id="ariaid-title7" style="">Hardware setup for SAMA5D27 with WINC3400 WiFi 8 Click board</h2><div class="body"><ul class="ul"><li class="li"><p class="p">Install JLink Program / Debug utility from Segger (https://www.segger.com/downloads/jlink/) for SOM1-Ek1 board JLink Debugger / Programmer</p>
+</li>
+<li class="li"><p class="p"><a class="xref" href="https://www.microchip.com/en-us/development-tool/atsama5d27-som1-ek1" target="_blank">SAMA5D27 SOM1-Ek1 board</a> - SAMA5D27 is used as the host MCU.</p>
+</li>
+<li class="li"><p class="p">Connect the WINC3400 WiFi 8 Click board to the MBus1 connector.</p>
+</li>
+<li class="li with-image"><p class="p">Connect the USB port (J10) on SOM1-Ek1 board to the computer using micro USB cable.</p>
+<br /><img class="image" src="GUID-6F91953F-D471-411E-841A-B5688A7528CD-low.png" /><br /></li>
+</ul>
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title8" id="serial-bridge-application"><h2 class="title topictitle2" id="ariaid-title8" style="">Serial Bridge Application</h2><div class="body"><p class="p">As the WINC device is connected to host MCU through SPI interface, upgrading the WINC serial flash via the host MCU would be an easier solution. Since, WINC provides transparent access to host MCU, the WINC serial flash can be read/written from host MCU. The host MCU can program the serial (SPI) flash without the need for operational firmware in the WINC. The host MCU running the serial bridge firmware is connected between computer and WINC SPI to download the firmware to WINC serial flash.
 <strong class="ph b">winc_programmer_UART (PC) &lt;—-&gt; samd21_xplained_pro_serial_bridge.elf(Host) &lt;—-&gt; WINC SPI device</strong></p>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title7" id="serial-bridge-application-for-harmony-3"><h3 class="title topictitle3" id="ariaid-title7" style="">Serial Bridge Application for Harmony 3</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Open MPLAB</p>
+<div class="topic nested2" aria-labelledby="ariaid-title9" id="serial-bridge-application-for-harmony-3"><h3 class="title topictitle3" id="ariaid-title9" style="">Serial Bridge Application for Harmony 3</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Open MPLAB</p>
 </li>
 <li class="li"><p class="p">Go to File Menu and select Open Project</p>
 </li>
@@ -303,7 +323,26 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title8" id="hardware-setup-1"><h3 class="title topictitle3" id="ariaid-title8" style="">Hardware Setup</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Power On Sequence</p>
+<div class="topic nested2" aria-labelledby="ariaid-title10" id="programming-the-application-into-sama5d27-som1-ek1-board"><h3 class="title topictitle3" id="ariaid-title10" style="">Programming the application into SAMA5D27 SOM1-Ek1 board</h3><div class="body"><p class="p">In SAMA5D27 SOM1-Ek1 board the Serial Bridge application will be programmed into the RAM. So do not reset the board after programming the application.</p>
+<p class="p">If the user wants to program the application into SD card and run it from SD Card, please follow the below mentioned steps:</p>
+<ul class="ul"><li class="li"><p class="p">Replace the Linker Script "ddr.ld" which is available in "wireless_wifi\apps\serial_bridge\firmware\src\config\sam_a5d27_som1_winc3400" with the Linker script https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_a5d2/blob/master/apps/uart/uart_echo_interrupt/firmware/src/config/sam_a5d27_som1_ek/ddr.ld</p>
+</li>
+<li class="li"><p class="p">Clean and Build the project</p>
+</li>
+<li class="li"><p class="p">Copy the harmony MPU bootstrap binary (boot.bin) from "wireless_wifi\apps\serial_bridge\firmware\at91bootstrap_sam_a5d27_som1_ek.X\binaries" onto the SD card</p>
+</li>
+<li class="li"><p class="p">Copy the application binary (harmony.bin) from "wireless_wifi\apps\serial_bridge\firmware\sam_a5d27_som1_winc3400.X\dist\sam_a5d27_som1_winc3400\production" onto the SD card.</p>
+</li>
+<li class="li"><p class="p">Insert the SD card into SDMMC slot (J12) on the board.</p>
+</li>
+<li class="li"><p class="p">Connect the Debug USB port on the board to the computer using a micro USB cable</p>
+</li>
+<li class="li"><p class="p">Reset the board to run the application</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title11" id="hardware-setup"><h3 class="title topictitle3" id="ariaid-title11" style="">Hardware Setup</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Power On Sequence</p>
 <ul class="ul"><li class="li"><p class="p">To perform a serial flash download using the ATWINC1500 built-in UART, it is mandatory that the ATWINC1500 chip is in the right bootloader state.</p>
 </li>
 <li class="li"><p class="p">To do so, the HostMCU must power up the ATWINC1500 chip and then perform the reset sequence as defined in the ATWINC1500 datasheet</p>
@@ -317,20 +356,20 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 </li>
 </ul>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e212"><span>ATWINC1500 module pin name</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e214"><span>ATWINC1500 Xplained Pro pin name</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e216"><span>Function</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e278"><span>ATWINC1500 module pin name</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e280"><span>ATWINC1500 Xplained Pro pin name</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e282"><span>Function</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e212 "><span>J14</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e214 "><span>UART_TX</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e216 "><span>TXD</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e278 "><span>J14</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e280 "><span>UART_TX</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e282 "><span>TXD</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e212 "><span>J19</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e214 "><span>UART_RXD</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e216 "><span>RXD</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e278 "><span>J19</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e280 "><span>UART_RXD</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e282 "><span>RXD</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e212 d10406e214 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e278 d10406e280 "><span> </span></td>
 </tr>
 </tbody>
 </table>
@@ -340,94 +379,85 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 </ul>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title9" id="hardware-setup-for-sama5d27-with-winc3400-wifi-8-click-board"><h3 class="title topictitle3" id="ariaid-title9" style="">Hardware setup for SAMA5D27 with WINC3400 WiFi 8 Click board</h3><div class="body"><ul class="ul"><li class="li"><p class="p">Install JLink Program / Debug utility from Segger (https://www.segger.com/downloads/jlink/) for SOM1-Ek1 board JLink Debugger / Programmer</p>
-</li>
-<li class="li"><p class="p">Connect the WINC3400 WiFi 8 Click board to the MBus1 connector.</p>
-</li>
-<li class="li with-image"><p class="p">Connect the USB port (J10) on SOM1-Ek1 board to the computer using micro USB cable.</p>
-<br /><img class="image" src="GUID-6F91953F-D471-411E-841A-B5688A7528CD-low.png" /><br /></li>
-</ul>
 </div>
-</div>
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title10" id="general-information-on-firmware-update"><h2 class="title topictitle2" id="ariaid-title10" style="">General Information on Firmware Update</h2><div class="body"><p class="p">The firmware upgrade tool for the WINC devices contains,</p>
+<div class="topic nested1" aria-labelledby="ariaid-title12" id="general-information-on-firmware-update"><h2 class="title topictitle2" id="ariaid-title12" style="">General Information on Firmware Update</h2><div class="body"><p class="p">The firmware upgrade tool for the WINC devices contains,</p>
 <ul class="ul"><li class="li"><p class="p">Scripts</p>
 </li>
 <li class="li"><p class="p">Binary Tools</p>
 </li>
 </ul>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title11" id="scripts"><h3 class="title topictitle3" id="ariaid-title11" style="">Scripts</h3><div class="body"><p class="p">The "winc" folder in <strong class="ph b">{local system path}\wireless_wifi\utilities\wifi</strong> path contains the following two scripts.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title13" id="scripts"><h3 class="title topictitle3" id="ariaid-title13" style="">Scripts</h3><div class="body"><p class="p">The "winc" folder in <strong class="ph b">{local system path}\wireless_wifi\utilities\wifi</strong> path contains the following two scripts.</p>
 <ul class="ul"><li class="li"><p class="p">winc_flash_tool.cmd</p>
 <p class="p">This script is for the firmware upgrade in Windows and it uses the "image_tool" and "winc_programmer_uart/i2c" to build and program the firmware binary image to the WINC devices.</p>
 <ul class="ul"><li class="li"><p class="p">winc_flash_tool.cmd Usage</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e290"><span>Usage</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e292"><span>Command Example</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e341"><span>Usage</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e343"><span>Command Example</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e290 "><span>To erase the entire flash</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e292 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /e</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e341 "><span>To erase the entire flash</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e343 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /e</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e290 "><span>To create and program the Firmware Image</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e292 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /e /x /i prog /w</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e341 "><span>To create and program the Firmware Image</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e343 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /e /x /i prog /w</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e290 "><span>To create and program the All-in-one(AIO) Image</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e292 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /e /x /i aio /w</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e341 "><span>To create and program the All-in-one(AIO) Image</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e343 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /e /x /i aio /w</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e290 "><span>To create OTA Image</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e292 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /i ota</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e341 "><span>To create OTA Image</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e343 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /i ota</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e290 "><span>Writing to "Root certificate" region</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e292 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /i root /w</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e341 "><span>Writing to "Root certificate" region</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e343 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /i root /w</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e290 "><span>Writing to "HTTP files" region</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e292 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /i http /w</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e341 "><span>Writing to "HTTP files" region</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e343 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /i http /w</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e290 "><span>To read the entire flash</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e292 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /r</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e341 "><span>To read the entire flash</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e343 "><span>winc_flash_tool.cmd /p COM3 /d WINC3400 /v 1.4.3 /r</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e290 d10406e292 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e341 d10406e343 "><span> </span></td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e338"><span>Arguments</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e340"><span>Details</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e389"><span>Arguments</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e391"><span>Details</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/p</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>Serial port for UART mode</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/p</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>Serial port for UART mode</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/d</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>WINC device type</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/d</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>WINC device type</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/s</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>Aardvark serial number</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/s</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>Aardvark serial number</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/v</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>Firmware version number</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/v</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>Firmware version number</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/e</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>Erase entire device before programming</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/e</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>Erase entire device before programming</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/x</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>Read XO offset before creating programming image</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/x</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>Read XO offset before creating programming image</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/i</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>Image type:prog    - Programmer format, aio     - All in one image, raw binary, ota - OTA, root - Root certificates in programmer format, http    - HTTP files in programmer format</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/i</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>Image type:prog    - Programmer format, aio     - All in one image, raw binary, ota - OTA, root - Root certificates in programmer format, http    - HTTP files in programmer format</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/w</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>Write to device</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/w</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>Write to device</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/f</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>Filename of image file to create</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/f</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>Filename of image file to create</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e338 "><span>/r</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e340 "><span>Read entire flash from device</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e389 "><span>/r</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e391 "><span>Read entire flash from device</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e338 d10406e340 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e389 d10406e391 "><span> </span></td>
 </tr>
 </tbody>
 </table>
@@ -437,7 +467,7 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 </li>
 </ul>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title12" id="commands-logs"><h4 class="title topictitle4" id="ariaid-title12" style="">Commands Logs</h4><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Create and program the Firmware Image</p>
+<div class="topic nested3" aria-labelledby="ariaid-title14" id="commands-logs"><h4 class="title topictitle4" id="ariaid-title14" style="">Commands Logs</h4><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Create and program the Firmware Image</p>
 <ul class="ul"><li class="li with-image"><p class="p">Expected output log for the command:</p>
 <p class="p">winc_flash_tool.cmd /p COM3 /d winc3400 /v 1.4.3 /i ota</p>
 <br /><img class="image" src="GUID-810F0F5D-F32C-4E29-AD93-03AD233C05B7-low.png" alt="firmware_upgrade" /><br /></li>
@@ -478,72 +508,72 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 <p class="p">This script is for the firmware upgrade in Linux and it uses the "image_tool" and "winc_programmer_uart/i2c" to build and program the firmware binary image to the WINC devices.</p>
 <ul class="ul"><li class="li"><p class="p">winc_flash_tool.sh Usage</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e488"><span>Usage</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e490"><span>Command Example</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e539"><span>Usage</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e541"><span>Command Example</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e488 "><span>To erase the entire flash</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e490 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -e</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e539 "><span>To erase the entire flash</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e541 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -e</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e488 "><span>To create and program the Firmware Image</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e490 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -e -x -i prog -w</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e539 "><span>To create and program the Firmware Image</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e541 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -e -x -i prog -w</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e488 "><span>To create and program the All-in-one(AIO) Image</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e490 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -e -x i aio -w</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e539 "><span>To create and program the All-in-one(AIO) Image</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e541 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -e -x i aio -w</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e488 "><span>To create OTA Image</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e490 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -i ota</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e539 "><span>To create OTA Image</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e541 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -i ota</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e488 "><span>Writing to "Root certificate" region</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e490 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -i root -w</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e539 "><span>Writing to "Root certificate" region</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e541 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -i root -w</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e488 "><span>Writing to "HTTP files" region</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e490 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -i http -w</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e539 "><span>Writing to "HTTP files" region</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e541 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -i http -w</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e488 "><span>To read the entire flash</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e490 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -r</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e539 "><span>To read the entire flash</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e541 "><span>winc_flash_tool.sh -p TTYS0 -d WINC3400 -v 1.4.3 -r</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e488 d10406e490 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e539 d10406e541 "><span> </span></td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e536"><span>Arguments</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e538"><span>Details</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e587"><span>Arguments</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e589"><span>Details</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-p</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>Serial port for UART mode</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-p</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>Serial port for UART mode</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-d</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>WINC device type</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-d</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>WINC device type</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-s</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>Aardvark serial number</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-s</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>Aardvark serial number</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-v</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>Firmware version number</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-v</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>Firmware version number</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-e</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>Erase entire device before programming</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-e</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>Erase entire device before programming</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-x</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>Read XO offset before creating programming image</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-x</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>Read XO offset before creating programming image</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-i</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>Image type:prog    - Programmer format, aio - All in one image, raw binary, ota- OTA, root- Root certificates in programmer format, http - HTTP files in programmer format</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-i</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>Image type:prog    - Programmer format, aio - All in one image, raw binary, ota- OTA, root- Root certificates in programmer format, http - HTTP files in programmer format</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-w</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>Write to device</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-w</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>Write to device</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-f</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>Filename of image file to create</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-f</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>Filename of image file to create</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e536 "><span>-r</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e538 "><span>Read entire flash from device</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e587 "><span>-r</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e589 "><span>Read entire flash from device</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e536 d10406e538 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e587 d10406e589 "><span> </span></td>
 </tr>
 </tbody>
 </table>
@@ -555,14 +585,14 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 </div>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title13" id="atwinc1500atwinc3400-binary-tools"><h3 class="title topictitle3" id="ariaid-title13" style="">ATWINC1500/ATWINC3400 Binary Tools</h3><div class="body"><p class="p">The script files internally use the following tools to build and program the image.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title15" id="atwinc1500atwinc3400-binary-tools"><h3 class="title topictitle3" id="ariaid-title15" style="">ATWINC1500/ATWINC3400 Binary Tools</h3><div class="body"><p class="p">The script files internally use the following tools to build and program the image.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">image_tool - Builds firmware binary image</p>
 </li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">winc_programmer_uart/i2c – Program the built firmware binary image to the WINC device using UART or I2C interface.</p>
 </li>
 </ol>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title14" id="building-firmware-image"><h4 class="title topictitle4" id="ariaid-title14" style="">Building Firmware Image</h4><div class="body"><ul class="ul"><li class="li"><p class="p">image_tool located in <strong class="ph b">{local system path}\wireless_wifi\utilities\wifi\winc\tools</strong> is used to build binary images for ATWINC devices.</p>
+<div class="topic nested3" aria-labelledby="ariaid-title16" id="building-firmware-image"><h4 class="title topictitle4" id="ariaid-title16" style="">Building Firmware Image</h4><div class="body"><ul class="ul"><li class="li"><p class="p">image_tool located in <strong class="ph b">{local system path}\wireless_wifi\utilities\wifi\winc\tools</strong> is used to build binary images for ATWINC devices.</p>
 </li>
 <li class="li"><p class="p">It collects all the binaries for each section and combine it in to one firmware called wincXXXX_X.X.X.bin.</p>
 </li>
@@ -579,43 +609,43 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 </ul>
 </div>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title15" id="image-tool-usage"><h4 class="title topictitle4" id="ariaid-title15" style="">image_tool Usage</h4><div class="body">
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e648"><span>Usage</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e650"><span>Command Example</span></th>
+<div class="topic nested3" aria-labelledby="ariaid-title17" id="image-tool-usage"><h4 class="title topictitle4" id="ariaid-title17" style="">image_tool Usage</h4><div class="body">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e699"><span>Usage</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e701"><span>Command Example</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e648 "><span>To create firmware image</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e650 "><span>image_tool.exe -c 1.4.3\flash_image.config -c gain_tables\gain.config -o winc3400_1.4.3.bin -of prog</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e699 "><span>To create firmware image</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e701 "><span>image_tool.exe -c 1.4.3\flash_image.config -c gain_tables\gain.config -o winc3400_1.4.3.bin -of prog</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e648 "><span>Writing to a specific region(eg: Root certificate)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e650 "><span>image_tool.exe -c 1.4.3\flash_image.config -c gain_tables\gain.config winc3400_1.4.3.bin -of prog -r “root certificates"</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e699 "><span>Writing to a specific region(eg: Root certificate)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e701 "><span>image_tool.exe -c 1.4.3\flash_image.config -c gain_tables\gain.config winc3400_1.4.3.bin -of prog -r “root certificates"</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e648 "><span>To create OTA firmware image</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e650 "><span>image_tool.exe -c 1.4.3\flash_image.config -o winc3400_1.4.3.bin -of winc_ota -s ota</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e699 "><span>To create OTA firmware image</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e701 "><span>image_tool.exe -c 1.4.3\flash_image.config -o winc3400_1.4.3.bin -of winc_ota -s ota</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e648 d10406e650 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e699 d10406e701 "><span> </span></td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e676"><span>Arguments</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e678"><span>Details</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e727"><span>Arguments</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e729"><span>Details</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e676 "><span>-c</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e678 "><span>Configuration files Microchip recommends to use the default configuration files which is flash_image.config</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e727 "><span>-c</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e729 "><span>Configuration files Microchip recommends to use the default configuration files which is flash_image.config</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e676 "><span>-o</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e678 "><span>Output name of the binary image files ATWINC1500: winc1500_X.X.X.bin, ATWINC3400: winc3400_X.X.X.bin</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e727 "><span>-o</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e729 "><span>Output name of the binary image files ATWINC1500: winc1500_X.X.X.bin, ATWINC3400: winc3400_X.X.X.bin</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e676 "><span>-of</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e678 "><span>The image_tool supports 4 output formats :  raw - Raw binary image, winc_ota - WINC OTA format, prog - Format suitable for programming., log - Textual log information</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e727 "><span>-of</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e729 "><span>The image_tool supports 4 output formats :  raw - Raw binary image, winc_ota - WINC OTA format, prog - Format suitable for programming., log - Textual log information</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e676 "><span>-r</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e678 "><span>Specifies a region to process. More than one region can be specified with repeated use of this option. If used only the regions specified will be processed.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e727 "><span>-r</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e729 "><span>Specifies a region to process. More than one region can be specified with repeated use of this option. If used only the regions specified will be processed.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e676 d10406e678 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e727 d10406e729 "><span> </span></td>
 </tr>
 </tbody>
 </table>
@@ -623,7 +653,7 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 <p class="p">For more information, enter image_tool help command:image_tool -h</p>
 </div>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title16" id="commands-logs-1"><h4 class="title topictitle4" id="ariaid-title16" style="">Commands Logs</h4><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Creating Firmware Image</p>
+<div class="topic nested3" aria-labelledby="ariaid-title18" id="commands-logs-1"><h4 class="title topictitle4" id="ariaid-title18" style="">Commands Logs</h4><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Creating Firmware Image</p>
 <ul class="ul"><li class="li with-image"><p class="p">Expected output log for the command:</p>
 <p class="p">image_tool.exe -c 1.4.3\flash_image.config -c gain_tables\gain.config -o winc3400_1.4.3.bin -of prog</p>
 <br /><img class="image" src="GUID-925365EB-526B-4143-B9B4-71658BA919E0-low.png" alt="imagetool_1" /><br /></li>
@@ -644,7 +674,7 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 </ol>
 </div>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title17" id="programming-firmware-image"><h4 class="title topictitle4" id="ariaid-title17" style="">Programming Firmware Image</h4><div class="body"><p class="p">winc_programmer_uart/i2c tool located in src/firmware/firmware is used to program the binary images for ATWINC1500/ATWINC3400 devices using UART or I2C interface. it does the following primary jobs:</p>
+<div class="topic nested3" aria-labelledby="ariaid-title19" id="programming-firmware-image"><h4 class="title topictitle4" id="ariaid-title19" style="">Programming Firmware Image</h4><div class="body"><p class="p">winc_programmer_uart/i2c tool located in src/firmware/firmware is used to program the binary images for ATWINC1500/ATWINC3400 devices using UART or I2C interface. it does the following primary jobs:</p>
 <ul class="ul"><li class="li"><p class="p">Erase the ATWINC1500/ATWINC3400 memory</p>
 </li>
 <li class="li"><p class="p">Read the firmware from ATWINC1500/ATWINC3400</p>
@@ -656,55 +686,55 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 </ul>
 </div>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title18" id="winc-programmer-uart-tool-usage"><h4 class="title topictitle4" id="ariaid-title18" style="">winc_programmer_uart Tool Usage</h4><div class="body">
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e775"><span>Usage</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e777"><span>Command Example</span></th>
+<div class="topic nested3" aria-labelledby="ariaid-title20" id="winc-programmer-uart-tool-usage"><h4 class="title topictitle4" id="ariaid-title20" style="">winc_programmer_uart Tool Usage</h4><div class="body">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e826"><span>Usage</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e828"><span>Command Example</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e775 "><span>Erase ATWINC1500/ATWINC3400 flash memory</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e777 "><span>winc_programmer_uart.exe -p COM16 -d winc3400 -e -pfw 1.4.3\firmware\programmer_firmware.bin</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e826 "><span>Erase ATWINC1500/ATWINC3400 flash memory</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e828 "><span>winc_programmer_uart.exe -p COM16 -d winc3400 -e -pfw 1.4.3\firmware\programmer_firmware.bin</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e775 "><span>Write the created binary image to ATWINC1500/ATWINC3400 flash memory</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e777 "><span>winc_programmer_uart.exe -p COM16 -d winc3400 -i winc3400_1.4.3.bin -if prog -w -pfw 1.4.3\firmware\programmer_firmware.bin</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e826 "><span>Write the created binary image to ATWINC1500/ATWINC3400 flash memory</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e828 "><span>winc_programmer_uart.exe -p COM16 -d winc3400 -i winc3400_1.4.3.bin -if prog -w -pfw 1.4.3\firmware\programmer_firmware.bin</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e775 "><span>Verify the written image in ATWINC1500/ATWINC3400 device</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e777 "><span>winc_programmer_uart.exe -p COM16 -d winc3400 -i winc3400_1.4.3.bin -if prog -r -pfw 1.4.3\firmware\programmer_firmware.bin</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e826 "><span>Verify the written image in ATWINC1500/ATWINC3400 device</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e828 "><span>winc_programmer_uart.exe -p COM16 -d winc3400 -i winc3400_1.4.3.bin -if prog -r -pfw 1.4.3\firmware\programmer_firmware.bin</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e775 "><span>Single command (including all the above operations)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e777 "><span>winc_programmer_UART.exe -p COM16 -d winc3400 -e -i winc3400_1.4.3.bin -if prog -w -r -pfw 1.4.3\firmware\programmer_firmware.bin</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e826 "><span>Single command (including all the above operations)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e828 "><span>winc_programmer_UART.exe -p COM16 -d winc3400 -e -i winc3400_1.4.3.bin -if prog -w -r -pfw 1.4.3\firmware\programmer_firmware.bin</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e775 d10406e777 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e826 d10406e828 "><span> </span></td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e808"><span>Arguments</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e810"><span>Details</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e859"><span>Arguments</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d10406e861"><span>Details</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e808 "><span>-p</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e810 "><span>Port number of the connected HostMCU COM Port Command to find the Port number: test_edbg</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e859 "><span>-p</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e861 "><span>Port number of the connected HostMCU COM Port Command to find the Port number: test_edbg</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e808 "><span>-d</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e810 "><span>ATWINC device: winc1500 or winc3400</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e859 "><span>-d</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e861 "><span>ATWINC device: winc1500 or winc3400</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e808 "><span>-e</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e810 "><span>To erase the ATWINC1500/ATWINC3400 device flash memory before writing the firmware image</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e859 "><span>-e</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e861 "><span>To erase the ATWINC1500/ATWINC3400 device flash memory before writing the firmware image</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e808 "><span>-w</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e810 "><span>To write the firmware image</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e859 "><span>-w</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e861 "><span>To write the firmware image</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e808 "><span>-r</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e810 "><span>To read the firmware image</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e859 "><span>-r</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e861 "><span>To read the firmware image</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e808 "><span>-if</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e810 "><span>Input format. winc_ota - WINC OTA format, raw - A raw binary image, prog - Format suitable for programming.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e859 "><span>-if</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e861 "><span>Input format. winc_ota - WINC OTA format, raw - A raw binary image, prog - Format suitable for programming.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e808 "><span>-pfw</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e810 "><span>programming firmware : WINC firmware used to program the device.</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e859 "><span>-pfw</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d10406e861 "><span>programming firmware : WINC firmware used to program the device.</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e808 d10406e810 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d10406e859 d10406e861 "><span> </span></td>
 </tr>
 </tbody>
 </table>
@@ -713,7 +743,7 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 <p class="p"><em class="ph i">winc_programmer_uart.exe -h</em></p>
 </div>
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title19" id="commands-logs-2"><h4 class="title topictitle4" id="ariaid-title19" style="">Commands logs</h4><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Erase WINC memory</p>
+<div class="topic nested3" aria-labelledby="ariaid-title21" id="commands-logs-2"><h4 class="title topictitle4" id="ariaid-title21" style="">Commands logs</h4><div class="body"><ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Erase WINC memory</p>
 <ul class="ul"><li class="li with-image"><p class="p">Expected output log for the command:</p>
 <p class="p">winc_programmer_uart.exe -p COM3 -d winc3400 -e -pfw 1.4.3\firmware\programmer_firmware.bin</p>
 <br /><img class="image" src="GUID-9D08DD23-C1F1-49E4-982B-27B053F27C6B-low.png" alt="erase" /><br /></li>
@@ -751,7 +781,7 @@ After the installation, open the MPLAB IDE and launch H3 content manager from th
 </div>
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title20" id="download-failure-troubleshooting"><h3 class="title topictitle3" id="ariaid-title20" style="">Download Failure Troubleshooting</h3><div class="body"><p class="p">Here are the troubleshooting tips for a specific error while downloading using batch script.</p>
+<div class="topic nested2" aria-labelledby="ariaid-title22" id="download-failure-troubleshooting"><h3 class="title topictitle3" id="ariaid-title22" style="">Download Failure Troubleshooting</h3><div class="body"><p class="p">Here are the troubleshooting tips for a specific error while downloading using batch script.</p>
 <ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">The script Failed To Find Any COM Port
 The winc_programmer_uart.exe expects a COM port as an argument. If the expected COM port is not found, then it will provide the below error.</p>
 <br /><img class="image" src="GUID-4CDD4FAC-8551-4A56-BD94-7BD22C4D362A-low.png" alt="com_port_failed" /><br /><p class="p"><strong class="ph b">How to fix it:</strong></p>
