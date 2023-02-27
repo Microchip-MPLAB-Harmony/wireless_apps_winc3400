@@ -8748,7 +8748,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\initialization.c</file>
-         <hash>c3f52b881c037d1a90b6757ca9525d5002ac6767fd3a513060fff54aabb929b0</hash>
+         <hash>c71ad14a78f3a6bd2458121edc7a29bac61778913652f582b4e39a0fe2d8fa8f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc0.h</file>
@@ -8964,7 +8964,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\definitions.h</file>
-         <hash>e9797ae3c43d68291fec29ddbd35a2198dfcd41ae4e038ff8699d503a95202c1</hash>
+         <hash>9ee44f6ee6131144c8137b86177cb939790f9d20c269b5ae0d0bb743cca7a01c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\interrupts.c</file>
@@ -9688,7 +9688,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\configuration.h</file>
-         <hash>971af419f0cc57690c903fb67f082970ea8aec5d413797ec7d15edc1e44566d7</hash>
+         <hash>06022268b9ea511b4eb4a545b7e75abaa67be07df1e39ab72ad59e981af0e0ed</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\toolchain_specifics.h</file>

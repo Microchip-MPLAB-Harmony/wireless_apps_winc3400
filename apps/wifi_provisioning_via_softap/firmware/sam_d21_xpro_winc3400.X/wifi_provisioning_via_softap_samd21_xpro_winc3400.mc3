@@ -790,7 +790,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;Group0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;398&quot; canvasWidth=&quot;654&quot; dnOrder=&quot;1&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;Group0&quot; x=&quot;310&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;640&quot; y=&quot;20&quot;/&gt;
@@ -811,8 +813,6 @@
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;tc3&quot; x=&quot;0&quot; y=&quot;184&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;Group0&quot;/&gt;
-    &lt;GraphSettings canvasHeight=&quot;398&quot; canvasWidth=&quot;654&quot; dnOrder=&quot;2&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -7790,7 +7790,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\definitions.h</file>
-         <hash>f01182bed6e5f4bdc97065f65a726964978137aae21db332141f676e48ee621e</hash>
+         <hash>2418ae6359480a8e6e0d4b123e4faa5d302e09cb4e7d340e53814becf2aac0ab</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -7934,7 +7934,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\initialization.c</file>
-         <hash>8d6bf14448fb3931a0acc7ef3b42357a44b5bf5413050bf9476dfe1dffbf63bf</hash>
+         <hash>0744f626e887f2e853262aa817bba574da34a2920635ca4a9d773c982baf5262</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\wdrv_winc_debug.h</file>
