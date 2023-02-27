@@ -80,7 +80,9 @@
 // *****************************************************************************
 static const WDRV_WINC_SPI_CFG wdrvWincSpiInitData =
 {
-    .drvIndex           = DRV_SPI_INDEX_0
+    .drvIndex           = DRV_SPI_INDEX_0,
+    .baudRateInHz       = 30000000,
+    .chipSelect         = SYS_PORT_PIN_NONE
 };
 
 static const WDRV_WINC_SYS_INIT wdrvWincInitData = {
@@ -332,7 +334,6 @@ TCPIP_STACK_HEAP_INTERNAL_CONFIG tcpipHeapConfig =
     .heapFlags = TCPIP_STACK_HEAP_USE_FLAGS,
     .heapUsage = TCPIP_STACK_HEAP_USAGE_CONFIG,
     .malloc_fnc = TCPIP_STACK_MALLOC_FUNC,
-    .calloc_fnc = TCPIP_STACK_CALLOC_FUNC,
     .free_fnc = TCPIP_STACK_FREE_FUNC,
     .heapSize = TCPIP_STACK_DRAM_SIZE,
 };
@@ -682,11 +683,11 @@ void SYS_Initialize ( void* data )
 
 
 
-/* Network Presentation Layer Initialization */
-sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
-/* TCPIP Stack Initialization */
-sysObj.tcpip = TCPIP_STACK_Init();
-SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
+   /* Network Presentation Layer Initialization */
+   sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
+   /* TCPIP Stack Initialization */
+   sysObj.tcpip = TCPIP_STACK_Init();
+   SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
 
     CRYPT_WCCB_Initialize();

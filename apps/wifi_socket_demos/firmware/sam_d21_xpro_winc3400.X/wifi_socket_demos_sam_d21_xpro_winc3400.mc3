@@ -647,7 +647,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;638&quot; canvasWidth=&quot;766&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;550&quot; y=&quot;15&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;430&quot; y=&quot;60&quot;/&gt;
@@ -667,7 +668,6 @@
         &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;tc3&quot; x=&quot;6&quot; y=&quot;400&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;638&quot; canvasWidth=&quot;766&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -6971,7 +6971,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\definitions.h</file>
-         <hash>274c7d7b8de8e442fbaa6d6d4a704ee589e874d66c467f06c3ce8fcbc22d463e</hash>
+         <hash>4a4d3d3a53e05f48d5be4d071b28539dcdf3e73cf76a949ddea9527d9089377f</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -7031,7 +7031,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>41942501c8d9502763cdc13b4300fe4728369c4c6ff0348c99cf7cd4a5db276b</hash>
+         <hash>8ffc0f79262c44908c380a3ad15d46449d63fc532e94c8a4d10156b2a1d42493</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21J18A_DFP\component\dsu.h</file>
@@ -7147,7 +7147,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\initialization.c</file>
-         <hash>4f45437c80299af220bf89e7e8dfb9200164a0b88931fc9804f1de41e02c525e</hash>
+         <hash>fd260f75b61ad21fa43881e26f2b002474d3df94712a8904482dea71cc81c714</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\wdrv_winc_debug.h</file>
@@ -7787,7 +7787,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>1c793506fb215f62b363eccb885ca40b271710b3c381c47e1a7d1530cf10a527</hash>
+         <hash>8ef6ddbeb1cfcd750c3fdf4a40a0ed0b93426401b7053c864eb90e98a804b1c0</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\drv\ble_stack\wifiprov_task.h</file>
@@ -7859,7 +7859,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>e87e6ba9cb409542bed1b3de76bb5248bf145ce31201768d6c811a6d1f0cd4f0</hash>
+         <hash>21bcdea3495b4d9e5664710e87fd42d82ce326308c9f9e0eccbac473c0890bb6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\system\int\src\sys_int.c</file>
@@ -7879,15 +7879,15 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\wdrv_winc.c</file>
-         <hash>796e6722497630e5a4cbc9a2ae40ad36437c62d7ee5f6fcdff708c5ca7f3ee4c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\sam_d21_xpro_winc3400\system\command\sys_command.h</file>
-         <hash>6bd5388fd8931ab337f3ff230c12bce8f52683bbd4d06f2fe1a453d2b76d2dc6</hash>
+         <hash>ad1ee1cc4c9591b5390c2609898cadf5fafd09141c4e8dd25e648eb00a0e2c4d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\wdrv_winc_assoc.h</file>
          <hash>0dfa352e4fdce8325360352f70320f5e68cfd4318cec4009cdbda31dee2bbb80</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_d21_xpro_winc3400\system\command\sys_command.h</file>
+         <hash>6bd5388fd8931ab337f3ff230c12bce8f52683bbd4d06f2fe1a453d2b76d2dc6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\pin_configurations.csv</file>

@@ -663,8 +663,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;514&quot; canvasWidth=&quot;868&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_Xplained_Pro&quot; x=&quot;310&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;190&quot; y=&quot;100&quot;/&gt;
@@ -684,6 +683,7 @@
         &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;tc3&quot; x=&quot;364&quot; y=&quot;147&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;514&quot; canvasWidth=&quot;868&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -8554,7 +8554,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\initialization.c</file>
-         <hash>240e91d8e392c9547e524ea68a77139c1279fb6f6c240b148953457f5345d459</hash>
+         <hash>c3f52b881c037d1a90b6757ca9525d5002ac6767fd3a513060fff54aabb929b0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc0.h</file>
@@ -8770,7 +8770,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\definitions.h</file>
-         <hash>e9797ae3c43d68291fec29ddbd35a2198dfcd41ae4e038ff8699d503a95202c1</hash>
+         <hash>b04945e684c12c3eb8d93089e8c0e639fc4ae28f47a0425e914d14cc091bd62f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\interrupts.c</file>
@@ -8786,7 +8786,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>41942501c8d9502763cdc13b4300fe4728369c4c6ff0348c99cf7cd4a5db276b</hash>
+         <hash>8ffc0f79262c44908c380a3ad15d46449d63fc532e94c8a4d10156b2a1d42493</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
@@ -8894,7 +8894,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>1c793506fb215f62b363eccb885ca40b271710b3c381c47e1a7d1530cf10a527</hash>
+         <hash>8ef6ddbeb1cfcd750c3fdf4a40a0ed0b93426401b7053c864eb90e98a804b1c0</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\wdrv_winc_bssfind.h</file>
@@ -9114,7 +9114,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\wdrv_winc.c</file>
-         <hash>796e6722497630e5a4cbc9a2ae40ad36437c62d7ee5f6fcdff708c5ca7f3ee4c</hash>
+         <hash>ad1ee1cc4c9591b5390c2609898cadf5fafd09141c4e8dd25e648eb00a0e2c4d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\system\dma\sys_dma_mapping.h</file>
@@ -9314,7 +9314,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>e87e6ba9cb409542bed1b3de76bb5248bf145ce31201768d6c811a6d1f0cd4f0</hash>
+         <hash>21bcdea3495b4d9e5664710e87fd42d82ce326308c9f9e0eccbac473c0890bb6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\driver\winc\include\drv\driver\m2m_ssl.h</file>

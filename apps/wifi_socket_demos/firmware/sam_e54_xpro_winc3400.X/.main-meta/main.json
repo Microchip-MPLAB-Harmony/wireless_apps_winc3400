@@ -4,18 +4,18 @@
 	"content": {
 		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.wireless_apps_winc3400_wifi_socket_demos",
-		"version": "3.5.0",
+		"version": "3.6.0",
 		"displayName": "Wi-Fi Socket Mode Demos",
 		"projectName": "sam_e54_xpro_winc3400.X",
 		"shortDescription": "This example application demonstrates the WINC3400 WiFi station mode/Access point mode,SSL,Ping,Iperf,SNTP,MQTT,WiFi Provisioning,WiFi Provisioning via BLE,Custom serial Chat,Heart Rate Profile,Battery Service,Proximity Reporter and Transparent Service applications in Socket Mode",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.00"
+			"semverRange": ">=6.05"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.1.0"
+				"semverRange": ">=4.2.0"
 			}
 		],
 		"dfp": {

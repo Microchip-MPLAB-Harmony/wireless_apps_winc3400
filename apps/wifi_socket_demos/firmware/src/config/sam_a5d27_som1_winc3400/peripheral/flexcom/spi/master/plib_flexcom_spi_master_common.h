@@ -142,6 +142,8 @@ typedef struct
     FLEXCOM_SPI_CALLBACK    callback;
     uintptr_t               context;
     uint32_t                status;
+    /* Number of bytes transferred */
+    size_t                  nBytesTransferred;
 
 } FLEXCOM_SPI_OBJECT ;
 

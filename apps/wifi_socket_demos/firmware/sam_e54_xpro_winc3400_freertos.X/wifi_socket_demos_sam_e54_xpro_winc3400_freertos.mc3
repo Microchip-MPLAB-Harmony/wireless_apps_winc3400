@@ -10026,7 +10026,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\tasks.c</file>
-         <hash>4796a49d6ee8703e99d21270704691d53efffb40d389330be5ca8674e7797eba</hash>
+         <hash>74eec228a85a8567932c39abc7b5f4471ff81e43bdac7c422a4615f66deb0448</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\driver\winc\include\drv\ble_stack\event.h</file>
@@ -10450,7 +10450,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\initialization.c</file>
-         <hash>c557a10956d51520c3736b117a21590022bc2178a8264a949846b99b40d946e3</hash>
+         <hash>a3bf49eac689216e7591b1e89f1a6611a05e86cd60c5f06de8424b9fadf5bcfc</hash>
       </entry>
       <entry>
          <file>..\src\app.h</file>
@@ -10542,7 +10542,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\driver\winc\wdrv_winc.c</file>
-         <hash>796e6722497630e5a4cbc9a2ae40ad36437c62d7ee5f6fcdff708c5ca7f3ee4c</hash>
+         <hash>ad1ee1cc4c9591b5390c2609898cadf5fafd09141c4e8dd25e648eb00a0e2c4d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\peripheral\evsys\plib_evsys.h</file>
@@ -10722,7 +10722,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>1c793506fb215f62b363eccb885ca40b271710b3c381c47e1a7d1530cf10a527</hash>
+         <hash>8ef6ddbeb1cfcd750c3fdf4a40a0ed0b93426401b7053c864eb90e98a804b1c0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\i2s.h</file>
@@ -10802,7 +10802,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>e87e6ba9cb409542bed1b3de76bb5248bf145ce31201768d6c811a6d1f0cd4f0</hash>
+         <hash>21bcdea3495b4d9e5664710e87fd42d82ce326308c9f9e0eccbac473c0890bb6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\system\console\src\sys_console_uart.h</file>
@@ -10818,7 +10818,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\definitions.h</file>
-         <hash>456070c45e95d6982480597c5bee06ea7ab288f9d5698890f834b9a2a80a7633</hash>
+         <hash>a0ea261896c90896567ac488426ae8f97ce4106e259e4823478a51a53b7de107</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom7.h</file>
@@ -10994,7 +10994,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400_freertos\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>41942501c8d9502763cdc13b4300fe4728369c4c6ff0348c99cf7cd4a5db276b</hash>
+         <hash>8ffc0f79262c44908c380a3ad15d46449d63fc532e94c8a4d10156b2a1d42493</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

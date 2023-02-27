@@ -80,7 +80,9 @@
 // *****************************************************************************
 static const WDRV_WINC_SPI_CFG wdrvWincSpiInitData =
 {
-    .drvIndex           = DRV_SPI_INDEX_0
+    .drvIndex           = DRV_SPI_INDEX_0,
+    .baudRateInHz       = 1000000,
+    .chipSelect         = SYS_PORT_PIN_NONE
 };
 
 static const WDRV_WINC_SYS_INIT wdrvWincInitData = {

@@ -953,7 +953,10 @@ static void StateMachineRxDone(tIperfState* pIState)
 static void StateMachineTxStart(tIperfState* pIState)
 {
 
-   TCPIP_ARP_Resolve(pIState->pNetIf, &pIState->remoteSide.remoteIPaddress.v4Add);
+   if(TCPIP_STACK_NetMACTypeGet(pIState->pNetIf) != TCPIP_MAC_TYPE_PPP)
+   {
+       TCPIP_ARP_Resolve(pIState->pNetIf, &pIState->remoteSide.remoteIPaddress.v4Add);
+   }
    IperfSetState(pIState, IPERF_TX_ARP_RESOLVE_STATE);
    pIState->timer = SYS_TMR_TickCountGet();
 }
@@ -969,7 +972,11 @@ static void StateMachineTxArpResolve(tIperfState* pIState)
      return;
   }
 
-  if(!(TCPIP_Helper_IsMcastAddress(&pIState->remoteSide.remoteIPaddress.v4Add)))
+  if(TCPIP_STACK_NetMACTypeGet(pIState->pNetIf) == TCPIP_MAC_TYPE_PPP)
+  {
+      memset(pIState->remoteMACAddr.v, 0, sizeof(pIState->remoteMACAddr));
+  }
+  else if(!(TCPIP_Helper_IsMcastAddress(&pIState->remoteSide.remoteIPaddress.v4Add)))
   {
     if(!TCPIP_ARP_IsResolved(pIState->pNetIf, &pIState->remoteSide.remoteIPaddress.v4Add, &pIState->remoteMACAddr))
     {
@@ -1796,7 +1803,20 @@ static void StateMachineUDPTxOpen(tIperfState* pIState)
     {
         (pIState->pCmdIO->pCmdApi->msg)(cmdIoParam, "iperf: Set of TX buffer size failed\r\n");
     }
-    if(!TCPIP_UDP_OptionsSet(pIState->udpSock, UDP_OPTION_TX_QUEUE_LIMIT, (void*)TCPIP_IPERF_TX_QUEUE_LIMIT))
+    size_t txQLimit;
+#if defined(TCPIP_STACK_USE_PPP_INTERFACE)
+    if(TCPIP_STACK_NetMACTypeGet(pIState->pNetIf) == TCPIP_MAC_TYPE_PPP)
+    {
+        txQLimit = TCPIP_IPERF_PPP_TX_QUEUE_LIMIT;
+    }
+    else
+    {
+        txQLimit = TCPIP_IPERF_TX_QUEUE_LIMIT;
+    }
+#else
+    txQLimit = TCPIP_IPERF_TX_QUEUE_LIMIT;
+#endif  // defined(TCPIP_STACK_USE_PPP_INTERFACE)
+    if(!TCPIP_UDP_OptionsSet(pIState->udpSock, UDP_OPTION_TX_QUEUE_LIMIT, (void*)txQLimit))
     {
         (pIState->pCmdIO->pCmdApi->msg)(cmdIoParam, "iperf: Set of TX queuing limit failed\r\n");
     }
@@ -2513,12 +2533,6 @@ static void CommandIperfSize(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
     const void* cmdIoParam = pCmdIO->cmdIoParam;
 
 
-    if (argc < 3)
-    {
-        (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: iperfs <-tx size> <-rx size> <-i index>\r\n");
-        return;
-    }
-
     setTx = setRx = 0;
     txBuffSize = rxBuffSize = 0;
     iperfIndex = 0;     // assume index 0 if not specified
@@ -2545,7 +2559,7 @@ static void CommandIperfSize(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
         }
         else
         {
-            (*pCmdIO->pCmdApi->msg)(cmdIoParam, "iperfi: Unknown parameter\r\n");
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: iperfs <-tx size> <-rx size> <-i index>\r\n");
         }
 
         currIx += 2;
@@ -2568,14 +2582,15 @@ static void CommandIperfSize(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
     if(setTx)
     {
         pIState->txBuffSize = txBuffSize;
-        (*pCmdIO->pCmdApi->print)(cmdIoParam, "iperfs: OK, set instance %d tx size to %d\r\n", iperfIndex, txBuffSize);
     }
 
     if(setRx)
     {
         pIState->rxBuffSize = rxBuffSize;
-        (*pCmdIO->pCmdApi->print)(cmdIoParam, "iperfs: OK, set instance %d rx size to %d\r\n", iperfIndex, rxBuffSize);
     }
+
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "iperfs: OK, instance %d tx size is %d\r\n", iperfIndex, pIState->txBuffSize);
+    (*pCmdIO->pCmdApi->print)(cmdIoParam, "iperfs: OK, instance %d rx size is %d\r\n", iperfIndex, pIState->rxBuffSize);
 
 }
 

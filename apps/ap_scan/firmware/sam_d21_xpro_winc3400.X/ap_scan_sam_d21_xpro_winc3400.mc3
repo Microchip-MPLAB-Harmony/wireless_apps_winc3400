@@ -600,7 +600,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;Group0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;Group0&quot; x=&quot;30&quot; y=&quot;80&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;550&quot; y=&quot;15&quot;/&gt;
@@ -620,7 +621,6 @@
         &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;tc3&quot; x=&quot;6&quot; y=&quot;400&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;Group0&quot;/&gt;
     &lt;GraphSettings canvasHeight=&quot;487&quot; canvasWidth=&quot;764&quot; dnOrder=&quot;2&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
@@ -6311,7 +6311,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\definitions.h</file>
-         <hash>614df3febcb96af90d563f81845f526d56dc9a90121d21eee2cd8afac038c693</hash>
+         <hash>2293d683fcdd28e7fa5b8b5a8d8fb827e8f336da82708a86eb3f05e059f3e1db</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -6367,7 +6367,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>41942501c8d9502763cdc13b4300fe4728369c4c6ff0348c99cf7cd4a5db276b</hash>
+         <hash>8ffc0f79262c44908c380a3ad15d46449d63fc532e94c8a4d10156b2a1d42493</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21J18A_DFP\component\dsu.h</file>
@@ -6455,7 +6455,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\initialization.c</file>
-         <hash>b678aa1f7e59d8ba7d63ef91a3c3a06db95a3cb0a47579ff4f559a2405cde19e</hash>
+         <hash>0a1a2eacb73addeaed60cc8feaee75e2f7c96f999a30bdf841ba9c1d26581818</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\wdrv_winc_debug.h</file>
@@ -7003,7 +7003,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>1c793506fb215f62b363eccb885ca40b271710b3c381c47e1a7d1530cf10a527</hash>
+         <hash>8ef6ddbeb1cfcd750c3fdf4a40a0ed0b93426401b7053c864eb90e98a804b1c0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21J18A_DFP\component\rtc.h</file>
@@ -7059,7 +7059,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>e87e6ba9cb409542bed1b3de76bb5248bf145ce31201768d6c811a6d1f0cd4f0</hash>
+         <hash>21bcdea3495b4d9e5664710e87fd42d82ce326308c9f9e0eccbac473c0890bb6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\system\int\src\sys_int.c</file>
@@ -7079,7 +7079,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\wdrv_winc.c</file>
-         <hash>796e6722497630e5a4cbc9a2ae40ad36437c62d7ee5f6fcdff708c5ca7f3ee4c</hash>
+         <hash>ad1ee1cc4c9591b5390c2609898cadf5fafd09141c4e8dd25e648eb00a0e2c4d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\wdrv_winc_assoc.h</file>

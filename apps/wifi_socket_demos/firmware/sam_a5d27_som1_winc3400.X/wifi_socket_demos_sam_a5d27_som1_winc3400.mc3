@@ -3270,8 +3270,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;538&quot; canvasWidth=&quot;812&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;274&quot; y=&quot;21&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
@@ -3288,6 +3287,7 @@
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;uart1&quot; x=&quot;133&quot; y=&quot;399&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;538&quot; canvasWidth=&quot;812&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -11360,7 +11360,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\initialization.c</file>
-         <hash>562ff2999da0727120394b423f75ba96acf625abf6ef58f02ae39fe51cf7b9e3</hash>
+         <hash>814edbf8e21db313584e2d52ff85653ef949956d127151ae0cc79fb259a6910b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\driver\winc\include\drv\spi_flash\spi_flash.h</file>
@@ -11396,7 +11396,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\peripheral\flexcom\spi\master\plib_flexcom_spi_master_common.h</file>
-         <hash>b15e3b2e34ea934f1bfc8a0d9a70a36145db45bcfa4ed770d6ddb084162446a1</hash>
+         <hash>ef102e449c813b287b72a5dc000061074da25284809b072b86371b91349a5f8f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\driver\winc\include\drv\ble_stack\wifiprov_task.h</file>
@@ -11596,7 +11596,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\peripheral\flexcom\spi\master\plib_flexcom4_spi_master.c</file>
-         <hash>935cd4286b64b39daa1b9303d4aef45f7707d29d8cc69ca93c5aad5eab30bc11</hash>
+         <hash>dcff0954cd0f2dbd7194accf97e5e23c2161a9f9bbe3516e4af1a26a12be23cf</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\system\dma\sys_dma.h</file>
@@ -11848,7 +11848,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\configuration.h</file>
-         <hash>dca86c2300fd022a28108e75933c207822f3d4f9dee2fe9af0e2ee622a7556f7</hash>
+         <hash>a9aab90b6f3d9005bc3f01d480c30724e3ad5dc53b54e97bf43e87fd4b0c67c0</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\driver\winc\wdrv_winc_custie.c</file>
@@ -12096,7 +12096,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\definitions.h</file>
-         <hash>923919d54e23f08f4770b57a3c535a71cf4412763ad29c8529e93edc00d71c32</hash>
+         <hash>d81694f0fe210df05b965141223ba0fd1afc12e5751b43f096e8daaff2b4246e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_a5d27_som1_winc3400\driver\winc\include\drv\ble_stack\gapm_task.h</file>

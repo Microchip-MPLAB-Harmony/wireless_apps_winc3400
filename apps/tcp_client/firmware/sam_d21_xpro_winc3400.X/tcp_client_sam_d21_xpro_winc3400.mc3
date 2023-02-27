@@ -588,8 +588,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;490&quot; canvasWidth=&quot;857&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;HarmonyCore&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;cmsis&quot; x=&quot;430&quot; y=&quot;60&quot;/&gt;
@@ -608,6 +607,7 @@
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;tc3&quot; x=&quot;392&quot; y=&quot;109&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;490&quot; canvasWidth=&quot;857&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -6284,7 +6284,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\definitions.h</file>
-         <hash>2293d683fcdd28e7fa5b8b5a8d8fb827e8f336da82708a86eb3f05e059f3e1db</hash>
+         <hash>f01182bed6e5f4bdc97065f65a726964978137aae21db332141f676e48ee621e</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -6340,7 +6340,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>41942501c8d9502763cdc13b4300fe4728369c4c6ff0348c99cf7cd4a5db276b</hash>
+         <hash>8ffc0f79262c44908c380a3ad15d46449d63fc532e94c8a4d10156b2a1d42493</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21J18A_DFP\component\dsu.h</file>
@@ -6400,7 +6400,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\configuration.h</file>
-         <hash>6374fdb1d639b290676e38bdb5527ad5e824949cdfc507d654d04485568f3778</hash>
+         <hash>535d152af923311593f962e1d26ddcc5877e9a7e2e95980857f64d9936e40d3f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\system\ports\sys_ports.h</file>
@@ -6428,7 +6428,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\initialization.c</file>
-         <hash>06a7b776b125d33a13a7ba2803e9ce6957933f73f03412f1312bd812e68f6419</hash>
+         <hash>8d6bf14448fb3931a0acc7ef3b42357a44b5bf5413050bf9476dfe1dffbf63bf</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\wdrv_winc_debug.h</file>
@@ -6976,7 +6976,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>1c793506fb215f62b363eccb885ca40b271710b3c381c47e1a7d1530cf10a527</hash>
+         <hash>8ef6ddbeb1cfcd750c3fdf4a40a0ed0b93426401b7053c864eb90e98a804b1c0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD21J18A_DFP\component\rtc.h</file>
@@ -7032,7 +7032,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>e87e6ba9cb409542bed1b3de76bb5248bf145ce31201768d6c811a6d1f0cd4f0</hash>
+         <hash>21bcdea3495b4d9e5664710e87fd42d82ce326308c9f9e0eccbac473c0890bb6</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\system\int\src\sys_int.c</file>
@@ -7052,7 +7052,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\wdrv_winc.c</file>
-         <hash>796e6722497630e5a4cbc9a2ae40ad36437c62d7ee5f6fcdff708c5ca7f3ee4c</hash>
+         <hash>ad1ee1cc4c9591b5390c2609898cadf5fafd09141c4e8dd25e648eb00a0e2c4d</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\driver\winc\include\wdrv_winc_assoc.h</file>

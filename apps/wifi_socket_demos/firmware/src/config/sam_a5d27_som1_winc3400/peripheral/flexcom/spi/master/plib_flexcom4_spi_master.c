@@ -54,7 +54,8 @@
 // *****************************************************************************
 // *****************************************************************************
 /* Global object to save FLEXCOM SPI Exchange related data */
-FLEXCOM_SPI_OBJECT flexcom4SpiObj;
+static FLEXCOM_SPI_OBJECT flexcom4SpiObj;
+
 
 void FLEXCOM4_SPI_Initialize ( void )
 {
@@ -66,7 +67,7 @@ void FLEXCOM4_SPI_Initialize ( void )
 
 
     /* Enable Master mode, select clock source, select particular NPCS line for chip select and disable mode fault detection */
-    FLEXCOM4_REGS->FLEX_SPI_MR = FLEX_SPI_MR_MSTR_Msk | FLEX_SPI_MR_BRSRCCLK_PERIPH_CLK | FLEX_SPI_MR_DLYBCS(0) | FLEX_SPI_MR_PCS(FLEXCOM_SPI_CHIP_SELECT_NPCS1)  | FLEX_SPI_MR_MODFDIS_Msk;
+    FLEXCOM4_REGS->FLEX_SPI_MR = FLEX_SPI_MR_MSTR_Msk | FLEX_SPI_MR_BRSRCCLK_PERIPH_CLK | FLEX_SPI_MR_DLYBCS(0U) | FLEX_SPI_MR_PCS(FLEXCOM_SPI_CHIP_SELECT_NPCS1)  | FLEX_SPI_MR_MODFDIS_Msk;
 
 
     /* Set up clock Polarity, data phase, Communication Width, Baud Rate */
@@ -91,7 +92,7 @@ bool FLEXCOM4_SPI_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveD
     uint32_t dummyData;
 
     /* Verify the request */
-    if((((txSize > 0) && (pTransmitData != NULL)) || ((rxSize > 0) && (pReceiveData != NULL))) && (flexcom4SpiObj.transferIsBusy == false))
+    if((((txSize > 0U) && (pTransmitData != NULL)) || ((rxSize > 0U) && (pReceiveData != NULL))) && (flexcom4SpiObj.transferIsBusy == false))
     {
         isRequestAccepted = true;
         flexcom4SpiObj.txBuffer = pTransmitData;
@@ -136,10 +137,14 @@ bool FLEXCOM4_SPI_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveD
                 FLEXCOM4_REGS->FLEX_SPI_TDR = *((uint8_t*)flexcom4SpiObj.txBuffer);
                 flexcom4SpiObj.txCount++;
             }
-            else if (flexcom4SpiObj.dummySize > 0)
+            else if (flexcom4SpiObj.dummySize > 0U)
             {
                 FLEXCOM4_REGS->FLEX_SPI_TDR = (uint8_t)(0xff);
                 flexcom4SpiObj.dummySize--;
+            }
+            else
+            {
+                /* Do nothing */
             }
         }
         else
@@ -153,14 +158,18 @@ bool FLEXCOM4_SPI_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveD
                 FLEXCOM4_REGS->FLEX_SPI_TDR = *((uint16_t*)flexcom4SpiObj.txBuffer);
                 flexcom4SpiObj.txCount++;
             }
-            else if (flexcom4SpiObj.dummySize > 0)
+            else if (flexcom4SpiObj.dummySize > 0U)
             {
                 FLEXCOM4_REGS->FLEX_SPI_TDR = (uint16_t)(0xffff);
                 flexcom4SpiObj.dummySize--;
             }
+            else
+            {
+                /* Do nothing */
+            }
         }
 
-        if (rxSize > 0)
+        if (rxSize > 0U)
         {
             /* Enable receive interrupt to complete the transfer in ISR context */
             FLEXCOM4_REGS->FLEX_SPI_IER = FLEX_SPI_IER_RDRF_Msk;
@@ -178,30 +187,35 @@ bool FLEXCOM4_SPI_WriteRead (void* pTransmitData, size_t txSize, void* pReceiveD
 bool FLEXCOM4_SPI_TransferSetup (FLEXCOM_SPI_TRANSFER_SETUP * setup, uint32_t spiSourceClock )
 {
     uint32_t scbr;
-    if ((setup == NULL) || (setup->clockFrequency == 0))
+    bool setupStatus = false;
+    if ((setup != NULL) && (setup->clockFrequency != 0U))
     {
-        return false;
-    }
-    if(spiSourceClock == 0)
-    {
-        // Fetch Master Clock Frequency directly
-        spiSourceClock = 83000000;
-    }
+        if(spiSourceClock == 0U)
+        {
+            // Fetch Master Clock Frequency directly
+            spiSourceClock = 83000000;
+        }
 
-    scbr = spiSourceClock/setup->clockFrequency;
+        scbr = spiSourceClock/setup->clockFrequency;
 
-    if(scbr == 0)
-    {
-        scbr = 1;
+        if(scbr == 0U)
+        {
+            scbr = 1;
+        }
+        else if(scbr > 255U)
+        {
+            scbr = 255;
+        }
+        else
+        {
+            /* Do nothing */
+        }
+
+        FLEXCOM4_REGS->FLEX_SPI_CSR[1]= (FLEXCOM4_REGS->FLEX_SPI_CSR[1] & ~(FLEX_SPI_CSR_CPOL_Msk | FLEX_SPI_CSR_NCPHA_Msk | FLEX_SPI_CSR_BITS_Msk | FLEX_SPI_CSR_SCBR_Msk)) | ((uint32_t)setup->clockPolarity | (uint32_t)setup->clockPhase | (uint32_t)setup->dataBits | FLEX_SPI_CSR_SCBR(scbr));
+
+        setupStatus = true;
     }
-    else if(scbr > 255)
-    {
-        scbr = 255;
-    }
-
-    FLEXCOM4_REGS->FLEX_SPI_CSR[1]= (FLEXCOM4_REGS->FLEX_SPI_CSR[1] & ~(FLEX_SPI_CSR_CPOL_Msk | FLEX_SPI_CSR_NCPHA_Msk | FLEX_SPI_CSR_BITS_Msk | FLEX_SPI_CSR_SCBR_Msk)) | ((uint32_t)setup->clockPolarity | (uint32_t)setup->clockPhase | (uint32_t)setup->dataBits | FLEX_SPI_CSR_SCBR(scbr));
-
-    return true;
+    return setupStatus;
 }
 
 bool FLEXCOM4_SPI_Write(void* pTransmitData, size_t txSize)
@@ -216,7 +230,7 @@ bool FLEXCOM4_SPI_Read(void* pReceiveData, size_t rxSize)
 
 bool FLEXCOM4_SPI_IsTransmitterBusy(void)
 {
-    return ((FLEXCOM4_REGS->FLEX_SPI_SR & FLEX_SPI_SR_TXEMPTY_Msk) == 0)? true : false;
+    return ((FLEXCOM4_REGS->FLEX_SPI_SR & FLEX_SPI_SR_TXEMPTY_Msk) == 0U);
 }
 
 void FLEXCOM4_SPI_CallbackRegister (FLEXCOM_SPI_CALLBACK callback, uintptr_t context)
@@ -227,7 +241,7 @@ void FLEXCOM4_SPI_CallbackRegister (FLEXCOM_SPI_CALLBACK callback, uintptr_t con
 
 bool FLEXCOM4_SPI_IsBusy(void)
 {
-    return ((flexcom4SpiObj.transferIsBusy) || ((FLEXCOM4_REGS->FLEX_SPI_SR & FLEX_SPI_SR_TXEMPTY_Msk) == 0));
+    return ((flexcom4SpiObj.transferIsBusy) || ((FLEXCOM4_REGS->FLEX_SPI_SR & FLEX_SPI_SR_TXEMPTY_Msk) == 0U));
 }
 
 void FLEXCOM4_InterruptHandler(void)
@@ -241,6 +255,7 @@ void FLEXCOM4_InterruptHandler(void)
     /* save the status in global object before it gets cleared */
     flexcom4SpiObj.status = FLEXCOM4_REGS->FLEX_SPI_SR;
 
+
     if ((FLEXCOM4_REGS->FLEX_SPI_SR & FLEX_SPI_SR_RDRF_Msk ) == FLEX_SPI_SR_RDRF_Msk)
     {
         receivedData = (FLEXCOM4_REGS->FLEX_SPI_RDR & FLEX_SPI_RDR_RD_Msk) >> FLEX_SPI_RDR_RD_Pos;
@@ -249,11 +264,13 @@ void FLEXCOM4_InterruptHandler(void)
         {
             if(dataBits == FLEX_SPI_CSR_BITS_8_BIT)
             {
-                ((uint8_t*)flexcom4SpiObj.rxBuffer)[flexcom4SpiObj.rxCount++] = receivedData;
+                ((uint8_t*)flexcom4SpiObj.rxBuffer)[flexcom4SpiObj.rxCount] = (uint8_t)receivedData;
+                flexcom4SpiObj.rxCount++;
             }
             else
             {
-                ((uint16_t*)flexcom4SpiObj.rxBuffer)[flexcom4SpiObj.rxCount++] = receivedData;
+                ((uint16_t*)flexcom4SpiObj.rxBuffer)[flexcom4SpiObj.rxCount] = (uint16_t)receivedData;
+                flexcom4SpiObj.rxCount++;
             }
         }
     }
@@ -269,27 +286,37 @@ void FLEXCOM4_InterruptHandler(void)
         {
             if (flexcom4SpiObj.txCount < flexcom4SpiObj.txSize)
             {
-                FLEXCOM4_REGS->FLEX_SPI_TDR = ((uint8_t*)flexcom4SpiObj.txBuffer)[flexcom4SpiObj.txCount++];
+                FLEXCOM4_REGS->FLEX_SPI_TDR = ((uint8_t*)flexcom4SpiObj.txBuffer)[flexcom4SpiObj.txCount];
+                flexcom4SpiObj.txCount++;
             }
-            else if (flexcom4SpiObj.dummySize > 0)
+            else if (flexcom4SpiObj.dummySize > 0U)
             {
                 FLEXCOM4_REGS->FLEX_SPI_TDR = (uint8_t)(0xff);
                 flexcom4SpiObj.dummySize--;
+            }
+            else
+            {
+                /* Do nothing */
             }
         }
         else
         {
             if (flexcom4SpiObj.txCount < flexcom4SpiObj.txSize)
             {
-                FLEXCOM4_REGS->FLEX_SPI_TDR = ((uint16_t*)flexcom4SpiObj.txBuffer)[flexcom4SpiObj.txCount++];
+                FLEXCOM4_REGS->FLEX_SPI_TDR = ((uint16_t*)flexcom4SpiObj.txBuffer)[flexcom4SpiObj.txCount];
+                flexcom4SpiObj.txCount++;
             }
-            else if (flexcom4SpiObj.dummySize > 0)
+            else if (flexcom4SpiObj.dummySize > 0U)
             {
                 FLEXCOM4_REGS->FLEX_SPI_TDR = (uint16_t)(0xffff);
                 flexcom4SpiObj.dummySize--;
             }
+            else
+            {
+                /* Do nothing */
+            }
         }
-        if ((flexcom4SpiObj.txCount == flexcom4SpiObj.txSize) && (flexcom4SpiObj.dummySize == 0))
+        if ((flexcom4SpiObj.txCount == flexcom4SpiObj.txSize) && (flexcom4SpiObj.dummySize == 0U))
         {
             /* At higher baud rates, the data in the shift register can be
              * shifted out and TXEMPTY flag can get set resulting in a
@@ -314,6 +341,10 @@ void FLEXCOM4_InterruptHandler(void)
              */
             FLEXCOM4_REGS->FLEX_SPI_IDR = FLEX_SPI_IDR_RDRF_Msk;
             FLEXCOM4_REGS->FLEX_SPI_IER = FLEX_SPI_IDR_TDRE_Msk;
+        }
+        else
+        {
+            /* Do nothing */
         }
     }
 
