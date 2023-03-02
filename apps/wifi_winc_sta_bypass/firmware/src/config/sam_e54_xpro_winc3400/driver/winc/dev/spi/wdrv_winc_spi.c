@@ -117,7 +117,6 @@ static void _WDRV_WINC_SPITransferEventHandler(DRV_SPI_TRANSFER_EVENT event,
 
 bool WDRV_WINC_SPISend(void* pTransmitData, size_t txSize)
 {
-
     DRV_SPI_WriteTransferAdd(spiDcpt.spiHandle, pTransmitData, txSize, &spiDcpt.transferTxHandle);
 
     if (DRV_SPI_TRANSFER_HANDLE_INVALID == spiDcpt.transferTxHandle)
@@ -151,7 +150,6 @@ bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize)
 {
     static uint8_t dummy = 0;
 
-
     DRV_SPI_WriteReadTransferAdd(spiDcpt.spiHandle, &dummy, 1, pReceiveData, rxSize, &spiDcpt.transferRxHandle);
 
     if (DRV_SPI_TRANSFER_HANDLE_INVALID == spiDcpt.transferRxHandle)
@@ -163,13 +161,14 @@ bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize)
     {
     }
 
+
     return true;
 }
 
 //*******************************************************************************
 /*
   Function:
-    void WDRV_WINC_SPIOpen(void)
+    bool WDRV_WINC_SPIOpen(void)
 
   Summary:
     Opens the SPI object for the WiFi driver.
@@ -181,16 +180,23 @@ bool WDRV_WINC_SPIReceive(void* pReceiveData, size_t rxSize)
     See wdrv_winc_spi.h for usage information.
  */
 
-void WDRV_WINC_SPIOpen(void)
+bool WDRV_WINC_SPIOpen(void)
 {
+    DRV_SPI_TRANSFER_SETUP spiTransConf = {
+        .clockPhase     = DRV_SPI_CLOCK_PHASE_VALID_LEADING_EDGE,
+        .clockPolarity  = DRV_SPI_CLOCK_POLARITY_IDLE_LOW,
+        .dataBits       = DRV_SPI_DATA_BITS_8,
+        .csPolarity     = DRV_SPI_CS_POLARITY_ACTIVE_LOW
+    };
+
     if (OSAL_RESULT_TRUE != OSAL_SEM_Create(&spiDcpt.txSyncSem, OSAL_SEM_TYPE_COUNTING, 10, 0))
     {
-        return;
+        return false;
     }
 
     if (OSAL_RESULT_TRUE != OSAL_SEM_Create(&spiDcpt.rxSyncSem, OSAL_SEM_TYPE_COUNTING, 10, 0))
     {
-        return;
+        return false;
     }
 
     if (DRV_HANDLE_INVALID == spiDcpt.spiHandle)
@@ -200,10 +206,24 @@ void WDRV_WINC_SPIOpen(void)
         if (DRV_HANDLE_INVALID == spiDcpt.spiHandle)
         {
             WDRV_DBG_ERROR_PRINT("SPI open failed\r\n");
+
+            return false;
         }
     }
 
+    spiTransConf.baudRateInHz = spiDcpt.cfg.baudRateInHz;
+    spiTransConf.chipSelect   = spiDcpt.cfg.chipSelect;
+
+    if (false == DRV_SPI_TransferSetup(spiDcpt.spiHandle, &spiTransConf))
+    {
+        WDRV_DBG_ERROR_PRINT("SPI transfer setup failed\r\n");
+
+        return false;
+    }
+
     DRV_SPI_TransferEventHandlerSet(spiDcpt.spiHandle, _WDRV_WINC_SPITransferEventHandler, 0);
+
+    return true;
 }
 
 //*******************************************************************************
@@ -255,6 +275,12 @@ void WDRV_WINC_SPIDeinitialize(void)
 
     OSAL_SEM_Post(&spiDcpt.rxSyncSem);
     OSAL_SEM_Delete(&spiDcpt.rxSyncSem);
+
+    if (DRV_HANDLE_INVALID != spiDcpt.spiHandle)
+    {
+        DRV_SPI_Close(spiDcpt.spiHandle);
+        spiDcpt.spiHandle = DRV_HANDLE_INVALID;
+    }
 }
 
 //DOM-IGNORE-END

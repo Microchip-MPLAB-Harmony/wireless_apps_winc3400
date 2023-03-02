@@ -5,7 +5,7 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
-## Harmony 3 Wireless application examples for WINC3400 v3.5.1
+## Harmony 3 Wireless application examples for WINC3400 v3.6.0
 
 ### Development kit and demo application support
 
@@ -19,15 +19,8 @@ Following table provides number of Wireless examples available for different dev
 
 ### New Features
 
-- "wifi_socket_demos" is available for SAMA5D27-SOM1-EK1 with WINC3400 Wifi 8 Click board with latest "wireless_wifi" driver v3.7.2
-
-**Note**
-
-Only "wifi_socket_demos" of SAMA5D27-SOM1-EK1 with WINC3400 Wifi 8 Click board is upgraded with the latest "wireless_wifi" driver v3.7.2. All Other applcations are having "wireless_wifi" driver v3.7.0
-
-### Bug fixes
-
-- "wireless_wifi_apps_winc3400" applications are upgraded with latest "wireless_wifi" driver v3.7.0.
+- "wifi_socket_demos" is available for SAMA5D27-SOM1-EK1 with WINC3400 Wifi 8 Click board with latest "wireless_wifi" driver v3.8.0
+- "wireless_wifi_apps_winc3400" applications are upgraded with latest "wireless_wifi" driver v3.8.0
 
 ### Known Issues
 
