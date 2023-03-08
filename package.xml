@@ -5,10 +5,10 @@
         <Dependency name="core" version="v3.11.1"/>
         <Dependency name="crypto" version="v3.7.6"/>
         <Dependency name="cryptoauthlib" version="v3.3.3"/>
-        <Dependency name="csp" version="v3.13.1"/>
-        <Dependency name="dev_packs" version="v3.13.1"/>
-        <Dependency name="net" version="v3.8.0"/>
-        <Dependency name="wireless_wifi" version="v3.7.0"/>
+        <Dependency name="csp" version="v3.15.0"/>
+        <Dependency name="dev_packs" version="v3.15.1"/>
+        <Dependency name="net" version="v3.9.0"/>
+        <Dependency name="wireless_wifi" version="v3.8.0"/>
         <Dependency name="wolfssl" version="v4.7.0"/>
         <Dependency name="CMSIS-FreeRTOS" version="v10.4.6"/>
 </Dependencies>
