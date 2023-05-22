@@ -52,7 +52,7 @@ extern "C" {
 #endif
     
     
-SYS_CONSOLE_HANDLE wifiConsoleHandle;
+//SYS_CONSOLE_HANDLE wifiConsoleHandle;
 
 void APP_WiFiInitialize(APP_CALLBACK pfAPPWiFiCallback);
 

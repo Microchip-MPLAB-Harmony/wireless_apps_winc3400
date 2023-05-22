@@ -61,6 +61,7 @@
 #include "app_ssl.h"
 #include "app_mqtt_task.h"
 
+
 typedef struct
 {
     uint8_t protocol;
@@ -77,8 +78,8 @@ Socket_Config socket_config;
 // *****************************************************************************
 // *****************************************************************************
 static DRV_HANDLE wdrvHandle;
-extern APP_DEMOS appDemoId;
-
+//extern APP_DEMOS appDemoId;
+APP_DEMOS appDemoId;
 
 // *****************************************************************************
 // *****************************************************************************

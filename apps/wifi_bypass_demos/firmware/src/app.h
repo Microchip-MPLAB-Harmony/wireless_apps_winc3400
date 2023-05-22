@@ -95,7 +95,7 @@ typedef enum
     APP_WIFI_PROV_SOFTAP_DEMO       = 1 << 16,
     APP_MQTT_DEMO                   = 1 << 17,     
 } APP_DEMOS;
-APP_DEMOS appDemoId;
+extern APP_DEMOS appDemoId;
 
 #ifdef APP_BLE_CSC
 #define CSC_DEVICE 
