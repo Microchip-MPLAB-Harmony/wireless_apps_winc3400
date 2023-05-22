@@ -57,6 +57,7 @@
 #include "app_cert_download_ota.h"
 #include "iot/http/http_client.h"
 #include "iot/sw_timer.h"
+#include "wdrv_winc_common.h"
 
 #include "root_tls_cert/root_setup.h"
 #include "root_tls_cert/tls_setup.h"
@@ -106,9 +107,13 @@ static int8_t burn_certificates(void);
 /** Chain of TLS Certificates and private key to be uploaded */
 certFileInfo root_tls_certs_name[NUM_OF_ROOT_TLS_CHAIN_CERTIFICATES]=
 {
-{TLS_RSA_CERT,2,(uint8_t*)"winc_rsa.key"},
-{TLS_RSA_CERT,0,(uint8_t*)"winc_rsa.cer"},
-{ROOT_CERT,0,(uint8_t*)"aws_root.cer"},
+#ifdef ROOT_CERT_BUNDLE
+{ROOT_CERT,0,(uint8_t*)"root_certs.bin"},
+#else
+{ROOT_CERT,0,(uint8_t*)"GlobalSignRoot.cer"},
+{ROOT_CERT,0,(uint8_t*)"AmazonRootCA1.cer"},
+{ROOT_CERT,0,(uint8_t*)"ISRGRootX1.cer"},
+#endif
 };
 
 
@@ -350,12 +355,18 @@ static int8_t burn_certificates(void)
 {
         int8_t   ret = 0;
 
-        SYS_CONSOLE_PRINT(">> De-init WINC device to enter into download mode\r\n");
-        m2m_wifi_deinit(NULL);
-
-        if(0 != m2m_wifi_download_mode()) {
-                SYS_CONSOLE_PRINT("Unable to initialize bus, Press RESET button to try again.\r\n");
-                while(1);
+        SYS_CONSOLE_PRINT(">> De-init WINC device to enter into download mode\r\n");   
+        
+        WDRV_WINC_Close(wdrvHandle);
+        wdrvHandle = WDRV_WINC_Open(0,DRV_IO_INTENT_EXCLUSIVE); //Intend should be DRV_IO_INTENT_EXCLUSIVE to enter into download mode
+            
+        if (DRV_HANDLE_INVALID != wdrvHandle){
+        
+        }
+        else
+        {
+            SYS_CONSOLE_PRINT("Unable to initialize bus, Press RESET button to try again.\r\n");
+            while(1);
         }
 
         SYS_CONSOLE_PRINT(">> WINC entered into download mode\r\n");
@@ -365,26 +376,47 @@ static int8_t burn_certificates(void)
         for (uint8_t idx=0; idx < NUM_OF_ROOT_TLS_CHAIN_CERTIFICATES; idx++)
         {
            /* Write the Root certificates to WINC */
-           if(root_tls_certs_name[idx].cert_type == ROOT_CERT)
-             ret += WriteRootCertificate(root_tls_certs[idx].pu8FileData,root_tls_certs[idx].u32FileSz);
-
-           /* Write the TLS RSA based certificates to WINC */
-       if(root_tls_certs_name[idx].cert_type == TLS_RSA_CERT)
+           if(root_tls_certs_name[idx].cert_type == ROOT_CERT){
+		   #ifdef ROOT_CERT_BUNDLE
+		   if ( WDRV_WINC_STATUS_OK !=WDRV_WINC_NVMEraseSector(wdrvHandle,WDRV_WINC_NVM_REGION_ROOT_CERTS,0,1))
            {
-         ret += WriteTlsCertificate(root_tls_certs[idx].pu8FileData,root_tls_certs[idx].u32FileSz,
-                 &root_tls_certs[idx+1],root_tls_certs_name[idx].numOfChainCert);
-                 idx = idx + root_tls_certs_name[idx].numOfChainCert;
+           SYS_CONSOLE_PRINT("Erase sector failed.\r\n");
+           while(1);
            }
+          if( WDRV_WINC_STATUS_OK != WDRV_WINC_NVMWrite(wdrvHandle,WDRV_WINC_NVM_REGION_ROOT_CERTS,(void*)root_tls_certs[0].pu8FileData,0,4096))
+          {
+            SYS_CONSOLE_PRINT("ROOT  CERT update failed, Press RESET button to try again.\r\n");
+            while(1);
+          }
+		  else
+		  {
+		  	ret++;
+		  }
+            #else
+            ret += WriteRootCertificate(root_tls_certs[idx].pu8FileData,root_tls_certs[idx].u32FileSz);
+            #endif
 
-           /* Write the TLS ECC based certificates to WINC */
-       if(root_tls_certs_name[idx].cert_type == TLS_ECC_CERT)
-       {
-               ret += WriteTlsCertificate(NULL,0,&root_tls_certs[idx],root_tls_certs_name[idx].numOfChainCert);
-                   idx = idx + root_tls_certs_name[idx].numOfChainCert -1;
-       }
+            }
+           /* Write the TLS RSA based certificates to WINC */
+            if(root_tls_certs_name[idx].cert_type == TLS_RSA_CERT)
+            {
+                 ret += WriteTlsCertificate(root_tls_certs[idx].pu8FileData,root_tls_certs[idx].u32FileSz,
+                  &root_tls_certs[idx+1],root_tls_certs_name[idx].numOfChainCert);
+                  idx = idx + root_tls_certs_name[idx].numOfChainCert;
+            }
+
+                /* Write the TLS ECC based certificates to WINC */
+            if(root_tls_certs_name[idx].cert_type == TLS_ECC_CERT)
+            {
+                    ret += WriteTlsCertificate(NULL,0,&root_tls_certs[idx],root_tls_certs_name[idx].numOfChainCert);
+                        idx = idx + root_tls_certs_name[idx].numOfChainCert -1;
+            }
     }
-
-        return ret;
+        SYS_CONSOLE_PRINT("ROOT  CERTs updated.\r\n");
+        WDRV_WINC_Close(wdrvHandle);        
+        
+        SYS_RESET_SoftwareReset();
+         return ret;
 }
 
 /**

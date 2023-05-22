@@ -59,7 +59,7 @@
 #include "definitions.h"
 #include "system/console/sys_console.h"
 
-
+extern DRV_HANDLE wdrvHandle;
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

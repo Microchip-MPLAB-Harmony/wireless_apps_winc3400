@@ -81,11 +81,11 @@
 // *****************************************************************************
 // *****************************************************************************
 
-static DRV_HANDLE wdrvHandle;
+DRV_HANDLE wdrvHandle;
 static APP_DEMOS appDemoId;
 
 #define APP_PRINT_BUFFER_SIZ    2048
-static DRV_HANDLE wdrvHandle;
+
 
 static char printBuff[APP_PRINT_BUFFER_SIZ] __attribute__((aligned(4)));
 static int printBuffPtr;
