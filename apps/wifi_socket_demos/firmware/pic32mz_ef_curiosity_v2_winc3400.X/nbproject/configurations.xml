@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="65">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="ble" displayName="ble" projectFiles="true">
+        <logicalFolder name="ble_profiles"
+                       displayName="ble_profiles"
+                       projectFiles="true">
+          <logicalFolder name="cscp" displayName="cscp" projectFiles="true">
+            <itemPath>../src/ble/ble_profiles/cscp/cscp.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="hr_sensor" displayName="hr_sensor" projectFiles="true">
+            <itemPath>../src/ble/ble_profiles/hr_sensor/hr_sensor.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="pxp_reporter"
+                         displayName="pxp_reporter"
+                         projectFiles="true">
+            <itemPath>../src/ble/ble_profiles/pxp_reporter/pxp_reporter.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="ble_services"
+                       displayName="ble_services"
+                       projectFiles="true">
+          <logicalFolder name="battery" displayName="battery" projectFiles="true">
+            <itemPath>../src/ble/ble_services/battery/battery.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ble_mgr" displayName="ble_mgr" projectFiles="true">
+            <itemPath>../src/ble/ble_services/ble_mgr/ble_manager.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="cscs" displayName="cscs" projectFiles="true">
+            <itemPath>../src/ble/ble_services/cscs/cscs.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="heart_rate" displayName="heart_rate" projectFiles="true">
+            <itemPath>../src/ble/ble_services/heart_rate/heart_rate.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="immediate_alert"
+                         displayName="immediate_alert"
+                         projectFiles="true">
+            <itemPath>../src/ble/ble_services/immediate_alert/immediate_alert.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="link_loss" displayName="link_loss" projectFiles="true">
+            <itemPath>../src/ble/ble_services/link_loss/link_loss.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="trans_service"
+                         displayName="trans_service"
+                         projectFiles="true">
+            <itemPath>../src/ble/ble_services/trans_service/trans_service.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="tx_power" displayName="tx_power" projectFiles="true">
+            <itemPath>../src/ble/ble_services/tx_power/tx_power.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="inc" displayName="inc" projectFiles="true">
+          <itemPath>../src/ble/inc/profiles.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="sio2host" displayName="sio2host" projectFiles="true">
+          <logicalFolder name="uart" displayName="uart" projectFiles="true">
+            <itemPath>../src/ble/sio2host/uart/conf_sio2host.h</itemPath>
+            <itemPath>../src/ble/sio2host/uart/sio2host.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="utils" displayName="utils" projectFiles="true">
+          <itemPath>../src/ble/utils/ble_utils.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="pic32mz_ef_curiosity_v2_winc3400"
+                       displayName="pic32mz_ef_curiosity_v2_winc3400"
+                       projectFiles="true">
+          <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/bsp/bsp.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="driver" displayName="driver" projectFiles="true">
+            <logicalFolder name="spi" displayName="spi" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/spi/drv_spi_definitions.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/spi/drv_spi.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/spi/src/drv_spi_local.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="winc" displayName="winc" projectFiles="true">
+              <logicalFolder name="include" displayName="include" projectFiles="true">
+                <logicalFolder name="dev" displayName="dev" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/dev/wdrv_winc_spi.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/dev/wdrv_winc_gpio.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="drv" displayName="drv" projectFiles="true">
+                  <logicalFolder name="at_ble_api" displayName="at_ble_api" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/at_ble_api/at_ble_api.h</itemPath>
+                  </logicalFolder>
+                  <logicalFolder name="ble_stack" displayName="ble_stack" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/htpt_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/atts_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/error.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/diss_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/gattm_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/wifiprov_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/dbg_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/cmn_defs.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/profiles.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/gapc_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/interface.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/ble_device.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/ll_if.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/gapm_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/gattc_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/event.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/smpc_task.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack/htpt.h</itemPath>
+                  </logicalFolder>
+                  <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/bsp/nm_bsp.h</itemPath>
+                  </logicalFolder>
+                  <logicalFolder name="common" displayName="common" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/common/nm_debug.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/common/nm_common.h</itemPath>
+                  </logicalFolder>
+                  <logicalFolder name="driver" displayName="driver" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/m2m_hif.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/nmasic.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/m2m_ssl.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/nmbus.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/m2m_periph.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/nmspi.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/m2m_wifi.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/nmdrv.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/m2m_types.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/m2m_flash.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/m2m_ota.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver/ecc_types.h</itemPath>
+                  </logicalFolder>
+                  <logicalFolder name="platform" displayName="platform" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/platform/platform.h</itemPath>
+                  </logicalFolder>
+                  <logicalFolder name="socket" displayName="socket" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/socket/m2m_socket_host_if.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/socket/netinet_in.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/socket/socket.h</itemPath>
+                  </logicalFolder>
+                  <logicalFolder name="spi_flash" displayName="spi_flash" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/spi_flash/spi_flash.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/spi_flash/spi_flash_map.h</itemPath>
+                  </logicalFolder>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_powersave.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_ssl.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_socket.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_client_api.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_httpprovctx.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_wps.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_systime.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_enterprise.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_authctx.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_bssfind.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_sta.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_nvm.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_ble.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_assoc.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_common.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_debug.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_softap.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_bssctx.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_custie.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/wdrv_winc_api.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/driver_common.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/driver.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="osal" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/osal/osal_impl_basic.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/osal/osal.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/osal/osal_definitions.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="clk" displayName="clk" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/clk/plib_clk.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="coretimer" displayName="coretimer" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/coretimer/plib_coretimer.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="evic" displayName="evic" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/evic/plib_evic.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/gpio/plib_gpio.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="spi" displayName="spi" projectFiles="true">
+              <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/spi/spi_master/plib_spi_master_common.h</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/spi/spi_master/plib_spi3_master.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="uart" displayName="uart" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/uart/plib_uart6.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/uart/plib_uart_common.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="system" displayName="system" projectFiles="true">
+            <logicalFolder name="command" displayName="command" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/command/sys_command.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="console" displayName="console" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/console/sys_console.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/console/src/sys_console_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/console/src/sys_console_uart_definitions.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/console/src/sys_console_uart.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="debug" displayName="debug" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/debug/src/sys_debug_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/debug/sys_debug.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="int" displayName="int" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/int/sys_int.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/int/sys_int_mapping.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="ports" displayName="ports" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/ports/sys_ports.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/ports/sys_ports_mapping.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="reset" displayName="reset" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/reset/sys_reset.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="time" displayName="time" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/time/sys_time.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/time/sys_time_definitions.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/time/src/sys_time_local.h</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/system.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/system_common.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/system_module.h</itemPath>
+          </logicalFolder>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/definitions.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/device.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/user.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/interrupts.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/configuration.h</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/toolchain_specifics.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="paho.mqtt.embedded-c"
+                     displayName="paho.mqtt.embedded-c"
+                     projectFiles="true">
+        <logicalFolder name="MQTTClient-C"
+                       displayName="MQTTClient-C"
+                       projectFiles="true">
+          <logicalFolder name="Platforms" displayName="Platforms" projectFiles="true">
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/Platforms/MCHP_winc.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/src/MQTTClient.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="MQTTPacket" displayName="MQTTPacket" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnect.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTFormat.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPacket.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPublish.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribe.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribe.h</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/StackTrace.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="root_tls_cert"
+                     displayName="root_tls_cert"
+                     projectFiles="true">
+        <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
+          <itemPath>../src/root_tls_cert/crypto/crypto.h</itemPath>
+          <itemPath>../src/root_tls_cert/crypto/crypto_api.h</itemPath>
+          <itemPath>../src/root_tls_cert/crypto/crypto_types.h</itemPath>
+          <itemPath>../src/root_tls_cert/crypto/sha1_routines.h</itemPath>
+          <itemPath>../src/root_tls_cert/crypto/tls_buffer_manager.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="x509" displayName="x509" projectFiles="true">
+          <itemPath>../src/root_tls_cert/x509/asn1.h</itemPath>
+          <itemPath>../src/root_tls_cert/x509/x509_cert.h</itemPath>
+        </logicalFolder>
+        <itemPath>../src/root_tls_cert/pem.h</itemPath>
+        <itemPath>../src/root_tls_cert/root_setup.h</itemPath>
+        <itemPath>../src/root_tls_cert/root_tls_cert.h</itemPath>
+        <itemPath>../src/root_tls_cert/tls_setup.h</itemPath>
+        <itemPath>../src/root_tls_cert/tls_srv_sec.h</itemPath>
+      </logicalFolder>
+      <itemPath>../src/app.h</itemPath>
+      <itemPath>../src/app_battery.h</itemPath>
+      <itemPath>../src/app_blewifi_prov.h</itemPath>
+      <itemPath>../src/app_cert_download_ota.h</itemPath>
+      <itemPath>../src/app_csc.h</itemPath>
+      <itemPath>../src/app_gw.h</itemPath>
+      <itemPath>../src/app_gw_ble.h</itemPath>
+      <itemPath>../src/app_gw_mqtt.h</itemPath>
+      <itemPath>../src/app_heart_rate.h</itemPath>
+      <itemPath>../src/app_iperf.h</itemPath>
+      <itemPath>../src/app_mqtt.h</itemPath>
+      <itemPath>../src/app_ota.h</itemPath>
+      <itemPath>../src/app_ping.h</itemPath>
+      <itemPath>../src/app_pxp_reporter.h</itemPath>
+      <itemPath>../src/app_sntp.h</itemPath>
+      <itemPath>../src/app_ssl.h</itemPath>
+      <itemPath>../src/app_trans_service.h</itemPath>
+      <itemPath>../src/app_wifi.h</itemPath>
+      <itemPath>../src/iperf.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="pic32mz_ef_curiosity_v2_winc3400"
+                       displayName="pic32mz_ef_curiosity_v2_winc3400"
+                       projectFiles="true">
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/p32MZ2048EFM144.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="ble" displayName="ble" projectFiles="true">
+        <logicalFolder name="ble_profiles"
+                       displayName="ble_profiles"
+                       projectFiles="true">
+          <logicalFolder name="cscp" displayName="cscp" projectFiles="true">
+            <itemPath>../src/ble/ble_profiles/cscp/cscp.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="hr_sensor" displayName="hr_sensor" projectFiles="true">
+            <itemPath>../src/ble/ble_profiles/hr_sensor/hr_sensor.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="pxp_reporter"
+                         displayName="pxp_reporter"
+                         projectFiles="true">
+            <itemPath>../src/ble/ble_profiles/pxp_reporter/pxp_reporter.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="ble_services"
+                       displayName="ble_services"
+                       projectFiles="true">
+          <logicalFolder name="battery" displayName="battery" projectFiles="true">
+            <itemPath>../src/ble/ble_services/battery/battery.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ble_mgr" displayName="ble_mgr" projectFiles="true">
+            <itemPath>../src/ble/ble_services/ble_mgr/ble_manager.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="cscs" displayName="cscs" projectFiles="true">
+            <itemPath>../src/ble/ble_services/cscs/cscs.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="heart_rate" displayName="heart_rate" projectFiles="true">
+            <itemPath>../src/ble/ble_services/heart_rate/heart_rate.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="immediate_alert"
+                         displayName="immediate_alert"
+                         projectFiles="true">
+            <itemPath>../src/ble/ble_services/immediate_alert/immediate_alert.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="link_loss" displayName="link_loss" projectFiles="true">
+            <itemPath>../src/ble/ble_services/link_loss/link_loss.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="trans_service"
+                         displayName="trans_service"
+                         projectFiles="true">
+            <itemPath>../src/ble/ble_services/trans_service/trans_service.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="tx_power" displayName="tx_power" projectFiles="true">
+            <itemPath>../src/ble/ble_services/tx_power/tx_power.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="inc" displayName="inc" projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="sio2host" displayName="sio2host" projectFiles="true">
+          <logicalFolder name="uart" displayName="uart" projectFiles="true">
+            <itemPath>../src/ble/sio2host/uart/sio2host.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="utils" displayName="utils" projectFiles="true">
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="pic32mz_ef_curiosity_v2_winc3400"
+                       displayName="pic32mz_ef_curiosity_v2_winc3400"
+                       projectFiles="true">
+          <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/bsp/bsp.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="driver" displayName="driver" projectFiles="true">
+            <logicalFolder name="spi" displayName="spi" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/spi/src/drv_spi.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="winc" displayName="winc" projectFiles="true">
+              <logicalFolder name="dev" displayName="dev" projectFiles="true">
+                <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/dev/gpio/wdrv_winc_eint.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/dev/gpio/wdrv_winc_gpio.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="spi" displayName="spi" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/dev/spi/wdrv_winc_spi.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+              <logicalFolder name="drv" displayName="drv" projectFiles="true">
+                <logicalFolder name="ble_stack" displayName="ble_stack" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/gapm_task.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/event.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/error.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/gatt_client.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/security.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/dbg_task.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/gatt_server.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/gattm_task.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/gattc_task.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/gap.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/htpt_task.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/wifiprov_task.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/htpt.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/interface.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/ble_stack/gapc_task.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="common" displayName="common" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/common/nm_common.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="driver" displayName="driver" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/nmasic.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/m2m_periph.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/nmbus.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/nmspi.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/m2m_ota.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/m2m_flash.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/m2m_ssl.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/nmdrv.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/m2m_wifi.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/driver/m2m_hif.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="platform" displayName="platform" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/platform/platform.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="socket" displayName="socket" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/socket/inet_addr.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/socket/inet_ntop.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/socket/socket.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="spi_flash" displayName="spi_flash" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/drv/spi_flash/spi_flash.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+              <logicalFolder name="osal" displayName="osal" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/osal/wdrv_winc_osal.c</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_softap.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_custie.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_ble.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_systime.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_socket.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_sta.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_nvm.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_ssl.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_bssctx.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_bssfind.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_authctx.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_powersave.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_httpprovctx.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_assoc.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_enterprise.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/wdrv_winc_wps.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="clk" displayName="clk" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/clk/plib_clk.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="coretimer" displayName="coretimer" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/coretimer/plib_coretimer.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="evic" displayName="evic" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/evic/plib_evic.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/gpio/plib_gpio.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="spi" displayName="spi" projectFiles="true">
+              <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
+                <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/spi/spi_master/plib_spi3_master.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="uart" displayName="uart" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/peripheral/uart/plib_uart6.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
+            <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/stdio/xc32_monitor.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="system" displayName="system" projectFiles="true">
+            <logicalFolder name="command" displayName="command" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/command/src/sys_command.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="console" displayName="console" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/console/src/sys_console.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/console/src/sys_console_uart.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="debug" displayName="debug" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/debug/src/sys_debug.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="int" displayName="int" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/int/src/sys_int.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="reset" displayName="reset" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/reset/sys_reset.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="time" displayName="time" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/system/time/src/sys_time.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/interrupts.c</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/initialization.c</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/tasks.c</itemPath>
+          <itemPath>../src/config/pic32mz_ef_curiosity_v2_winc3400/exceptions.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="paho.mqtt.embedded-c"
+                     displayName="paho.mqtt.embedded-c"
+                     projectFiles="true">
+        <logicalFolder name="MQTTClient-C"
+                       displayName="MQTTClient-C"
+                       projectFiles="true">
+          <logicalFolder name="Platforms" displayName="Platforms" projectFiles="true">
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/Platforms/MCHP_winc.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTClient-C/src/MQTTClient.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="MQTTPacket" displayName="MQTTPacket" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnectClient.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTConnectServer.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTDeserializePublish.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTFormat.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTPacket.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSerializePublish.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribeClient.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTSubscribeServer.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribeClient.c</itemPath>
+            <itemPath>../src/third_party/paho.mqtt.embedded-c/MQTTPacket/src/MQTTUnsubscribeServer.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="root_tls_cert"
+                     displayName="root_tls_cert"
+                     projectFiles="true">
+        <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
+          <itemPath>../src/root_tls_cert/crypto/crypto_api.c</itemPath>
+          <itemPath>../src/root_tls_cert/crypto/hash.c</itemPath>
+          <itemPath>../src/root_tls_cert/crypto/rsa_key.c</itemPath>
+          <itemPath>../src/root_tls_cert/crypto/sha1_routines.c</itemPath>
+          <itemPath>../src/root_tls_cert/crypto/tls_buffer_manager.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="x509" displayName="x509" projectFiles="true">
+          <itemPath>../src/root_tls_cert/x509/asn1.c</itemPath>
+          <itemPath>../src/root_tls_cert/x509/x509_cert.c</itemPath>
+        </logicalFolder>
+        <itemPath>../src/root_tls_cert/pem.c</itemPath>
+        <itemPath>../src/root_tls_cert/root_setup.c</itemPath>
+        <itemPath>../src/root_tls_cert/tls_setup.c</itemPath>
+        <itemPath>../src/root_tls_cert/tls_srv_sec.c</itemPath>
+      </logicalFolder>
+      <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/app.c</itemPath>
+      <itemPath>../src/app_battery.c</itemPath>
+      <itemPath>../src/app_blewifi_prov.c</itemPath>
+      <itemPath>../src/app_cert_download_ota.c</itemPath>
+      <itemPath>../src/app_csc.c</itemPath>
+      <itemPath>../src/app_gw.c</itemPath>
+      <itemPath>../src/app_gw_ble.c</itemPath>
+      <itemPath>../src/app_gw_mqtt.c</itemPath>
+      <itemPath>../src/app_heart_rate.c</itemPath>
+      <itemPath>../src/app_iperf.c</itemPath>
+      <itemPath>../src/app_mqtt.c</itemPath>
+      <itemPath>../src/app_ota.c</itemPath>
+      <itemPath>../src/app_ping.c</itemPath>
+      <itemPath>../src/app_pxp_reporter.c</itemPath>
+      <itemPath>../src/app_sntp.c</itemPath>
+      <itemPath>../src/app_socket.c</itemPath>
+      <itemPath>../src/app_ssl.c</itemPath>
+      <itemPath>../src/app_trans_service.c</itemPath>
+      <itemPath>../src/app_wifi.c</itemPath>
+      <itemPath>../src/iperf.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+      <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400.mc3</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../src</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="pic32mz_ef_curiosity_v2_winc3400" type="2">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <targetDevice>PIC32MZ2048EFM144</targetDevice>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
+        <platformTool>pkob4hybrid</platformTool>
+        <languageToolchain>XC32</languageToolchain>
+        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <platform>3</platform>
+      </toolsSet>
+      <packs>
+        <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.3.58"/>
+      </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+          </linkerLibItems>
+        </linkerTool>
+        <archiverTool>
+        </archiverTool>
+        <loading>
+          <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
+          <alternateLoadableFile></alternateLoadableFile>
+        </loading>
+        <subordinates>
+        </subordinates>
+      </compileType>
+      <makeCustomizationType>
+        <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
+        <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
+        <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
+      </makeCustomizationType>
+      <C32>
+        <property key="additional-warnings" value="true"/>
+        <property key="addresss-attribute-use" value="false"/>
+        <property key="enable-app-io" value="false"/>
+        <property key="enable-omit-frame-pointer" value="false"/>
+        <property key="enable-symbols" value="true"/>
+        <property key="enable-unroll-loops" value="false"/>
+        <property key="exclude-floating-point" value="false"/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/pic32mz_ef_curiosity_v2_winc3400;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/dev;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/at_ble_api;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/ble_stack;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/bsp;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/bsp/include;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/common;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/driver;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/platform;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/socket;../src/config/pic32mz_ef_curiosity_v2_winc3400/driver/winc/include/drv/spi_flash"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="isolate-each-function" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="optimization-level" value="-O1"/>
+        <property key="place-data-into-section" value="true"/>
+        <property key="post-instruction-scheduling" value="default"/>
+        <property key="pre-instruction-scheduling" value="default"/>
+        <property key="preprocessor-macros"
+                  value="WINC_MQTT;BLE_DEVICE_ROLE=BLE_PERIPHERAL"/>
+        <property key="strict-ansi" value="false"/>
+        <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value="-fno-common"/>
+        <property key="toplevel-reordering" value=""/>
+        <property key="unaligned-access" value=""/>
+        <property key="use-cci" value="false"/>
+        <property key="use-iar" value="false"/>
+        <property key="use-indirect-calls" value="false"/>
+      </C32>
+      <C32-AR>
+        <property key="additional-options-chop-files" value="false"/>
+      </C32-AR>
+      <C32-AS>
+        <property key="assembler-symbols" value=""/>
+        <property key="enable-symbols" value="true"/>
+        <property key="exclude-floating-point-library" value="false"/>
+        <property key="expand-macros" value="false"/>
+        <property key="extra-include-directories-for-assembler" value=""/>
+        <property key="extra-include-directories-for-preprocessor" value=""/>
+        <property key="false-conditionals" value="false"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="keep-locals" value="false"/>
+        <property key="list-assembly" value="false"/>
+        <property key="list-source" value="false"/>
+        <property key="list-symbols" value="false"/>
+        <property key="oXC32asm-list-to-file" value="false"/>
+        <property key="omit-debug-dirs" value="false"/>
+        <property key="omit-forms" value="false"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="warning-level" value=""/>
+      </C32-AS>
+      <C32-CO>
+        <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
+      </C32-CO>
+      <C32-LD>
+        <property key="additional-options-use-response-files" value="false"/>
+        <property key="additional-options-write-sla" value="false"/>
+        <property key="allocate-dinit" value="false"/>
+        <property key="code-dinit" value="false"/>
+        <property key="ebase-addr" value=""/>
+        <property key="enable-check-sections" value="false"/>
+        <property key="exclude-floating-point-library" value="false"/>
+        <property key="exclude-standard-libraries" value="false"/>
+        <property key="extra-lib-directories" value=""/>
+        <property key="fill-flash-options-addr" value=""/>
+        <property key="fill-flash-options-const" value=""/>
+        <property key="fill-flash-options-how" value="0"/>
+        <property key="fill-flash-options-inc-const" value="1"/>
+        <property key="fill-flash-options-increment" value=""/>
+        <property key="fill-flash-options-seq" value=""/>
+        <property key="fill-flash-options-what" value="0"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-cross-reference-file" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="heap-size" value="1024"/>
+        <property key="input-libraries" value=""/>
+        <property key="kseg-length" value=""/>
+        <property key="kseg-origin" value=""/>
+        <property key="linker-symbols" value=""/>
+        <property key="map-file" value="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"/>
+        <property key="no-device-startup-code" value="true"/>
+        <property key="no-startup-files" value="false"/>
+        <property key="oXC32ld-extra-opts" value=""/>
+        <property key="optimization-level" value=""/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="remove-unused-sections" value="true"/>
+        <property key="report-memory-usage" value="false"/>
+        <property key="serial-length" value=""/>
+        <property key="serial-origin" value=""/>
+        <property key="stack-size" value=""/>
+        <property key="symbol-stripping" value=""/>
+        <property key="trace-symbols" value=""/>
+        <property key="warn-section-align" value="false"/>
+      </C32-LD>
+      <C32CPP>
+        <property key="additional-warnings" value="false"/>
+        <property key="addresss-attribute-use" value="false"/>
+        <property key="check-new" value="false"/>
+        <property key="eh-specs" value="true"/>
+        <property key="enable-app-io" value="false"/>
+        <property key="enable-omit-frame-pointer" value="false"/>
+        <property key="enable-symbols" value="true"/>
+        <property key="enable-unroll-loops" value="false"/>
+        <property key="exceptions" value="true"/>
+        <property key="exclude-floating-point" value="false"/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/pic32mz_ef_curiosity_v2_winc3400"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="isolate-each-function" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="optimization-level" value="-O1"/>
+        <property key="place-data-into-section" value="false"/>
+        <property key="post-instruction-scheduling" value="default"/>
+        <property key="pre-instruction-scheduling" value="default"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="rtti" value="true"/>
+        <property key="strict-ansi" value="false"/>
+        <property key="toplevel-reordering" value=""/>
+        <property key="unaligned-access" value=""/>
+        <property key="use-cci" value="false"/>
+        <property key="use-iar" value="false"/>
+        <property key="use-indirect-calls" value="false"/>
+      </C32CPP>
+      <C32Global>
+        <property key="common-include-directories" value=""/>
+        <property key="gp-relative-option" value=""/>
+        <property key="legacy-libc" value="true"/>
+        <property key="mdtcm" value=""/>
+        <property key="mitcm" value=""/>
+        <property key="mstacktcm" value="false"/>
+        <property key="omit-pack-options" value="1"/>
+        <property key="relaxed-math" value="false"/>
+        <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
+        <property key="wpo-lto" value="false"/>
+      </C32Global>
+      <Tool>
+        <property key="ADC" value="true"/>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="CAN1" value="true"/>
+        <property key="CAN2" value="true"/>
+        <property key="CHANGE NOTICE A" value="true"/>
+        <property key="CHANGE NOTICE B" value="true"/>
+        <property key="CHANGE NOTICE C" value="true"/>
+        <property key="CHANGE NOTICE D" value="true"/>
+        <property key="CHANGE NOTICE E" value="true"/>
+        <property key="CHANGE NOTICE F" value="true"/>
+        <property key="CHANGE NOTICE G" value="true"/>
+        <property key="CHANGE NOTICE H" value="true"/>
+        <property key="CHANGE NOTICE J" value="true"/>
+        <property key="CHANGE NOTICE K" value="true"/>
+        <property key="COMPARATOR" value="true"/>
+        <property key="DMA" value="true"/>
+        <property key="ETHERNET CONTROLLER" value="true"/>
+        <property key="Freeze All Other Peripherals" value="true"/>
+        <property key="I2C 1" value="true"/>
+        <property key="I2C 2" value="true"/>
+        <property key="I2C 3" value="true"/>
+        <property key="I2C 4" value="true"/>
+        <property key="I2C 5" value="true"/>
+        <property key="INPUT CAPTURE 1" value="true"/>
+        <property key="INPUT CAPTURE 2" value="true"/>
+        <property key="INPUT CAPTURE 3" value="true"/>
+        <property key="INPUT CAPTURE 4" value="true"/>
+        <property key="INPUT CAPTURE 5" value="true"/>
+        <property key="INPUT CAPTURE 6" value="true"/>
+        <property key="INPUT CAPTURE 7" value="true"/>
+        <property key="INPUT CAPTURE 8" value="true"/>
+        <property key="INPUT CAPTURE 9" value="true"/>
+        <property key="INTERRUPT CONTROL" value="true"/>
+        <property key="OUTPUT COMPARE 1" value="true"/>
+        <property key="OUTPUT COMPARE 2" value="true"/>
+        <property key="OUTPUT COMPARE 3" value="true"/>
+        <property key="OUTPUT COMPARE 4" value="true"/>
+        <property key="OUTPUT COMPARE 5" value="true"/>
+        <property key="OUTPUT COMPARE 6" value="true"/>
+        <property key="OUTPUT COMPARE 7" value="true"/>
+        <property key="OUTPUT COMPARE 8" value="true"/>
+        <property key="OUTPUT COMPARE 9" value="true"/>
+        <property key="PARALLEL MASTER/SLAVE PORT" value="true"/>
+        <property key="REAL TIME CLOCK" value="true"/>
+        <property key="REFERENCE CLOCK1" value="true"/>
+        <property key="REFERENCE CLOCK2" value="true"/>
+        <property key="REFERENCE CLOCK3" value="true"/>
+        <property key="REFERENCE CLOCK4" value="true"/>
+        <property key="SPI/I2S 1" value="true"/>
+        <property key="SPI/I2S 2" value="true"/>
+        <property key="SPI/I2S 3" value="true"/>
+        <property key="SPI/I2S 4" value="true"/>
+        <property key="SPI/I2S 5" value="true"/>
+        <property key="SPI/I2S 6" value="true"/>
+        <property key="TIMER1" value="true"/>
+        <property key="TIMER2" value="true"/>
+        <property key="TIMER3" value="true"/>
+        <property key="TIMER4" value="true"/>
+        <property key="TIMER5" value="true"/>
+        <property key="TIMER6" value="true"/>
+        <property key="TIMER7" value="true"/>
+        <property key="TIMER8" value="true"/>
+        <property key="TIMER9" value="true"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
+        <property key="UART1" value="true"/>
+        <property key="UART2" value="true"/>
+        <property key="UART3" value="true"/>
+        <property key="UART4" value="true"/>
+        <property key="UART5" value="true"/>
+        <property key="UART6" value="true"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
+        <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+      </Tool>
+      <pkob4hybrid>
+        <property key="ADC" value="true"/>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="CAN1" value="true"/>
+        <property key="CAN2" value="true"/>
+        <property key="CHANGE NOTICE A" value="true"/>
+        <property key="CHANGE NOTICE B" value="true"/>
+        <property key="CHANGE NOTICE C" value="true"/>
+        <property key="CHANGE NOTICE D" value="true"/>
+        <property key="CHANGE NOTICE E" value="true"/>
+        <property key="CHANGE NOTICE F" value="true"/>
+        <property key="CHANGE NOTICE G" value="true"/>
+        <property key="CHANGE NOTICE H" value="true"/>
+        <property key="CHANGE NOTICE J" value="true"/>
+        <property key="CHANGE NOTICE K" value="true"/>
+        <property key="COMPARATOR" value="true"/>
+        <property key="DMA" value="true"/>
+        <property key="ETHERNET CONTROLLER" value="true"/>
+        <property key="Freeze All Other Peripherals" value="true"/>
+        <property key="I2C 1" value="true"/>
+        <property key="I2C 2" value="true"/>
+        <property key="I2C 3" value="true"/>
+        <property key="I2C 4" value="true"/>
+        <property key="I2C 5" value="true"/>
+        <property key="INPUT CAPTURE 1" value="true"/>
+        <property key="INPUT CAPTURE 2" value="true"/>
+        <property key="INPUT CAPTURE 3" value="true"/>
+        <property key="INPUT CAPTURE 4" value="true"/>
+        <property key="INPUT CAPTURE 5" value="true"/>
+        <property key="INPUT CAPTURE 6" value="true"/>
+        <property key="INPUT CAPTURE 7" value="true"/>
+        <property key="INPUT CAPTURE 8" value="true"/>
+        <property key="INPUT CAPTURE 9" value="true"/>
+        <property key="INTERRUPT CONTROL" value="true"/>
+        <property key="OUTPUT COMPARE 1" value="true"/>
+        <property key="OUTPUT COMPARE 2" value="true"/>
+        <property key="OUTPUT COMPARE 3" value="true"/>
+        <property key="OUTPUT COMPARE 4" value="true"/>
+        <property key="OUTPUT COMPARE 5" value="true"/>
+        <property key="OUTPUT COMPARE 6" value="true"/>
+        <property key="OUTPUT COMPARE 7" value="true"/>
+        <property key="OUTPUT COMPARE 8" value="true"/>
+        <property key="OUTPUT COMPARE 9" value="true"/>
+        <property key="PARALLEL MASTER/SLAVE PORT" value="true"/>
+        <property key="REAL TIME CLOCK" value="true"/>
+        <property key="REFERENCE CLOCK1" value="true"/>
+        <property key="REFERENCE CLOCK2" value="true"/>
+        <property key="REFERENCE CLOCK3" value="true"/>
+        <property key="REFERENCE CLOCK4" value="true"/>
+        <property key="SPI/I2S 1" value="true"/>
+        <property key="SPI/I2S 2" value="true"/>
+        <property key="SPI/I2S 3" value="true"/>
+        <property key="SPI/I2S 4" value="true"/>
+        <property key="SPI/I2S 5" value="true"/>
+        <property key="SPI/I2S 6" value="true"/>
+        <property key="TIMER1" value="true"/>
+        <property key="TIMER2" value="true"/>
+        <property key="TIMER3" value="true"/>
+        <property key="TIMER4" value="true"/>
+        <property key="TIMER5" value="true"/>
+        <property key="TIMER6" value="true"/>
+        <property key="TIMER7" value="true"/>
+        <property key="TIMER8" value="true"/>
+        <property key="TIMER9" value="true"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
+        <property key="UART1" value="true"/>
+        <property key="UART2" value="true"/>
+        <property key="UART3" value="true"/>
+        <property key="UART4" value="true"/>
+        <property key="UART5" value="true"/>
+        <property key="UART6" value="true"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
+        <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+      </pkob4hybrid>
+    </conf>
+  </confs>
+</configurationDescriptor>
