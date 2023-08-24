@@ -14,8 +14,10 @@ This example project demonstrates the WINC3400 WiFi applicationsin Bypass mode.
 
 -   **[MQTT Demo](docs/GUID-49316BE3-AC2F-4E11-AE94-1E35E949F3B2.md)**  
 
--   **[Iperf Demo](docs/GUID-955C3E8C-7967-49D9-A353-AE0486131D1C.md)**  
+-   **[Iperf Demo](GUID-955C3E8C-7967-49D9-A353-AE0486131D1C.md)**  
 
+
+**Parent topic:**[Harmony 3 Wireless application examples for WINC3400](GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.md)
 
 ## Description
 
@@ -31,13 +33,50 @@ To build the application, refer to the following table and open the project usin
 
 |Project Name|Description|
 |------------|-----------|
-|sam\_e54\_xpro\_winc3400.X|MPLABX project for SAME54 and WINC3400 Xplained pro|
-|sam\_e54\_xpro\_winc3400\_freertos.X|MPLABX project for SAME54 and WINC3400 Xplained pro usinf FreeRTOS|
-| | |
+|sam\_e54\_xpro\_winc3400.X|MPLABX project for SAME54 Xplained Pro Evaluation Kit and WINC3400 Xplained pro|
+|sam\_e54\_xpro\_winc3400\_freertos.X|MPLABX project for SAME54 Xplained Pro Evaluation Kit and WINC3400 Xplained pro usinf FreeRTOS|
+|sam\_a5d27\_som1\_winc3400.X|MPLABX project for SAMA5D27-SOM1-EK1 Evaluation Kit and WINC3400 WiFi 8 Click board|
+|pic32mz\_ef\_curiosity\_v2\_winc3400.X|MPLABX project for PIC32MZ EF 2.0 curiosity board and WINC3400 Xplained pro|
+| |
 
 ## Setting up SAMXXX Xplained Pro board
 
 -   Connect the Debug USB port on the SAMXXX Xplained Pro board to the computer using a micro USB cable
+
+-   Connect the WINC3400 Xplained pro on the EXT1 header of SAMXXX Xplained Pro board
+
+
+## Setting up PIC32MZ EF 2.0 Curiosity board
+
+-   Connect the Debug USB port on the PIC32MZ EF 2.0 Curiosity board to the computer using a micro USB cable
+
+-   Connect the WINC3400 Xplained pro on the EXT1 header of PIC32MZ EF 2.0 Curiosity board
+
+
+## Setting up SAMA5D27-SOM1-EK1 Evaluation Kit
+
+-   Connect the WINC3400 WiFi 8 Click board to the MBus1 connector.
+
+-   Connect the USB port \(J10\) on SOM1-Ek1 board to the computer using micro USB cable.
+
+
+### Addtional hardware required
+
+-   SD Card with FAT32 file system
+
+
+### Setting up the SD card
+
+-   Copy the boot loader binary\( boot.bin\) from "firmware\\at91bootstrap\_sam\_a5d27\_som1\_ek.X\\binaries" onto the SD card
+
+-   Copy the application \(harmony.bin\) from "firmware/sam\_a5d27\_som1\_winc3400.X/dist/sam\_a5d27\_som1\_winc3400/production" onto the SD card, available after a successful build of the application
+
+
+### Setting up the board
+
+-   Insert the SD card into SDMMC slot \(J12\).
+
+-   Connect the Debug USB port on the board to the computer using a micro USB cable.
 
 
 ## Running the Application
@@ -68,7 +107,7 @@ WiFi Commands Details
 |wifi help|Wi-Fi Service help command|wifi help|
 |wifi set <bootmode\> <ssid\_name\> <auth\_type\> <pwd\> <username/index\>|Set Wi-Fi Configuration for Station\(STA\) mode or Access Point \(AP\) mode|wifi set 2 DEMO\_AP 2 12345678|
 |wifi get|Get Wi-Fi Configuration|wifi get|
-| | | |
+| |
 
 Wi-Fi command parameters information
 
@@ -79,7 +118,7 @@ Wi-Fi command parameters information
 |authtype\(Security type\)|1 - OPEN Mode. 2 - WPAPSK mode. 3 - WEP mode. 5 - 802.1x authentication MSCHAPV2 mode.|
 |pwd\(password\)|Password/passphrase|
 |username/index|Username if authtype is 802.1x authentication MSCHAPV2 or Key Index if the authtype is WEP.|
-| | |
+| |
 
 Application command parameters information
 
@@ -89,14 +128,14 @@ Application command parameters information
 |appdemo start <demo\_id\>|Select and start an application demo|appdemo start 1|
 |appdemo get|Get the ID of currently running application demo|appdemo get|
 |appdemo stop|Stop the currently running application demo|appdemo stop|
-| | | |
+| |
 
 Application command parameters information
 
 |Parameter|Sub Parameter|
 |---------|-------------|
 |demo\_ID|1 - WiFi station mode/Access point mode demo. 8 - SSL Demo. 9 - Ping Demo. 10 - Iperf demo. 11 - SNTP demo. 18 - MQTT Demo.|
-| | |
+| |
 
 ## List of Applications
 

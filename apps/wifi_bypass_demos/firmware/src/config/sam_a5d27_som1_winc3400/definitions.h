@@ -53,11 +53,10 @@
 #include "peripheral/tc/plib_tc0.h"
 #include "system/time/sys_time.h"
 #include "peripheral/uart/plib_uart1.h"
-#include "net_pres/pres/net_pres.h"
-#include "net_pres/pres/net_pres_encryptionproviderapi.h"
-#include "net_pres/pres/net_pres_transportapi.h"
-#include "net_pres/pres/net_pres_socketapi.h"
 #include "driver/spi/drv_spi.h"
+#include "library/tcpip/tcpip.h"
+#include "system/sys_time_h2_adapter.h"
+#include "system/sys_random_h2_adapter.h"
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"
 #include "system/cache/sys_cache.h"
@@ -65,9 +64,6 @@
 #include "system/reset/sys_reset.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "library/tcpip/tcpip.h"
-#include "system/sys_time_h2_adapter.h"
-#include "system/sys_random_h2_adapter.h"
 #include "driver/winc/include/wdrv_winc_api.h"
 #include "system/command/sys_command.h"
 #include "peripheral/mmu/plib_mmu.h"
@@ -94,6 +90,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAMA5D27CD1G"
+#define DEVICE_ARCH			 "CORTEX-A5"
+#define DEVICE_FAMILY		 "SAMA5"
+#define DEVICE_SERIES		 "SAMA5D2"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 498000000
@@ -209,8 +211,6 @@ Remarks:
 typedef struct
 {
     SYS_MODULE_OBJ  sysTime;
-    SYS_MODULE_OBJ  netPres;
-
     SYS_MODULE_OBJ  sysConsole0;
 
 
@@ -221,7 +221,7 @@ typedef struct
 
     SYS_MODULE_OBJ  sysDebug;
 
-    
+    SYS_MODULE_OBJ  netPres;
 
 
 } SYSTEM_OBJECTS;

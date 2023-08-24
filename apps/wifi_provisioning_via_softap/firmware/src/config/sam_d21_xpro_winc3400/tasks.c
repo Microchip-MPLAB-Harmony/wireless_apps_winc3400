@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 
@@ -76,7 +77,7 @@ void SYS_Tasks ( void )
 
 
     /* Maintain Device Drivers */
-    WDRV_WINC_Tasks(sysObj.drvWifiWinc);
+        WDRV_WINC_Tasks(sysObj.drvWifiWinc);
 
 
 

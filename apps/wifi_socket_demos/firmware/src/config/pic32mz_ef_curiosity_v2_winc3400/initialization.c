@@ -142,7 +142,7 @@ static DRV_SPI_CLIENT_OBJ drvSPI0ClientObjPool[DRV_SPI_CLIENTS_NUMBER_IDX0];
 static DRV_SPI_TRANSFER_OBJ drvSPI0TransferObjPool[DRV_SPI_QUEUE_SIZE_IDX0];
 
 /* SPI PLIB Interface Initialization */
-const DRV_SPI_PLIB_INTERFACE drvSPI0PlibAPI = {
+static const DRV_SPI_PLIB_INTERFACE drvSPI0PlibAPI = {
 
     /* SPI PLIB Setup */
     .setup = (DRV_SPI_PLIB_SETUP)SPI3_TransferSetup,
@@ -157,23 +157,23 @@ const DRV_SPI_PLIB_INTERFACE drvSPI0PlibAPI = {
     .callbackRegister = (DRV_SPI_PLIB_CALLBACK_REGISTER)SPI3_CallbackRegister,
 };
 
-const uint32_t drvSPI0remapDataBits[]= { 0x00000000, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0x00000400, 0x00000800 };
-const uint32_t drvSPI0remapClockPolarity[] = { 0x00000000, 0x00000040 };
-const uint32_t drvSPI0remapClockPhase[] = { 0x00000000, 0x00000100 };
+static const uint32_t drvSPI0remapDataBits[]= { 0x00000000, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0xFFFFFFFFU, 0x00000400, 0x00000800 };
+static const uint32_t drvSPI0remapClockPolarity[] = { 0x00000000, 0x00000040 };
+static const uint32_t drvSPI0remapClockPhase[] = { 0x00000000, 0x00000100 };
 
-const DRV_SPI_INTERRUPT_SOURCES drvSPI0InterruptSources =
+static const DRV_SPI_INTERRUPT_SOURCES drvSPI0InterruptSources =
 {
     /* Peripheral has more than one interrupt vectors */
     .isSingleIntSrc                        = false,
 
     /* Peripheral interrupt lines */
     .intSources.multi.spiTxReadyInt      = -1,
-    .intSources.multi.spiTxCompleteInt   = _SPI3_TX_VECTOR,
-    .intSources.multi.spiRxInt           = _SPI3_RX_VECTOR,
+    .intSources.multi.spiTxCompleteInt   = (int32_t)_SPI3_TX_VECTOR,
+    .intSources.multi.spiRxInt           = (int32_t)_SPI3_RX_VECTOR,
 };
 
 /* SPI Driver Initialization Data */
-const DRV_SPI_INIT drvSPI0InitData =
+static const DRV_SPI_INIT drvSPI0InitData =
 {
     /* SPI PLIB API */
     .spiPlib = &drvSPI0PlibAPI,
@@ -200,7 +200,6 @@ const DRV_SPI_INIT drvSPI0InitData =
     /* SPI interrupt sources (SPI peripheral and DMA) */
     .interruptSources = &drvSPI0InterruptSources,
 };
-
 // </editor-fold>
 
 
@@ -235,7 +234,7 @@ const SYS_CMD_INIT sysCmdInit =
 
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
-const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
+static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)CORETIMER_CallbackSet,
     .timerStart = (SYS_TIME_PLIB_START)CORETIMER_Start,
     .timerStop = (SYS_TIME_PLIB_STOP)CORETIMER_Stop ,
@@ -245,7 +244,7 @@ const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
     .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)CORETIMER_CounterGet,
 };
 
-const SYS_TIME_INIT sysTimeInitData =
+static const SYS_TIME_INIT sysTimeInitData =
 {
     .timePlib = &sysTimePlibAPI,
     .hwTimerIntNum = 0,
@@ -253,7 +252,7 @@ const SYS_TIME_INIT sysTimeInitData =
 
 // </editor-fold>
 
-const SYS_DEBUG_INIT debugInit =
+static const SYS_DEBUG_INIT debugInit =
 {
     .moduleInit = {0},
     .errorLevel = SYS_DEBUG_GLOBAL_ERROR_LEVEL,
@@ -264,25 +263,22 @@ const SYS_DEBUG_INIT debugInit =
 // <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
 
 
-/* Declared in console device implementation (sys_console_uart.c) */
-extern const SYS_CONSOLE_DEV_DESC sysConsoleUARTDevDesc;
-
-const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
+static const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
 {
-    .read = (SYS_CONSOLE_UART_PLIB_READ)UART6_Read,
-	.readCountGet = (SYS_CONSOLE_UART_PLIB_READ_COUNT_GET)UART6_ReadCountGet,
-	.readFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET)UART6_ReadFreeBufferCountGet,
-    .write = (SYS_CONSOLE_UART_PLIB_WRITE)UART6_Write,
-	.writeCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET)UART6_WriteCountGet,
-	.writeFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET)UART6_WriteFreeBufferCountGet,
+    .read_t = (SYS_CONSOLE_UART_PLIB_READ)UART6_Read,
+    .readCountGet = (SYS_CONSOLE_UART_PLIB_READ_COUNT_GET)UART6_ReadCountGet,
+    .readFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET)UART6_ReadFreeBufferCountGet,
+    .write_t = (SYS_CONSOLE_UART_PLIB_WRITE)UART6_Write,
+    .writeCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET)UART6_WriteCountGet,
+    .writeFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET)UART6_WriteFreeBufferCountGet,
 };
 
-const SYS_CONSOLE_UART_INIT_DATA sysConsole0UARTInitData =
+static const SYS_CONSOLE_UART_INIT_DATA sysConsole0UARTInitData =
 {
-    .uartPLIB = &sysConsole0UARTPlibAPI,    
+    .uartPLIB = &sysConsole0UARTPlibAPI,
 };
 
-const SYS_CONSOLE_INIT sysConsole0Init =
+static const SYS_CONSOLE_INIT sysConsole0Init =
 {
     .deviceInitData = (const void*)&sysConsole0UARTInitData,
     .consDevDesc = &sysConsoleUARTDevDesc,
@@ -353,14 +349,25 @@ void SYS_Initialize ( void* data )
     /* Initialize SPI0 Driver Instance */
     sysObj.drvSPI0 = DRV_SPI_Initialize(DRV_SPI_INDEX_0, (SYS_MODULE_INIT *)&drvSPI0InitData);
 
+
     SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+    H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
+    
+    /* MISRAC 2012 deviation block end */
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+     H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
     sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
 
-
-    sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
-
+    /* MISRAC 2012 deviation block end */
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+     H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
+   /* MISRAC 2012 deviation block end */
 
 
     /* MISRAC 2012 deviation block end */

@@ -48,8 +48,8 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "system/command/sys_command.h"
 #include "driver/winc/include/wdrv_winc_api.h"
+#include "system/command/sys_command.h"
 #include "peripheral/mmu/plib_mmu.h"
 #include "peripheral/matrix/plib_matrix.h"
 #include "peripheral/clk/plib_clk.h"
@@ -81,6 +81,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAMA5D27CD1G"
+#define DEVICE_ARCH			 "CORTEX-A5"
+#define DEVICE_FAMILY		 "SAMA5"
+#define DEVICE_SERIES		 "SAMA5D2"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 498000000

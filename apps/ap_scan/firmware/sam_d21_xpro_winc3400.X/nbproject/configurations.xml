@@ -154,6 +154,7 @@
           <itemPath>../src/config/sam_d21_xpro_winc3400/configuration.h</itemPath>
           <itemPath>../src/config/sam_d21_xpro_winc3400/interrupts.h</itemPath>
           <itemPath>../src/config/sam_d21_xpro_winc3400/device_vectors.h</itemPath>
+          <itemPath>../src/config/sam_d21_xpro_winc3400/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -443,7 +444,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.20</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -674,6 +675,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-3ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="E:/savita_h3/wireless/apps/ap_scan/firmware/sam_d21_xpro_winc3400.X/debug/sam_d21_xpro_winc3400/sam_d21_xpro_winc3400_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

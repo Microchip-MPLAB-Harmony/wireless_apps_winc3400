@@ -325,6 +325,7 @@
           <itemPath>../src/config/sam_a5d27_som1_winc3400/device.h</itemPath>
           <itemPath>../src/config/sam_a5d27_som1_winc3400/definitions.h</itemPath>
           <itemPath>../src/config/sam_a5d27_som1_winc3400/interrupts.h</itemPath>
+          <itemPath>../src/config/sam_a5d27_som1_winc3400/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
@@ -398,7 +399,6 @@
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/i2sc0.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/shdwc.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/trng.h</itemPath>
-            <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/smc.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/gmac.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/tc1.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/matrix1.h</itemPath>
@@ -448,6 +448,7 @@
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/uart2.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/aes.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/sdmmc1.h</itemPath>
+            <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/hsmc.h</itemPath>
           </logicalFolder>
           <logicalFolder name="pio" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/pio/sama5d27cd1g.h</itemPath>
@@ -466,6 +467,11 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="system" displayName="system" projectFiles="true">
+        <logicalFolder name="tmr" displayName="tmr" projectFiles="true">
+          <itemPath>../src/config/sam_a5d27_som1_winc3400/system/tmr/sys_tmr.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="third_party" displayName="third_party" projectFiles="true">
@@ -569,7 +575,6 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/chacha20_poly1305.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/dsa.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/misc.h</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/rabbit.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/selftest.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/aes.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/blake2-impl.h</itemPath>
@@ -586,12 +591,10 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/dh.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/pkcs12.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/cryptocb.h</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/hc128.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/rsa.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/ripemd.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/wolfmath.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/md2.h</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/idea.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/pkcs7.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/fe_operations.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/fips_test.h</itemPath>
@@ -616,6 +619,11 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/wc_pkcs11.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/ecc.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/mem_track.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/siphash.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/eccsi.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/kdf.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/sakke.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/falcon.h</itemPath>
       </logicalFolder>
       <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
         <itemPath>../src/third_party/wolfssl/wolfssl/internal.h</itemPath>
@@ -630,6 +638,7 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/ssl.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/ocsp.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/sniffer.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/openssl/compat_types.h</itemPath>
       </logicalFolder>
       <itemPath>../src/app_mqtt_task.h</itemPath>
       <itemPath>../src/app.h</itemPath>
@@ -860,7 +869,6 @@
           <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha256_sam6156.c</itemPath>
           <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rng_u2242.c</itemPath>
         </logicalFolder>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/idea.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/md5.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rsa.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/blake2s.c</itemPath>
@@ -900,7 +908,6 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/integer.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/aes.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hash.c</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hc128.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_encrypt.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha256.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/coding.c</itemPath>
@@ -917,7 +924,6 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hmac.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_armthumb.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/cpuid.c</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rabbit.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/md2.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/tfm.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ecc.c</itemPath>
@@ -933,6 +939,11 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/chacha.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ed25519.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_cortexm.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sakke.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/falcon.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/eccsi.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/kdf.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/siphash.c</itemPath>
       </logicalFolder>
       <logicalFolder name="wolfssl" displayName="wolfssl" projectFiles="true">
         <itemPath>../src/third_party/wolfssl/src/wolfio.c</itemPath>
@@ -944,6 +955,11 @@
         <itemPath>../src/third_party/wolfssl/src/crl.c</itemPath>
         <itemPath>../src/third_party/wolfssl/src/tls13.c</itemPath>
         <itemPath>../src/third_party/wolfssl/src/keys.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/x509_str.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/pk.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/conf.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/dtls13.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/src/x509.c</itemPath>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/config/sam_a5d27_som1_winc3400/pin_configurations.csv</itemPath>
@@ -972,14 +988,14 @@
         <targetDevice>ATSAMA5D27CD1G</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>jlink</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.20</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.9.106"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.9.106"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="boot.load_adr" value=""/>
@@ -1017,6 +1033,7 @@
       <C32>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -1074,6 +1091,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -1113,6 +1131,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -1161,6 +1180,8 @@
         <property key="communication.speed" value="4"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="jlink.override" value=""/>
         <property key="lastid" value=""/>
         <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
@@ -1192,6 +1213,8 @@
         <property key="communication.speed" value="4"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="jlink.override" value=""/>
         <property key="lastid" value=""/>
         <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>

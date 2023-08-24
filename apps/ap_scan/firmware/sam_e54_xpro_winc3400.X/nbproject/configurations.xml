@@ -163,6 +163,7 @@
           <itemPath>../src/config/sam_e54_xpro_winc3400/configuration.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/interrupts.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/device_vectors.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -499,14 +500,14 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.20</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.8.234"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.7.122"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

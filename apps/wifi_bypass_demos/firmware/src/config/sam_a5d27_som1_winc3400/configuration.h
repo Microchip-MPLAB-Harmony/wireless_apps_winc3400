@@ -96,7 +96,7 @@ extern "C" {
 
 #define SYS_CMD_ENABLE
 #define SYS_CMD_DEVICE_MAX_INSTANCES       SYS_CONSOLE_DEVICE_MAX_INSTANCES
-#define SYS_CMD_PRINT_BUFFER_SIZE          1024
+#define SYS_CMD_PRINT_BUFFER_SIZE          1024U
 #define SYS_CMD_BUFFER_DMA_READY
 
 
@@ -107,10 +107,10 @@ extern "C" {
 #define SYS_DEBUG_USE_CONSOLE
 
 
-#define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			1
-#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			2
-#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		0
-#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		1026
+#define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
+#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(1U)
+#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		(0U)
+#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		(1026U)
 
 
 
@@ -121,7 +121,7 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 /* SPI Driver Common Configuration Options */
-#define DRV_SPI_INSTANCES_NUMBER              1
+#define DRV_SPI_INSTANCES_NUMBER              (1U)
 
 /*** WiFi WINC Driver Configuration ***/
 #define WDRV_WINC_PIO_SOURCE
@@ -309,6 +309,11 @@ extern "C" {
 
 
 
+	/*** tcpip_cmd Configuration ***/
+	#define TCPIP_STACK_COMMAND_ENABLE
+
+
+
 /* Network Configuration Index 0 */
 #define TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX0 "WINC"
 #define TCPIP_IF_WINC
@@ -328,17 +333,6 @@ extern "C" {
                                                     TCPIP_NETWORK_CONFIG_IP_STATIC
                                                     
 #define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0         WDRV_WINC_MACObject
-
-
-
-	/*** tcpip_cmd Configuration ***/
-	#define TCPIP_STACK_COMMAND_ENABLE
-
-
-/* MPLAB Harmony Net Presentation Layer Definitions*/
-#define NET_PRES_NUM_INSTANCE 1
-#define NET_PRES_NUM_SOCKETS 10
-
 
 
 
@@ -433,6 +427,7 @@ extern "C" {
 
 #define TCPIP_STACK_TICK_RATE		        		5
 #define TCPIP_STACK_SECURE_PORT_ENTRIES             10
+#define TCPIP_STACK_LINK_RATE		        		333
 
 #define TCPIP_STACK_ALIAS_INTERFACE_SUPPORT   false
 

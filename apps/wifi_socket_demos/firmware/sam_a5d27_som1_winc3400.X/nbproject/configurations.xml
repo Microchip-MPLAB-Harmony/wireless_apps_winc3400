@@ -255,6 +255,7 @@
           <itemPath>../src/config/sam_a5d27_som1_winc3400/device.h</itemPath>
           <itemPath>../src/config/sam_a5d27_som1_winc3400/interrupts.h</itemPath>
           <itemPath>../src/config/sam_a5d27_som1_winc3400/definitions.h</itemPath>
+          <itemPath>../src/config/sam_a5d27_som1_winc3400/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
@@ -348,7 +349,6 @@
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/rtc.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/aximx.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/rxlp.h</itemPath>
-            <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/smc.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/pit.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/uart3.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/xdmac0.h</itemPath>
@@ -378,6 +378,7 @@
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/icm.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/secumod.h</itemPath>
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/tc1.h</itemPath>
+            <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/instance/hsmc.h</itemPath>
           </logicalFolder>
           <logicalFolder name="pio" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAMA5D27CD1G_DFP/pio/sama5d27cd1g.h</itemPath>
@@ -739,14 +740,14 @@
         <targetDevice>ATSAMA5D27CD1G</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>jlink</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.20</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
         <pack name="SAMA5D2_DFP" vendor="Microchip" version="1.9.106"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="boot.load_adr" value=""/>
@@ -931,6 +932,8 @@
         <property key="communication.speed" value="4"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="jlink.override" value=""/>
         <property key="lastid" value=""/>
         <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
@@ -962,6 +965,8 @@
         <property key="communication.speed" value="4"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="jlink.override" value=""/>
         <property key="lastid" value=""/>
         <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>

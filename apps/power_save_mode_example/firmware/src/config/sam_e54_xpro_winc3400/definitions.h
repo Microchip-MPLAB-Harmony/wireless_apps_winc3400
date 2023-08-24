@@ -48,8 +48,8 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "peripheral/nvmctrl/plib_nvmctrl.h"
 #include "peripheral/sercom/usart/plib_sercom2_usart.h"
+#include "peripheral/nvmctrl/plib_nvmctrl.h"
 #include "peripheral/evsys/plib_evsys.h"
 #include "driver/winc/include/wdrv_winc_api.h"
 #include "peripheral/port/plib_port.h"
@@ -82,6 +82,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAME54P20A"
+#define DEVICE_ARCH			 "CORTEX-M4"
+#define DEVICE_FAMILY		 "SAME"
+#define DEVICE_SERIES		 "SAME54"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 120000000
@@ -200,9 +206,9 @@ typedef struct
     /* SPI0 Driver Object */
     SYS_MODULE_OBJ drvSPI0;
 
-    SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysDebug;
 
+    SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysConsole0;
 
 

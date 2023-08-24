@@ -35,6 +35,8 @@ This example project demonstrates the WINC3400 applications of WiFi and BLE in S
 -   **[Battery Service Application Demo](docs/GUID-F6C1AEC3-D21B-440A-9AF7-40CE3A8C6251.md)**  
 
 
+**Parent topic:**[Harmony 3 Wireless application examples for WINC3400](GUID-B02CCF0F-B40C-487D-8D4D-570EFA78D2BF.md)
+
 ## Description
 
 This project has both WiFi and BLE example applications. The user can configure the WiFi parameters and select the required example application through command. The user would need to use "Microchip Bluetooth Data" mobile application to run the BLE example applications.
@@ -49,15 +51,25 @@ To build the application, refer to the following table and open the project usin
 
 |Project Name|Description|
 |------------|-----------|
-|sam\_e54\_xpro\_winc3400.X|MPLABX project for SAME54 and WINC3400 Xplained pro|
-|sam\_d21\_xpro\_winc3400.X|MPLABX project for SAMD21 and WINC3400 Xplained pro|
-|sam\_e54\_xpro\_winc3400\_freertos.X|MPLABX project for SAME54 and WINC3400 Xplained pro using FreeRTOS|
-|sam\_a5d27\_som1\_winc3400.X|MPLABX project for SAMA5D27 and WINC1500 WiFi 7 Click board|
+|sam\_e54\_xpro\_winc3400.X|MPLABX project for SAME54 Xplained Pro Evaluation Kit and WINC3400 Xplained pro|
+|sam\_d21\_xpro\_winc3400.X|MPLABX project for SAMD21 Xplained Pro Evaluation Kit and WINC3400 Xplained pro|
+|sam\_e54\_xpro\_winc3400\_freertos.X|MPLABX project for SAME54 Xplained Pro Evaluation Kit and WINC3400 Xplained pro using FreeRTOS|
+|sam\_a5d27\_som1\_winc3400.X|MPLABX project for SAMA5D27 SAMA5D27-SOM1-EK1 Evaluation Kit and WINC1500 WiFi 7 Click board|
+|pic32mz\_ef\_curiosity\_v2\_winc3400.X|MPLABX project for PIC32MZ EF 2.0 curiosity board and WINC3400 Xplained pro|
 | |
 
 ## Setting up SAMXXX Xplained Pro board
 
 -   Connect the Debug USB port on the SAMXXX Xplained Pro board to the computer using a micro USB cable
+
+-   Connect the WINC3400 Xplained pro on the EXT1 header of SAMXXX Xplained Pro board
+
+
+## Setting up PIC32MZ EF 2.0 Curiosity board
+
+-   Connect the Debug USB port on the PIC32MZ EF 2.0 Curiosity board to the computer using a micro USB cable
+
+-   Connect the WINC3400 Xplained pro on the EXT1 header of PIC32MZ EF 2.0 Curiosity board
 
 
 ## Setting up SAMA5D27-SOM1-EK1 Evaluation Kit
