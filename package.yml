@@ -30,7 +30,7 @@ package:
       version: "3.10.0"
     - name: "wireless_wifi"
       type: "package"
-      version: "3.9.0"
+      version: "3.9.1"
     - name: "wolfssl"
       type: "package"
       version: "5.4.0"

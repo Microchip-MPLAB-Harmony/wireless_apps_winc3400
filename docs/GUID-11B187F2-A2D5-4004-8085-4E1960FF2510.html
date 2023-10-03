@@ -230,17 +230,17 @@
 <br /><img class="image" src="GUID-4DC916AC-6E5D-4F01-94F4-4D5AE0B066E8-low.png" alt="ping_demo_config" /><br /></li>
 <li class="li"><span class="indent-level-default">2.</span><p class="p">Enter "<strong class="ph b">siperf &lt;tcp/udp&gt;</strong>" on the terminal window to select and start the iperf application demo in the DUT.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d6713e31"><span>Command  on DUT</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d6713e33"><span>Details</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d6711e31"><span>Command  on DUT</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d6711e33"><span>Details</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e31 "><span>siperf tcp</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e33 "><span>Starts the TCP server at the DUT</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e31 "><span>siperf tcp</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e33 "><span>Starts the TCP server at the DUT</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e31 "><span>siperf udp</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e33 "><span>Starts the UDP server at the DUT</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e31 "><span>siperf udp</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e33 "><span>Starts the UDP server at the DUT</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d6713e31 d6713e33 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d6711e31 d6711e33 "><span> </span></td>
 </tr>
 </tbody>
 </table>
@@ -251,20 +251,20 @@
 <li class="li"><span class="indent-level-default">4.</span><p class="p">After the "TCP/UDP" server has started, the user wants to run the iperf commands on the PC to start the iperf application as TCP/UDP Client .</p>
 <p class="p">iperf command details.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d6713e69"><span>Command  on PC</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d6713e71"><span>Details</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d6713e73"><span>Example</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d6711e69"><span>Command  on PC</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d6711e71"><span>Details</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d6711e73"><span>Example</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e69 "><span>iperf -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt; -r</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e71 "><span>Setup the <strong class="ph b">TCP Client</strong> in the PC</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e73 "><span>iperf -c 192.168.43.27 -i 1 -t 10 -r</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e69 "><span>iperf -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt; -r</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e71 "><span>Setup the <strong class="ph b">TCP Client</strong> in the PC</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e73 "><span>iperf -c 192.168.43.27 -i 1 -t 10 -r</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e69 "><span>iperf -u -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt; -u -b &lt;bandwidth&gt;  -r</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e71 "><span>Setup the <strong class="ph b">UDP Client</strong> in the PC</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e73 "><span>iperf -u -c 192.168.43.27 -b 20M -i 1 -t 10 -r</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e69 "><span>iperf -u -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt; -u -b &lt;bandwidth&gt;  -r</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e71 "><span>Setup the <strong class="ph b">UDP Client</strong> in the PC</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e73 "><span>iperf -u -c 192.168.43.27 -b 20M -i 1 -t 10 -r</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d6713e69 d6713e71 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d6711e69 d6711e71 "><span> </span></td>
 </tr>
 </tbody>
 </table>
@@ -272,20 +272,20 @@
 </li>
 <li class="li"><span class="indent-level-default">5.</span><p class="p">After receiving the "Server Report" on the terminal, enter the iperf commands on the PC to set the iperf application as TCP/UDP server.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d6713e108"><span>Command on PC</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d6713e110"><span>Details</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d6713e112"><span>Example</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d6711e108"><span>Command on PC</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d6711e110"><span>Details</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d6711e112"><span>Example</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e108 "><span>iperf -s -i &lt;time_interval&gt;</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e110 "><span>Setup the <strong class="ph b">TCP Server</strong> in the PC</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e112 "><span>iperf -s -i 1</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e108 "><span>iperf -s -i &lt;time_interval&gt;</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e110 "><span>Setup the <strong class="ph b">TCP Server</strong> in the PC</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e112 "><span>iperf -s -i 1</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e108 "><span>iperf -s -u -i &lt;time_interval&gt;</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e110 "><span>Setup the <strong class="ph b">UDP Server</strong> in the PC</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6713e112 "><span>iperf -s -u -i 1</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e108 "><span>iperf -s -u -i &lt;time_interval&gt;</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e110 "><span>Setup the <strong class="ph b">UDP Server</strong> in the PC</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d6711e112 "><span>iperf -s -u -i 1</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d6713e108 d6713e110 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d6711e108 d6711e110 "><span> </span></td>
 </tr>
 </tbody>
 </table>

@@ -232,38 +232,38 @@
 </li>
 <li class="li"><span class="indent-level-default">3.</span><p class="p">The user should enter the iperf commands in the terminal window (for DUT) and in the iperf application which is available in the PC.</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d7286e34"><span>Protocol</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d7286e36"><span>PC</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d7286e38"><span>DUT</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d7286e40"><span>Command on PC</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d7286e42"><span>Command on DUT</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d7284e34"><span>Protocol</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d7284e36"><span>PC</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d7284e38"><span>DUT</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d7284e40"><span>Command on PC</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d7284e42"><span>Command on DUT</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e34 "><span>UDP</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e36 "><span>Client</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e38 "><span>Server</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e40 "><span>iperf -u -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt; -u -b &lt;bandwidth&gt; e.g.: iperf -u -c 192.168.43.27 -b 20M -i 1 -t 10</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e42 "><span>iperf -s -u -i &lt;time_interval&gt;  e.g.: iperf -s -u -i 1</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e34 "><span>UDP</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e36 "><span>Client</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e38 "><span>Server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e40 "><span>iperf -u -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt; -u -b &lt;bandwidth&gt; e.g.: iperf -u -c 192.168.43.27 -b 20M -i 1 -t 10</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e42 "><span>iperf -s -u -i &lt;time_interval&gt;  e.g.: iperf -s -u -i 1</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e34 "><span>UDP</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e36 "><span>Server</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e38 "><span>Client</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e40 "><span>iperf -s -u -i &lt;time_interval&gt;  e.g.: iperf -s -u -i 1</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e42 "><span>iperf -u -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt; -u -b &lt;bandwidth&gt; e.g.: iperf -u -c 192.168.43.87 -b 20M -i 1 -t 10</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e34 "><span>UDP</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e36 "><span>Server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e38 "><span>Client</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e40 "><span>iperf -s -u -i &lt;time_interval&gt;  e.g.: iperf -s -u -i 1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e42 "><span>iperf -u -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt; -u -b &lt;bandwidth&gt; e.g.: iperf -u -c 192.168.43.87 -b 20M -i 1 -t 10</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e34 "><span>TCP</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e36 "><span>Client</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e38 "><span>Server</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e40 "><span>iperf -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt;  e.g: iperf -c 192.168.43.27 -i 1 -t 10</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e42 "><span>iperf -s -i &lt;time_interval&gt;  e.g: iperf -s -i 1</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e34 "><span>TCP</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e36 "><span>Client</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e38 "><span>Server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e40 "><span>iperf -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -i &lt;time_interval&gt;  e.g: iperf -c 192.168.43.27 -i 1 -t 10</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e42 "><span>iperf -s -i &lt;time_interval&gt;  e.g: iperf -s -i 1</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e34 "><span>TCP</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e36 "><span>Server</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e38 "><span>Client</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e40 "><span>iperf -s -i &lt;time_interval&gt;  e.g: iperf -s -i 1</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7286e42 "><span>iperf -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -x &lt;bandwidth&gt;  e.g: iperf -c 192.168.43.87 -x 10M -t 10</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e34 "><span>TCP</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e36 "><span>Server</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e38 "><span>Client</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e40 "><span>iperf -s -i &lt;time_interval&gt;  e.g: iperf -s -i 1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d7284e42 "><span>iperf -c &lt;Server_IP_Address&gt; -t &lt;time_peroid&gt; -x &lt;bandwidth&gt;  e.g: iperf -c 192.168.43.87 -x 10M -t 10</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d7286e34 d7286e36 "><span> </span></td>
+<tr class="row"><td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d7284e34 d7284e36 "><span> </span></td>
 </tr>
 </tbody>
 </table>

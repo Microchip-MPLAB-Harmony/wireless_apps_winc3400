@@ -247,54 +247,54 @@
 <li class="li"><span class="indent-level-default">5.</span><p class="p">The gateway application mandates that, all the gateway compatible BLE nodes are required to have the advertisement data in a specific format, which the gateway application can parse. The advertisement data should follow the format given below for the gateway application:</p>
 <br /><img class="image" src="GUID-98DCB701-A026-48D8-B40F-903F90494B8D-low.png" alt="gw_ble_node_advt_frame_format" /><br /><p class="p">The table below provides advertisement packet data with respect to each byte position in the advertisement packet:</p>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d14370e88"><span>Bytes</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d14370e90"><span>Data Type and Description</span></th>
-<th class="entry cellrowborder" style="vertical-align:middle;" id="d14370e92"><span>Data Value</span></th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d14393e88"><span>Bytes</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d14393e90"><span>Data Type and Description</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d14393e92"><span>Data Value</span></th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>0</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>AD Element:- Length (Flags Element Length)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>0x02</span></td>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>0</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>AD Element:- Length (Flags Element Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>0x02</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>1</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>AD Element:- Type (Flags)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>0x01</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>1</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>AD Element:- Type (Flags)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>0x01</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>2</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>AD Element:- Value (BR/EDR Supported, LE General Discoverable mode)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>0x06</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>2</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>AD Element:- Value (BR/EDR Supported, LE General Discoverable mode)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>0x06</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>3</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>AD Element:- Length (Manufacture Specific Length)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>0x1B</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>3</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>AD Element:- Length (Manufacture Specific Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>0x1B</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>4</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>AD Element:- Type (Manufacture Specific)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>0xFF</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>4</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>AD Element:- Type (Manufacture Specific)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>0xFF</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>5, 6</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>GW Element:- MFG ID (Manufacture ID of Microchip)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>0x00CD</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>5, 6</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>GW Element:- MFG ID (Manufacture ID of Microchip)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>0x00CD</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>7</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>GW Element:- APP ID (Application ID of WINC3400 Gateway)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>0xAA</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>7</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>GW Element:- APP ID (Application ID of WINC3400 Gateway)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>0xAA</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>8</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>GW Element:- Name LEN (BLE Node Name Length)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>XX</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>8</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>GW Element:- Name LEN (BLE Node Name Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>XX</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>9 - 20</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>GW Element:- Name (Maximum length of 12 bytes Node Name)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>XX, XX...XX</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>9 - 20</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>GW Element:- Name (Maximum length of 12 bytes Node Name)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>XX, XX...XX</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>21</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>GW Element :- Value LEN (BLE Node Value Length)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>XX</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>21</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>GW Element :- Value LEN (BLE Node Value Length)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>XX</span></td>
 </tr>
-<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e88 "><span>22 - 30</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e90 "><span>GW Element :- Value (Maximum length of 9 bytes of Node Value)</span></td>
-<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14370e92 "><span>XX, XX...XX</span></td>
+<tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e88 "><span>22 - 30</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e90 "><span>GW Element :- Value (Maximum length of 9 bytes of Node Value)</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d14393e92 "><span>XX, XX...XX</span></td>
 </tr>
 </tbody>
 </table>
