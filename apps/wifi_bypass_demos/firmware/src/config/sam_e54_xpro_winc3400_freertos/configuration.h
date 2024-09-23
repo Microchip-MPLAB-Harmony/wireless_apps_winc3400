@@ -138,9 +138,6 @@ extern "C" {
 #define WDRV_WINC_DEVICE_BSS_ROAMING
 #define WDRV_WINC_DEVICE_DYNAMIC_BYPASS_MODE
 #define WDRV_WINC_DEVICE_URL_TYPE           unsigned char
-#define WDRV_WINC_DEVICE_SCAN_STOP_ON_FIRST
-#define WDRV_WINC_DEVICE_DEPRECATE_WEP
-#define WDRV_WINC_DEVICE_SCAN_SSID_LIST
 #define WDRV_WINC_DEVICE_USE_SYS_DEBUG
 /*** WiFi WINC Driver RTOS Configuration ***/
 #define DRV_WIFI_WINC_RTOS_STACK_SIZE           1024
@@ -252,6 +249,7 @@ extern "C" {
 #define WOLFSSL_TLS13
 #define HAVE_SUPPORTED_CURVES
 #define NO_ERROR_STRINGS
+#define WOLFSSL_MAX_ERROR_SZ 38 // Fix Mandatory Misra 21.18 caused by removing error strings with defining NO_ERROR_STRINGS
 #define NO_OLD_TLS
 
 
@@ -538,6 +536,7 @@ extern "C" {
 #define SINGLE_THREADED
 #define NO_SIG_WRAPPER
 #define NO_ERROR_STRINGS
+#define WOLFSSL_MAX_ERROR_SZ 38 // Fix Mandatory Misra 21.18 caused by removing error strings with defining NO_ERROR_STRINGS
 #define NO_WOLFSSL_MEMORY
 // ---------- FUNCTIONAL CONFIGURATION END ----------
 

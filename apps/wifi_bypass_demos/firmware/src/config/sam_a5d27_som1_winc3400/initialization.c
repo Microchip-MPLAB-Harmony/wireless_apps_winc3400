@@ -357,6 +357,8 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     {TCPIP_MODULE_DNS_SERVER,       &tcpipDNSServerInitData},       // TCPIP_MODULE_DNS_SERVER
     {TCPIP_MODULE_SNTP,             &tcpipSNTPInitData},            // TCPIP_MODULE_SNTP
 
+    {TCPIP_MODULE_COMMAND,          0},                             // TCPIP_MODULE_COMMAND,
+    {TCPIP_MODULE_IPERF,            0},                             // TCPIP_MODULE_IPERF,
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
 // MAC modules

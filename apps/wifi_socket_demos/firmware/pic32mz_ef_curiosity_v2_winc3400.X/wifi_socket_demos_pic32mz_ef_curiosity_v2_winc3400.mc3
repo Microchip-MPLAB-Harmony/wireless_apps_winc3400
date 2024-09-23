@@ -1,4 +1,4 @@
-<config configName="pic32mz_ef_winc3400" projectName="wifi_socket_mode_demos_pic32mz_ef_winc3400" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
+<config configName="pic32mz_ef_winc3400" projectName="wifi_socket_mode_demos_pic32mz_ef_winc3400" configVersion="1.1" device="PIC32MZ2048EFM144" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -6597,7 +6597,7 @@
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1.4.4&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1.4.6&quot;/&gt;
     &lt;/Values&gt;
   &lt;/drvWifiWinc&gt;
 &lt;/drvWifiWinc&gt;
@@ -7758,9 +7758,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_ECC_TYPES_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_ECC_TYPES_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_ECC_TYPES_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_ECC_TYPES_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7771,9 +7771,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_INET_ADDR_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_INET_ADDR_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_INET_ADDR_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_INET_ADDR_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7784,9 +7784,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_INET_NTOP_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_INET_NTOP_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_INET_NTOP_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_INET_NTOP_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7797,9 +7797,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_FLASH_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_FLASH_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_FLASH_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_FLASH_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7810,9 +7810,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_FLASH_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_FLASH_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_FLASH_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_FLASH_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7823,9 +7823,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_HIF_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_HIF_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_HIF_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_HIF_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7836,9 +7836,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_HIF_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_HIF_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_HIF_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_HIF_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7849,9 +7849,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_OTA_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_OTA_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_OTA_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_OTA_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7862,9 +7862,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_OTA_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_OTA_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_OTA_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_OTA_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7875,9 +7875,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_PERIPH_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_PERIPH_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_PERIPH_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_PERIPH_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7888,9 +7888,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_PERIPH_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_PERIPH_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_PERIPH_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_PERIPH_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7901,9 +7901,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_SOCKET_HOST_IF_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_SOCKET_HOST_IF_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_SOCKET_HOST_IF_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_SOCKET_HOST_IF_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7914,9 +7914,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_SSL_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_SSL_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_SSL_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_SSL_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7927,9 +7927,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_SSL_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_SSL_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_SSL_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_SSL_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7940,9 +7940,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_TYPES_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_TYPES_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_TYPES_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_TYPES_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7953,9 +7953,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_WIFI_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_WIFI_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_WIFI_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_WIFI_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7966,9 +7966,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_M2M_WIFI_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_M2M_WIFI_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_M2M_WIFI_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_M2M_WIFI_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7979,9 +7979,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NETINET_IN_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NETINET_IN_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NETINET_IN_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NETINET_IN_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -7992,9 +7992,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMASIC_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NMASIC_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMASIC_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NMASIC_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8005,9 +8005,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMASIC_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NMASIC_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMASIC_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NMASIC_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8018,9 +8018,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMBUS_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NMBUS_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMBUS_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NMBUS_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8031,9 +8031,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMBUS_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NMBUS_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMBUS_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NMBUS_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8044,9 +8044,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMDRV_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NMDRV_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMDRV_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NMDRV_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8057,9 +8057,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMDRV_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NMDRV_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMDRV_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NMDRV_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8070,9 +8070,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMSPI_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NMSPI_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMSPI_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NMSPI_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8083,9 +8083,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NMSPI_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NMSPI_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NMSPI_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NMSPI_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8096,9 +8096,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NM_BSP_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NM_BSP_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NM_BSP_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NM_BSP_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8109,9 +8109,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NM_COMMON_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NM_COMMON_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NM_COMMON_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NM_COMMON_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8122,9 +8122,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NM_COMMON_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NM_COMMON_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NM_COMMON_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NM_COMMON_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8135,9 +8135,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_NM_DEBUG_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_NM_DEBUG_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_NM_DEBUG_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_NM_DEBUG_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8148,9 +8148,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_SOCKET_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_SOCKET_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_SOCKET_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_SOCKET_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8161,9 +8161,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_SOCKET_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_SOCKET_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_SOCKET_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_SOCKET_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8174,9 +8174,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_SPI_FLASH_C"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_SPI_FLASH_C"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_SPI_FLASH_C&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_SPI_FLASH_C&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8187,9 +8187,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_SPI_FLASH_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_SPI_FLASH_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_SPI_FLASH_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_SPI_FLASH_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -8200,9 +8200,9 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_4_SPI_FLASH_MAP_H"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="drvWifiWinc" name="WIFI_WINC3400_1_4_6_SPI_FLASH_MAP_H"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;drvWifiWinc&gt;
-  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_4_SPI_FLASH_MAP_H&quot;&gt;
+  &lt;drvWifiWinc dnOrder=&quot;0&quot; id=&quot;WIFI_WINC3400_1_4_6_SPI_FLASH_MAP_H&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
@@ -9917,310 +9917,550 @@
 </value>
       </entry>
    </tokenMap>
-   <generatedFileHashHistoryMap class="java.util.HashMap">
+   <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\socket\inet_ntop.c</file>
-         <hash>70d07a5f9e03e1deac5508553f6077b1ac1f678d12247463dc9c52d266a729d2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\osal\osal_impl_basic.h</file>
-         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\exceptions.c</file>
-         <hash>30b880390be9495d817d130a99612cbe4a21ce5f953a22bf77fc97872b770538</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\atts_task.h</file>
-         <hash>3ca2f5454ccd4256b1b0b86c2f767560e08c8816c972ff51624247c4922d5e82</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_periph.h</file>
-         <hash>b85e4054046cea45ab6ef64df6dd82a1cb282212a9c89d53622b1b25626d63c8</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\definitions.h</file>
-         <hash>7ecef002c7993161e30cc66ad883d3ba0ab3846a89cb735d230b5665d60eb251</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_ssl.c</file>
-         <hash>cba4ac2da776aaabcbfde74423090177cf721679240f3952eda47e1461aa7e5a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gapm_task.c</file>
-         <hash>1cde38aba8b76accc4509dc8c56bd0b5f138900390e17aa1c8b7b293b9a4e3c6</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_client_api.h</file>
-         <hash>9967c909183b72459d7e24890fd7a36b722780b30d63d7f6a7d318320cea8581</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\profiles.h</file>
-         <hash>11ffdfc96c4a3105466c8f1777768342f5941252b3b6b8b70cb5a2de385795b4</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_powersave.h</file>
-         <hash>7c18edd78c70c95f7f935d6a90073f379268155962a1710312a4cce64bd1486d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\gattm_task.h</file>
-         <hash>0eb76b403187907292b904d40e7b3c1bb4926314472d28faf70ea24ce3547d7f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_debug.h</file>
-         <hash>75242f7d6a3ac3724f9da7f072f68c363458e18088a278576fc455758310cebe</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\command\sys_command.h</file>
-         <hash>691fd597ae2e7c8ebe35bae259123e46d82ddf9af40dd6712a8611197f26313f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gap.c</file>
-         <hash>00a3e7d4afc77e09ff6edb52abafe0dfc03738703551a6de357af35726b2157b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\ecc_types.h</file>
-         <hash>f0680dab5fdd6b0ad6871059a0695a7950bec53d0582ca6c19abfead91ac84d5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\gattc_task.h</file>
-         <hash>1e1a10cf6628ece521fdbce2fd6ddc8be039eda4ef7606d6cdebce8b042c4a39</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_flash.c</file>
-         <hash>f2b97969fcd1875a8dd3fdbe4dccf9ea9f70a9ace6ff266aaab182f42b3d5c70</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console.c</file>
-         <hash>622a27844a650b4fa265c7a4739ba3768a76e4148600be42e44eec2e0673d7c6</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\dbg_task.h</file>
-         <hash>27925a77417182a0fea4a8b2da16588cf649521766e4310ceccc863e5630f36e</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\time\sys_time_definitions.h</file>
-         <hash>46537746b1d12ece6b682c9be1c8f3f219663c638c21a51a973762b7b393afe6</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\driver_common.h</file>
-         <hash>5217965f6720b4fdf717e99ce9df4f2c9fbd82bbbc9655847166d1eefa806fee</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\common\nm_common.c</file>
-         <hash>761811e732bd67df4e0ae20eaf137b5ddd02402eaeea79bcb2d1daccfd78654b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\spi_flash\spi_flash.h</file>
-         <hash>b00050d06753a944eba7d18dc71030fb0fda0d89b643be83c24b66bab9059292</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_common.h</file>
-         <hash>03bd2ff262875c439c2a1047270df62d7a7b81d2a28e6e53871acc0eda83e0ba</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\dev\gpio\wdrv_winc_gpio.c</file>
-         <hash>6fcff5874cbbe61574cb693279ac45ea4528e0e33b5733cd394e371ea1c64cad</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\smpc_task.h</file>
-         <hash>57eb7e0f6d6c877bb1d2ba220e670d81226590ec6e3f19f307d595c3b788b007</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_assoc.c</file>
-         <hash>c7e3bb261698a791d4bdc9f2728181a0dd5314da6cf8d693242d2fe27db3d6a0</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_httpprovctx.c</file>
-         <hash>a04d0f3ff68d848908af8d31d58231d00e093b209ca4c12f3e6c31a6b8220017</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\dbg_task.c</file>
-         <hash>7a5e902f91bfdb7df5d47749432e0da5d1edf8126e027cb21feacd98c7a1206c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gatt_server.c</file>
-         <hash>26513c0498a032f928842e8afe37d38b4129a63c6aff1336325a3bcf9d514048</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\spi\src\drv_spi_local.h</file>
-         <hash>d19b6335d37bb86224a50feaac9678342de36b4c6649ca29b47caa39cf4e11fd</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_sta.h</file>
-         <hash>78c812977f6dc63a0c2299ca34bf134f22ee3c29653895319efb8fa3072159f5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\nmbus.h</file>
-         <hash>620da9c329d00ab9c9cf59fd6f6b6e2bac805f22e337a471c9ac87877d8c7c2e</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc.c</file>
-         <hash>6a5418d7d0b7d3b0326554cd2bf21f45dba7bc4b971caef4301db36edb3fa0be</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console_local.h</file>
-         <hash>024a0b50ea2fea72b964b8209fb256b5df6693badd320485821e7912c5eebb25</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_hif.c</file>
-         <hash>00b6301a2d5459ed185204562058455ebb89c1152932904f71b642d78b445bca</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_hif.h</file>
-         <hash>73ccb3c7a89f8f24bb026b7877a3ea89c72520f265528704b7cf98812670aac5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\spi_flash\spi_flash_map.h</file>
-         <hash>9c3da3926bf3e3c1c71f7af8f65d6b83509b97ff5961d14243e7896c57748f9a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\ll_if.h</file>
-         <hash>5d9a6a0c850da52cde42c7b47181cce3c32755ad535a515a3ac5a74f3ab26908</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\at_ble_api\at_ble_api.h</file>
-         <hash>9ef1c5cd5a8f6bf7f28ac294f4dc68a9bcda67a36673841d2f519cfbc11aca9c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\htpt_task.h</file>
-         <hash>4f56df2753da9775d6a8c6ce8d6bdfe441369527f19e9cce71bcc53b44cd264f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\nmspi.c</file>
-         <hash>6b695624235ce8cf472db4c9342849bb374db5c43e79167925c724e3bfdf1656</hash>
+         <file>..\src\app.c</file>
+         <hash>632c78c323cb9f8c6359f20337440c08f8461eb4b0304552b6a3cfd5c4052620</hash>
       </entry>
       <entry>
          <file>..\src\app.h</file>
          <hash>8e35d8509552a4d1d6e6f123ad75694cf784a707f7dac592ed33b55121aa8e28</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_ssl.h</file>
-         <hash>10b31383339e504591e066322ec559e19b0a2d48b8321ea3b8cc715fd2619ea7</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\sys_tasks.h</file>
-         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_enterprise.c</file>
-         <hash>6bbeabef302924aaee7c26ab49f1fea32cc3d08dce7a8a89347ce49c302f2614</hash>
-      </entry>
-      <entry>
-         <file>..\src\app.c</file>
-         <hash>632c78c323cb9f8c6359f20337440c08f8461eb4b0304552b6a3cfd5c4052620</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\int\sys_int.h</file>
-         <hash>2c878ab7ff41ae56b5c0c3c94929ad66eb87b8660bf9a439177d049e8ad8f8c8</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\socket\netinet_in.h</file>
-         <hash>d9c8ce7f00c9bccd4e10f3d74e0b3a5f0ac05825c28ad8971e6f8ae3a4f7465a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\platform\platform.h</file>
-         <hash>09aced87bfc4a0c15102421c583212ed14538d0ae85be580ecc3fac20a645a35</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console_uart.c</file>
-         <hash>ff3d1854f469e4fc41d96adce6f7ec38afad5d1b076c295eb4777936777673d0</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_sta.c</file>
-         <hash>866f3bbdf54faecfc15fd6f125e886cfaf868a9d109a24532a8b845677ba7276</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\time\sys_time.h</file>
-         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console_uart.h</file>
-         <hash>690c74d55c9204f3e3d621635257df1de1c89f097671a678c359f5e24461589a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\error.h</file>
-         <hash>7fd0437fdd2d44bae2bf5fac42b8c2bf99f15c901b942351fe0e5657f58002bc</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\bsp\bsp.c</file>
+         <hash>865aa42848dfc8f4be84e69f42ec6a59117bedb2a7219705ec7d8c9c68c877cc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\bsp\bsp.h</file>
          <hash>f13e3ded102e0196087a7d8240ebdc39c741c38023481ffd5a6280fbe6840c76</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\system_module.h</file>
-         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\configuration.h</file>
+         <hash>f5e9fc887bc39d78951dbee355a426f095f880790c1423334f371c75da34a2a3</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_wifi.c</file>
-         <hash>28663d782d406b12429dbfb3f811d368ba52c6cb0932df25b1fc6fff8633804f</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\definitions.h</file>
+         <hash>33bf053117c86fd46ae2fd3884dcbf6c1623a4f0e0edd1a0b09d4fda4d42055f</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\stdio\xc32_monitor.c</file>
-         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\device.h</file>
+         <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc.h</file>
-         <hash>28d676e635654da70b19be36e2ef67689b1b43d7bde94a96c6b5903a126e66cc</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\driver.h</file>
+         <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_ota.c</file>
-         <hash>2b22f15f854cc3586d6452452b44b1308aa2547085522999b18bac6772eadf65</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\driver_common.h</file>
+         <hash>5217965f6720b4fdf717e99ce9df4f2c9fbd82bbbc9655847166d1eefa806fee</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\bsp\bsp.c</file>
-         <hash>865aa42848dfc8f4be84e69f42ec6a59117bedb2a7219705ec7d8c9c68c877cc</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\spi\drv_spi.h</file>
+         <hash>9a6daa12b48114aa08202529bea2a2a3d9d98a4365d864f10380ad2244b139d2</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_nvm.c</file>
-         <hash>4ab2a6ea56eb7d8e9777d2d5d961bcabbdd36fc4a3436776503680737d7ce995</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\spi\drv_spi_definitions.h</file>
+         <hash>92f0a3e5c52999719e33e290cd002b19a2bef4f1f003b80f6373d2ebaa1c07f3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\spi\src\drv_spi.c</file>
+         <hash>cb8ca253da0576e64ca7ad7d64c4a7a82c6b88fb5d51736469818e0999bc6acd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\spi\src\drv_spi_local.h</file>
+         <hash>d19b6335d37bb86224a50feaac9678342de36b4c6649ca29b47caa39cf4e11fd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
+         <hash>6bb5b37df5fea90d4f888a2e68e5b0257fb0eb185d8ee1a56a39a5ab1733079c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\dev\gpio\wdrv_winc_gpio.c</file>
+         <hash>6fcff5874cbbe61574cb693279ac45ea4528e0e33b5733cd394e371ea1c64cad</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\dev\spi\wdrv_winc_spi.c</file>
+         <hash>cbd3ce1848529897eccaa0ae9a58deb70aed23ee70c8d130c865825c225de53d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\dbg_task.c</file>
+         <hash>fd6d4e5ee8e9f8371cc7145fd21d2ce5a033931c2886f2f8dfe80fe305101204</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\error.c</file>
-         <hash>e66e6d10ec883f88654b0344f5f409382afc6d17c91946adbb1f1f77c94c08eb</hash>
+         <hash>cc97987910ea60645cecbecc744dda1082bf98058c9e000dfbcdee795b70d594</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\spi_flash\spi_flash.c</file>
-         <hash>ba840ba555c63dc3872e1027a01e18fd42c5bd35c8d0b86a38b770c70db8a450</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\event.c</file>
+         <hash>7e7dc73a173a61293c24d24869b6e97c29b8e25b86340fc420e580a8f4c8f2be</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\uart\plib_uart6.h</file>
-         <hash>e4b3f0d3c923f3effe267e6ea0c9ec373786f87e40a5cf3d147f4554b4dc5d5c</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gap.c</file>
+         <hash>1972512e9bb4078c88829c44e5c865cd335f8ad1f998c8fdc8fae7da10b79c5f</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_ble.h</file>
-         <hash>169933acd795da1633b9d734e803260d01ff36513ad7289f93a05077fa1006ec</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gapc_task.c</file>
+         <hash>2ce70ad80afd896c15015d0fa779640a5a37de50156551db63225f8506b63a18</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_wps.c</file>
-         <hash>ac14a1ed576da563cbfffa4466a9f0addc056eb01e4ab78a3ab663c8b7691c7e</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gapm_task.c</file>
+         <hash>311c0489313823fbf8a553393558792f1f4c02137bc6ce7a59a12c288e1a11a3</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\nmdrv.c</file>
-         <hash>3b563358c0487c911a4687069fb1426963210151b4c4c042be635964a6244171</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gatt_client.c</file>
+         <hash>3b7bab88831be6a5c9b877ee524f88372bfe369bdb3819401bc163daff4051bb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gatt_server.c</file>
+         <hash>ab939cfcc728077cc9438c90def42ee1a9415ddcd03169f1a872f3127a90d383</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gattc_task.c</file>
+         <hash>9812813b3c41d8baeca462bc5ae489f6ce34d44bc299e516224f271fa6ad6001</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gattm_task.c</file>
-         <hash>e00323a9c9a7b6cfdb681ad99d8175ee199d024ae9c9701942b3d026a86d1d46</hash>
+         <hash>306246dcb43ae12e0c6bc00ced7d31656c948408ed12b0e9ad6fde78c8b6fe74</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\configuration.h</file>
-         <hash>fbe4613fbd30f030d6e54c365963e110269938b59c7bdd79166e974d2c044f16</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\htpt.c</file>
+         <hash>902fb3f300288367cc5400402ad45fcf5d018c6d6cbe4144b79d48635b9857b4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\htpt_task.c</file>
          <hash>df50c05ef6cabef509737120360dd1f0ea35b2ec2a921253b743768e89cafea8</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\osal\osal_definitions.h</file>
-         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\interface.c</file>
+         <hash>775c770ea410b5b8cbfa33f0ce3dc972cad9284c07abdfd2bf6db63e3bbc7358</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\security.c</file>
+         <hash>24832064faddc2f4869fef2b5d4fe0647c5b6ba785774de5760f2deb45274bc6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\wifiprov_task.c</file>
+         <hash>ab7383c99c4c8ae8c46c47d41c4df38ea86f819ee375c6a4acf1bf94ecb6a799</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\common\nm_common.c</file>
+         <hash>761811e732bd67df4e0ae20eaf137b5ddd02402eaeea79bcb2d1daccfd78654b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_flash.c</file>
+         <hash>f2b97969fcd1875a8dd3fdbe4dccf9ea9f70a9ace6ff266aaab182f42b3d5c70</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_hif.c</file>
+         <hash>00b6301a2d5459ed185204562058455ebb89c1152932904f71b642d78b445bca</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_ota.c</file>
+         <hash>2b22f15f854cc3586d6452452b44b1308aa2547085522999b18bac6772eadf65</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_periph.c</file>
+         <hash>5fcc5acde74d85782d96f7854fd1c759111c34a321c4f4a35b4aa592e6b3bd4f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_ssl.c</file>
+         <hash>cba4ac2da776aaabcbfde74423090177cf721679240f3952eda47e1461aa7e5a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_wifi.c</file>
+         <hash>28663d782d406b12429dbfb3f811d368ba52c6cb0932df25b1fc6fff8633804f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\nmasic.c</file>
+         <hash>ac708b95217d8c2677be8ff931366df38768614959a9936202d5e0074a5af3f5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\nmbus.c</file>
+         <hash>caf056971b479903c8b7ee06da09cef555b7f546a65ca2e0b1b8805bd6c22fcc</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\nmdrv.c</file>
+         <hash>3b563358c0487c911a4687069fb1426963210151b4c4c042be635964a6244171</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\nmspi.c</file>
+         <hash>6b695624235ce8cf472db4c9342849bb374db5c43e79167925c724e3bfdf1656</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\platform\platform.c</file>
+         <hash>227fe32f5be9966e5c39d1ca80cdbb4ec426f69aed449b54f6af042649d0a059</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\socket\inet_addr.c</file>
+         <hash>179583d7e40ceb004a565efeb5d7db6477ab29ea45f6da4ec9612066021bf76a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\socket\inet_ntop.c</file>
+         <hash>70d07a5f9e03e1deac5508553f6077b1ac1f678d12247463dc9c52d266a729d2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\socket\socket.c</file>
+         <hash>106cfe0595b9bef13c8806f7a119debcfc785d6c0efbfd0a76a8574976f433a8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\spi_flash\spi_flash.c</file>
+         <hash>ba840ba555c63dc3872e1027a01e18fd42c5bd35c8d0b86a38b770c70db8a450</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\dev\wdrv_winc_gpio.h</file>
+         <hash>5cac8b19a0a37ba6fefb4c6a9886bc0e15dbfb04c4cc9fc24c7fe370981af653</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\dev\wdrv_winc_spi.h</file>
+         <hash>8f0352418cb20cbfd71426ccea30c596df1cf0b602a730980486f9579202e095</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\at_ble_api\at_ble_api.h</file>
+         <hash>ffc2c9d3c76ef973d6d803085eb011628a27a797a3c2ea84891ecf4b0f24d695</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\atts_task.h</file>
+         <hash>3ca2f5454ccd4256b1b0b86c2f767560e08c8816c972ff51624247c4922d5e82</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\ble_device.h</file>
+         <hash>3e240d77930d0878d0ceba424a0de4c0c2998a78b4604e128e697f60343d92b4</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\cmn_defs.h</file>
+         <hash>2ae1d5f362a4987f0fad1307cab46a983e001f649c775ec526f24b46bd6ef3c9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\dbg_task.h</file>
+         <hash>27925a77417182a0fea4a8b2da16588cf649521766e4310ceccc863e5630f36e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\diss_task.h</file>
+         <hash>b085e7ddceceee0018f0d78e71077865f80057e0a6a435172e8f5d171dd99994</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\error.h</file>
+         <hash>7fd0437fdd2d44bae2bf5fac42b8c2bf99f15c901b942351fe0e5657f58002bc</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\event.h</file>
+         <hash>f4b1b04cce73f7041f9a40db02ddd7828fdff5bc2679304771345de50d86615a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\gapc_task.h</file>
+         <hash>ea4662e7a09d4ee1bcd2a960f35ed252af77ac20bc8d7a6e90ca8280f3b7c9a2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\gapm_task.h</file>
+         <hash>5f8c5d7f033b332cc414b9d93ac42bf1680178591fa2db064239723142e3ba8d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\gattc_task.h</file>
+         <hash>3707187dc0fded443dd41295d28cecb91dfbcb732ce531e037c346f11913517f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\gattm_task.h</file>
+         <hash>0eb76b403187907292b904d40e7b3c1bb4926314472d28faf70ea24ce3547d7f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\htpt.h</file>
+         <hash>970f698d7980ae056125b18e4694bd44b51fd18371ba1819f26f112f30f120aa</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\htpt_task.h</file>
+         <hash>4f56df2753da9775d6a8c6ce8d6bdfe441369527f19e9cce71bcc53b44cd264f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\interface.h</file>
+         <hash>35a9279ccafcb19dfaa7ac981a0d34f324e46f57b7deb995328622585f45119d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\ll_if.h</file>
+         <hash>5d9a6a0c850da52cde42c7b47181cce3c32755ad535a515a3ac5a74f3ab26908</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\profiles.h</file>
+         <hash>11ffdfc96c4a3105466c8f1777768342f5941252b3b6b8b70cb5a2de385795b4</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\smpc_task.h</file>
+         <hash>57eb7e0f6d6c877bb1d2ba220e670d81226590ec6e3f19f307d595c3b788b007</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\wifiprov_task.h</file>
+         <hash>5cfdb5ba1345d37502b6e918bb57cc95dbc38f7b770c7cf327348cd90022dc27</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\bsp\nm_bsp.h</file>
+         <hash>88fadce4cc24b622aa789f6d135a3d5d5e1e2c944c6fc84835d034f8a5d3391b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\common\nm_common.h</file>
+         <hash>0872e84022d315d33833559fe41ad078212818eb007245fa596a6c4c92b3753c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\common\nm_debug.h</file>
+         <hash>3a141f24832c8d889d3a32b0eddf19fd9e8ce11f6743810e78552c891e65058b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\ecc_types.h</file>
+         <hash>f0680dab5fdd6b0ad6871059a0695a7950bec53d0582ca6c19abfead91ac84d5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_flash.h</file>
+         <hash>7b52944bc3e867cd3cb48d1ae93711344e46a167096b470cf6a5d5fd80d80cf9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_hif.h</file>
+         <hash>73ccb3c7a89f8f24bb026b7877a3ea89c72520f265528704b7cf98812670aac5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_ota.h</file>
+         <hash>7f33797d151a4305d7e2f1a533f23741d31d6442813d3761340fc51240d1c2ff</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_periph.h</file>
+         <hash>b85e4054046cea45ab6ef64df6dd82a1cb282212a9c89d53622b1b25626d63c8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_ssl.h</file>
+         <hash>aa910bcb790c4549fa53b06e1ce82d11810fef8f3953c1db16006a751d34264a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_types.h</file>
+         <hash>d400a2a4d58a6dbaa2609d5d524d567ada5efccec4f61994b3aedf082616ec80</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_wifi.h</file>
+         <hash>ad71287d133e52062a492af1854ff704b9af010a8dd2379ff3527a54916a50a9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\nmasic.h</file>
+         <hash>42f0aa6f9488161e8b09d44f1223e4a815b9998442fce5dbcf7a99123d42b8da</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\nmbus.h</file>
+         <hash>620da9c329d00ab9c9cf59fd6f6b6e2bac805f22e337a471c9ac87877d8c7c2e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\nmdrv.h</file>
+         <hash>37623c88d26a58239e334f0dc839e650a29a6f07ca100becd17d83a532ace48b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\nmspi.h</file>
+         <hash>ccd35810960ce4fecb905d1545a5e4fa9f313eb4da9228469a7705126d2b73f3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\platform\platform.h</file>
+         <hash>09aced87bfc4a0c15102421c583212ed14538d0ae85be580ecc3fac20a645a35</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\socket\m2m_socket_host_if.h</file>
          <hash>b14a3abc9fc5687def2efcd5750c63ed75aff3ec0b8b1d8b01104a23d79dde32</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\security.c</file>
-         <hash>24832064faddc2f4869fef2b5d4fe0647c5b6ba785774de5760f2deb45274bc6</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\socket\netinet_in.h</file>
+         <hash>d9c8ce7f00c9bccd4e10f3d74e0b3a5f0ac05825c28ad8971e6f8ae3a4f7465a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\socket\socket.h</file>
+         <hash>c3cac1c6151176a13fb695f45a61678e166234e6b57193b52999953b4e271720</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\spi_flash\spi_flash.h</file>
+         <hash>b00050d06753a944eba7d18dc71030fb0fda0d89b643be83c24b66bab9059292</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\spi_flash\spi_flash_map.h</file>
+         <hash>9c3da3926bf3e3c1c71f7af8f65d6b83509b97ff5961d14243e7896c57748f9a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc.h</file>
+         <hash>28d676e635654da70b19be36e2ef67689b1b43d7bde94a96c6b5903a126e66cc</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_api.h</file>
+         <hash>a2aaa71e2b00ef9984da243674e53ef1d6931435aedc7f3ef9351703f01513e2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_assoc.h</file>
+         <hash>77345b69f42b42e3df18e4559df59ecdbeee1851de1925c01f3ae527e5ae5fa2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_authctx.h</file>
+         <hash>aaedb117f48338c57a8d8e57fa1f060b1d3667b3f221581c0f5a43e2d43da675</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_ble.h</file>
+         <hash>169933acd795da1633b9d734e803260d01ff36513ad7289f93a05077fa1006ec</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_bssctx.h</file>
+         <hash>80205273796b0b9ae2408bacac6de26dbe86d572ecfd9bd4620ed1d4a9782eb7</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_bssfind.h</file>
+         <hash>7b080af28903ff6ab643222b72e5cfae15880b42351cec5e8a1b4bb08648adcb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_client_api.h</file>
+         <hash>9967c909183b72459d7e24890fd7a36b722780b30d63d7f6a7d318320cea8581</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_common.h</file>
+         <hash>03bd2ff262875c439c2a1047270df62d7a7b81d2a28e6e53871acc0eda83e0ba</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_custie.h</file>
+         <hash>6da49fc0a73ce64fbc2538bb29e7ead376aeff0ed05fabee2f54cb720b8b3e2d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_debug.h</file>
+         <hash>75242f7d6a3ac3724f9da7f072f68c363458e18088a278576fc455758310cebe</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_enterprise.h</file>
+         <hash>ff9764a3b42cce23f5396fd1cd6c2c934c73fa9983a97dc7a24a61ef671f8146</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_httpprovctx.h</file>
+         <hash>450c007d360885933485e857fd8ba26b265a34fc77c23f45c2290e15856b3174</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_nvm.h</file>
+         <hash>57ba21e9983af6c20b94196f885b7bf86d47267173b8f7a2abacf2c576d01b0a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_powersave.h</file>
+         <hash>7c18edd78c70c95f7f935d6a90073f379268155962a1710312a4cce64bd1486d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_socket.h</file>
+         <hash>57e5e61fe06543339e609b133920b2d7924edaecb070635c5678d5b21da1e09b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_softap.h</file>
+         <hash>d3f33749a7987c666c2798220f619faf929bdeb53e88408520ff13b789a13a13</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_ssl.h</file>
+         <hash>10b31383339e504591e066322ec559e19b0a2d48b8321ea3b8cc715fd2619ea7</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_sta.h</file>
+         <hash>fba93a4415976e1da48e77d7b380d5e2ef9ba20ac1c615a42c49051c53af63ba</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_systime.h</file>
+         <hash>ddb858f48ace0816b9d11d8813a4a03e56aa33d7d008b1443acbbe7eb1df5856</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_wps.h</file>
+         <hash>d105554d4c3b1170b80ac3405dca33f5e5808dabbd5fa0a416c6a8a73edf8abd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\osal\wdrv_winc_osal.c</file>
+         <hash>24bc41d45730a1833ba621750008ba919ec045855e75ebcc1ea254103bbbbcf1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc.c</file>
+         <hash>6a5418d7d0b7d3b0326554cd2bf21f45dba7bc4b971caef4301db36edb3fa0be</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_assoc.c</file>
+         <hash>c7e3bb261698a791d4bdc9f2728181a0dd5314da6cf8d693242d2fe27db3d6a0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_authctx.c</file>
+         <hash>e6607c2a0adc7b0cefa88f712cd7fb06c3fe17675bc2b74e23c711d44fa0fbe6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_ble.c</file>
+         <hash>957211eda5a202a9ed4309089d628d0d1d8b66713c2e4775a8a7f2d711f82858</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_bssctx.c</file>
+         <hash>2a77572626c22641ffeed1c3ac09e87334abe05fde3a0dc453d14f1e7432acfa</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_bssfind.c</file>
+         <hash>4dfe1ce18d583e671443b442d2079b31d33fdd0f9c4b975ede8568bd64861418</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_custie.c</file>
+         <hash>5d0cf1993b2459fec3d2a5772bc507ae58c008a9a84c193a02b62fb1c54de99e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_enterprise.c</file>
+         <hash>6bbeabef302924aaee7c26ab49f1fea32cc3d08dce7a8a89347ce49c302f2614</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_httpprovctx.c</file>
+         <hash>a04d0f3ff68d848908af8d31d58231d00e093b209ca4c12f3e6c31a6b8220017</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_nvm.c</file>
+         <hash>4ab2a6ea56eb7d8e9777d2d5d961bcabbdd36fc4a3436776503680737d7ce995</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_powersave.c</file>
+         <hash>4ddec3052ce114a3583c76586e7ef90deddc376e9ce182726c187339c1371d98</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_socket.c</file>
+         <hash>8b320083343faa8deaaa4e6675da756ec8b8abe117adf0e99279b6b4989c3e03</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_softap.c</file>
+         <hash>f786f300532a8b907ed26fccc666bdcaafc823e43ca864af3d0c1da5accb093f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_ssl.c</file>
+         <hash>880e6eeba9378e2f43e09936877c35d358ca61858e0ad594d7b4d248bfff97f2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_sta.c</file>
+         <hash>3e513a9c67a317c8c5c9971c61f3c95359d982d40fbfdce6ae512db327d60243</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_systime.c</file>
+         <hash>4ae18a250095125548713031a340912c39c9a373cbd33e1183a4c82aa19cd10b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_wps.c</file>
+         <hash>ac14a1ed576da563cbfffa4466a9f0addc056eb01e4ab78a3ab663c8b7691c7e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\exceptions.c</file>
+         <hash>8c1843dacd6aec28ef12be3d763763a268e0facd02d4f1e7d67e21a8d73061d1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\initialization.c</file>
+         <hash>68aa8fa554ba40749a2b820a041927268820981592c63b57fe0bccdc2048b263</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\interrupts.c</file>
+         <hash>a8996028e7b6d2d428b73a21d59dcb3f25f5de362dc0858d2fbcf8a3639cd484</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\interrupts.h</file>
+         <hash>a8b5cd7a3f98d6dc827219cfaa9f0d24f6c9a8d2c4a8890f18b0fbd53168ea59</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\osal\osal.h</file>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\osal\osal_definitions.h</file>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\osal\osal_impl_basic.h</file>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\p32MZ2048EFM144.ld</file>
+         <hash>845668fce00fbcce2a16b1f325acfa0a1cbca5916ae3207f3e77699d2ca6272f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\clk\plib_clk.c</file>
@@ -10231,416 +10471,176 @@
          <hash>35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\nmasic.c</file>
-         <hash>ac708b95217d8c2677be8ff931366df38768614959a9936202d5e0074a5af3f5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\socket\socket.h</file>
-         <hash>c3cac1c6151176a13fb695f45a61678e166234e6b57193b52999953b4e271720</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\int\src\sys_int.c</file>
-         <hash>30ac5e334ca90204f545f1ab769ae26f421b910b3fb3be99354b364febceee64</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_ota.h</file>
-         <hash>7f33797d151a4305d7e2f1a533f23741d31d6442813d3761340fc51240d1c2ff</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_assoc.h</file>
-         <hash>77345b69f42b42e3df18e4559df59ecdbeee1851de1925c01f3ae527e5ae5fa2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\device.h</file>
-         <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gapc_task.c</file>
-         <hash>c786ff328d733dd49fdf2c83f7200e32be6234717a8161b0f09d0b00231ed279</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\nmdrv.h</file>
-         <hash>37623c88d26a58239e334f0dc839e650a29a6f07ca100becd17d83a532ace48b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\toolchain_specifics.h</file>
-         <hash>fd2fc7bbe60706409cc0c0a525825c0194f6f71adc0a89e6310041f06dc2f645</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\interface.c</file>
-         <hash>775c770ea410b5b8cbfa33f0ce3dc972cad9284c07abdfd2bf6db63e3bbc7358</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\system_common.h</file>
-         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_socket.c</file>
-         <hash>ed424b31e4181f2ed64545420510bdfe791fd54baf578255e91a0032a37448e4</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\event.c</file>
-         <hash>057077296bdee9e01800314bb1021cc9aa0858c0d148e0db1677dbfca587ebf7</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\spi\drv_spi_definitions.h</file>
-         <hash>92f0a3e5c52999719e33e290cd002b19a2bef4f1f003b80f6373d2ebaa1c07f3</hash>
-      </entry>
-      <entry>
-         <file>..\src\main.c</file>
-         <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_wifi.h</file>
-         <hash>6e01d9d5d62551c8dd4789090c7be486d5608967be979830397addc123710e6a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\debug\src\sys_debug.c</file>
-         <hash>474ee981d4285453a2ae9f1e4735c40129281931b89f579c3c413acdff1d8d26</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_socket.h</file>
-         <hash>57e5e61fe06543339e609b133920b2d7924edaecb070635c5678d5b21da1e09b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>8f0352418cb20cbfd71426ccea30c596df1cf0b602a730980486f9579202e095</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\spi\spi_master\plib_spi3_master.h</file>
-         <hash>76f15ff685371d173538226082bed33a65cc974f10c0d8a51aa92ac683e68915</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\common\nm_debug.h</file>
-         <hash>3a141f24832c8d889d3a32b0eddf19fd9e8ce11f6743810e78552c891e65058b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\interface.h</file>
-         <hash>0af5efe1a65ac34a965e8f82c23ac44f70f4600c49fe6baffb8335bc618ac444</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\spi\drv_spi.h</file>
-         <hash>9a6daa12b48114aa08202529bea2a2a3d9d98a4365d864f10380ad2244b139d2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_bssfind.c</file>
-         <hash>4dfe1ce18d583e671443b442d2079b31d33fdd0f9c4b975ede8568bd64861418</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\spi\spi_master\plib_spi3_master.c</file>
-         <hash>3557bc9ff5a0bb3851279bc9f1ac4c230048316162d82a2afbf91359dc15a836</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\evic\plib_evic.c</file>
-         <hash>15339c43b090130ea8c4a5fcdcb8fc98762bfc5431833a59aa24c37dce613317</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\debug\src\sys_debug_local.h</file>
-         <hash>d14855e54d4929ec6c9c3ea1e9de3fdc1711bb278fc27ab39079e9f16ecc87d5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\platform\platform.c</file>
-         <hash>67963e87d285138841f002169353c08bfbee259cf65d5aedf91573258d3a5c69</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\common\nm_common.h</file>
-         <hash>0872e84022d315d33833559fe41ad078212818eb007245fa596a6c4c92b3753c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_nvm.h</file>
-         <hash>57ba21e9983af6c20b94196f885b7bf86d47267173b8f7a2abacf2c576d01b0a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>cbd3ce1848529897eccaa0ae9a58deb70aed23ee70c8d130c865825c225de53d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\nmasic.h</file>
-         <hash>42f0aa6f9488161e8b09d44f1223e4a815b9998442fce5dbcf7a99123d42b8da</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\gapm_task.h</file>
-         <hash>5f8c5d7f033b332cc414b9d93ac42bf1680178591fa2db064239723142e3ba8d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_systime.h</file>
-         <hash>ddb858f48ace0816b9d11d8813a4a03e56aa33d7d008b1443acbbe7eb1df5856</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\debug\sys_debug.h</file>
-         <hash>5c34d947b4d700829a89d9d7616d941fa9e17047c67adc6de4d365b0a8ce39f4</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\gapc_task.h</file>
-         <hash>ea4662e7a09d4ee1bcd2a960f35ed252af77ac20bc8d7a6e90ca8280f3b7c9a2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\socket\inet_addr.c</file>
-         <hash>179583d7e40ceb004a565efeb5d7db6477ab29ea45f6da4ec9612066021bf76a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\time\src\sys_time.c</file>
-         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\cmn_defs.h</file>
-         <hash>2ae1d5f362a4987f0fad1307cab46a983e001f649c775ec526f24b46bd6ef3c9</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_api.h</file>
-         <hash>a2aaa71e2b00ef9984da243674e53ef1d6931435aedc7f3ef9351703f01513e2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_flash.h</file>
-         <hash>7b52944bc3e867cd3cb48d1ae93711344e46a167096b470cf6a5d5fd80d80cf9</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_powersave.c</file>
-         <hash>4ddec3052ce114a3583c76586e7ef90deddc376e9ce182726c187339c1371d98</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\time\src\sys_time_local.h</file>
-         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\initialization.c</file>
-         <hash>d40bbe0f3a46ec21fd6b4a8adbc730cccf02858462756d4f523ff7aaf9341eea</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\ports\sys_ports_mapping.h</file>
-         <hash>97195d4a7a99942def4f84b563b6590ee56ecb79c39f0defdc163c548e8f85ab</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\p32MZ2048EFM144.ld</file>
-         <hash>845668fce00fbcce2a16b1f325acfa0a1cbca5916ae3207f3e77699d2ca6272f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_bssctx.h</file>
-         <hash>80205273796b0b9ae2408bacac6de26dbe86d572ecfd9bd4620ed1d4a9782eb7</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\uart\plib_uart6.c</file>
-         <hash>fa5f1f521c77708a9fa9a6e6c496a4b54e892a90af9cfd3c97734c71e71e36ea</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\spi\src\drv_spi.c</file>
-         <hash>cb8ca253da0576e64ca7ad7d64c4a7a82c6b88fb5d51736469818e0999bc6acd</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\nmspi.h</file>
-         <hash>ccd35810960ce4fecb905d1545a5e4fa9f313eb4da9228469a7705126d2b73f3</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_ssl.c</file>
-         <hash>880e6eeba9378e2f43e09936877c35d358ca61858e0ad594d7b4d248bfff97f2</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\diss_task.h</file>
-         <hash>b085e7ddceceee0018f0d78e71077865f80057e0a6a435172e8f5d171dd99994</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_bssctx.c</file>
-         <hash>2a77572626c22641ffeed1c3ac09e87334abe05fde3a0dc453d14f1e7432acfa</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\evic\plib_evic.h</file>
-         <hash>55a4d4a3985da6e88a9548a0a29a4f8d08e077348dbad6cd6ddce5fe40d01a33</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\event.h</file>
-         <hash>f4b1b04cce73f7041f9a40db02ddd7828fdff5bc2679304771345de50d86615a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\int\sys_int_mapping.h</file>
-         <hash>a2dcf05575becc98aa212af1d220eda07487bd645d82c4d7a980aa3a22384cf3</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_ssl.h</file>
-         <hash>4cd67f56e559205ce13049f530e3abea271b671cb98a4c521a5e63ea43a3de17</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gatt_client.c</file>
-         <hash>3b7bab88831be6a5c9b877ee524f88372bfe369bdb3819401bc163daff4051bb</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_authctx.c</file>
-         <hash>5e157361ad36c27ff2478ba5cede190ac291b00a88c92a97aaca78fdb8cb70f5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\tasks.c</file>
-         <hash>c2cf34f59d672ebd901a0e8decfa49ed242c218ca43dee39a76037fbc8f860f9</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\bsp\nm_bsp.h</file>
-         <hash>88fadce4cc24b622aa789f6d135a3d5d5e1e2c944c6fc84835d034f8a5d3391b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\ports\sys_ports.h</file>
-         <hash>30eb82378e87ab0b3f42953466081abd7d406e07efac3a1999035c3d1135c3f0</hash>
-      </entry>
-      <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\coretimer\plib_coretimer.c</file>
          <hash>2f636a8a90403a73ce55b8397c9ea548bb1e4ef7c022796ec2b3dffe7f97e96c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\wifiprov_task.c</file>
-         <hash>c4f152854e4426ca66a2376f5ff0bf78c4f5f71eb9ad8b062d88a8ea86e96536</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\m2m_periph.c</file>
-         <hash>5fcc5acde74d85782d96f7854fd1c759111c34a321c4f4a35b4aa592e6b3bd4f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\interrupts.h</file>
-         <hash>a8b5cd7a3f98d6dc827219cfaa9f0d24f6c9a8d2c4a8890f18b0fbd53168ea59</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\reset\sys_reset.h</file>
-         <hash>962efce739387d25aacb5dc3aa90e90f216a478bcf19b57237540fd72bce2748</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_custie.c</file>
-         <hash>5d0cf1993b2459fec3d2a5772bc507ae58c008a9a84c193a02b62fb1c54de99e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\coretimer\plib_coretimer.h</file>
          <hash>d88929a1d7d6d0428c517cb789359c574c42d52c3c8a04bb267990255ad81706</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\reset\sys_reset.c</file>
-         <hash>7626748bc54c0de05d023a7aa7eacf73f9cc9ca2e1e77abe078b478b54ed5fed</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\evic\plib_evic.c</file>
+         <hash>ac20bed91bb233c5fcb868ac8bea8b79e77e8bbb7ba01845f831c829ec6d90e7</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\ble_device.h</file>
-         <hash>3e240d77930d0878d0ceba424a0de4c0c2998a78b4604e128e697f60343d92b4</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\user.h</file>
-         <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\interrupts.c</file>
-         <hash>a8996028e7b6d2d428b73a21d59dcb3f25f5de362dc0858d2fbcf8a3639cd484</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\socket\socket.c</file>
-         <hash>106cfe0595b9bef13c8806f7a119debcfc785d6c0efbfd0a76a8574976f433a8</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_systime.c</file>
-         <hash>4ae18a250095125548713031a340912c39c9a373cbd33e1183a4c82aa19cd10b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_ble.c</file>
-         <hash>957211eda5a202a9ed4309089d628d0d1d8b66713c2e4775a8a7f2d711f82858</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_softap.h</file>
-         <hash>d3f33749a7987c666c2798220f619faf929bdeb53e88408520ff13b789a13a13</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\wifiprov_task.h</file>
-         <hash>5cfdb5ba1345d37502b6e918bb57cc95dbc38f7b770c7cf327348cd90022dc27</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>6bb5b37df5fea90d4f888a2e68e5b0257fb0eb185d8ee1a56a39a5ab1733079c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\system.h</file>
-         <hash>2b75f8e370e5cb2c54f70da7351ee149f0d5a7673e700f39b373099716b31b55</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\driver\nmbus.c</file>
-         <hash>caf056971b479903c8b7ee06da09cef555b7f546a65ca2e0b1b8805bd6c22fcc</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_wps.h</file>
-         <hash>d105554d4c3b1170b80ac3405dca33f5e5808dabbd5fa0a416c6a8a73edf8abd</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\htpt.c</file>
-         <hash>902fb3f300288367cc5400402ad45fcf5d018c6d6cbe4144b79d48635b9857b4</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\driver.h</file>
-         <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\spi\spi_master\plib_spi_master_common.h</file>
-         <hash>844a71566e886cd1f28024000d440ac48841cdb4f4059f5feefac8e4334f12ef</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\gpio\plib_gpio.h</file>
-         <hash>6ef56fd22892c1a3e25cd778caf78977d5b1d403df507cd981edc6428568be9f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\drv\ble_stack\gattc_task.c</file>
-         <hash>230f0a5af7b3a97843ac85c44e4c858d116536e65d37414b6c667cf98676dad4</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_httpprovctx.h</file>
-         <hash>450c007d360885933485e857fd8ba26b265a34fc77c23f45c2290e15856b3174</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_enterprise.h</file>
-         <hash>ff9764a3b42cce23f5396fd1cd6c2c934c73fa9983a97dc7a24a61ef671f8146</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\command\src\sys_command.c</file>
-         <hash>e2e011b221d372dbb81cd7af594d7da29d7ae18966a99a3fd72b3c5772c237bf</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_authctx.h</file>
-         <hash>3b40acf5d56e6f738c40322ccce49a3d24ce0b0f7e8c79ae993c2af2f431aef8</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_bssfind.h</file>
-         <hash>7b080af28903ff6ab643222b72e5cfae15880b42351cec5e8a1b4bb08648adcb</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\wdrv_winc_custie.h</file>
-         <hash>6da49fc0a73ce64fbc2538bb29e7ead376aeff0ed05fabee2f54cb720b8b3e2d</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\evic\plib_evic.h</file>
+         <hash>8d23fbec497272607e866c677642a16f99b84018980cee72d0df73db1f696194</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\gpio\plib_gpio.c</file>
          <hash>096f7b8e816f5d985e7e2072b64361766b7d44786f09a989971260014bbbda30</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\sys_console.h</file>
-         <hash>cc82ba93f8d69bf31a9dfcfe1e425de3924bcf9e4e4b31f7efad9c2d062dcbf6</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\gpio\plib_gpio.h</file>
+         <hash>6ef56fd22892c1a3e25cd778caf78977d5b1d403df507cd981edc6428568be9f</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\osal\wdrv_winc_osal.c</file>
-         <hash>24bc41d45730a1833ba621750008ba919ec045855e75ebcc1ea254103bbbbcf1</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\spi\spi_master\plib_spi3_master.c</file>
+         <hash>3557bc9ff5a0bb3851279bc9f1ac4c230048316162d82a2afbf91359dc15a836</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\wdrv_winc_softap.c</file>
-         <hash>f786f300532a8b907ed26fccc666bdcaafc823e43ca864af3d0c1da5accb093f</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\spi\spi_master\plib_spi3_master.h</file>
+         <hash>76f15ff685371d173538226082bed33a65cc974f10c0d8a51aa92ac683e68915</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console_uart_definitions.h</file>
-         <hash>bf403c11673266a5a861fd99253c377030c1a7f9e912eef446101e416b4f8c9a</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\spi\spi_master\plib_spi_master_common.h</file>
+         <hash>844a71566e886cd1f28024000d440ac48841cdb4f4059f5feefac8e4334f12ef</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\driver\m2m_types.h</file>
-         <hash>ae85f6d78e9c25ca918be4d9047f90e05335d71fac169727e1ae7aca02b96a65</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\uart\plib_uart6.c</file>
+         <hash>fa5f1f521c77708a9fa9a6e6c496a4b54e892a90af9cfd3c97734c71e71e36ea</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\dev\wdrv_winc_gpio.h</file>
-         <hash>5cac8b19a0a37ba6fefb4c6a9886bc0e15dbfb04c4cc9fc24c7fe370981af653</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\uart\plib_uart6.h</file>
+         <hash>e4b3f0d3c923f3effe267e6ea0c9ec373786f87e40a5cf3d147f4554b4dc5d5c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\peripheral\uart\plib_uart_common.h</file>
          <hash>b87295faadae4157d5880e22970f89094f2b51e1866930040a90ba49c6b29797</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\osal\osal.h</file>
-         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\stdio\xc32_monitor.c</file>
+         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
       </entry>
       <entry>
-         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\driver\winc\include\drv\ble_stack\htpt.h</file>
-         <hash>970f698d7980ae056125b18e4694bd44b51fd18371ba1819f26f112f30f120aa</hash>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\command\src\sys_command.c</file>
+         <hash>84360285206bc304af70cc0b29fea061345ba6e27674613b5bb947da9fda0768</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\command\sys_command.h</file>
+         <hash>691fd597ae2e7c8ebe35bae259123e46d82ddf9af40dd6712a8611197f26313f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console.c</file>
+         <hash>622a27844a650b4fa265c7a4739ba3768a76e4148600be42e44eec2e0673d7c6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console_local.h</file>
+         <hash>024a0b50ea2fea72b964b8209fb256b5df6693badd320485821e7912c5eebb25</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console_uart.c</file>
+         <hash>ff3d1854f469e4fc41d96adce6f7ec38afad5d1b076c295eb4777936777673d0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console_uart.h</file>
+         <hash>690c74d55c9204f3e3d621635257df1de1c89f097671a678c359f5e24461589a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\src\sys_console_uart_definitions.h</file>
+         <hash>bf403c11673266a5a861fd99253c377030c1a7f9e912eef446101e416b4f8c9a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\console\sys_console.h</file>
+         <hash>cc82ba93f8d69bf31a9dfcfe1e425de3924bcf9e4e4b31f7efad9c2d062dcbf6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\debug\src\sys_debug.c</file>
+         <hash>474ee981d4285453a2ae9f1e4735c40129281931b89f579c3c413acdff1d8d26</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\debug\src\sys_debug_local.h</file>
+         <hash>d14855e54d4929ec6c9c3ea1e9de3fdc1711bb278fc27ab39079e9f16ecc87d5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\debug\sys_debug.h</file>
+         <hash>aa94da8f32cbcb40672145542d149d077ff8f4b25c08d47d53e3d206d1c6bb83</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\int\src\sys_int.c</file>
+         <hash>30ac5e334ca90204f545f1ab769ae26f421b910b3fb3be99354b364febceee64</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\int\sys_int.h</file>
+         <hash>2c878ab7ff41ae56b5c0c3c94929ad66eb87b8660bf9a439177d049e8ad8f8c8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\int\sys_int_mapping.h</file>
+         <hash>a2dcf05575becc98aa212af1d220eda07487bd645d82c4d7a980aa3a22384cf3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\ports\sys_ports.h</file>
+         <hash>30eb82378e87ab0b3f42953466081abd7d406e07efac3a1999035c3d1135c3f0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\ports\sys_ports_mapping.h</file>
+         <hash>97195d4a7a99942def4f84b563b6590ee56ecb79c39f0defdc163c548e8f85ab</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\reset\sys_reset.c</file>
+         <hash>7626748bc54c0de05d023a7aa7eacf73f9cc9ca2e1e77abe078b478b54ed5fed</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\reset\sys_reset.h</file>
+         <hash>962efce739387d25aacb5dc3aa90e90f216a478bcf19b57237540fd72bce2748</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\system.h</file>
+         <hash>2b75f8e370e5cb2c54f70da7351ee149f0d5a7673e700f39b373099716b31b55</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\system_common.h</file>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\system_module.h</file>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\time\src\sys_time.c</file>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\time\src\sys_time_local.h</file>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\time\sys_time.h</file>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\system\time\sys_time_definitions.h</file>
+         <hash>46537746b1d12ece6b682c9be1c8f3f219663c638c21a51a973762b7b393afe6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\tasks.c</file>
+         <hash>c2cf34f59d672ebd901a0e8decfa49ed242c218ca43dee39a76037fbc8f860f9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\toolchain_specifics.h</file>
+         <hash>fd2fc7bbe60706409cc0c0a525825c0194f6f71adc0a89e6310041f06dc2f645</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32mz_ef_curiosity_v2_winc3400\user.h</file>
+         <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
+      </entry>
+      <entry>
+         <file>..\src\main.c</file>
+         <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

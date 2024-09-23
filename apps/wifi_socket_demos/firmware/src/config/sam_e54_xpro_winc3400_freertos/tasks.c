@@ -60,6 +60,17 @@
 // Section: RTOS "Tasks" Routine
 // *****************************************************************************
 // *****************************************************************************
+TaskHandle_t xSYS_CMD_Tasks;
+void lSYS_CMD_Tasks(  void *pvParameters  )
+{
+    while(1)
+    {
+        SYS_CMD_Tasks();
+        vTaskDelay(10 / portTICK_PERIOD_MS);
+    }
+}
+
+
 static void _WDRV_WINC_Tasks(void *pvParameters)
 {
     while(1)
@@ -76,17 +87,6 @@ static void _WDRV_WINC_Tasks(void *pvParameters)
         }
     }
 }
-
-TaskHandle_t xSYS_CMD_Tasks;
-void lSYS_CMD_Tasks(  void *pvParameters  )
-{
-    while(1)
-    {
-        SYS_CMD_Tasks();
-        vTaskDelay(10 / portTICK_PERIOD_MS);
-    }
-}
-
 
 /* Handle for the APP_Tasks. */
 TaskHandle_t xAPP_Tasks;

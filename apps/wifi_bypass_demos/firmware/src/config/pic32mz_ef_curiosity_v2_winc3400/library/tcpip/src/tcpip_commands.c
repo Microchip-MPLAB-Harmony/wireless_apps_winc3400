@@ -47,9 +47,21 @@ Microchip or any third party.
 #include "system/debug/sys_debug.h"
 #include "system/command/sys_command.h"
 
-#if defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
+#if defined(TCPIP_STACK_USE_HTTP_NET_SERVER) && defined(TCPIP_HTTP_NET_CONSOLE_CMD)
 #include "net_pres/pres/net_pres_socketapi.h"
-#endif  // defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
+#define _TCPIP_COMMANDS_HTTP_NET_SERVER 
+#elif defined(TCPIP_STACK_USE_HTTP_SERVER_V2) && defined(TCPIP_HTTP_CONSOLE_CMD)
+// HTTP server V2 commands
+#include "net_pres/pres/net_pres_socketapi.h"
+#if defined(HTTP_SERVER_V2_NET_COMPATIBILITY)
+// use backward HTTP_NET compatibility
+#include "tcpip/http_server_transl.h"
+#define _TCPIP_COMMANDS_HTTP_NET_SERVER 
+#else
+// new HTTP server commands
+#define _TCPIP_COMMANDS_HTTP_SERVER 
+#endif  // defined(HTTP_SERVER_V2_NET_COMPATIBILITY)
+#endif  // defined(TCPIP_STACK_USE_HTTP_NET_SERVER) && defined(TCPIP_HTTP_NET_CONSOLE_CMD)
 
 #if defined(TCPIP_STACK_COMMAND_ENABLE)
 
@@ -127,8 +139,8 @@ typedef enum
 }DNS_SERVICE_COMD_TYPE;
 typedef struct 
 {
-	const char *command;
-	DNS_SERVICE_COMD_TYPE  val;
+    const char *command;
+    DNS_SERVICE_COMD_TYPE  val;
 }DNSS_COMMAND_MAP;
 
 
@@ -203,9 +215,16 @@ static char tftpServerHost[TCPIP_TFTPC_SERVERADDRESS_LEN];     // current target
 static char tftpcFileName[TCPIP_TFTPC_FILENAME_LEN]; // TFTP file name that will be for PUT and GET command
 #endif
 
-#if defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
-static void _Command_HttpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
+#if defined(_TCPIP_COMMANDS_HTTP_NET_SERVER)
+static void _Command_HttpNetInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 #if (TCPIP_HTTP_NET_SSI_PROCESS != 0)
+static void _Command_SsiNetInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
+#endif
+#elif defined(_TCPIP_COMMANDS_HTTP_SERVER)
+static void _Command_HttpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
+static size_t http_inst_ix  = 0;        // current HTTP instance number
+static size_t http_port_ix  = 0;        // current HTTP port number
+#if (TCPIP_HTTP_SSI_PROCESS != 0)
 static void _Command_SsiInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 #endif
 #endif
@@ -482,6 +501,9 @@ static void _CommandModDeinit(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv
 static void _CommandModRunning(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
 #endif  // defined(TCPIP_STACK_RUN_TIME_INIT) && (TCPIP_STACK_RUN_TIME_INIT != 0)
 
+#if defined(TCPIP_STACK_USE_SNMPV3_SERVER)  
+static void _Command_SNMPv3USMSet(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv);
+#endif
 // TCPIP stack command table
 static const SYS_CMD_DESCRIPTOR    tcpipCmdTbl[]=
 {
@@ -538,17 +560,22 @@ static const SYS_CMD_DESCRIPTOR    tcpipCmdTbl[]=
 #if defined(TCPIP_STACK_USE_DHCPV6_CLIENT)
     {"dhcp6",      _CommandDhcpv6Options,          ": DHCPV6 client commands"},
 #endif
-#if defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
-    {"http",        _Command_HttpInfo,             ": HTTP information"},
+#if defined(_TCPIP_COMMANDS_HTTP_NET_SERVER)
+    {"http",        _Command_HttpNetInfo,           ": HTTP information"},
 #if (TCPIP_HTTP_NET_SSI_PROCESS != 0)
-    {"ssi",         _Command_SsiInfo,              ": SSI information"},
+    {"ssi",         _Command_SsiNetInfo,            ": SSI information"},
+#endif
+#elif defined(_TCPIP_COMMANDS_HTTP_SERVER)
+    {"http",        _Command_HttpInfo,              ": HTTP information"},
+#if (TCPIP_HTTP_SSI_PROCESS != 0)
+    {"ssi",         _Command_SsiInfo,               ": SSI information"},
 #endif
 #endif
 #if defined(TCPIP_STACK_USE_SMTPC) && defined(TCPIP_SMTPC_USE_MAIL_COMMAND)
-	{"mail", 	    _CommandMail,			       ": Send Mail Message"},
+    {"mail",        _CommandMail,                  ": Send Mail Message"},
 #endif  // defined(TCPIP_STACK_USE_SMTPC) && defined(TCPIP_SMTPC_USE_MAIL_COMMAND)
 #if defined(_TCPIP_COMMANDS_MIIM)
-	{"miim", 	    _CommandMiim,			       ": MIIM commands"},
+    {"miim",        _CommandMiim,                  ": MIIM commands"},
 #endif  // defined(_TCPIP_COMMANDS_MIIM)
 #if (TCPIP_UDP_COMMANDS)
     {"udp",         _Command_Udp,                  ": UDP commands"},
@@ -591,6 +618,10 @@ static const SYS_CMD_DESCRIPTOR    tcpipCmdTbl[]=
     {"deinit",         _CommandModDeinit,          ": deinit"},
     {"runstat",       _CommandModRunning,          ": runstat"},
 #endif  // defined(TCPIP_STACK_RUN_TIME_INIT) && (TCPIP_STACK_RUN_TIME_INIT != 0)
+
+#if defined(TCPIP_STACK_USE_SNMPV3_SERVER)    
+    {"snmpv3",  _Command_SNMPv3USMSet,     ": snmpv3"},
+#endif    
 };
 
 bool TCPIP_Commands_Initialize(const TCPIP_STACK_MODULE_CTRL* const stackCtrl, const TCPIP_COMMAND_MODULE_CONFIG* const pCmdInit)
@@ -893,7 +924,7 @@ static void _Command_DHCPLeaseInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char**
         return;
     }
 
-    (*pCmdIO->pCmdApi->print)(cmdIoParam,"MAC Address		IPAddress		RemainingLeaseTime \r\n",0);
+    (*pCmdIO->pCmdApi->print)(cmdIoParam,"MAC Address       IPAddress       RemainingLeaseTime \r\n",0);
 
     prevLease = 0;
     do
@@ -910,8 +941,8 @@ static void _Command_DHCPLeaseInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char**
             TCPIP_Helper_MACAddressToString(&leaseEntry.hwAdd, addrBuff, sizeof(addrBuff));
             (*pCmdIO->pCmdApi->print)(cmdIoParam, "%s", addrBuff);
             TCPIP_Helper_IPAddressToString(&leaseEntry.ipAddress, addrBuff, sizeof(addrBuff));
-            (*pCmdIO->pCmdApi->print)(cmdIoParam, "	%s ", addrBuff);
-            (*pCmdIO->pCmdApi->print)(cmdIoParam, "	%d Secs\r\n", leaseEntry.leaseTime/SYS_TMR_TickCounterFrequencyGet());
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, " %s ", addrBuff);
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, " %d Secs\r\n", leaseEntry.leaseTime/SYS_TMR_TickCounterFrequencyGet());
 
             prevLease = nextLease;
         }
@@ -1005,6 +1036,7 @@ static void _Command_DHCPsLeaseList(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char*
     }extLeaseInfo;
 
     const void* cmdIoParam = pCmdIO->cmdIoParam;
+    memset(&extLeaseInfo.leaseInfo, 0, sizeof(extLeaseInfo.leaseInfo));
 
     uint16_t nLeases;
     uint16_t usedLeases;
@@ -2006,10 +2038,10 @@ static void _Command_TFTPC_Service(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char**
     }
    
     if(TCPIP_TFTPC_SetCommand(&mAddr,ipType,cmdType,tftpcFileName) != TFTPC_ERROR_NONE)
-	{
-		(*pCmdIO->pCmdApi->msg)(pCmdIO->cmdIoParam, "TFTPC:Command processing error.\r\n");
+    {
+        (*pCmdIO->pCmdApi->msg)(pCmdIO->cmdIoParam, "TFTPC:Command processing error.\r\n");
         return;
-	}
+    }
 }
 #endif
 #if defined(TCPIP_STACK_USE_DNS)
@@ -2357,7 +2389,7 @@ static int _Command_DNSSOnOff(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv
         (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Unknown option\r\n");
         return false;
     }
-	addFnc = svcEnable?TCPIP_DNSS_Enable:TCPIP_DNSS_Disable;
+    addFnc = svcEnable?TCPIP_DNSS_Enable:TCPIP_DNSS_Disable;
 
         msgOK   = svcEnable?"enabled":"disabled";
         msgFail = svcEnable?"enable":"disable";
@@ -2381,7 +2413,7 @@ static int _Command_AddDelDNSSrvAddress(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, c
     uint8_t             *hostName;
     IP_MULTI_ADDRESS    ipDNS;
     const void* cmdIoParam = pCmdIO->cmdIoParam;
-    uint32_t		entryTimeout=0;
+    uint32_t        entryTimeout=0;
 #if defined(TCPIP_STACK_USE_IPV6)
     uint8_t     addrBuf[44];
 #endif
@@ -2497,8 +2529,8 @@ static void _Command_DnsServService(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char*
                 {"del",DNS_SERVICE_COMD_DEL,},
                 {"info",DNS_SERVICE_COMD_INFO,},
             }; 
-	
-	
+    
+    
     if (argc < 2) {
         (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: dnss <service/add/del/info> \r\n");
          return;
@@ -2556,7 +2588,7 @@ static int _Command_ShowDNSServInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char*
     hostName = (uint8_t*)argv[2];
     if(strcmp((char*)argv[2],"all")==0)
     {
-    	index = 0;
+        index = 0;
         (*pCmdIO->pCmdApi->msg)(cmdIoParam,"HostName        IPv4/IPv6Count\r\n");
 
         while(1)
@@ -4022,7 +4054,7 @@ void TCPIP_COMMAND_Task(void)
 #if (TCPIP_ARP_COMMANDS != 0)
 static void _CommandArp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 {
-    // arp <interface> <req/query/del/list> <ipAddr>
+    // arp <interface> <req/query/del/list/insert> <ipAddr> <macAddr>\r\n");
     //
     TCPIP_NET_HANDLE netH;
     IPV4_ADDR ipAddr;
@@ -4140,20 +4172,42 @@ static void _CommandArp(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
             return;
         }
 
+        if (strcmp(argv[2], "insert") == 0)
+        {   // insert an address
+            if (argc < 5 || !TCPIP_Helper_StringToMACAddress(argv[4], macAddr.v))
+            {
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Invalid MAC address string \r\n");
+                return;
+            }
+
+
+            arpRes = TCPIP_ARP_EntrySet(netH, &ipAddr, &macAddr, true);
+            if(arpRes >= 0)
+            {
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "arp: Added MAC address %s for %s (%d)\r\n", argv[4], argv[3], arpRes);
+            }
+            else
+            {
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam, "arp: Failed to insert MAC address!\r\n");
+            }
+            return;
+        }
+
         break;
     }
 
     (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: arp interface list\r\n");
-    (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: arp interface req/query/del ipAddr\r\n");
+    (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: arp interface req/query/del/insert <ipAddr> <macAddr>\r\n");
     (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Ex: arp eth0 req 192.168.1.105 \r\n");
 }
 #endif  // (TCPIP_ARP_COMMANDS != 0)
 #endif  // defined(TCPIP_STACK_USE_IPV4)
 
-#if defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
-static void _Command_HttpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
+#if defined(_TCPIP_COMMANDS_HTTP_NET_SERVER)
+static void _Command_HttpNetInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 {
-    int     httpActiveConn, httpOpenConn, connIx, chunkIx;
+    int     httpActiveConn, connIx, chunkIx;
+    int httpOpenConn;
     TCPIP_HTTP_NET_CONN_INFO    httpInfo;
     TCPIP_HTTP_NET_CHUNK_INFO   httpChunkInfo[6];
     TCPIP_HTTP_NET_CHUNK_INFO*  pChunkInfo;
@@ -4240,9 +4294,10 @@ static void _Command_HttpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv
 
 }
 #if (TCPIP_HTTP_NET_SSI_PROCESS != 0)
-static void _Command_SsiInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
+static void _Command_SsiNetInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 {
-    int nSSIVars, ssiEntries, ix;
+    int ssiEntries, ix;
+    int nSSIVars;
     const void* cmdIoParam = pCmdIO->cmdIoParam;
 
     const char* varStr;
@@ -4270,11 +4325,221 @@ static void _Command_SsiInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
             }
         }
     }
-
 }
 #endif  // (TCPIP_HTTP_NET_SSI_PROCESS != 0)
-#endif // defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
+#endif // defined(_TCPIP_COMMANDS_HTTP_NET_SERVER)
 
+#if defined(_TCPIP_COMMANDS_HTTP_SERVER)
+static void _Command_HttpInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
+{
+    size_t argIx, argStep;
+    size_t instCount, portCount, ruleCount, instIx, ruleIx;
+    size_t httpActiveConn, connIx, chunkIx, httpOpenConn;
+    TCPIP_HTTP_CONN_INFO    httpInfo;
+    TCPIP_HTTP_CHUNK_INFO   httpChunkInfo[6];
+    TCPIP_HTTP_CHUNK_INFO*  pChunkInfo;
+    TCPIP_HTTP_STATISTICS   httpStat;
+    TCPIP_HTTP_ACCESS_RULE accRule;
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+
+    if (argc < 2)
+    {
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: http <inst n> <port n> info/stat/chunk/disconnect/rules\r\n");
+        return;
+    }
+
+    argIx = 1;
+    while(argIx < argc)
+    { 
+        char* cmd = argv[argIx];
+
+        if(strcmp(cmd, "inst") == 0 && (argIx + 1) < argc)
+        {
+            http_inst_ix = atoi(argv[argIx + 1]); 
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "http: Set the instance to: %d\r\n", http_inst_ix);
+            argStep = 2;
+        }
+        else if(strcmp(cmd, "port") == 0 && (argIx + 1) < argc)
+        {
+            http_port_ix = atoi(argv[argIx + 1]);
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "http: Set the port to: %d\r\n", http_port_ix);
+            argStep = 2;
+        }
+        else
+        {
+            httpActiveConn = TCPIP_HTTP_ActiveConnectionCountGet(http_inst_ix, http_port_ix, &httpOpenConn);
+
+            if(strcmp(cmd, "info") == 0)
+            {
+                instCount = TCPIP_HTTP_Instance_CountGet();
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP instances: %d\r\n", instCount);
+                for(instIx = 0; instIx < instCount; instIx++)
+                {
+                    portCount = TCPIP_HTTP_Instance_PortCountGet(instIx); 
+                    (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP instance: %d, has %d port(s)\r\n", instIx, portCount);
+                }
+
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP instance: %d, port: %d connections info - active: %d, open: %d\r\n", http_inst_ix, http_port_ix, httpActiveConn, httpOpenConn);
+
+                for(connIx = 0; connIx < httpOpenConn; connIx++)
+                {
+                    if(TCPIP_HTTP_InfoGet(http_inst_ix, http_port_ix, connIx, &httpInfo))
+                    {
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP conn: %d status: 0x%4x, port: %d, sm: 0x%4x, chunks: %d, chunk empty: %d, file empty: %d\r\n",
+                                connIx, httpInfo.httpStatus, httpInfo.listenPort, httpInfo.connStatus, httpInfo.nChunks, httpInfo.chunkPoolEmpty, httpInfo.fileBufferPoolEmpty);
+                    }
+                    else
+                    {
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP: failed to get info for conn: %d\r\n", connIx);
+                    }
+                }
+            }
+            else if(strcmp(cmd, "chunk") == 0)
+            {
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP instance: %d, port: %d chunk info:\r\n", http_inst_ix, http_port_ix);
+                for(connIx = 0; connIx < httpOpenConn; connIx++)
+                {
+                    if(TCPIP_HTTP_InfoGet(http_inst_ix, http_port_ix, connIx, &httpInfo))
+                    {
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP conn: %d, chunks: %d\r\n",  connIx, httpInfo.nChunks);
+                        if(TCPIP_HTTP_ChunkInfoGet(http_inst_ix, http_port_ix, connIx, httpChunkInfo, sizeof(httpChunkInfo)/sizeof(*httpChunkInfo)))
+                        {
+                            pChunkInfo = httpChunkInfo;
+                            for(chunkIx = 0; chunkIx < httpInfo.nChunks; chunkIx++, pChunkInfo++)
+                            {
+                                (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tHTTP chunk: %d flags: 0x%4x, status: 0x%4x, fName: %s\r\n", chunkIx, pChunkInfo->flags, pChunkInfo->status, pChunkInfo->chunkFName);
+                                (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tHTTP chunk: dyn buffers: %d, var Name: %s\r\n", pChunkInfo->nDynBuffers, pChunkInfo->dynVarName);
+                            }
+                            continue;
+                        }
+                    }
+
+                    (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP: failed to get info for conn: %d\r\n", connIx);
+                }
+            }
+            else if(strcmp(cmd, "stat") == 0)
+            {
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP instance: %d, port: %d statistics info:\r\n", http_inst_ix, http_port_ix);
+                if(TCPIP_HTTP_StatsticsGet(http_inst_ix, http_port_ix, &httpStat))
+                {
+                    (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP connections: %d, active: %d, open: %d\r\n", httpStat.nConns, httpStat.nActiveConns, httpStat.nOpenConns);
+                    (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP pool empty: %d, max depth: %d, parse retries: %d\r\n", httpStat.dynPoolEmpty, httpStat.maxRecurseDepth, httpStat.dynParseRetry);
+                }
+                else
+                {
+                    (*pCmdIO->pCmdApi->msg)(cmdIoParam, "HTTP: Failed to get status!\r\n");
+                }
+            }
+            else if(strcmp(cmd, "disconnect") == 0)
+            {
+                for(connIx = 0; connIx < httpOpenConn; connIx++)
+                {
+                    TCPIP_HTTP_CONN_HANDLE connHandle = TCPIP_HTTP_ConnectionHandleGet(http_inst_ix, http_port_ix, connIx);
+                    NET_PRES_SKT_HANDLE_T skt_h = TCPIP_HTTP_ConnectionSocketGet(connHandle);
+                    NET_PRES_SocketDisconnect(skt_h);
+                }
+
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP instance %d, port %d, disconnected %d connections, active: %d\r\n", http_inst_ix, http_port_ix, httpOpenConn, httpActiveConn);
+            }
+            else if(strcmp(cmd, "rules") == 0)
+            {
+                ruleCount = TCPIP_HTTP_PortRules_CountGet(http_inst_ix, http_port_ix); 
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP instance: %d, port: %d, rules: %d\r\n", http_inst_ix, http_port_ix, ruleCount);
+                for(ruleIx = 0; ruleIx < ruleCount; ruleIx++)
+                {
+                    if(TCPIP_HTTP_PortRuleGet(http_inst_ix, http_port_ix, ruleIx, &accRule))
+                    {
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "rule: %d\r\n", ruleIx);
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tinPort: %d, intIfIx: %d, addType: %d\r\n", accRule.inPort, accRule.inIfIx, accRule.inAddType);
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\taction: %d, ruleSize: %d\r\n", accRule.action, accRule.ruleSize);
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tdir: %s\r\n", accRule.dir);
+                        if(accRule.action == TCPIP_HTTP_ACCESS_ACTION_REDIRECT)
+                        {
+                            (*pCmdIO->pCmdApi->print)(cmdIoParam, "\tredirURI: %s, redirServer: %s\r\n", accRule.redirURI, accRule.redirServer);
+                        }
+                    }
+                    else
+                    {
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "Failed to get rule: %d\r\n", ruleIx);
+                    }
+                }
+            }
+            else
+            {
+                (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP: unknown parameter '%s'\r\n", cmd);
+            }
+
+            argStep = 1;
+        }
+        argIx += argStep;
+    }
+}
+#if (TCPIP_HTTP_SSI_PROCESS != 0)
+static void _Command_SsiInfo(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
+{
+    size_t argIx, argStep;
+    size_t ssiEntries, ssiIx, nSSIVars;
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+
+    const char* varName;
+    TCPIP_HTTP_DYN_ARG_DCPT varDcpt;
+
+    if (argc < 2)
+    {
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: ssi <inst n> info\r\n");
+        return;
+    }
+
+    argIx = 1;
+    argStep = 1;
+    while(argIx < argc)
+    { 
+        char* cmd = argv[argIx];
+
+        if(strcmp(cmd, "inst") == 0 && (argIx + 1) < argc)
+        {
+            http_inst_ix = atoi(argv[argIx + 1]); 
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "http: Set the instance to: %d\r\n", http_inst_ix);
+            argStep = 2;
+        }
+        else if(strcmp(cmd, "info") == 0)
+        {
+            ssiEntries = TCPIP_HTTP_SSIVariablesNumberGet(http_inst_ix, &nSSIVars);
+
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "HTTP instance %d SSI variable slots - active: %d, total: %d\r\n", http_inst_ix, ssiEntries, nSSIVars);
+
+            for(ssiIx = 0; ssiIx < nSSIVars; ssiIx++)
+            {
+                bool varRes = TCPIP_HTTP_SSIVariableGetByIndex(http_inst_ix, ssiIx, &varName, &varDcpt);
+                if(varRes)
+                {
+                    if(varDcpt.argType == TCPIP_HTTP_DYN_ARG_TYPE_INT32)
+                    {
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "SSI variable %d name: %s, type: integer, value: %d\r\n", ssiIx, varName, varDcpt.argInt32);
+                    } 
+                    else
+                    {
+                        (*pCmdIO->pCmdApi->print)(cmdIoParam, "SSI variable %d name: %s, type: string, value: %s\r\n", ssiIx, varName, varDcpt.argStr);
+                    }
+                }
+                else
+                {
+                    (*pCmdIO->pCmdApi->print)(cmdIoParam, "SSI info - failed to get variable: %s\r\n", varName);
+                }
+            }
+            argStep = 1;
+        }
+        else
+        {   // ignore unknown command
+            (*pCmdIO->pCmdApi->print)(cmdIoParam, "SSI: unknown parameter '%s'\r\n", cmd);
+            argStep = 1;
+        }
+
+        argIx += argStep;
+    }
+}
+#endif  // (TCPIP_HTTP_SSI_PROCESS != 0)
+#endif // defined(_TCPIP_COMMANDS_HTTP_SERVER)
 
 #if defined(TCPIP_STACK_USE_SMTPC) && defined(TCPIP_SMTPC_USE_MAIL_COMMAND)
 
@@ -6324,7 +6589,7 @@ static void _Command_FTPC_Service(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** 
             {
                 strcpy(serverPathname, argv[opt_count + 2]);
                 fileOptions.serverPathName = serverPathname;
-            }		
+            }       
         }
 
         fileOptions.clientPathName = (char *)"name_list.txt";
@@ -6375,7 +6640,7 @@ static void _Command_FTPC_Service(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** 
             {
                 strcpy(serverPathname, argv[opt_count + 2]);
                 fileOptions.serverPathName = serverPathname;
-            }		
+            }       
         }
         fileOptions.clientPathName = (char *)"list.txt";
         if (argc == (opt_count + 4))
@@ -6535,7 +6800,7 @@ static void _CommandIpv4Table(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv
     // ip table index
     size_t ix;
     const void* cmdIoParam = pCmdIO->cmdIoParam;
-    TCPIP_IPV4_FORWARD_ENTRY_BIN fwdEntry;
+    TCPIP_IPV4_FORWARD_ENTRY_BIN fwdEntry = {0};
     unsigned int index = 0;
 
     if(argc > 2)
@@ -7653,6 +7918,298 @@ static void _CommandModRunning(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** arg
     }
 }
 #endif  // defined(TCPIP_STACK_RUN_TIME_INIT) && (TCPIP_STACK_RUN_TIME_INIT != 0)
+
+#if defined(TCPIP_STACK_USE_SNMPV3_SERVER)  
+static uint8_t SNMPV3_USM_ERROR_STR[SNMPV3_USM_NO_ERROR][100]=
+{
+    /* SNMPV3_USM_SUCCESS=0 */
+    "\r\n",
+    /* SNMPV3_USM_INVALID_INPUTCONFIG */
+    "Error! Invalid input parameter \r\n", 
+    /* SNMPV3_USM_INVALID_USER */
+    "Error! User index position value exceeds the user configuration \r\n",
+    /* SNMPV3_USM_INVALID_USERNAME */
+    "Error! Invalid user name \r\n",
+   /* SNMPV3_USM_INVALID_USER_NAME_LENGTH */
+    "Error!Invalid User name length \r\n",
+    /* SNMPV3_USM_INVALID_PRIVAUTH_PASSWORD_LEN */
+    "Error!Invalid Auth and Priv password length \r\n",
+    /* SNMPV3_USM_INVALID_PRIVAUTH_LOCALIZED_PASSWORD_LEN */
+    "Error!Invalid Auth and Priv localized password length \r\n",
+    /* SNMPV3_USM_INVALID_PRIVAUTH_TYPE */
+    "Error!Privacy Authentication security level configuration not allowed \r\n",
+    /* SNMPV3_USM_INVALID_AUTH_CONFIG_NOT_ALLOWED */
+    "Error! Authentication security level configuration not allowed \r\n",
+    /* SNMPV3_USM_INVALID_PRIV_CONFIG_NOT_ALLOWED */
+    "Error! Privacy security level configuration not allowed \r\n",
+    /*SNMPV3_USM_INVALID_SECURITY_LEVEL */
+    "Error! Invalid USM Security level type  \r\n",
+    /*SNMPV3_USM_NOT_SUPPORTED */
+    "Error! USM Set configuration not allowed \r\n",
+};
+/*
+ "Usage: snmpv3 usm <pos> <name> <security-level> <authpass> <privpass>"
+ * pos - USM config table 
+ * 
+ * usmOpcode = 0 ; only user name configuration
+ * usmOpcode = 1 ; both username and security level configuration
+ * usmOpcode = 0 ; only user name configuration
+ * usmOpcode = 1 ; both username and security level configuration
+ */
+
+static void _Command_SNMPv3USMSet(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
+{
+    const void* cmdIoParam = pCmdIO->cmdIoParam;
+    uint8_t  usmPos=TCPIP_SNMPV3_USM_MAX_USER;
+    bool     usmUserNameOpcode=false;
+    bool     usmSecLevelOpcode=false;
+    bool     usmAuthPasswdOpcode=false;
+    bool     usmPrivPasswdOpcode=false;
+    bool     usmUserInfo=false;
+    char     userNameBuf[TCPIP_SNMPV3_USER_SECURITY_NAME_LEN+1];
+    char     authPwBuf[TCPIP_SNMPV3_PRIVAUTH_PASSWORD_LEN+1];
+    char     privPwBuf[TCPIP_SNMPV3_PRIVAUTH_PASSWORD_LEN+1];
+    SNMPV3_PRIV_PROT_TYPE privType=SNMPV3_NO_PRIV;
+    SNMPV3_HMAC_HASH_TYPE hashType=SNMPV3_NO_HMAC_AUTH;
+    uint8_t  secLev = NO_AUTH_NO_PRIV;
+    uint8_t  configArgs=0;
+    TCPIP_SNMPV3_USM_CONFIG_ERROR_TYPE result=SNMPV3_USM_NO_ERROR;
+    
+    if(argc < 3)
+    {
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Usage: snmpv3 usm <pos> <u name> <l security-level> <a type authpass> <p type privpass> <info>\r\n");
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "SNMPv3 USM position range - 0 to %d \r\n", TCPIP_SNMPV3_USM_MAX_USER-1);
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "SNMPv3 USM security level NoAuthNoPriv- %d, AuthNoPriv- %d, AuthPriv- %d \r\n", NO_AUTH_NO_PRIV, AUTH_NO_PRIV, AUTH_PRIV);
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "SNMPv3 USM authentication supported type md5- %d sha- %d \r\n", SNMPV3_HMAC_MD5, SNMPV3_HMAC_SHA1);
+        (*pCmdIO->pCmdApi->print)(cmdIoParam, "SNMPv3 USM privacy supported type DES- %d AES- %d \r\n", SNMPV3_DES_PRIV, SNMPV3_AES_PRIV);
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Ex: snmpv3 usm 2 u mchp l 3 a 0 auth12345 p 1 priv12345 \r\n");
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam, "Ex: snmpv3 usm info \r\n");
+        return;
+    }
+
+    configArgs = 1;
+    if(argc >= 3)
+    {
+        if(strcmp(argv[configArgs], "usm") == 0)
+        {
+            configArgs = configArgs +1;
+            if(strcmp("info",argv[configArgs]) == 0)
+            {
+                usmUserInfo = true;
+            }
+            else
+            {
+                usmPos = atoi(argv[configArgs]);
+                if(usmPos>= TCPIP_SNMPV3_USM_MAX_USER)
+                {
+                    (*pCmdIO->pCmdApi->msg)(cmdIoParam,"Invalid USM configuration position\r\n");
+                    return;
+                }
+            }
+        }
+    }
+  
+    // more than position field 
+    memset(userNameBuf, 0, sizeof(userNameBuf));
+    memset(authPwBuf, 0, sizeof(authPwBuf));
+    memset(privPwBuf, 0, sizeof(privPwBuf));
+
+    configArgs = configArgs + 1;
+    // verify there are enough commands for this SNMPv3 configuration
+    if(argc == configArgs)
+    {
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam,"SNMPv3 insufficient user inputs\r\n");
+        return;
+    }
+    
+    if(usmUserInfo != true)
+    {
+        while(argc > 3)
+        {
+            if(strncmp("u",argv[configArgs],1) == 0)
+            {
+                if(argc == configArgs+1)
+                {
+                    (*pCmdIO->pCmdApi->msg)(cmdIoParam,"SNMPv3 User name is missing\r\n");
+                    return;
+                }
+                strncpy(userNameBuf,argv[configArgs+1],TCPIP_SNMPV3_USER_SECURITY_NAME_LEN);
+                usmUserNameOpcode = true;
+                configArgs = configArgs+2;
+            }
+            else if(strncmp("l",argv[configArgs],1) == 0)
+            {
+                if(argc == configArgs+1)
+                {
+                    (*pCmdIO->pCmdApi->msg)(cmdIoParam,"SNMPv3 security level is missing\r\n");
+                    return;
+                }
+                secLev = atoi(argv[configArgs+1]);
+                usmSecLevelOpcode = true;
+                configArgs = configArgs+2;
+            }
+            else if(strncmp("a",argv[configArgs],1) == 0)
+            {
+                if(argc == configArgs+1)
+                {
+                    (*pCmdIO->pCmdApi->msg)(cmdIoParam,"SNMPv3 Authentication Hash type is missing\r\n");
+                    return;
+                }
+                hashType = atoi(argv[configArgs+1]);
+                if(argc == configArgs+2)
+                {
+                    (*pCmdIO->pCmdApi->msg)(cmdIoParam,"SNMPv3 Authentication password is missing\r\n");
+                    return;
+                }
+                strncpy(authPwBuf,argv[configArgs+2],TCPIP_SNMPV3_PRIVAUTH_PASSWORD_LEN);
+                usmAuthPasswdOpcode = true;
+                configArgs = configArgs+3;
+            }
+            else if(strncmp("p",argv[configArgs],1) == 0)
+            {
+                if(argc == configArgs+1)
+                {
+                    (*pCmdIO->pCmdApi->msg)(cmdIoParam,"SNMPv3 Privacy Hash type is missing\r\n");
+                    return;
+                }
+                privType = atoi(argv[configArgs+1]);
+                if(argc == configArgs+2)
+                {
+                    (*pCmdIO->pCmdApi->msg)(cmdIoParam,"SNMPv3 Privacy password is missing\r\n");
+                    return;
+                }
+                strncpy(privPwBuf,argv[configArgs+2],TCPIP_SNMPV3_PRIVAUTH_PASSWORD_LEN);
+                usmPrivPasswdOpcode = true;
+                configArgs = configArgs+3;
+            }
+            else
+            {
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam,"invalid number of arguments\r\n");
+                return;
+            }
+            if(configArgs>=argc)
+            {
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam,"End of arguments\r\n");
+                break;
+            }
+        }
+    }
+    
+    if(usmUserNameOpcode)
+    {
+        uint8_t userNameLen = 0;
+        userNameLen = strlen((char*)userNameBuf);
+        result = TCPIP_SNMPV3_SetUSMUserName(userNameBuf,userNameLen,usmPos);
+        if(result != SNMPV3_USM_SUCCESS)
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam,(char*)SNMPV3_USM_ERROR_STR[result]);
+            return;
+        }
+        else
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam,"USM user name configured successfully\r\n");
+        }
+    }
+    if(usmSecLevelOpcode)
+    {
+        uint8_t userNameLen = 0;
+        userNameLen = strlen((char*)userNameBuf);
+        result = TCPIP_SNMPV3_SetUSMSecLevel(userNameBuf,userNameLen,secLev);
+        if(result != SNMPV3_USM_SUCCESS)
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam,(char*)SNMPV3_USM_ERROR_STR[result]);
+            return;
+        }
+        else
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam,"USM Security level configured successfully\r\n");
+        }
+    }
+    
+    if(usmAuthPasswdOpcode)
+    {
+        uint8_t userNameLen = 0;
+        uint8_t authPwLen=0;
+        userNameLen = strlen((char*)userNameBuf);
+        authPwLen = strlen((char*)authPwBuf);
+        result = TCPIP_SNMPV3_SetUSMAuth(userNameBuf,userNameLen,authPwBuf,authPwLen,hashType);
+        if(result != SNMPV3_USM_SUCCESS)
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam,(char*)SNMPV3_USM_ERROR_STR[result]);
+            return;
+        }
+        else
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam,"USM Authentication password configured successfully\r\n");
+        }
+    }
+    
+    if(usmPrivPasswdOpcode)
+    {
+        uint8_t userNameLen = 0;
+        uint8_t privPwLen=0;
+        userNameLen = strlen((char*)userNameBuf);
+        privPwLen = strlen((char*)privPwBuf);
+        result = TCPIP_SNMPV3_SetUSMPrivacy(userNameBuf,userNameLen,privPwBuf,privPwLen,privType);
+        if(result != SNMPV3_USM_SUCCESS)
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam,(char*)SNMPV3_USM_ERROR_STR[result]);
+            return;
+        }
+        else
+        {
+            (*pCmdIO->pCmdApi->msg)(cmdIoParam,"USM Privacy password configured successfully\r\n");
+        }
+    }
+    if(usmAuthPasswdOpcode || usmPrivPasswdOpcode)
+    {
+        TCPIP_SNMPV3_USMAuthPrivLocalization(usmPos);
+    }
+    if(usmUserInfo)
+    {
+        uint8_t usmUserLen=0;
+        uint8_t usmUserAuthLen=0;
+        uint8_t usmUserPrivLen=0;
+        STD_BASED_SNMPV3_SECURITY_LEVEL securityLevel=NO_AUTH_NO_PRIV;
+        uint8_t i=0;
+        
+        (*pCmdIO->pCmdApi->msg)(cmdIoParam,"SNMPv3 USM CONFIGURATION DETAILS\r\n");
+        
+        for(i=0;i<TCPIP_SNMPV3_USM_MAX_USER;i++)
+        {
+            memset(userNameBuf,0,sizeof(userNameBuf));
+            result = TCPIP_SNMPV3_GetUSMUserName(userNameBuf,&usmUserLen,i);
+            if(result != SNMPV3_USM_SUCCESS)
+            {
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam,(char*)SNMPV3_USM_ERROR_STR[result]);
+            }
+             
+            memset(authPwBuf,0,sizeof(authPwBuf));
+            result = TCPIP_SNMPV3_GetUSMAuth(userNameBuf,usmUserLen,authPwBuf,&usmUserAuthLen,&hashType);
+            if(result != SNMPV3_USM_SUCCESS)
+            {
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam,(char*)SNMPV3_USM_ERROR_STR[result]);
+            }
+
+            memset(privPwBuf,0,sizeof(privPwBuf));
+            result = TCPIP_SNMPV3_GetUSMPrivacy(userNameBuf,usmUserLen,privPwBuf,&usmUserPrivLen,&privType);
+            if(result != SNMPV3_USM_SUCCESS)
+            {
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam,(char*)SNMPV3_USM_ERROR_STR[result]);
+            }
+
+            result = TCPIP_SNMPV3_GetUSMSecLevel(userNameBuf,usmUserLen,&securityLevel);
+            if(result != SNMPV3_USM_SUCCESS)
+            {
+                (*pCmdIO->pCmdApi->msg)(cmdIoParam,(char*)SNMPV3_USM_ERROR_STR[result]);
+            }
+            
+            (*pCmdIO->pCmdApi->print)(cmdIoParam,"index:%d  username: %s  secLevel: %d authType: %d authpw: %s  privType: %d privpw: %s \r\n", i,userNameBuf, securityLevel,hashType,authPwBuf,privType,privPwBuf );
+        }
+    }
+    
+}
+#endif
 
 #endif // defined(TCPIP_STACK_COMMAND_ENABLE)
 

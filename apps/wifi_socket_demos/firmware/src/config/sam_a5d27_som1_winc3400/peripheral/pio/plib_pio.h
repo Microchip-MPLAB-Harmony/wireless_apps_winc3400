@@ -91,77 +91,77 @@
 
 
 /*** Macros for WDRV_WINC_RESETN pin ***/
-#define WDRV_WINC_RESETN_Set()               (PIOB_REGS->PIO_SODR = (1<<2))
-#define WDRV_WINC_RESETN_Clear()             (PIOB_REGS->PIO_CODR = (1<<2))
+#define WDRV_WINC_RESETN_Set()               (PIOB_REGS->PIO_SODR = ((uint32_t)1U<<2U))
+#define WDRV_WINC_RESETN_Clear()             (PIOB_REGS->PIO_CODR = ((uint32_t)1U<<2U))
 #define WDRV_WINC_RESETN_Toggle()            do {\
-                                            PIOB_REGS->PIO_MSKR = (1<<2); \
-                                            PIOB_REGS->PIO_ODSR ^= (1<<2);\
+                                            PIOB_REGS->PIO_MSKR = ((uint32_t)1U<<2U); \
+                                            PIOB_REGS->PIO_ODSR ^= ((uint32_t)1U<<2U);\
                                         } while (0)
 #define WDRV_WINC_RESETN_OutputEnable()      do {\
-                                            PIOB_REGS->PIO_MSKR = (1<<2); \
-                                            PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_MSKR = ((uint32_t)1U<<2U); \
+                                            PIOB_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define WDRV_WINC_RESETN_InputEnable()       do { \
-                                            PIOB_REGS->PIO_MSKR = (1<<2); \
-                                            PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_MSKR = ((uint32_t)1U<<2U); \
+                                            PIOB_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define WDRV_WINC_RESETN_Get()               ((PIOB_REGS->PIO_PDSR >> 2) & 0x1)
+#define WDRV_WINC_RESETN_Get()               ((PIOB_REGS->PIO_PDSR >> 2U) & 0x1U)
 #define WDRV_WINC_RESETN_PIN                  PIO_PIN_PB2
 
 /*** Macros for GPIO_PB0 pin ***/
-#define GPIO_PB0_Set()               (PIOB_REGS->PIO_SODR = (1<<0))
-#define GPIO_PB0_Clear()             (PIOB_REGS->PIO_CODR = (1<<0))
+#define GPIO_PB0_Set()               (PIOB_REGS->PIO_SODR = ((uint32_t)1U<<0U))
+#define GPIO_PB0_Clear()             (PIOB_REGS->PIO_CODR = ((uint32_t)1U<<0U))
 #define GPIO_PB0_Toggle()            do {\
-                                            PIOB_REGS->PIO_MSKR = (1<<0); \
-                                            PIOB_REGS->PIO_ODSR ^= (1<<0);\
+                                            PIOB_REGS->PIO_MSKR = ((uint32_t)1U<<0U); \
+                                            PIOB_REGS->PIO_ODSR ^= ((uint32_t)1U<<0U);\
                                         } while (0)
 #define GPIO_PB0_OutputEnable()      do {\
-                                            PIOB_REGS->PIO_MSKR = (1<<0); \
-                                            PIOB_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_MSKR = ((uint32_t)1U<<0U); \
+                                            PIOB_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define GPIO_PB0_InputEnable()       do { \
-                                            PIOB_REGS->PIO_MSKR = (1<<0); \
-                                            PIOB_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOB_REGS->PIO_MSKR = ((uint32_t)1U<<0U); \
+                                            PIOB_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define GPIO_PB0_Get()               ((PIOB_REGS->PIO_PDSR >> 0) & 0x1)
+#define GPIO_PB0_Get()               ((PIOB_REGS->PIO_PDSR >> 0U) & 0x1U)
 #define GPIO_PB0_PIN                  PIO_PIN_PB0
 #define GPIO_PB0_InterruptEnable()   (PIOB_REGS->PIO_IER = (1<<0))
 #define GPIO_PB0_InterruptDisable()  (PIOB_REGS->PIO_IDR = (1<<0))
 
 /*** Macros for WDRV_WINC_CHIP_EN pin ***/
-#define WDRV_WINC_CHIP_EN_Set()               (PIOD_REGS->PIO_SODR = (1<<25))
-#define WDRV_WINC_CHIP_EN_Clear()             (PIOD_REGS->PIO_CODR = (1<<25))
+#define WDRV_WINC_CHIP_EN_Set()               (PIOD_REGS->PIO_SODR = ((uint32_t)1U<<25U))
+#define WDRV_WINC_CHIP_EN_Clear()             (PIOD_REGS->PIO_CODR = ((uint32_t)1U<<25U))
 #define WDRV_WINC_CHIP_EN_Toggle()            do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<25); \
-                                            PIOD_REGS->PIO_ODSR ^= (1<<25);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<25U); \
+                                            PIOD_REGS->PIO_ODSR ^= ((uint32_t)1U<<25U);\
                                         } while (0)
 #define WDRV_WINC_CHIP_EN_OutputEnable()      do {\
-                                            PIOD_REGS->PIO_MSKR = (1<<25); \
-                                            PIOD_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<25U); \
+                                            PIOD_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define WDRV_WINC_CHIP_EN_InputEnable()       do { \
-                                            PIOD_REGS->PIO_MSKR = (1<<25); \
-                                            PIOD_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOD_REGS->PIO_MSKR = ((uint32_t)1U<<25U); \
+                                            PIOD_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define WDRV_WINC_CHIP_EN_Get()               ((PIOD_REGS->PIO_PDSR >> 25) & 0x1)
+#define WDRV_WINC_CHIP_EN_Get()               ((PIOD_REGS->PIO_PDSR >> 25U) & 0x1U)
 #define WDRV_WINC_CHIP_EN_PIN                  PIO_PIN_PD25
 
 /*** Macros for GPIO_PA10 pin ***/
-#define GPIO_PA10_Set()               (PIOA_REGS->PIO_SODR = (1<<10))
-#define GPIO_PA10_Clear()             (PIOA_REGS->PIO_CODR = (1<<10))
+#define GPIO_PA10_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<10U))
+#define GPIO_PA10_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<10U))
 #define GPIO_PA10_Toggle()            do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<10); \
-                                            PIOA_REGS->PIO_ODSR ^= (1<<10);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<10U); \
+                                            PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<10U);\
                                         } while (0)
 #define GPIO_PA10_OutputEnable()      do {\
-                                            PIOA_REGS->PIO_MSKR = (1<<10); \
-                                            PIOA_REGS->PIO_CFGR |=(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<10U); \
+                                            PIOA_REGS->PIO_CFGR |=((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         }while(0)
 #define GPIO_PA10_InputEnable()       do { \
-                                            PIOA_REGS->PIO_MSKR = (1<<10); \
-                                            PIOA_REGS->PIO_CFGR &= ~(1 << PIO_CFGR_DIR_Pos);\
+                                            PIOA_REGS->PIO_MSKR = ((uint32_t)1U<<10U); \
+                                            PIOA_REGS->PIO_CFGR &= ~((uint32_t)1U << PIO_CFGR_DIR_Pos);\
                                         } while (0)
-#define GPIO_PA10_Get()               ((PIOA_REGS->PIO_PDSR >> 10) & 0x1)
+#define GPIO_PA10_Get()               ((PIOA_REGS->PIO_PDSR >> 10U) & 0x1U)
 #define GPIO_PA10_PIN                  PIO_PIN_PA10
 // *****************************************************************************
 /* PIO Ports
