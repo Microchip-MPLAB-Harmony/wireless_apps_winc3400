@@ -159,12 +159,12 @@
           <itemPath>../src/config/sam_e54_xpro_winc3400/device_cache.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/definitions.h</itemPath>
-          <itemPath>../src/config/sam_e54_xpro_winc3400/example_conf.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/device.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/configuration.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/interrupts.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/device_vectors.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro_winc3400/sys_tasks.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro_winc3400/example_conf.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -504,7 +504,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.30</languageToolchainVersion>
+        <languageToolchainVersion>4.45</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

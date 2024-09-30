@@ -70,6 +70,8 @@
 #define APP_TCP_LISTEN_PORT         6666//80
 #define APP_TCP_BUFFER_SIZE         1460
 
+
+
 typedef enum
 {
     /* Example's state machine's initial state. */
@@ -201,8 +203,8 @@ static const SYS_CMD_DESCRIPTOR AppWiFiCmdTbl[] =
 };
 static void APP_WiFiAPAssocCallback(DRV_HANDLE handle, WDRV_WINC_ASSOC_HANDLE assocHandle, const WDRV_WINC_SSID *const pSSID, const WDRV_WINC_NETWORK_ADDRESS *const pPeerAddress, WDRV_WINC_AUTH_TYPE authType, int8_t rssi)
 {
-    memcpy(&peerAddress,pPeerAddress,sizeof(WDRV_WINC_NETWORK_ADDRESS));    
-    
+    memcpy(&peerAddress,pPeerAddress,sizeof(WDRV_WINC_NETWORK_ADDRESS)); 
+  
     appSocketStaApState = APP_WIFI_AP_WAIT_FOR_STA_IP;
 }
 static void APP_WiFiAPConnectNotifyCallback(DRV_HANDLE handle, WDRV_WINC_ASSOC_HANDLE assocHandle, WDRV_WINC_CONN_STATE currentState, WDRV_WINC_CONN_ERROR errorCode)
@@ -588,10 +590,9 @@ void APP_WiFiTasks(DRV_HANDLE handle)
         {  
             TCPIP_DHCPS_LEASE_HANDLE dhcpsLease = 0;
             TCPIP_DHCPS_LEASE_ENTRY dhcpsLeaseEntry;
-            
+     
             dhcpsLease = TCPIP_DHCPS_LeaseEntryGet(netHdl, &dhcpsLeaseEntry, dhcpsLease);
-
-            if ((0 != dhcpsLease) && (0 == memcmp(dhcpsLeaseEntry.hwAdd.v, peerAddress.macAddress.addr, WDRV_WINC_MAC_ADDR_LEN)))
+            if ((0 != dhcpsLease))
             {
                 SYS_CONSOLE_PRINT("\r\n Connected STA MAC:%x:%x:%x:%x:%x:%x \r\n", dhcpsLeaseEntry.hwAdd.v[0], dhcpsLeaseEntry.hwAdd.v[1], dhcpsLeaseEntry.hwAdd.v[2], dhcpsLeaseEntry.hwAdd.v[3],dhcpsLeaseEntry.hwAdd.v[4],dhcpsLeaseEntry.hwAdd.v[5]);
                 SYS_CONSOLE_PRINT("\r\n Connected STA IP:%d.%d.%d.%d \r\n", dhcpsLeaseEntry.ipAddress.v[0], dhcpsLeaseEntry.ipAddress.v[1], dhcpsLeaseEntry.ipAddress.v[2], dhcpsLeaseEntry.ipAddress.v[3]);

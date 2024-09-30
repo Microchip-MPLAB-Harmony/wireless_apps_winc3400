@@ -47,23 +47,23 @@ To build the application, refer to the following table and open the project usin
 
 5.  The WINC3400 device will scan the APs and ready to get paired with Mobile application.
 
-    ![ble_scan](images/GUID-E1636831-7B1D-4CB3-A619-F360C3059905-low.png)
+    ![ble_scan](images/ble_scan.png)
 
 6.  In the Mobile Application, Open the "Ble provisioner" widget.
 
-    ![wifi_prov_widget](images/GUID-38796A44-D45A-4AC9-96A8-2B475F02C1CB-low.jpg)
+    ![wifi_prov_widget](images/mbd_home.png)
 
 7.  In the "Ble provisioner" widget, press the "scan" button. It will list the surrounding BLE devices.
 
-    ![scan](images/GUID-E1623A3D-8D15-4E78-94BD-BBE0C3CC161A-low.jpg)
+    ![scan](images/scan.png)
 
 8.  The default name given for WINC3400 in the "Wi-Fi provisioning using BLE" application is "Wifi Prov". Click on "Wifi Prov" device.
 
-    ![select_device](images/GUID-745696CC-257C-4410-ACB9-97172B87E96E-low.jpg)
+    ![select_device](images/wi-fi_prov.png)
 
 9.  The next screen will display the scanned AP list.
 
-    ![provisioning](images/GUID-569499C9-0752-4774-A413-AB76EDA56F93-low.jpg)
+    ![provisioning](images/prov_1.png)
 
 10. Select the desired AP from the scan list and provide the required credentials to make Wi-Fi connection.
 
@@ -75,10 +75,10 @@ To build the application, refer to the following table and open the project usin
 
 14. Enter the password to pair the WINC3400 device with mobile.
 
-    ![pairing](images/GUID-E7DC885E-EC71-4806-AC07-41DDCDE60416-low.jpg)
+    ![pairing](images/pairing_1.png)
 
 15. The device will connect to the AP and print the IP address obtained.
 
-    ![ble_provisoing_full_log](images/GUID-ADA9232A-58EE-4CAE-868B-7E01948C1DE9-low.png)
+    ![ble_provisoing_full_log](images/wifi_prov_log.png)
 
 
