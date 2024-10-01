@@ -73,7 +73,7 @@ extern "C" {
 #define APP_PING 
 #define APP_SNTP
 #define APP_BLE    
-//#define APP_OTA
+#define APP_OTA
 #ifdef APP_BLE
 #define APP_BLE_WIFI_PROV
 #define APP_BLE_CSC
