@@ -653,8 +653,8 @@
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;appWincExampleConf&quot; value=&quot;Open&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;WEP&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;appWincExampleConf&quot; value=&quot;WEP&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;Open&quot;/&gt;
     &lt;/Values&gt;
   &lt;/appWincExampleConf&gt;
 &lt;/appWincExampleConf&gt;
@@ -6271,7 +6271,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\definitions.h</file>
-         <hash>bf7f1e8241df7bdaf3218cd2ea63ede7964e608a776ef917f10bdc41943e0e45</hash>
+         <hash>3b796541fa5f5c8fe73ef104331a31dafb6fe03abaf58ee1d0f00599a3ac271b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\device.h</file>
@@ -6619,7 +6619,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\example_conf.h</file>
-         <hash>f5be2983f6ae9f342b3787e8a151fe4ab3e8a543074e234636432f0f2463a75f</hash>
+         <hash>14f226398b4572013893776e1c1ca4d571125a8cd96fee13704ba48dac70fe02</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\exceptions.c</file>
@@ -6627,7 +6627,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\initialization.c</file>
-         <hash>8a4b2cacf14a32dc0a9c870eb23dec05c0f2f677f3409676f3eb275962a5e00d</hash>
+         <hash>21af94a790f505b81636c360e0e5f273439a84c0db92a3c3ea55a88a4a843303</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d21_xpro_winc3400\interrupts.c</file>

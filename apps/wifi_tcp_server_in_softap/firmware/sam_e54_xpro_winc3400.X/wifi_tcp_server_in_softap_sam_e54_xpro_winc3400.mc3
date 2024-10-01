@@ -714,8 +714,8 @@
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;appWincExampleConf&quot; value=&quot;Open&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;WEP&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;appWincExampleConf&quot; value=&quot;WEP&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;Open&quot;/&gt;
     &lt;/Values&gt;
   &lt;/appWincExampleConf&gt;
 &lt;/appWincExampleConf&gt;
@@ -9068,7 +9068,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\example_conf.h</file>
-         <hash>f5be2983f6ae9f342b3787e8a151fe4ab3e8a543074e234636432f0f2463a75f</hash>
+         <hash>14f226398b4572013893776e1c1ca4d571125a8cd96fee13704ba48dac70fe02</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_e54_xpro_winc3400\exceptions.c</file>
