@@ -90,3 +90,24 @@ The following applications are provided to demonstrate the typical or interestin
 |Socket Mode|[WINC3400+SAME54](apps/wifi_socket_demos/docs/GUID-0CD99E9B-6954-42F9-8CA8-5E92D55DAEB8.md)|This document explains a step by step approach to create a WINC3400 Socket mode project with SAME54 host.|
 |Bypass Mode|[WINC3400+SAME54](apps/wifi_bypass_demos/docs/GUID-4ABAE224-6F7D-47D1-ACBE-5DE2FD598301.md)|This document explains a step by step approach to create a WINC3400 Bypass mode project with SAME54 host.|
 
+
+
+____
+
+[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400/blob/master/Microchip_SLA001.md)
+[![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/wireless_apps_winc3400.svg)](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400/releases/latest)
+[![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/wireless_apps_winc3400.svg)](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400/releases/latest)
+[![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/wireless_apps_winc3400.svg)](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400/graphs/commit-activity)
+[![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/wireless_apps_winc3400.svg)]()
+
+____
+
+[![Developer Help](https://img.shields.io/badge/Youtube-Developer%20Help-red.svg)](https://www.youtube.com/MicrochipDeveloperHelp)
+[![Developer Help](https://img.shields.io/badge/XWiki-Developer%20Help-torquiose.svg)](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/harmony/)
+[![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology)
+[![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology)
+[![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/)
+[![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech)
+
+[![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/wireless_apps_winc3400.svg?style=social)]()
+[![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/wireless_apps_winc3400.svg?style=social)]()
