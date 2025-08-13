@@ -69,6 +69,7 @@
 #define GPIO_RK0_OutputEnable()      (TRISKCLR = (1U<<0))
 #define GPIO_RK0_InputEnable()       (TRISKSET = (1U<<0))
 #define GPIO_RK0_Get()               ((PORTK >> 0) & 0x1U)
+#define GPIO_RK0_GetLatch()          ((LATK >> 0) & 0x1U)
 #define GPIO_RK0_PIN                  GPIO_PIN_RK0
 #define GPIO_RK0_InterruptEnable()   (CNENKSET = (1U<<0))
 #define GPIO_RK0_InterruptDisable()  (CNENKCLR = (1U<<0))
@@ -80,6 +81,7 @@
 #define WDRV_WINC_RESETN_OutputEnable()      (TRISBCLR = (1U<<12))
 #define WDRV_WINC_RESETN_InputEnable()       (TRISBSET = (1U<<12))
 #define WDRV_WINC_RESETN_Get()               ((PORTB >> 12) & 0x1U)
+#define WDRV_WINC_RESETN_GetLatch()          ((LATB >> 12) & 0x1U)
 #define WDRV_WINC_RESETN_PIN                  GPIO_PIN_RB12
 
 /*** Macros for WDRV_WINC_CHIP_EN pin ***/
@@ -89,6 +91,7 @@
 #define WDRV_WINC_CHIP_EN_OutputEnable()      (TRISKCLR = (1U<<6))
 #define WDRV_WINC_CHIP_EN_InputEnable()       (TRISKSET = (1U<<6))
 #define WDRV_WINC_CHIP_EN_Get()               ((PORTK >> 6) & 0x1U)
+#define WDRV_WINC_CHIP_EN_GetLatch()          ((LATK >> 6) & 0x1U)
 #define WDRV_WINC_CHIP_EN_PIN                  GPIO_PIN_RK6
 
 
@@ -332,7 +335,7 @@ typedef struct {
 
 static inline void GPIO_PinWrite(GPIO_PIN pin, bool value)
 {
-	 uint32_t xvalue = (uint32_t)value;
+     uint32_t xvalue = (uint32_t)value;
     GPIO_PortWrite((pin>>4U), (uint32_t)(0x1U) << (pin & 0xFU), (xvalue) << (pin & 0xFU));
 }
 

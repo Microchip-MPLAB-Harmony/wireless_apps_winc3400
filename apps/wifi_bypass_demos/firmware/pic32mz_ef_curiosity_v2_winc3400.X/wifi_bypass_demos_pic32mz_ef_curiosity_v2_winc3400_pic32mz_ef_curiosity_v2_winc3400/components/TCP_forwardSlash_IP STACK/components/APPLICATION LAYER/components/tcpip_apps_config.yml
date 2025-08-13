@@ -1,0 +1,91 @@
+configVersion: 1.0.0
+componentName: tcpip_apps_config
+coreVersion: 5.8.2
+device: PIC32MZ2048EFM144
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tcpip_apps_config
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: net
+  type: package
+  version: v3.14.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: APPLICATION LAYER
+    children:
+    - children:
+      - attributes:
+          id: tcpip_apps_config
+          x: '20'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    TCPIP_AUTOCONFIG_ENABLE_DHCP_CLIENT:
+      attributes:
+        id: TCPIP_AUTOCONFIG_ENABLE_DHCP_CLIENT
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TCPIP_AUTOCONFIG_ENABLE_DHCP_SERVER:
+      attributes:
+        id: TCPIP_AUTOCONFIG_ENABLE_DHCP_SERVER
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TCPIP_AUTOCONFIG_ENABLE_DNS_CLIENT:
+      attributes:
+        id: TCPIP_AUTOCONFIG_ENABLE_DNS_CLIENT
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TCPIP_AUTOCONFIG_ENABLE_DNS_SERVER:
+      attributes:
+        id: TCPIP_AUTOCONFIG_ENABLE_DNS_SERVER
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TCPIP_AUTOCONFIG_ENABLE_IPERF:
+      attributes:
+        id: TCPIP_AUTOCONFIG_ENABLE_IPERF
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TCPIP_AUTOCONFIG_ENABLE_SNTP:
+      attributes:
+        id: TCPIP_AUTOCONFIG_ENABLE_SNTP
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}

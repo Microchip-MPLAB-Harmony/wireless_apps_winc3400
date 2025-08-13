@@ -308,8 +308,33 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400"
+                     displayName="wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400"
+                     projectFiles="true">
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/sys_command.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/drv_spi_0.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/sys_time.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/uart6.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/spi3.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/dfp.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/sys_console.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/drvWifiWinc.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/core_timer.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/core.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/drv_spi.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/sys_debug.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/sys_console_0.yml</itemPath>
+          <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/components/HarmonyCore.yml</itemPath>
+        </logicalFolder>
+        <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400_pic32mz_ef_curiosity_v2_winc3400/mcc-config.mc4</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>wifi_socket_demos_pic32mz_ef_curiosity_v2_winc3400.mc3</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LibraryFiles"
+                   displayName="LibraryFiles"
+                   projectFiles="true">
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -606,7 +631,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.45</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

@@ -1,0 +1,51 @@
+configVersion: 1.0.0
+componentName: appWincExampleConf
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: appWincExampleConf
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_apps_winc3400
+  type: package
+  version: v3.7.2
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: appWincExampleConf
+          x: '540'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    APP_WIFI_AUTH_METHOD_STA:
+      attributes:
+        id: APP_WIFI_AUTH_METHOD_STA
+      children:
+      - children:
+        - attributes:
+            value: WPA
+          type: User
+        type: Values
+      type: Combo
+    APP_WIFI_SSID:
+      attributes:
+        id: APP_WIFI_SSID
+      children:
+      - children:
+        - attributes:
+            value: MicrochipDemoAp
+          type: User
+        type: Values
+      type: String
+  userData: {}

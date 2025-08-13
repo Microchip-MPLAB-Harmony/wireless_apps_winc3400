@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -83,13 +83,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "ATSAMA5D27CD1G"
-#define DEVICE_ARCH			 "CORTEX-A5"
-#define DEVICE_FAMILY		 "SAMA5"
-#define DEVICE_SERIES		 "SAMA5D2"
+#define DEVICE_NAME          "ATSAMA5D27CD1G"
+#define DEVICE_ARCH          "CORTEX-A5"
+#define DEVICE_FAMILY        "SAMA5"
+#define DEVICE_SERIES        "SAMA5D2"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 498000000
+#define CPU_CLOCK_FREQUENCY 498000000U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -202,12 +202,14 @@ Remarks:
 typedef struct
 {
     SYS_MODULE_OBJ  drvWifiWinc;
+    SYS_MODULE_OBJ sysCommand;
+
     /* SPI0 Driver Object */
     SYS_MODULE_OBJ drvSPI0;
 
+    SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysDebug;
 
-    SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysConsole0;
 
 

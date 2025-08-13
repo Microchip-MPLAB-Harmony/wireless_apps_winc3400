@@ -1,0 +1,85 @@
+configVersion: 1.0.0
+componentName: tcpipStack
+coreVersion: 5.8.2
+device: PIC32MZ2048EFM144
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tcpipStack
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: net
+  type: package
+  version: v3.14.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: BASIC CONFIGURATION
+    children:
+    - children:
+      - attributes:
+          id: tcpipStack
+          x: '240'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    TCPIP_STACK_DRAM_SIZE:
+      attributes:
+        id: TCPIP_STACK_DRAM_SIZE
+      children:
+      - children:
+        - attributes:
+            value: '45960'
+          type: User
+        type: Values
+      type: Integer
+    TCPIP_STACK_HEAP_SIZE_RECOMMEND:
+      attributes:
+        id: TCPIP_STACK_HEAP_SIZE_RECOMMEND
+      children:
+      - children:
+        - attributes:
+            id: tcpipStack
+            value: '36'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TCPIP_STACK_NET_INTERFACE_NAME_IDX0:
+      attributes:
+        id: TCPIP_STACK_NET_INTERFACE_NAME_IDX0
+      children:
+      - children:
+        - attributes:
+            id: tcpipStack
+            value: WINC
+          type: Dynamic
+        type: Values
+      type: String
+    TCPIP_STACK_NET_INTERFACE_NUM:
+      attributes:
+        id: TCPIP_STACK_NET_INTERFACE_NUM
+      children:
+      - children:
+        - attributes:
+            id: tcpipStack
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TCPIP_STACK_SYS_RANDOM_H2_ADAPTER:
+      attributes:
+        id: TCPIP_STACK_SYS_RANDOM_H2_ADAPTER
+      children:
+      - children:
+        - attributes:
+            id: tcpipStack
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+  userData: {}

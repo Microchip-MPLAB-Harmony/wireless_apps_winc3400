@@ -1,0 +1,55 @@
+configVersion: 1.0.0
+componentName: lib_wolfmqtt
+coreVersion: 5.8.2
+device: PIC32MZ2048EFM144
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: lib_wolfmqtt
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: net
+  type: package
+  version: v3.14.1
+- dependencyPackage: ''
+  name: wolfMQTT
+  type: package
+  version: v1.19.2
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: PRESENTATION LAYER
+    children:
+    - children:
+      - attributes:
+          id: lib_wolfmqtt
+          x: '199'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    WMQTT_CSTM_APP_TEMPLATE:
+      attributes:
+        id: WMQTT_CSTM_APP_TEMPLATE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    WMQTT_NET_GLUE_DEBUG_ENABLE:
+      attributes:
+        id: WMQTT_NET_GLUE_DEBUG_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}

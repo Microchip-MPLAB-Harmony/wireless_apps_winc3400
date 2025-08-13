@@ -53,6 +53,8 @@
 #include <stdarg.h>
 #include "app.h"
 #include "wdrv_winc_client_api.h"
+#include "tcpip/src/tcpip_private.h"
+#include "tcpip/src/link_list.h"
 #include "tcpip/src/tcpip_manager_control.h"
 
 // *****************************************************************************

@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -64,8 +64,8 @@
 #include "system/reset/sys_reset.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "driver/winc/include/wdrv_winc_api.h"
 #include "system/command/sys_command.h"
+#include "driver/winc/include/wdrv_winc_api.h"
 #include "peripheral/mmu/plib_mmu.h"
 #include "peripheral/matrix/plib_matrix.h"
 #include "peripheral/clk/plib_clk.h"
@@ -92,13 +92,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "ATSAMA5D27CD1G"
-#define DEVICE_ARCH			 "CORTEX-A5"
-#define DEVICE_FAMILY		 "SAMA5"
-#define DEVICE_SERIES		 "SAMA5D2"
+#define DEVICE_NAME          "ATSAMA5D27CD1G"
+#define DEVICE_ARCH          "CORTEX-A5"
+#define DEVICE_FAMILY        "SAMA5"
+#define DEVICE_SERIES        "SAMA5D2"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 498000000
+#define CPU_CLOCK_FREQUENCY 498000000U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -215,6 +215,9 @@ typedef struct
 
 
     SYS_MODULE_OBJ  tcpip;
+
+    SYS_MODULE_OBJ sysCommand;
+
     SYS_MODULE_OBJ  drvWifiWinc;
     /* SPI0 Driver Object */
     SYS_MODULE_OBJ drvSPI0;

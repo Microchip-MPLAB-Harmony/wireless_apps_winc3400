@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -88,13 +88,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "ATSAME54P20A"
-#define DEVICE_ARCH			 "CORTEX-M4"
-#define DEVICE_FAMILY		 "SAME"
-#define DEVICE_SERIES		 "SAME54"
+#define DEVICE_NAME          "ATSAME54P20A"
+#define DEVICE_ARCH          "CORTEX-M4"
+#define DEVICE_FAMILY        "SAME"
+#define DEVICE_SERIES        "SAME54"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 120000000
+#define CPU_CLOCK_FREQUENCY 120000000U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -206,6 +206,8 @@ Remarks:
 
 typedef struct
 {
+    SYS_MODULE_OBJ sysCommand;
+
     SYS_MODULE_OBJ  drvWifiWinc;
     /* SPI0 Driver Object */
     SYS_MODULE_OBJ drvSPI0;

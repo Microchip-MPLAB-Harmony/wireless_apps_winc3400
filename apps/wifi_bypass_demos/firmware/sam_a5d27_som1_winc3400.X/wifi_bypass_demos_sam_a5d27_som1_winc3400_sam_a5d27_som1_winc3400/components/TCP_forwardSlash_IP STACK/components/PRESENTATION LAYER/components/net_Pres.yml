@@ -1,0 +1,265 @@
+configVersion: 1.0.0
+componentName: net_Pres
+coreVersion: 5.8.2
+device: ATSAMA5D27CD1G
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: net_Pres
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: net
+  type: package
+  version: v3.14.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: Net_Pres_SNTP_Dependency
+        children:
+        - children:
+          - attributes:
+              id: enabled
+            children:
+            - type: Value
+              value: 'true'
+            type: Boolean
+          type: Attributes
+        type: GenericDependency
+      type: Attachments
+    type: net_Pres
+  elementPosition:
+    attributes:
+      id: PRESENTATION LAYER
+    children:
+    - children:
+      - attributes:
+          id: net_Pres
+          x: '20'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    NET_PRES_BLOB_CERT:
+      attributes:
+        id: NET_PRES_BLOB_CERT
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: net_Pres
+            value: '0'
+          type: Dynamic
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    NET_PRES_BLOB_CERT_REPO:
+      attributes:
+        id: NET_PRES_BLOB_CERT_REPO
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NET_PRES_BLOB_CLIENT_CERT_FILENAME:
+      attributes:
+        id: NET_PRES_BLOB_CLIENT_CERT_FILENAME
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: wolfssl/certs_test.h
+          type: Dynamic
+        type: Values
+      type: String
+    NET_PRES_BLOB_CLIENT_CERT_FORMAT:
+      attributes:
+        id: NET_PRES_BLOB_CLIENT_CERT_FORMAT
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: '1'
+          type: Dynamic
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    NET_PRES_BLOB_CLIENT_CERT_LEN_VARIABLE:
+      attributes:
+        id: NET_PRES_BLOB_CLIENT_CERT_LEN_VARIABLE
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: sizeof_client_cert_der_2048
+          type: Dynamic
+        type: Values
+      type: String
+    NET_PRES_BLOB_CLIENT_CERT_VARIABLE:
+      attributes:
+        id: NET_PRES_BLOB_CLIENT_CERT_VARIABLE
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: client_cert_der_2048
+          type: Dynamic
+        type: Values
+      type: String
+    NET_PRES_BLOB_SERVER_CERT_FILENAME:
+      attributes:
+        id: NET_PRES_BLOB_SERVER_CERT_FILENAME
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: wolfssl/certs_test.h
+          type: Dynamic
+        type: Values
+      type: String
+    NET_PRES_BLOB_SERVER_CERT_FORMAT:
+      attributes:
+        id: NET_PRES_BLOB_SERVER_CERT_FORMAT
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    NET_PRES_BLOB_SERVER_CERT_LEN_VARIABLE:
+      attributes:
+        id: NET_PRES_BLOB_SERVER_CERT_LEN_VARIABLE
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: sizeof_server_cert_der_2048
+          type: Dynamic
+        type: Values
+      type: String
+    NET_PRES_BLOB_SERVER_CERT_VARIABLE:
+      attributes:
+        id: NET_PRES_BLOB_SERVER_CERT_VARIABLE
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: server_cert_der_2048
+          type: Dynamic
+        type: Values
+      type: String
+    NET_PRES_BLOB_SERVER_KEY_FILENAME:
+      attributes:
+        id: NET_PRES_BLOB_SERVER_KEY_FILENAME
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: wolfssl/certs_test.h
+          type: Dynamic
+        type: Values
+      type: String
+    NET_PRES_BLOB_SERVER_KEY_LEN_VARIABLE:
+      attributes:
+        id: NET_PRES_BLOB_SERVER_KEY_LEN_VARIABLE
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: sizeof_server_key_der_2048
+          type: Dynamic
+        type: Values
+      type: String
+    NET_PRES_BLOB_SERVER_KEY_VARIABLE:
+      attributes:
+        id: NET_PRES_BLOB_SERVER_KEY_VARIABLE
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: server_key_der_2048
+          type: Dynamic
+        type: Values
+      type: String
+    NET_PRES_CERT_STORE_STUBS:
+      attributes:
+        id: NET_PRES_CERT_STORE_STUBS
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NET_PRES_ENC_PROVIDE:
+      attributes:
+        id: NET_PRES_ENC_PROVIDE
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    NET_PRES_GENERATE_ENC_STUBS:
+      attributes:
+        id: NET_PRES_GENERATE_ENC_STUBS
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NET_PRES_SUPPORT_ENCRYPTION:
+      attributes:
+        id: NET_PRES_SUPPORT_ENCRYPTION
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    NET_PRES_USE_WOLF_SSL:
+      attributes:
+        id: NET_PRES_USE_WOLF_SSL
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+  userData: {}

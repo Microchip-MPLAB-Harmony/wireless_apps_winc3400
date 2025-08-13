@@ -96,7 +96,7 @@ extern "C" {
 
 #define SYS_CMD_ENABLE
 #define SYS_CMD_DEVICE_MAX_INSTANCES       SYS_CONSOLE_DEVICE_MAX_INSTANCES
-#define SYS_CMD_PRINT_BUFFER_SIZE          2560U
+#define SYS_CMD_PRINT_BUFFER_SIZE          512U
 #define SYS_CMD_BUFFER_DMA_READY
 
 /* Command System Service RTOS Configurations*/
@@ -113,7 +113,7 @@ extern "C" {
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(1U)
 #define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		(0U)
-#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		(5012U)
+#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		(256U)
 
 
 
@@ -243,10 +243,6 @@ extern "C" {
 #define NO_WRITEV
 #define MICROCHIP_TCPIP
 #define HAVE_FFDHE_2048
-#define HAVE_FFDHE_3072
-#define HAVE_FFDHE_4096
-#define HAVE_FFDHE_6144
-#define HAVE_FFDHE_8192
 #define NO_PWDBASED
 #define HAVE_TLS_EXTENSIONS
 #define WOLFSSL_TLS13
@@ -530,7 +526,7 @@ extern "C" {
 #define HAVE_ECC
 #define HAVE_DH
 #define NO_DSA
-#define FP_MAX_BITS 16384
+#define FP_MAX_BITS 4096
 #define USE_CERT_BUFFERS_2048
 #define WC_RSA_PSS
 #define NO_DEV_RANDOM
@@ -553,6 +549,7 @@ extern "C" {
 	
 #define FREERTOS
 
+	
 
 
 /*** DNS Server Configuration ***/

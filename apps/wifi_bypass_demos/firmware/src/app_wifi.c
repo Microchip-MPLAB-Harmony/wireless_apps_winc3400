@@ -56,6 +56,8 @@
 #ifdef APP_STA_AP
 #include <stdlib.h>
 #include "wdrv_winc_client_api.h"
+#include "tcpip/src/link_list.h"
+#include "tcpip/src/tcpip_private.h"
 #include "tcpip/src/tcpip_manager_control.h"
 #include "app_wifi.h"
 

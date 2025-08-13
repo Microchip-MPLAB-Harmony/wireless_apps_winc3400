@@ -10,7 +10,7 @@
 *******************************************************************************/
 
 /*
-Copyright (C) 2013-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
+Copyright (C) 2013-2025, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
 The software and documentation is provided by microchip and its contributors
 "as is" and any express, implied or statutory warranties, including, but not
@@ -33,8 +33,8 @@ Microchip or any third party.
 */
 
 
-#ifndef _NET_TLS_WOLFSSL_GLUE_H_
-#define _NET_TLS_WOLFSSL_GLUE_H_
+#ifndef H_NET_TLS_WOLFSSL_GLUE_H_
+#define H_NET_TLS_WOLFSSL_GLUE_H_
 
 #include "configuration.h"
 #include "net_pres/pres/net_pres.h"
@@ -42,21 +42,21 @@ Microchip or any third party.
 #ifdef __CPLUSPLUS
 extern "C" {
 #endif
-extern NET_PRES_EncProviderObject net_pres_EncProviderStreamClient0;
-bool NET_PRES_EncProviderStreamClientInit0(struct _NET_PRES_TransportObject * transObject);
-bool NET_PRES_EncProviderStreamClientDeinit0(void);
-bool NET_PRES_EncProviderStreamClientOpen0(uintptr_t transHandle, void * providerData);
-bool NET_PRES_EncProviderStreamClientIsInited0(void);
-NET_PRES_EncSessionStatus NET_PRES_EncProviderClientConnect0(void * providerData);
-NET_PRES_EncSessionStatus NET_PRES_EncProviderConnectionClose0(void * providerData);
-int32_t NET_PRES_EncProviderWrite0(void * providerData, const uint8_t * buffer, uint16_t size);
-uint16_t  NET_PRES_EncProviderWriteReady0(void * providerData, uint16_t reqSize, uint16_t minSize);
-int32_t NET_PRES_EncProviderRead0(void * providerData, uint8_t * buffer, uint16_t size);
-int32_t NET_PRES_EncProviderReadReady0(void * providerData);
-int32_t NET_PRES_EncProviderPeek0(void * providerData, uint8_t * buffer, uint16_t size);
-int32_t NET_PRES_EncProviderOutputSize0(void * providerData, int32_t inSize);
-int32_t NET_PRES_EncProviderMaxOutputSize0(void * providerData);
+extern Net_ProvObject net_ProvStreamClient0;
+bool Net_ProvStreamClientInit0(struct S_NET_PRES_TransportObject * transObject);
+bool Net_ProvStreamClientDeinit0(void);
+bool Net_ProvStreamClientOpen0(SYS_MODULE_OBJ obj, uintptr_t presHandle, uintptr_t transHandle, void * providerData);
+bool Net_ProvStreamClientIsInited0(void);
+NET_PRES_EncSessionStatus Net_ProvClientConnect0(void * providerData);
+NET_PRES_EncSessionStatus Net_ProvConnectionClose0(void * providerData);
+int32_t Net_ProvWrite0(void * providerData, const uint8_t * dataBuff, uint16_t size);
+uint16_t  Net_ProvWriteReady0(void * providerData, uint16_t reqSize, uint16_t minSize);
+int32_t Net_ProvRead0(void * providerData, uint8_t * dataBuff, uint16_t size);
+int32_t Net_ProvReadReady0(void * providerData);
+int32_t Net_ProvPeek0(void * providerData, uint8_t * dataBuff, uint16_t size);
+int32_t Net_ProvOutputSize0(void * providerData, int32_t inSize);
+int32_t Net_ProvMaxOutputSize0(void * providerData);
 #ifdef __CPLUSPLUS
 }
 #endif
-#endif //_NET_TLS_WOLFSSL_GLUE_H_
+#endif //H_NET_TLS_WOLFSSL_GLUE_H_

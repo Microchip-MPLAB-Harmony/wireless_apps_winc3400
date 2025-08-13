@@ -1,0 +1,188 @@
+configVersion: 1.0.0
+componentName: drvWifiWinc
+coreVersion: 5.8.2
+device: PIC32MZ2048EFM144
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: drvWifiWinc
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_wifi
+  type: package
+  version: v3.12.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: drv_spi_dependency
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: drv_spi_0
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: drv_spi
+            type: String
+          type: Attributes
+        type: DirectDependency
+      - attributes:
+          id: libdrvWincMac
+        children:
+        - children:
+          - attributes:
+              id: enabled
+            children:
+            - type: Value
+              value: 'true'
+            type: Boolean
+          type: Attributes
+        type: DirectCapability
+      - attributes:
+          id: spi_dependency
+        children:
+        - children:
+          - attributes:
+              id: enabled
+            children:
+            - type: Value
+              value: 'false'
+            type: Boolean
+          type: Attributes
+        type: DirectDependency
+      type: Attachments
+    type: drvWifiWinc
+  elementPosition:
+    attributes:
+      id: DRIVER LAYER
+    children:
+    - children:
+      - attributes:
+          id: drvWifiWinc
+          x: '384'
+          y: '75'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    DRV_WIFI_WINC1500_VERSION:
+      attributes:
+        id: DRV_WIFI_WINC1500_VERSION
+      children:
+      - children:
+        - attributes:
+            value: 19.7.7
+          type: User
+        type: Values
+      type: Combo
+    DRV_WIFI_WINC3400_VERSION:
+      attributes:
+        id: DRV_WIFI_WINC3400_VERSION
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 1.4.7
+          type: User
+        type: Values
+      type: Combo
+    DRV_WIFI_WINC_DEVICE:
+      attributes:
+        id: DRV_WIFI_WINC_DEVICE
+      children:
+      - children:
+        - attributes:
+            value: WINC3400
+          type: User
+        type: Values
+      type: Combo
+    DRV_WIFI_WINC_DRIVER_MODE:
+      attributes:
+        id: DRV_WIFI_WINC_DRIVER_MODE
+      children:
+      - children:
+        - attributes:
+            id: tcpip_driver_config
+            value: Ethernet Mode
+          type: Dynamic
+        type: Values
+      type: Combo
+    DRV_WIFI_WINC_GPIO_SRC_SELECT:
+      attributes:
+        id: DRV_WIFI_WINC_GPIO_SRC_SELECT
+      children:
+      - children:
+        - attributes:
+            value: '112'
+          type: User
+        type: Values
+      type: KeyValueSet
+    DRV_WIFI_WINC_SPI_INST:
+      attributes:
+        id: DRV_WIFI_WINC_SPI_INST
+      children:
+      - children:
+        - attributes:
+            id: drvWifiWinc
+            value: drv_spi_0
+          type: Dynamic
+        type: Values
+      type: String
+    DRV_WIFI_WINC_SPI_INST_IDX:
+      attributes:
+        id: DRV_WIFI_WINC_SPI_INST_IDX
+      children:
+      - children:
+        - attributes:
+            id: drvWifiWinc
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    DRV_WIFI_WINC_USE_SYS_DEBUG:
+      attributes:
+        id: DRV_WIFI_WINC_USE_SYS_DEBUG
+      children:
+      - children:
+        - attributes:
+            id: drvWifiWinc
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    DRV_WIFI_WINC_USE_TCPIP_STACK:
+      attributes:
+        id: DRV_WIFI_WINC_USE_TCPIP_STACK
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: tcpip_driver_config
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+  userData: {}

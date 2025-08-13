@@ -58,6 +58,7 @@ typedef enum
     /* Example's state machine's initial state. */
     EXAMP_STATE_INIT=0,
     EXAMP_STATE_CONNECT_AP,
+    EXAMP_STATE_SET_POWERSAVE_MODE,
     EXAMP_STATE_REQ_SLEEP,
     EXAMP_STATE_CONNECTED_AP,
     EXAMP_STATE_DISCONNECTED,
@@ -207,19 +208,23 @@ void APP_ExampleTasks(DRV_HANDLE handle)
                 {
                     break;
                 }
-
-                if (WDRV_WINC_STATUS_OK != WDRV_WINC_PowerSaveSetMode(handle, WDRV_WINC_PS_MODE_AUTO_LOW_POWER))
-                {
-                    break;
-                }
             }
             else if (MAIN_PS_SLEEP_MODE == WDRV_WINC_PS_MODE_OFF)
             {
                 SYS_CONSOLE_Print(appData.consoleHandle, "WDRV_WINC_PS_MODE_OFF\r\n");
             }
 
-            state = EXAMP_STATE_CONNECT_AP;
+            state = EXAMP_STATE_SET_POWERSAVE_MODE;
             break;
+        }
+        
+        case EXAMP_STATE_SET_POWERSAVE_MODE:
+        {
+            if (WDRV_WINC_STATUS_OK != WDRV_WINC_PowerSaveSetMode(handle, WDRV_WINC_PS_MODE_AUTO_LOW_POWER))
+            {
+                break;
+            }
+            state = EXAMP_STATE_CONNECT_AP;
         }
 
         case EXAMP_STATE_CONNECT_AP:

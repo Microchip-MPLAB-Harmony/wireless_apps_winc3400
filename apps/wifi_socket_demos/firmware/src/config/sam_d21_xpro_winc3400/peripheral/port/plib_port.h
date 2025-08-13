@@ -83,6 +83,15 @@
 #define GPIO_PB07_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 7U)) & 0x01U)
 #define GPIO_PB07_PIN                  PORT_PIN_PB07
 
+/*** Macros for GPIO_PB30 pin ***/
+#define GPIO_PB30_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 30U))
+#define GPIO_PB30_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 30U))
+#define GPIO_PB30_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 30U))
+#define GPIO_PB30_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 30U))
+#define GPIO_PB30_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 30U))
+#define GPIO_PB30_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 30U)) & 0x01U)
+#define GPIO_PB30_PIN                  PORT_PIN_PB30
+
 /*** Macros for WDRV_WINC_RESETN pin ***/
 #define WDRV_WINC_RESETN_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 1U))
 #define WDRV_WINC_RESETN_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 1U))

@@ -5,7 +5,7 @@
 #define _WOLFMQTT_VS_SETTINGS_
 
 /* Don't include this if using autoconf cross-compile */
-#ifndef HAVE_CONFIG_H
+#if !defined(HAVE_CONFIG_H)
 
 /* TLS Support */
 #undef  ENABLE_MQTT_TLS

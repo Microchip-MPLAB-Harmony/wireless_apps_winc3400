@@ -1,0 +1,169 @@
+configVersion: 1.0.0
+componentName: lib_wolfssl
+coreVersion: 5.8.2
+device: ATSAMA5D27CD1G
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: lib_wolfssl
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: crypto
+  type: package
+  version: v3.8.2
+- dependencyPackage: ''
+  name: wolfssl
+  type: package
+  version: v5.4.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: WolfSSL_Crypto_Dependency
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: lib_wolfcrypt
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: lib_wolfcrypt
+            type: String
+          type: Attributes
+        type: DirectDependency
+      type: Attachments
+    type: lib_wolfssl
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: lib_wolfssl
+          x: '930'
+          y: '335'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    wolfssl:
+      attributes:
+        id: wolfssl
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    wolfsslDTLS:
+      attributes:
+        id: wolfsslDTLS
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    wolfsslFfdheGroup2048:
+      attributes:
+        id: wolfsslFfdheGroup2048
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    wolfsslFfdheGroup3072:
+      attributes:
+        id: wolfsslFfdheGroup3072
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    wolfsslFfdheGroup4096:
+      attributes:
+        id: wolfsslFfdheGroup4096
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    wolfsslFfdheGroup6144:
+      attributes:
+        id: wolfsslFfdheGroup6144
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    wolfsslFfdheGroup8192:
+      attributes:
+        id: wolfsslFfdheGroup8192
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    wolfsslHkdf:
+      attributes:
+        id: wolfsslHkdf
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    wolfsslSmallStackSupport:
+      attributes:
+        id: wolfsslSmallStackSupport
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    wolfsslTLS13:
+      attributes:
+        id: wolfsslTLS13
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    wolfsslTLSDowngrade:
+      attributes:
+        id: wolfsslTLSDowngrade
+      children:
+      - children:
+        - attributes:
+            id: lib_wolfssl
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+  userData: {}

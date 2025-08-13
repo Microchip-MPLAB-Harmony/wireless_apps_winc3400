@@ -68,9 +68,12 @@ typedef enum
 } APP_BLE_PROXIMITY_STATES;
 
 APP_BLE_PROXIMITY_STATES appBleProximityState;
-
-
-#define LED0_PIN    SYS_PORT_PIN_PB30
+/*The below definition needs to be used with SAME54 device*/
+#define LED0_PIN    SYS_PORT_PIN_PC18 
+/*The below definition needs to be used with SAMED21 device*/
+//#define LED0_PIN   SYS_PORT_PIN_PB30
+/*The below definition needs to be used with SAMA5D27 device*/
+//#define LED0_PIN SYS_PORT_PIN_PA10
 
 // Initial timer value
 #define PXP_REPORTER_INIT_TIMER_INTERVAL		(60)

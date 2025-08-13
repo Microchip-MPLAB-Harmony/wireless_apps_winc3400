@@ -1,35 +1,5 @@
-# Wifi Provisioning via SoftAP
+![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
 
-This example compiles the Wifi Provisioning via SoftAP application which is used to provision a WiFi connection.
-
-## Description
-
-In this demonstration, the WINC Driver will advertise a SoftAP. The SoftAP connection is leveraged to provision a WiFi connection.
-
-## Downloading and building the application
-
-To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_winc3400)
-
-Path of the application within the repository is **apps/wifi\_provisioning\_via\_softap/firmware** .
-
-To build the application, refer to the following table and open the project using its IDE.
-
-|Project Name|Description|
-|------------|-----------|
-|sam\_d21\_xpro\_winc3400.X|MPLABX project for SAMD21 and WINC3400 Xplained pro|
-| | |
-
-## Setting up SAMXXX Xplained Pro board
-
--   Connect the Debug USB port on the SAMXXX Xplained Pro board to the computer using a micro USB cable
-
-
-## Running the Application
-
-1.  Open the project.
-
-2.  Build and program the generated code into the hardware using its IDE.
-
-3.  Please refer "firmware update guide" and "WINC Driver Demonstrations" for more information.
+[Click here](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=wireless_apps_winc3400_wifi_prov_via_softap&redirect=true) to view documentation for this application.
 
 

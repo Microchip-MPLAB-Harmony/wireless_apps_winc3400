@@ -1,0 +1,41 @@
+configVersion: 1.0.0
+componentName: appWincExampleConf
+coreVersion: 5.8.2
+device: ATSAMD21J18A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: appWincExampleConf
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_apps_winc3400
+  type: package
+  version: v3.7.2
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: appWincExampleConf
+          x: '570'
+          y: '120'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    APP_WIFI_AUTH_METHOD_STA:
+      attributes:
+        id: APP_WIFI_AUTH_METHOD_STA
+      children:
+      - children:
+        - attributes:
+            value: WPA
+          type: User
+        type: Values
+      type: Combo
+  userData: {}

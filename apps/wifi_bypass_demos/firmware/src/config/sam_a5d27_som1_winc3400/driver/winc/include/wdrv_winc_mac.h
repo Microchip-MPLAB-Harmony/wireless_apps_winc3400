@@ -39,8 +39,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _WDRV_WINC_MAC_H
-#define _WDRV_WINC_MAC_H
+#ifndef WDRV_WINC_MAC_H
+#define WDRV_WINC_MAC_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -331,8 +331,8 @@ TCPIP_MAC_RES WDRV_WINC_MACParametersGet
     (
         DRV_HANDLE handle,
         TCPIP_MAC_STATISTICS_REG_ENTRY* pRegEntries,
-        int nEntries,
-        int* pHwEntries
+        size_t/int nEntries,
+        size_t/int* pHwEntries
     )
 
   Summary:
@@ -361,8 +361,13 @@ TCPIP_MAC_RES WDRV_WINC_MACRegisterStatisticsGet
 (
     DRV_HANDLE handle,
     TCPIP_MAC_STATISTICS_REG_ENTRY* pRegEntries,
+#if TCPIP_STACK_VERSION_MAJOR != 8
+    size_t nEntries,
+    size_t* pHwEntries
+#else
     int nEntries,
     int* pHwEntries
+#endif
 );
 
 //*******************************************************************************
@@ -502,4 +507,4 @@ bool WDRV_WINC_MACEventAcknowledge(DRV_HANDLE handle, TCPIP_MAC_EVENT macEvents)
 
 TCPIP_MAC_EVENT WDRV_WINC_MACEventPendingGet(DRV_HANDLE handle);
 
-#endif /* _WDRV_WINC_MAC_H */
+#endif /* WDRV_WINC_MAC_H */

@@ -117,7 +117,7 @@ P16,PA13,,Available,In,,,,,,,
 P17,PA26,,Available,In,,,,,,,
 R1,PD26,,Available,In,,,,,,,
 R9,PA8,,Available,In,,,,,,,
-R10,PA10,GPIO_PA10,GPIO,In,n/a,No,Disabled,No,No,Glitch Filter,0x0
+R10,PA10,GPIO_PA10,GPIO,Out,High,No,Disabled,No,No,Glitch Filter,0x0
 R11,PA7,,Available,In,,,,,,,
 R13,PA30,,Available,In,,,,,,,
 R14,PA28,,Available,In,,,,,,,

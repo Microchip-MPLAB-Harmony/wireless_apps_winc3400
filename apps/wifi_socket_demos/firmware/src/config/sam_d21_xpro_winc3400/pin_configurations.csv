@@ -45,7 +45,7 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 53,PA28,,Available,,,,,,NORMAL
 57,PA30,,Available,,,,,,NORMAL
 58,PA31,,Available,,,,,,NORMAL
-59,PB30,,Available,,,,,,NORMAL
+59,PB30,GPIO_PB30,GPIO,Digital,Out,High,,,NORMAL
 60,PB31,,Available,,,,,,NORMAL
 61,PB00,,Available,,,,,,NORMAL
 62,PB01,WDRV_WINC_RESETN,GPIO,Digital,Out,High,,,NORMAL

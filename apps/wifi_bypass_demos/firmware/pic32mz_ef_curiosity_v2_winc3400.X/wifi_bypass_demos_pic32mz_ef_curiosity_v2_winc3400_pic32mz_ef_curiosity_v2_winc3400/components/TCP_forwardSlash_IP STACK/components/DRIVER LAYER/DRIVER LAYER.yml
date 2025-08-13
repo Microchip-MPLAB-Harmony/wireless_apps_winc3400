@@ -1,0 +1,77 @@
+configVersion: 1.0.0
+componentName: DRIVER LAYER
+coreVersion: 5.8.2
+device: PIC32MZ2048EFM144
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyGroupModule
+  name: DRIVER LAYER
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: bsp
+  type: package
+  version: v3.22.0
+- dependencyPackage: ''
+  name: core
+  type: package
+  version: v3.15.2
+- dependencyPackage: ''
+  name: crypto
+  type: package
+  version: v3.8.2
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.22.4
+- dependencyPackage: ''
+  name: net
+  type: package
+  version: v3.14.1
+- dependencyPackage: ''
+  name: wireless_wifi
+  type: package
+  version: v3.12.1
+- dependencyPackage: ''
+  name: wolfMQTT
+  type: package
+  version: v1.19.2
+- dependencyPackage: ''
+  name: wolfMQTT
+  type: package
+  version: v1.19.2
+- dependencyPackage: ''
+  name: wolfssl
+  type: package
+  version: v5.4.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: libdrvWincMac
+          namespace: drvWifiWinc
+          targetAttachmentID: tcpipNetConfig_0:NETCONFIG_MAC_Dependency
+          targetComponentID: BASIC CONFIGURATION
+        type: Attachment
+      type: Attachments
+    type: DRIVER LAYER
+  elementPosition:
+    attributes:
+      id: TCP/IP STACK
+    children:
+    - children:
+      - attributes:
+          id: DRIVER LAYER
+          x: '200'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols: {}
+  userData: {}

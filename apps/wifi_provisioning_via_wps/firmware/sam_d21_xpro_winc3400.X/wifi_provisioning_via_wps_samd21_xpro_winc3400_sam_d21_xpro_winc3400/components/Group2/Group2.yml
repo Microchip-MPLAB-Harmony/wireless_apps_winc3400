@@ -1,0 +1,51 @@
+configVersion: 1.0.0
+componentName: Group2
+coreVersion: 5.8.2
+device: ATSAMD21J18A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyGroupModule
+  name: Group2
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: core
+  type: package
+  version: v3.15.2
+- dependencyPackage: ''
+  name: core
+  type: package
+  version: v3.15.2
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.22.4
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.22.4
+- dependencyPackage: ''
+  name: wireless_wifi
+  type: package
+  version: v3.12.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: Group2
+          x: '270'
+          y: '60'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols: {}
+  userData: {}

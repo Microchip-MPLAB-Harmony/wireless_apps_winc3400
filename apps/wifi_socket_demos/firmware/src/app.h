@@ -83,7 +83,7 @@ extern "C" {
 //#define APP_PUB_BLE_MQTT
 
     //#define APP_BLE_BATTERY
-    //#define APP_BLE_PROXIMITY
+  //  #define APP_BLE_PROXIMITY
 #endif
 #if (defined __SAME54P20A__) || (defined __SAMA5D27CD1G__)
 #define APP_BLE_BATTERY

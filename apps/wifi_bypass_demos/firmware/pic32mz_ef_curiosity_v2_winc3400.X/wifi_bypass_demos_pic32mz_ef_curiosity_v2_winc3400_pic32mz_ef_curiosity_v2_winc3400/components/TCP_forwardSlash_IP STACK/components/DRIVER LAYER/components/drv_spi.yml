@@ -1,0 +1,64 @@
+configVersion: 1.0.0
+componentName: drv_spi
+coreVersion: 5.8.2
+device: PIC32MZ2048EFM144
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: drv_spi
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: core
+  type: package
+  version: v3.15.2
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: DRIVER LAYER
+    children:
+    - children:
+      - attributes:
+          id: drv_spi
+          x: '198'
+          y: '97'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    DRV_SPI_SYS_DMA_CODE_ENABLE:
+      attributes:
+        id: DRV_SPI_SYS_DMA_CODE_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: drv_spi
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    DRV_SPI_SYS_DMA_ENABLE:
+      attributes:
+        id: DRV_SPI_SYS_DMA_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: drv_spi
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    DRV_SPI_SYS_DMA_ENABLE_CNTR:
+      attributes:
+        id: DRV_SPI_SYS_DMA_ENABLE_CNTR
+      children:
+      - children:
+        - attributes:
+            id: drv_spi
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData: {}

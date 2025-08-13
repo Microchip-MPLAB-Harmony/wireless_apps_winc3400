@@ -1,0 +1,63 @@
+configVersion: 1.0.0
+componentName: tcpip_basic_config
+coreVersion: 5.8.2
+device: PIC32MZ2048EFM144
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tcpip_basic_config
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: net
+  type: package
+  version: v3.14.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: BASIC CONFIGURATION
+    children:
+    - children:
+      - attributes:
+          id: tcpip_basic_config
+          x: '20'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    TCPIP_AUTOCONFIG_ENABLE_NETCONFIG:
+      attributes:
+        id: TCPIP_AUTOCONFIG_ENABLE_NETCONFIG
+      children:
+      - children:
+        - attributes:
+            id: tcpip_basic_config
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    TCPIP_AUTOCONFIG_ENABLE_STACK:
+      attributes:
+        id: TCPIP_AUTOCONFIG_ENABLE_STACK
+      children:
+      - children:
+        - attributes:
+            id: tcpip_basic_config
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    TCPIP_AUTOCONFIG_ENABLE_TCPIPCMD:
+      attributes:
+        id: TCPIP_AUTOCONFIG_ENABLE_TCPIPCMD
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}

@@ -229,30 +229,39 @@
           </logicalFolder>
           <itemPath>../src/packs/ATSAMD21J18A_DFP/samd21j18a.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
-          <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
-            <logicalFolder name="f1" displayName="Core" projectFiles="true">
-              <logicalFolder name="f1" displayName="Include" projectFiles="true">
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
-              </logicalFolder>
-            </logicalFolder>
-          </logicalFolder>
-        </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400"
+                     displayName="ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400"
+                     projectFiles="true">
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <logicalFolder name="Group0" displayName="Group0" projectFiles="true">
+            <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/Group0/Group0.yml</itemPath>
+          </logicalFolder>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/sys_debug.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/cmsis.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/nvmctrl.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/sercom3.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/sys_time.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/drvWifiWinc.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/sercom0.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/sys_console.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/sys_console_0.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/tc3.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/eic.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/drv_spi_0.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/dfp.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/core.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/drv_spi.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/evsys.yml</itemPath>
+          <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/components/HarmonyCore.yml</itemPath>
+        </logicalFolder>
+        <itemPath>ap_scan_sam_d21_xpro_winc3400_sam_d21_xpro_winc3400/mcc-config.mc4</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1"
                      displayName="sam_d21_xpro_winc3400.mhc"
                      projectFiles="true">
@@ -277,7 +286,10 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_d21_xpro_winc3400/harmony-manifest-success.yml</itemPath>
-      <itemPath>ap_scan_sam_d21_xpro_winc3400.mc3</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LibraryFiles"
+                   displayName="LibraryFiles"
+                   projectFiles="true">
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -444,7 +456,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.45</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -699,67 +711,6 @@
         <property key="voltagevalue" value=""/>
         <property key="x.erase.clearprot" value="true"/>
       </EdbgTool>
-      <PICkit3PlatformTool>
-        <property key="ADC 1" value="true"/>
-        <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="CHANGE NOTICE" value="true"/>
-        <property key="COMPARATOR" value="true"/>
-        <property key="CTMU" value="true"/>
-        <property key="DMA" value="true"/>
-        <property key="Freeze All Other Peripherals" value="true"/>
-        <property key="I2C1" value="true"/>
-        <property key="I2C2" value="true"/>
-        <property key="INPUT CAPTURE 1" value="true"/>
-        <property key="INPUT CAPTURE 2" value="true"/>
-        <property key="INPUT CAPTURE 3" value="true"/>
-        <property key="INPUT CAPTURE 4" value="true"/>
-        <property key="INPUT CAPTURE 5" value="true"/>
-        <property key="INTERRUPT CONTROL" value="true"/>
-        <property key="OUTPUT COMPARE 1" value="true"/>
-        <property key="OUTPUT COMPARE 2" value="true"/>
-        <property key="OUTPUT COMPARE 3" value="true"/>
-        <property key="OUTPUT COMPARE 4" value="true"/>
-        <property key="OUTPUT COMPARE 5" value="true"/>
-        <property key="PARALLEL MASTER/SLAVE PORT" value="true"/>
-        <property key="REAL TIME CLOCK" value="true"/>
-        <property key="SPI/I2S 1" value="true"/>
-        <property key="SPI/I2S 2" value="true"/>
-        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="TIMER1" value="true"/>
-        <property key="TIMER2" value="true"/>
-        <property key="TIMER3" value="true"/>
-        <property key="TIMER4" value="true"/>
-        <property key="TIMER5" value="true"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
-        <property key="UART1" value="true"/>
-        <property key="UART2" value="true"/>
-        <property key="hwtoolclock.frcindebug" value="false"/>
-        <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="true"/>
-        <property key="memories.configurationmemory" value="true"/>
-        <property key="memories.eeprom" value="true"/>
-        <property key="memories.flashdata" value="true"/>
-        <property key="memories.id" value="true"/>
-        <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.end" value="0x1d003fff"/>
-        <property key="memories.programmemory.start" value="0x1d000000"/>
-        <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmertogo.imagename" value=""/>
-        <property key="programoptions.donoteraseauxmem" value="false"/>
-        <property key="programoptions.eraseb4program" value="true"/>
-        <property key="programoptions.pgmspeed" value="2"/>
-        <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveprogramrange.end" value="0x1d003fff"/>
-        <property key="programoptions.preserveprogramrange.start" value="0x1d000000"/>
-        <property key="programoptions.preserveuserid" value="false"/>
-        <property key="programoptions.testmodeentrymethod" value="VPPFirst"/>
-        <property key="programoptions.usehighvoltageonmclr" value="false"/>
-        <property key="programoptions.uselvpprogramming" value="false"/>
-        <property key="voltagevalue" value="3.25"/>
-      </PICkit3PlatformTool>
       <Simulator>
         <property key="codecoverage.enabled" value="Disable"/>
         <property key="codecoverage.enableoutputtofile" value="false"/>

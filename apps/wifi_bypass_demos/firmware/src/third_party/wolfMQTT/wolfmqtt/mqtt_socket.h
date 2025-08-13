@@ -1,6 +1,6 @@
 /* mqtt_socket.h
  *
- * Copyright (C) 2006-2022 wolfSSL Inc.
+ * Copyright (C) 2006-2025 wolfSSL Inc.
  *
  * This file is part of wolfMQTT.
  *
@@ -69,8 +69,10 @@ typedef int (*MqttNetDisconnectCb)(void *context);
 typedef struct _MqttTls {
     WOLFSSL_CTX         *ctx;
     WOLFSSL             *ssl;
-    int                 sockRc;
-    int                 timeout_ms;
+    int                 sockRcRead;
+    int                 sockRcWrite;
+    int                 timeout_ms_read;
+    int                 timeout_ms_write;
 } MqttTls;
 #endif
 
@@ -97,18 +99,18 @@ WOLFMQTT_LOCAL int MqttSocket_Read(struct _MqttClient *client, byte* buf,
 #ifdef WOLFMQTT_SN
 WOLFMQTT_LOCAL int MqttSocket_Peek(struct _MqttClient *client, byte* buf,
         int buf_len, int timeout_ms);
-#endif
+#endif /* WOLFMQTT_SN */
 WOLFMQTT_LOCAL int MqttSocket_Connect(struct _MqttClient *client,
         const char* host, word16 port, int timeout_ms, int use_tls,
         MqttTlsCb cb);
 WOLFMQTT_LOCAL int MqttSocket_Disconnect(struct _MqttClient *client);
 
-#ifdef ENABLE_MQTT_TLS
+#if defined(ENABLE_MQTT_TLS) && !defined(ENABLE_MQTT_CURL)
 /* make these public for cases where user needs to create
  * WOLFSSL_CTX context and WOLFSSL object in the TLS callback */
 WOLFMQTT_API int MqttSocket_TlsSocketReceive(WOLFSSL* ssl, char *buf, int sz, void *ptr);
 WOLFMQTT_API int MqttSocket_TlsSocketSend(WOLFSSL* ssl, char *buf, int sz, void *ptr);
-#endif
+#endif /* ENABLE_MQTT_TLS && !ENABLE_MQTT_CURL*/
 
 #ifdef __cplusplus
     } /* extern "C" */

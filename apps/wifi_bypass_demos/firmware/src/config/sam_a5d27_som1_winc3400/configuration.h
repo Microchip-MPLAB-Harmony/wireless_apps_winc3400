@@ -245,6 +245,7 @@ extern "C" {
 #define HAVE_TLS_EXTENSIONS
 #define WOLFSSL_TLS13
 #define HAVE_SUPPORTED_CURVES
+#define WOLFSSL_SMALL_STACK
 #define NO_ERROR_STRINGS
 #define WOLFSSL_MAX_ERROR_SZ 38 // Fix Mandatory Misra 21.18 caused by removing error strings with defining NO_ERROR_STRINGS
 #define NO_OLD_TLS
@@ -539,6 +540,7 @@ extern "C" {
 #define NET_PRES_NUM_SOCKETS 10
 
 
+	
 
 
 /*** DNS Server Configuration ***/

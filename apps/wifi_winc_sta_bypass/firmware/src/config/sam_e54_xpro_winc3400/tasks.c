@@ -92,6 +92,10 @@ SYS_CMD_Tasks();
 
 
 
+NET_PRES_Tasks(sysObj.netPres);
+
+
+
 
     /* Maintain the application's state machine. */
         /* Call Application task APP. */

@@ -2,19 +2,23 @@
 
 manifest_file_version: 1.0.0
 project: wifi_socket_demos_sam_a5d27_som1_winc3400
-creation_date: 2024-09-23T15:04:30.848+05:30[Asia/Calcutta]
-operating_system: Windows 10
+creation_date: 2025-07-03T08:33:05.269+05:30[Asia/Calcutta]
+operating_system: Windows 11
 mcc_mode: IDE
-mcc_mode_version: v6.20
+mcc_mode_version: v6.25
 device_name: ATSAMA5D27CD1G
-compiler: XC32 4.45
-mcc_version: 5.5.1
-mcc_core_version: 5.7.1
-content_manager_version: 5.0.1
+compiler: XC32 4.60
+mcc_version: 5.6.2
+mcc_core_version: 5.8.2
+content_manager_version: 6.0.2
 is_mcc_offline: false
-is_using_prerelease_versions: false
+is_using_prerelease_versions: true
 mcc_content_registries: https://registry.npmjs.org/
-device_library: {library_class: com.microchip.mcc.harmony.Harmony3Library, name: Harmony
-    V3, version: 1.3.2}
+device_library: {library_class: com.microchip.mcc.harmony.Harmony3Library, name: Bundled,
+  version: Bundled}
 packs: {name: SAMA5D2_DFP, version: 1.11.228}
-modules: []
+modules:
+- {name: wireless_wifi, type: HARMONY, version: v3.12.1}
+- {name: core, type: HARMONY, version: v3.15.2}
+- {name: csp, type: HARMONY, version: v3.22.4}
+- {name: CMSIS_5, type: HARMONY, version: 5.9.0}

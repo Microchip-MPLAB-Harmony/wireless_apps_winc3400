@@ -1,6 +1,6 @@
 # Microchip MPLAB® Harmony 3 Release Notes
 
-## Harmony 3 Wireless application examples for WINC3400 v3.7.1
+## Harmony 3 Wireless application examples for WINC3400 v3.7.2
 
 ### Development kit and demo application support
 
@@ -15,19 +15,22 @@ Following table provides number of Wireless examples available for different dev
 
 ### New Features
 
-- Migrated all the host applications with latest "wireless_wifi" driver v3.11.1
+- Migrated all the host applications with latest "wireless_wifi" driver v3.12.1
+
+### Bug fixes and Improvements
+
+- Updated the "wifi_socket_demos" utilities with latest version of BLEDK3 apk.
+- Resolved the SSL connection negotiation failure in the "wifi_bypass_demo" application.
+- Corrected the LED behavior in the Proximity Reporter Application.
 
 ### Known Issues
 
-- WolfMQTT(STA bypass mode) demo application need to build "third_party/wolfMQTT/mqtt_socket.c" without xc32 option 'Make warnings into errors' as it uses the obsolete #include <sys/errno.h> file in WolfMQTT repo.
-
-- User may face connectivity issue with the SSL demo of bypass mode with FreeRTOS. Please use SSL demo of bypass mode without FreeRTOS.
-
+- The "wireless_apps_winc3400" repository should be placed alongside other dependency repositories to prevent MCC loading failures.
 - Additional known issues can be found at [WINC3400-known-issues](https://github.com/MicrochipTech/WINC3400-known-issues)
 
 ### Development Tools
 
-- [MPLAB® X IDE v6.20](https://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB® X IDE v6.25](https://www.microchip.com/mplab/mplab-x-ide)
 - MPLAB® X IDE plug-ins:
-  - MPLAB® Code Configurator (MCC) v5.5.1
-- [MPLAB® XC32 C/C++ Compiler v4.45](https://www.microchip.com/mplab/compilers)
+- MPLAB® Code Configurator (MCC) v5.6.2
+- [MPLAB® XC32 C/C++ Compiler v4.60](https://www.microchip.com/mplab/compilers)
